@@ -1,0 +1,16 @@
+opencv-python
+requests
+requests[socks]
+paramiko
+fabric
+python-kasa
+pyserial
+asyncio
+pyyaml
+beautifulsoup4
+opencv-python
+pytesseract
+pillow
+selenium
+boto3
+cdrouter

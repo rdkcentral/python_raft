@@ -1,0 +1,27 @@
+rebasebuffer:
+  pages:
+    test_locator:
+      url_extension: '/styled/find-by-playground-test.html'
+      elements:
+        paragraph_a_XPATH:
+          type: 'XPATH'
+          value: '/html/body/div[2]/p[1]'
+        paragraph_a_ID:
+          type: 'ID'
+          value: 'p1'
+        paragraph_a_NAME:
+          type: 'NAME'
+          value: 'pName1'
+        paragraph_a_CLASS_NAME:
+          type: 'CLASS_NAME'
+          value: 'normal'    
+        paragraph_a_TAG_NAME:
+          type: 'TAG_NAME'
+          value: 'p'      
+    attributes_page:
+      url_extension: '/styled/attributes-test.html'
+      elements:
+        paragraph:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/div/p'
+    
