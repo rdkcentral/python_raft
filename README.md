@@ -17,7 +17,20 @@ RAFT’s primary focus is to provide engineering teams a modular, config driven,
 
 ## Installation
 
-WIP
+### Requirements
+- Python (=3.11.8)
+- Pyenv can be used to manage multiple versions of Python (please refer to the [documentation](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation)).
+ 
+### User Installation
+```console
+$ pip install install_requirements.sh
+```
+ 
+ 
+### Contributor Installation
+```console
+$ pip install -r requirements_raft.txt
+```
 
 ## Getting Started
 
