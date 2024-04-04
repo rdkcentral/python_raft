@@ -18,6 +18,13 @@ from framework.core.commandModules.consoleInterface import consoleInterface
 
 class serialSession(consoleInterface):
     """Handle device serial connection operation
+
+    Args:
+        log (logModule): Log module to be used.
+        workspacePath (str): Path of the tests worksapce to create the sesson.log file.
+        serialPort (str): Serial port to use.
+        baudRate (int, option): Baud rate to use. Default's to 115200.
+
     """
   
     def __init__(self, log, workspacePath, serialPort, baudRate=115200):
@@ -39,7 +46,7 @@ class serialSession(consoleInterface):
             raise Exception('Failed to start Serial Connection. Check the COM port settings')
 
     def open(self):
-        """Starts serial session and serial file logger
+        """Starts serial session and serial file logger.
         """        
         try:
             if not self.serialCon.is_open:
@@ -54,7 +61,7 @@ class serialSession(consoleInterface):
         return isOpen
 
     def close(self):
-        """Closes the serial session and serial file logger
+        """Closes the serial session and serial file logger.
         """
         if self.serialFileHandler:
             self.log.debug("Successfully closed Serial log file")
@@ -72,10 +79,10 @@ class serialSession(consoleInterface):
         return True
 
     def write(self, message):
-        """Write to serial console
+        """Write to serial console.
 
         Args:
-            message (Str) - message to write to serial console
+            message (Str) - message to write to serial console.
         """
         self.log.debug("Writing to Serial [{}]".format(message.strip()))
         try:
@@ -86,10 +93,10 @@ class serialSession(consoleInterface):
         return True
     
     def writeLines(self, message):
-        """Write to serial console
+        """Write to serial console.
 
         Args:
-            message (Str) - message to write to serial console
+            message (Str) - message to write to serial console.
         """
         try:
             self.serialCon.writelines(message.encode('utf-8'))
@@ -98,7 +105,7 @@ class serialSession(consoleInterface):
         return True
 
     def read_until(self, value):
-        """Read serial output until a specified value is found
+        """Read serial output until a specified value is found.
         """
         message = bytes(value,encoding='utf-8')
         serialStr = self.serialCon.read_until( message )
@@ -110,7 +117,7 @@ class serialSession(consoleInterface):
         return writeString
 
     def read_all(self):
-        """Read all lines from serial output available in the buffer
+        """Read all lines from serial output available in the buffer.
         """
         serialStr = self.serialCon.read_all()
         if serialStr == b'':
@@ -123,6 +130,8 @@ class serialSession(consoleInterface):
         return writeString
 
     def flush(self):
+        """Clear the console.
+        """
         self.log.info("Clearing Serial console log")
         self.serialCon.flushInput()
         return True
