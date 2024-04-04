@@ -15,9 +15,20 @@
 import telnetlib
 import socket
 
-from framework.core.commandModules.consoleInterface import consoleInterface
+from .consoleInterface import consoleInterface
 
 class telnet(consoleInterface):
+
+    """telnet is a consoleInterface class to interface with telnet console sessions.
+
+    Args:
+        log (logModule): Log module to be used.
+        workspacePath (str): Path of the tests worksapce to create the sesson.log file.
+        host (str): IP address of the host to open a session with.
+        username (str): Username to login to the session with.
+        password (str): Password to login to the session with.
+        port (int, optional): Listening telnet port on host. Defaults to 23.
+    """
 
     def __init__(self,log, workspacePath, host, username, password, port=23):
         self.tn = None
@@ -44,12 +55,25 @@ class telnet(consoleInterface):
             self.log.error('Failed to initiate session log file - %s' % e)
 
     def open(self):
+        """Open the telnet session.
+        """
         self.connect()
 
     def close(self):
+        """Close the telnet session
+        """
         self.disconnect()
 
     def connect(self, username_prompt = "login: ", password_prompt = "Password: "):
+        """Open the telnet session
+
+        Args:
+            username_prompt (str, optional): Expected prompt shown for entering the username.
+            password_prompt (str, optional): Expected prompt shown for entering the password.
+
+        Returns:
+            bool: True if session opened successfully.
+        """
         try :
             self.log.info("Host IP : [{}]".format(self.host))
             self.tn = telnetlib.Telnet(self.host, self.port, self.timeout)
@@ -76,10 +100,23 @@ class telnet(consoleInterface):
         return True
 
     def disconnect(self):
+        """Close the telnet session
+
+        Returns:
+            bool: True
+        """
         self.tn.close()
         return True
 
     def write(self,message):
+        """Write a message into the session console.
+
+        Args:
+            message (str): Message to write into the console.
+
+        Returns:
+            bool: True when the message is successfully written to the console.
+        """
         message = message.encode()
         try:
             self.tn.write(message + b"\r\n")
@@ -89,26 +126,49 @@ class telnet(consoleInterface):
         return True
 
     def read_until(self,value):
+        """Read the console until a message appears.
+
+        Args:
+            value (str): The message to wait for in the console.
+
+        Returns:
+            str: Information displayed in the console up to the value entered.
+        """
         message = value.encode()
         result = self.tn.read_until(message,self.timeout)
         return result.decode()
 
     def read_eager(self):
+        """Read all readily available information displayed in the console.
+
+        Returns:
+            str: Information currently displayed in the console.
+        """
         result=self.tn.read_eager()
         return result.decode()
 
     def read_very_eager(self):
+        """Read all readily available information displayed in the console, without blocking I/O.
+
+        Returns:
+            str: Information currently displayed in the console.
+        """
         result=self.tn.read_very_eager()
         return result.decode()
 
     def read_some(self):
+        """Read information displayed in the console until EOF hit.
+
+        Returns:
+            str: Information currently displayed in the console.
+        """
         result=self.tn.read_some()
         return result.decode()
 
-    def message(self, message):
-        result=self.tn.message(message)
-        return result.decode()
-
     def read_all(self):
-        result=self.tn.read_eager()
-        return result.decode()
+        """Read all readily available information displayed in the console.
+
+        Returns:
+            str: Information currently displayed in the console.
+        """
+        return self.read_eager()
