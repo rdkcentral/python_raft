@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacewebpageControlTests" kind="namespace" language="Python">
+    <compoundname>webpageControlTests</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="webpageControlTests_8py_1adac5d481399526bab3313a2ca15ed3d7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webpageControlTests.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/webpageControlTests.py" line="7" column="1" bodyfile="unitTests/framework/webControlTests/webpageControlTests.py" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="webpageControlTests_8py_1a81a2bb6d2d90e8491530df79cb159280" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webpageControlTests.summary</definition>
+        <argsstring></argsstring>
+        <name>summary</name>
+        <initializer>=  logModule(&quot;WebpageControlTests&quot;, level=logModule.INFO)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/webpageControlTests.py" line="27" column="1" bodyfile="unitTests/framework/webControlTests/webpageControlTests.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="webpageControlTests_8py_1a4918ae7823314767abddd2cfc073ee57" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>webpageControlTests.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/webpageControlTests.py" line="30" column="1" bodyfile="unitTests/framework/webControlTests/webpageControlTests.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/webpageControlTests.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

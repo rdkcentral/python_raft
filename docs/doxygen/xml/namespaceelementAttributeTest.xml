@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceelementAttributeTest" kind="namespace" language="Python">
+    <compoundname>elementAttributeTest</compoundname>
+    <innerclass refid="classelementAttributeTest_1_1elementAttributeTest" prot="public">elementAttributeTest::elementAttributeTest</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="elementAttributeTest_8py_1aa4803356aff0bac13c638e54ceefe0e1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>elementAttributeTest.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/elementAttributeTest.py" line="8" column="1" bodyfile="unitTests/framework/webControlTests/elementAttributeTest.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="elementAttributeTest_8py_1ac20f9fa1cc9cf7bd8d7e44d5d6fb7bab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>elementAttributeTest.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>=  <ref refid="classelementAttributeTest_1_1elementAttributeTest" kindref="compound">elementAttributeTest</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/elementAttributeTest.py" line="37" column="1" bodyfile="unitTests/framework/webControlTests/elementAttributeTest.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/elementAttributeTest.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

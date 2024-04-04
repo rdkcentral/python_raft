@@ -1,0 +1,320 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::kasaControl::powerKasa</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1ab590647a02183e5490883775668ad917" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.kasaControl.powerKasa::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="66" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a232131d50ed88a1302fc82f15ebcfadb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.kasaControl.powerKasa::is_on</definition>
+        <argsstring></argsstring>
+        <name>is_on</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="67" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a1eff55ecdd1b556b737d754ad87a6754" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.kasaControl.powerKasa::is_off</definition>
+        <argsstring></argsstring>
+        <name>is_off</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="68" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1aa91a9ee2dbaee10e84239cae06893648" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.kasaControl.powerKasa::slotIndex</definition>
+        <argsstring></argsstring>
+        <name>slotIndex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="69" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a28ff1877837dce69d7cae44ed433ab55" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.kasaControl.powerKasa::ip</definition>
+        <argsstring></argsstring>
+        <name>ip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="70" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a4579852af2c71efc905bef6414d6ca01" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.kasaControl.powerKasa::options</definition>
+        <argsstring></argsstring>
+        <name>options</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="80" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a26e7f8d08198f576c003e36c4ebd6b49" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.kasaControl.powerKasa::args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="81" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a12979f4cd070636f4e460d710c09ab0d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.__init__</definition>
+        <argsstring>(self, logModule log, str ip, str args=None, str options=None, **kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>ip</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>args</declname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>options</declname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[init the kasa module]
+
+    kasa [OPTIONS] COMMAND [ARGS]...\n
+    Examples:-\n
+    kasa --strip --host 192.168.88.39 on --name &quot;Plug 3&quot;\n
+    kasa --strip --host 192.168.88.39 on --index 0 # Complete strip overall, index 1 is the first socket\n
+    kasa --plug --host 192.168.88.39 on\n
+
+Args:
+    log ([logModule]): [log module]
+    ip ([str]): [ip]
+    args ([str], optional): [args]. Defaults to None.
+    options ([str], optional): [options]. Defaults to None, which translates to &quot;--plug&quot;
+    kwargs ([dict]): [any other args]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="50" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="50" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1abe1af70d85ad004d8665924282d03fa1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.split_with_quotes</definition>
+        <argsstring>(self, inputString)</argsstring>
+        <name>split_with_quotes</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>inputString</type>
+          <defname>inputString</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="83" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="83" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1aaa96ea136caf563c08b1514de06d925e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.remove_empty_strings</definition>
+        <argsstring>(self, inputList)</argsstring>
+        <name>remove_empty_strings</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>inputList</type>
+          <defname>inputList</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="94" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="94" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a5d959e4b803b1ab30a8a4746fe22bd0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.performCommand</definition>
+        <argsstring>(self, command, noOptions=False, noArgs=False)</argsstring>
+        <name>performCommand</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>command</type>
+          <defname>command</defname>
+        </param>
+        <param>
+          <type>noOptions</type>
+          <defname>noOptions</defname>
+          <defval>False</defval>
+        </param>
+        <param>
+          <type>noArgs</type>
+          <defname>noArgs</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="101" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="101" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a161dbb3a96097a440700d93196962eda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="116" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="116" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1acf80f0e822d2b2c907f552a3d88928e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="126" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="126" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a3cf36573f7f961d22648be0aa5a3b697" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.__getstate__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__getstate__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="136" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="136" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1ae01fb6b85560c9653542bcd41aac81ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.kasaControl.powerKasa.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/kasaControl.py" line="181" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="181" bodyend="188"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Kasa power switch controller supports
+</verbatim> </para>
+    </detaileddescription>
+    <location file="framework/core/powerModules/kasaControl.py" line="45" column="1" bodyfile="framework/core/powerModules/kasaControl.py" bodystart="45" bodyend="188"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a3cf36573f7f961d22648be0aa5a3b697" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>__getstate__</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a12979f4cd070636f4e460d710c09ab0d" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a26e7f8d08198f576c003e36c4ebd6b49" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>args</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a28ff1877837dce69d7cae44ed433ab55" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>ip</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a1eff55ecdd1b556b737d754ad87a6754" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>is_off</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a232131d50ed88a1302fc82f15ebcfadb" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>is_on</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1ab590647a02183e5490883775668ad917" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>log</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a4579852af2c71efc905bef6414d6ca01" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>options</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a5d959e4b803b1ab30a8a4746fe22bd0f" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>performCommand</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1a161dbb3a96097a440700d93196962eda" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1acf80f0e822d2b2c907f552a3d88928e1" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1ae01fb6b85560c9653542bcd41aac81ea" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>reboot</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1aaa96ea136caf563c08b1514de06d925e" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>remove_empty_strings</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1aa91a9ee2dbaee10e84239cae06893648" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>slotIndex</name></member>
+      <member refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa_1abe1af70d85ad004d8665924282d03fa1" prot="public" virt="non-virtual"><scope>core::powerModules::kasaControl::powerKasa</scope><name>split_with_quotes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

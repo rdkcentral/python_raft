@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="remoteController__test_8py" kind="file" language="Python">
+    <compoundname>remoteController_test.py</compoundname>
+    <innerclass refid="classframework_1_1remoteController__test_1_1demoClass" prot="public">framework::remoteController_test::demoClass</innerclass>
+    <innernamespace refid="namespaceframework_1_1remoteController__test">framework::remoteController_test</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!<sp/>/bin/python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Add<sp/>the<sp/>framework<sp/>path<sp/>to<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">dir_path<sp/>=<sp/>os.path.dirname(os.path.realpath(__file__))</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">sys.path.append(dir_path+</highlight><highlight class="stringliteral">&quot;/../../&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>framework.core.rcCodes<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>rcCode<sp/></highlight><highlight class="keyword">as</highlight><highlight class="normal"><sp/>rc</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>framework.core.logModule<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>logModule</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>framework.core.testControl<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>testController</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="classframework_1_1remoteController__test_1_1demoClass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classframework_1_1remoteController__test_1_1demoClass" kindref="compound">demoClass</ref>(testController):</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Olimex<sp/>ESP32-EVB<sp/>as<sp/>a<sp/>RC<sp/>transmitter.<sp/>Telnet<sp/>operated.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>demo<sp/>=<sp/><ref refid="classframework_1_1remoteController__test_1_1demoClass" kindref="compound">demoClass</ref>(<sp/>testName<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;remoteDemo&quot;</highlight><highlight class="normal">,<sp/>level=logModule.INFO<sp/>)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.log.info(</highlight><highlight class="stringliteral">&quot;Testing<sp/>Power<sp/>On&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.powerControl.powerOn()</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.utils.wait(1)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.log.info(</highlight><highlight class="stringliteral">&quot;Testing<sp/>Power<sp/>Off&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.powerControl.powerOff()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.log.info(</highlight><highlight class="stringliteral">&quot;Testing<sp/>remote<sp/>LLAMA<sp/>RC6&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.setKeyMap(</highlight><highlight class="stringliteral">&quot;llama_rc6&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.POWER<sp/>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.MUTE<sp/>)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.MUTE<sp/>)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.VOL_DOWN<sp/>)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.VOL_UP<sp/>)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.setKeyMap(</highlight><highlight class="stringliteral">&quot;llama_tpv&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.log.info(</highlight><highlight class="stringliteral">&quot;Testing<sp/>remote<sp/>LLAMA<sp/>TPV&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.MUTE<sp/>)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.MUTE<sp/>)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.CHANNEL_DOWN<sp/>)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>demo.commonRemote.sendKey(<sp/>rc.CHANNEL_UP<sp/>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="unitTests/framework/remoteController_test.py"/>
+  </compounddef>
+</doxygen>

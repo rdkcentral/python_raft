@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classelementAttributeTest_1_1elementAttributeTest" kind="class" language="Python" prot="public">
+    <compoundname>elementAttributeTest::elementAttributeTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classelementAttributeTest_1_1elementAttributeTest_1a7d21b1aa1d1f7a1ac8bdf297747c1cca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def elementAttributeTest.elementAttributeTest.__init__</definition>
+        <argsstring>(self, testName=&quot;elementAttributeTest&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;elementAttributeTest&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/elementAttributeTest.py" line="14" column="1" bodyfile="unitTests/framework/webControlTests/elementAttributeTest.py" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classelementAttributeTest_1_1elementAttributeTest_1ae94324b88379ee85c9afe7970aee9c7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def elementAttributeTest.elementAttributeTest.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/elementAttributeTest.py" line="18" column="1" bodyfile="unitTests/framework/webControlTests/elementAttributeTest.py" bodystart="18" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>elementAttributeTest.elementAttributeTest</label>
+        <link refid="classelementAttributeTest_1_1elementAttributeTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>elementAttributeTest.elementAttributeTest</label>
+        <link refid="classelementAttributeTest_1_1elementAttributeTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/elementAttributeTest.py" line="13" column="1" bodyfile="unitTests/framework/webControlTests/elementAttributeTest.py" bodystart="13" bodyend="36"/>
+    <listofallmembers>
+      <member refid="classelementAttributeTest_1_1elementAttributeTest_1a7d21b1aa1d1f7a1ac8bdf297747c1cca" prot="public" virt="non-virtual"><scope>elementAttributeTest::elementAttributeTest</scope><name>__init__</name></member>
+      <member refid="classelementAttributeTest_1_1elementAttributeTest_1ae94324b88379ee85c9afe7970aee9c7f" prot="public" virt="non-virtual"><scope>elementAttributeTest::elementAttributeTest</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

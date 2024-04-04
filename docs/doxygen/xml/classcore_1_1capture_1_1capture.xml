@@ -1,0 +1,479 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1capture_1_1capture" kind="class" language="Python" prot="public">
+    <compoundname>core::capture::capture</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">utils</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1a5eefa2565ecba32c1e22606d3c40823a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="33" column="1" bodyfile="framework/core/capture.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1a50dc3c775d2946e15c36295c97ac51c8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::resolution</definition>
+        <argsstring></argsstring>
+        <name>resolution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="34" column="1" bodyfile="framework/core/capture.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1a194429aed1791252ff11f04c0a796bac" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::captureImagesPath</definition>
+        <argsstring></argsstring>
+        <name>captureImagesPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="35" column="1" bodyfile="framework/core/capture.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1a2b99448f2da5e6a8a445502c12f3d0de" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::ocrEnginePath</definition>
+        <argsstring></argsstring>
+        <name>ocrEnginePath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="36" column="1" bodyfile="framework/core/capture.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1a5cc3a5b731b8b56467631cd17f08f2fd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::captureInput</definition>
+        <argsstring></argsstring>
+        <name>captureInput</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="37" column="1" bodyfile="framework/core/capture.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1af63adc6b114f1440f94242d4c1944bb0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::captureImagesCount</definition>
+        <argsstring></argsstring>
+        <name>captureImagesCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="38" column="1" bodyfile="framework/core/capture.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1afdc941259be6106fda4ed355655d196a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::videoApi</definition>
+        <argsstring></argsstring>
+        <name>videoApi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="39" column="1" bodyfile="framework/core/capture.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1afe2b201ff54c8eb65a70a923b4416dfd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::regionDetails</definition>
+        <argsstring></argsstring>
+        <name>regionDetails</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="40" column="1" bodyfile="framework/core/capture.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1capture_1_1capture_1adf05ecae5170ad26c556c4ee9bda0c2f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.capture.capture::screenRegions</definition>
+        <argsstring></argsstring>
+        <name>screenRegions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="41" column="1" bodyfile="framework/core/capture.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1acd0a8b26f96cd595422411ac2b1d1499" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.__init__</definition>
+        <argsstring>(self, logModule log, str captureImagesPath, str ocrEnginePath, str resolution, str input, **dict kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>captureImagesPath</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>ocrEnginePath</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>resolution</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>**dict</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initialise the OCR capture engine
+
+Args:
+    log (logModule): logging module
+    captureImagesPath (str): output capture images path
+    ocrEnginePath (str): ocr binary path
+    resolution (str): input resolution
+    input (str): input number for capture
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="22" column="1" bodyfile="framework/core/capture.py" bodystart="22" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1aad1b291069ebe3be6b05b8b6b55c2c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.setRegions</definition>
+        <argsstring>(self, dict regionsConfig)</argsstring>
+        <name>setRegions</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>regionsConfig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Set the capture regions dictionary to operate with
+
+Args:
+    regionsConfig (dict): capture regions dictionary
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="43" column="1" bodyfile="framework/core/capture.py" bodystart="43" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1a7080166bbd57f2f6d6e998e998bca7f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.start</definition>
+        <argsstring>(self)</argsstring>
+        <name>start</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initialise capturing video output from capture card
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="51" column="1" bodyfile="framework/core/capture.py" bodystart="51" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1a237714178beed7cc0cf0da74a227392d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.stop</definition>
+        <argsstring>(self)</argsstring>
+        <name>stop</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Stop videocapture and release the resources
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="75" column="1" bodyfile="framework/core/capture.py" bodystart="75" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1afe45e74bfcbc4cf3d0682d4457137316" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.startImageCapture</definition>
+        <argsstring>(self)</argsstring>
+        <name>startImageCapture</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Capture current video frame from video input and return a PIL Image
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="83" column="1" bodyfile="framework/core/capture.py" bodystart="83" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1a2db6d92c4fa7b32b4343010f836099c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.getRegionCoords</definition>
+        <argsstring>(self, regionName)</argsstring>
+        <name>getRegionCoords</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>regionName</type>
+          <defname>regionName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get region co ordinates and ocr filters for the given region name
+
+Args:
+    regionName (str) - Name of the region
+
+Returns:
+    regionsDict (dict) - Dictionary of region co-ordinates and filters
+    Ex: regionsDict = {co_ords: (730, 410, 1155, 650), filters: &quot;None&quot;}
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="94" column="1" bodyfile="framework/core/capture.py" bodystart="94" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1a9be19a6cbb0b567aa4d85d972af7be0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.applyOcrImageFilter</definition>
+        <argsstring>(self, inputImage, filterName)</argsstring>
+        <name>applyOcrImageFilter</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>inputImage</type>
+          <defname>inputImage</defname>
+        </param>
+        <param>
+          <type>filterName</type>
+          <defname>filterName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Applied ocr filters on the input image
+
+Args:
+    inputImage (PIL Image)
+    filterName (str) - Filter to be applied on the image
+
+Returns:
+    outputImage (PIL Image)            
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="116" column="1" bodyfile="framework/core/capture.py" bodystart="116" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1aed3b52ac7ecbdcd8929b8821738f3d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.__getOCRText__</definition>
+        <argsstring>(self, regionName)</argsstring>
+        <name>__getOCRText__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>regionName</type>
+          <defname>regionName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get text from device screen video output
+
+Args:
+    regionName (str) - refer screen_regions.yml
+
+Returns:
+    ocrText (str) - Text extracted from the screen region
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="141" column="1" bodyfile="framework/core/capture.py" bodystart="141" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1adc9b23d98b0ec0976b090e6901aaf505" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.checkOcrText</definition>
+        <argsstring>(self, regionName, expectedText=&quot;&quot;)</argsstring>
+        <name>checkOcrText</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>regionName</type>
+          <defname>regionName</defname>
+        </param>
+        <param>
+          <type>expectedText</type>
+          <defname>expectedText</defname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Check expected text against the OCRed text from screen for given region and return the result
+
+Args:
+    expectedText (str) - Expected text on the screen
+    regionName (str) - stb screen region (refer screen_regions.yml)
+
+Returns:
+    result (boolean)
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="160" column="1" bodyfile="framework/core/capture.py" bodystart="160" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1capture_1_1capture_1a2196ccf871f7e38d82721b3e1391f126" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.capture.capture.waitForDisplayedScreen</definition>
+        <argsstring>(self, regionName, waitBetweenChecks=1, maxWaitTime=10)</argsstring>
+        <name>waitForDisplayedScreen</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>regionName</type>
+          <defname>regionName</defname>
+        </param>
+        <param>
+          <type>waitBetweenChecks</type>
+          <defname>waitBetweenChecks</defname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>maxWaitTime</type>
+          <defname>maxWaitTime</defname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Wait until a screen is displayed on the device
+
+Args:
+    regionName (str) - Region where text is expected on the screen
+    expectedText (str) - Expected text on the screen. If empty, uses ocr_text of regionName from xx.xx.screen_regions.yml
+    waitBetweenChecks (int) - Wait in secs after every check
+    maxWaitTime (int) - Maximum wait time to check for the expected screen
+
+Returns:
+    result (bool)
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/capture.py" line="181" column="1" bodyfile="framework/core/capture.py" bodystart="181" bodyend="209"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>utils</label>
+      </node>
+      <node id="1">
+        <label>core.capture.capture</label>
+        <link refid="classcore_1_1capture_1_1capture"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>utils</label>
+      </node>
+      <node id="1">
+        <label>core.capture.capture</label>
+        <link refid="classcore_1_1capture_1_1capture"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="framework/core/capture.py" line="21" column="1" bodyfile="framework/core/capture.py" bodystart="21" bodyend="209"/>
+    <listofallmembers>
+      <member refid="classcore_1_1capture_1_1capture_1aed3b52ac7ecbdcd8929b8821738f3d1c" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>__getOCRText__</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1acd0a8b26f96cd595422411ac2b1d1499" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>__init__</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a9be19a6cbb0b567aa4d85d972af7be0b" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>applyOcrImageFilter</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1af63adc6b114f1440f94242d4c1944bb0" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>captureImagesCount</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a194429aed1791252ff11f04c0a796bac" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>captureImagesPath</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a5cc3a5b731b8b56467631cd17f08f2fd" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>captureInput</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1adc9b23d98b0ec0976b090e6901aaf505" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>checkOcrText</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a2db6d92c4fa7b32b4343010f836099c7" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>getRegionCoords</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a5eefa2565ecba32c1e22606d3c40823a" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>log</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a2b99448f2da5e6a8a445502c12f3d0de" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>ocrEnginePath</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1afe2b201ff54c8eb65a70a923b4416dfd" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>regionDetails</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a50dc3c775d2946e15c36295c97ac51c8" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>resolution</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1adf05ecae5170ad26c556c4ee9bda0c2f" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>screenRegions</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1aad1b291069ebe3be6b05b8b6b55c2c1a" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>setRegions</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a7080166bbd57f2f6d6e998e998bca7f2" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>start</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1afe45e74bfcbc4cf3d0682d4457137316" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>startImageCapture</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a237714178beed7cc0cf0da74a227392d" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>stop</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1afdc941259be6106fda4ed355655d196a" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>videoApi</name></member>
+      <member refid="classcore_1_1capture_1_1capture_1a2196ccf871f7e38d82721b3e1391f126" prot="public" virt="non-virtual"><scope>core::capture::capture</scope><name>waitForDisplayedScreen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

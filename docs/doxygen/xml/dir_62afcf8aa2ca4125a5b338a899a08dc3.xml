@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_62afcf8aa2ca4125a5b338a899a08dc3" kind="dir">
+    <compoundname>unitTests/framework</compoundname>
+    <innerdir refid="dir_8a371890c7df54832bedf6136b86116e">unitTests/framework/webControlTests</innerdir>
+    <innerfile refid="unitTests_2framework_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="exceptionTests_8py">exceptionTests.py</innerfile>
+    <innerfile refid="logging__tests_8py">logging_tests.py</innerfile>
+    <innerfile refid="powerSwitch__tests_8py">powerSwitch_tests.py</innerfile>
+    <innerfile refid="remoteController__test_8py">remoteController_test.py</innerfile>
+    <innerfile refid="startup_8py">startup.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/"/>
+  </compounddef>
+</doxygen>

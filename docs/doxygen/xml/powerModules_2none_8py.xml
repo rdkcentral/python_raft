@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="powerModules_2none_8py" kind="file" language="Python">
+    <compoundname>none.py</compoundname>
+    <innerclass refid="classcore_1_1powerModules_1_1none_1_1powerNone" prot="public">core::powerModules::none::powerNone</innerclass>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1none">core::powerModules::none</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!<sp/>/bin/python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#/*<sp/>*****************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#*<sp/>Copyright<sp/>(C)<sp/>2021<sp/>Sky<sp/>group<sp/>of<sp/>companies,<sp/>All<sp/>Rights<sp/>Reserved</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">#*<sp/>******************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>RAFT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@addtogroup<sp/><sp/>:<sp/>core.powerModules</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>20/11/2021</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@brief<sp/>:<sp/>wrapper<sp/>for<sp/>powerSwitch<sp/>None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#/*<sp/>******************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="classcore_1_1powerModules_1_1none_1_1powerNone" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcore_1_1powerModules_1_1none_1_1powerNone" kindref="compound">powerNone</ref>():</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>log):</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" kindref="member">log</ref><sp/>=<sp/>log</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" kindref="member">log</ref>.info(</highlight><highlight class="stringliteral">&quot;PowerSwitchNone()&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">pass</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">powerOn(self):</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" kindref="member">log</ref>.info(</highlight><highlight class="stringliteral">&quot;powerSwitchNone().powerOn&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">powerOff(self):</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" kindref="member">log</ref>.info(</highlight><highlight class="stringliteral">&quot;powerSwitchNone().powerOff&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">reboot(self):</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aec78fbef34d255076d5338f521860b9d" kindref="member">powerOff</ref>()</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>result<sp/>!=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" kindref="member">log</ref>.error(</highlight><highlight class="stringliteral">&quot;<sp/>Power<sp/>Failed<sp/>off&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(1)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1a0a0f118c06b0638a4223b2eae0b9e2dd" kindref="member">powerOn</ref>()</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>result<sp/>!=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" kindref="member">log</ref>.error(</highlight><highlight class="stringliteral">&quot;<sp/>Power<sp/>Failed<sp/>on&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result</highlight></codeline>
+    </programlisting>
+    <location file="framework/core/powerModules/none.py"/>
+  </compounddef>
+</doxygen>

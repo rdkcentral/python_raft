@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceperformActionsTests" kind="namespace" language="Python">
+    <compoundname>performActionsTests</compoundname>
+    <innerclass refid="classperformActionsTests_1_1performActionsTests" prot="public">performActionsTests::performActionsTests</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="performActionsTests_8py_1a859938dce7cf2320b799ac52ddf62df7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>performActionsTests.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/performActionsTests.py" line="8" column="1" bodyfile="unitTests/framework/webControlTests/performActionsTests.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="performActionsTests_8py_1a583422c1b6c9200b6cb2011a60faa4eb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>performActionsTests.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>=  <ref refid="classperformActionsTests_1_1performActionsTests" kindref="compound">performActionsTests</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/performActionsTests.py" line="103" column="1" bodyfile="unitTests/framework/webControlTests/performActionsTests.py" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/performActionsTests.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

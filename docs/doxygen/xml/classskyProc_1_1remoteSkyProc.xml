@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classskyProc_1_1remoteSkyProc" kind="class" language="Python" prot="public">
+    <compoundname>skyProc::remoteSkyProc</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classskyProc_1_1remoteSkyProc_1af9585cf6f4c4c57df55acfa6737b3bdb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>skyProc.remoteSkyProc::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/skyProc.py" line="20" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classskyProc_1_1remoteSkyProc_1afa557441f8fae26bb68801ca387a05d2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>skyProc.remoteSkyProc::ip</definition>
+        <argsstring></argsstring>
+        <name>ip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/skyProc.py" line="21" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classskyProc_1_1remoteSkyProc_1aefef35f081d7ce49476778db6c178c4a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>skyProc.remoteSkyProc::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/skyProc.py" line="22" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classskyProc_1_1remoteSkyProc_1affacb32a917e5a1253afb740beb9f3e8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>skyProc.remoteSkyProc::telnet</definition>
+        <argsstring></argsstring>
+        <name>telnet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/skyProc.py" line="25" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classskyProc_1_1remoteSkyProc_1a956242f4cb523382f2a2fe94f07e4110" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def skyProc.remoteSkyProc.__init__</definition>
+        <argsstring>(self, log, remoteController)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>remoteController</type>
+          <defname>remoteController</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/skyProc.py" line="19" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="19" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classskyProc_1_1remoteSkyProc_1aad15047942df68698ee33ce1a9a18022" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def skyProc.remoteSkyProc.command</definition>
+        <argsstring>(self, cmd)</argsstring>
+        <name>command</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cmd</type>
+          <defname>cmd</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/skyProc.py" line="24" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="24" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classskyProc_1_1remoteSkyProc_1afbae3277631637f2e432f8ca6558e035" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def skyProc.remoteSkyProc.sendKey</definition>
+        <argsstring>(self, code, repeat, delay)</argsstring>
+        <name>sendKey</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>code</type>
+          <defname>code</defname>
+        </param>
+        <param>
+          <type>repeat</type>
+          <defname>repeat</defname>
+        </param>
+        <param>
+          <type>delay</type>
+          <defname>delay</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/skyProc.py" line="36" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="36" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/remoteControllerModules/skyProc.py" line="17" column="1" bodyfile="framework/core/remoteControllerModules/skyProc.py" bodystart="17" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classskyProc_1_1remoteSkyProc_1a956242f4cb523382f2a2fe94f07e4110" prot="public" virt="non-virtual"><scope>skyProc::remoteSkyProc</scope><name>__init__</name></member>
+      <member refid="classskyProc_1_1remoteSkyProc_1aad15047942df68698ee33ce1a9a18022" prot="public" virt="non-virtual"><scope>skyProc::remoteSkyProc</scope><name>command</name></member>
+      <member refid="classskyProc_1_1remoteSkyProc_1afa557441f8fae26bb68801ca387a05d2" prot="public" virt="non-virtual"><scope>skyProc::remoteSkyProc</scope><name>ip</name></member>
+      <member refid="classskyProc_1_1remoteSkyProc_1af9585cf6f4c4c57df55acfa6737b3bdb" prot="public" virt="non-virtual"><scope>skyProc::remoteSkyProc</scope><name>log</name></member>
+      <member refid="classskyProc_1_1remoteSkyProc_1aefef35f081d7ce49476778db6c178c4a" prot="public" virt="non-virtual"><scope>skyProc::remoteSkyProc</scope><name>port</name></member>
+      <member refid="classskyProc_1_1remoteSkyProc_1afbae3277631637f2e432f8ca6558e035" prot="public" virt="non-virtual"><scope>skyProc::remoteSkyProc</scope><name>sendKey</name></member>
+      <member refid="classskyProc_1_1remoteSkyProc_1affacb32a917e5a1253afb740beb9f3e8" prot="public" virt="non-virtual"><scope>skyProc::remoteSkyProc</scope><name>telnet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::olimex::powerOlimex</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a5cda3827dd290c558189ccc234021551" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.olimex.powerOlimex::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="20" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1adf5aba13552f8264856bf35be247cc95" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.olimex.powerOlimex::ip</definition>
+        <argsstring></argsstring>
+        <name>ip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="21" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1aa7aa22df5a4ea36023b3bd797dfcd227" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.olimex.powerOlimex::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="22" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a97535df7f02490fe06cce2ce98c43d8c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.olimex.powerOlimex::relay</definition>
+        <argsstring></argsstring>
+        <name>relay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="25" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1af5b2f75d9ac6883e45158b93c6988e6e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.olimex.powerOlimex::telnet</definition>
+        <argsstring></argsstring>
+        <name>telnet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="26" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a8566514dba064537e5496047c136d48f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.olimex.powerOlimex.__init__</definition>
+        <argsstring>(self, log, ip, port, relay)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>port</type>
+          <defname>port</defname>
+        </param>
+        <param>
+          <type>relay</type>
+          <defname>relay</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="19" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="19" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a918f7fb81ff78f6a720d02f3363a92cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.olimex.powerOlimex.command</definition>
+        <argsstring>(self, cmd)</argsstring>
+        <name>command</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cmd</type>
+          <defname>cmd</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="28" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="28" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a6ad5567c2602c2bb55801af0021ad834" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.olimex.powerOlimex.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="40" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="40" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a7fffbc012439bcc32b9759d3a810c638" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.olimex.powerOlimex.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="46" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="46" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1aa35d86cf67ad7e9dbfcba24377ed5fe0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.olimex.powerOlimex.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/olimex.py" line="52" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="52" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/olimex.py" line="17" column="1" bodyfile="framework/core/powerModules/olimex.py" bodystart="17" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a8566514dba064537e5496047c136d48f" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a918f7fb81ff78f6a720d02f3363a92cf" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>command</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1adf5aba13552f8264856bf35be247cc95" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>ip</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a5cda3827dd290c558189ccc234021551" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>log</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1aa7aa22df5a4ea36023b3bd797dfcd227" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>port</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a6ad5567c2602c2bb55801af0021ad834" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a7fffbc012439bcc32b9759d3a810c638" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1aa35d86cf67ad7e9dbfcba24377ed5fe0" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>reboot</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1a97535df7f02490fe06cce2ce98c43d8c" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>relay</name></member>
+      <member refid="classcore_1_1powerModules_1_1olimex_1_1powerOlimex_1af5b2f75d9ac6883e45158b93c6988e6e" prot="public" virt="non-virtual"><scope>core::powerModules::olimex::powerOlimex</scope><name>telnet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

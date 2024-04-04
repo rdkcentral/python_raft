@@ -1,0 +1,77 @@
+core.powerModules package
+=========================
+
+Submodules
+----------
+
+core.powerModules.S20control module
+-----------------------------------
+
+.. automodule:: core.powerModules.S20control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerModules.SLP module
+----------------------------
+
+.. automodule:: core.powerModules.SLP
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerModules.apc module
+----------------------------
+
+.. automodule:: core.powerModules.apc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerModules.apcAos module
+-------------------------------
+
+.. automodule:: core.powerModules.apcAos
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerModules.hs100 module
+------------------------------
+
+.. automodule:: core.powerModules.hs100
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerModules.kasaControl module
+------------------------------------
+
+.. automodule:: core.powerModules.kasaControl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerModules.none module
+-----------------------------
+
+.. automodule:: core.powerModules.none
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerModules.olimex module
+-------------------------------
+
+.. automodule:: core.powerModules.olimex
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: core.powerModules
+   :members:
+   :undoc-members:
+   :show-inheritance:

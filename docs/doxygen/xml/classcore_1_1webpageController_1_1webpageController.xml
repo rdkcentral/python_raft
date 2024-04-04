@@ -1,0 +1,1407 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1webpageController_1_1webpageController" kind="class" language="Python" prot="public">
+    <compoundname>core::webpageController::webpageController</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a7f09c3e9b687553fd9d34dac3082d554" prot="private" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::_pages</definition>
+        <argsstring></argsstring>
+        <name>_pages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="24" column="1" bodyfile="framework/core/webpageController.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1aaa2760097a96bb5105f3686a7250d168" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::webDriver</definition>
+        <argsstring></argsstring>
+        <name>webDriver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="25" column="1" bodyfile="framework/core/webpageController.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a0eb7968f537ae57b62b2132f9c2e3f31" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="26" column="1" bodyfile="framework/core/webpageController.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1aee56ee7ced052f87e5cf9e1c228fa8f5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::currentTab</definition>
+        <argsstring></argsstring>
+        <name>currentTab</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="43" column="1" bodyfile="framework/core/webpageController.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a340f7ddb2bc4b19665b64cd4487e5c4f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::currentPage</definition>
+        <argsstring></argsstring>
+        <name>currentPage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="44" column="1" bodyfile="framework/core/webpageController.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a3b324f25de48d07257e22f92f6e2c5ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::currentPageName</definition>
+        <argsstring></argsstring>
+        <name>currentPageName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="45" column="1" bodyfile="framework/core/webpageController.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a9cb0aadf488e0626c4f40c7a4f809a24" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::currentView</definition>
+        <argsstring></argsstring>
+        <name>currentView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="46" column="1" bodyfile="framework/core/webpageController.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a70c77c565312d9642015e1d34564139a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::defaultView</definition>
+        <argsstring></argsstring>
+        <name>defaultView</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="47" column="1" bodyfile="framework/core/webpageController.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a69d0634ecee31b585b7eab7b5550d75c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::tabs</definition>
+        <argsstring></argsstring>
+        <name>tabs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="48" column="1" bodyfile="framework/core/webpageController.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a2ef21d6d1c89055747e128d8cb12c42f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::url</definition>
+        <argsstring></argsstring>
+        <name>url</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="57" column="1" bodyfile="framework/core/webpageController.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1a202a274f7a2d956f16a5686a3cbd430c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::webpageConfig</definition>
+        <argsstring></argsstring>
+        <name>webpageConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="68" column="1" bodyfile="framework/core/webpageController.py" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1webpageController_1_1webpageController_1af558b1cbdfbc640c7313c92f5a8de40d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.webpageController.webpageController::globalActions</definition>
+        <argsstring></argsstring>
+        <name>globalActions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="70" column="1" bodyfile="framework/core/webpageController.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a157427c040adcebe937adab2dda1ce20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.__init__</definition>
+        <argsstring>(self, log, webDriverConfig, baseUrl=None, webpageConfig=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>webDriverConfig</type>
+          <defname>webDriverConfig</defname>
+        </param>
+        <param>
+          <type>baseUrl</type>
+          <defname>baseUrl</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>webpageConfig</type>
+          <defname>webpageConfig</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="23" column="1" bodyfile="framework/core/webpageController.py" bodystart="23" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1aa1f92dbbb9e2c7a98ba550a43016446b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.configureWebpages</definition>
+        <argsstring>(self, baseUrl, webpageConfig)</argsstring>
+        <name>configureWebpages</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>baseUrl</type>
+          <defname>baseUrl</defname>
+        </param>
+        <param>
+          <type>webpageConfig</type>
+          <defname>webpageConfig</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Sets the webpage base url as well as the webpage config if they were not set in the constructor
+
+Args:
+    base_url (str): Base url to navigate to the pages
+    webpageConfig (dict): Dictionary config containing the pages
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="72" column="1" bodyfile="framework/core/webpageController.py" bodystart="72" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a73618a759cd44bd161ae52b02ad43818" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.setWebpage</definition>
+        <argsstring>(self, pageName)</argsstring>
+        <name>setWebpage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pageName</type>
+          <defname>pageName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Tells the controller that the browser is on a different page than what is set in the controller. For use after a redirect
+
+Args:
+    pageName (str): Name of the page that the browser is now on
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="83" column="1" bodyfile="framework/core/webpageController.py" bodystart="83" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a491b9ed7291f17376bc34d993979fcfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.navigateTo</definition>
+        <argsstring>(self, pageName)</argsstring>
+        <name>navigateTo</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pageName</type>
+          <defname>pageName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Navigates the the pageName specified based on the pages config. Then checks the expected elements are present
+
+Args:
+    pageName (str): Name of the page to navigate to based on a key in the pages config
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="125" column="1" bodyfile="framework/core/webpageController.py" bodystart="125" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a36929c09c9a4fe6aa74cf5e41df28c4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.pages</definition>
+        <argsstring>(self)</argsstring>
+        <name>pages</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the dictionary of the pages that the webpage config has provided
+
+Returns:
+    dict: Dictionary of the pages that the webpage config has provided
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="340" column="1" bodyfile="framework/core/webpageController.py" bodystart="340" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ae98bd7ed732caba4478da723c8ee4e05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.performAction</definition>
+        <argsstring>(self, actionName, **kwargs)</argsstring>
+        <name>performAction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>actionName</type>
+          <defname>actionName</defname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Performs the action that is passed in action name, any additional arguments are subbed into any args values starting with $
+
+Args:
+    actionName (str): The name of the action to perform
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="348" column="1" bodyfile="framework/core/webpageController.py" bodystart="348" bodyend="367"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a51c8d6505e6bc273bc54bfa8a54d1ee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getTextOfElement</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>getTextOfElement</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="368" column="1" bodyfile="framework/core/webpageController.py" bodystart="368" bodyend="371"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a1ecf6837009f9622b6cd1dfcaf968a3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.performInteraction</definition>
+        <argsstring>(self, interactionName, elementName=None, args=None)</argsstring>
+        <name>performInteraction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>interactionName</type>
+          <defname>interactionName</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>args</type>
+          <defname>args</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Performs a single interaction with the browser based on the type passed
+
+Args:
+    interaction (str): The interaction to perform
+    args (dict): Any arguments to substitute into the interaction
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="372" column="1" bodyfile="framework/core/webpageController.py" bodystart="372" bodyend="407"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a182760790ca2deb8ff3e891b8ea2fedd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.performGlobalAction</definition>
+        <argsstring>(self, globalActionName, **kwargs)</argsstring>
+        <name>performGlobalAction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>globalActionName</type>
+          <defname>globalActionName</defname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Performs a global action
+
+Args:
+    globalActionName (String): Name of the action to perform
+    kwargs: Variable number of optional arguments for the actions
+
+Raises:
+    Exception: If webpage config does not contain any global action
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="437" column="1" bodyfile="framework/core/webpageController.py" bodystart="437" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a65c5ab2db7892961d67372b99999863c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getElementAttribute</definition>
+        <argsstring>(self, elementName, attributeName)</argsstring>
+        <name>getElementAttribute</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <param>
+          <type>attributeName</type>
+          <defname>attributeName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the value of the element attribute specified
+
+Args:
+    elementName (String): Name of element
+    attributeName (String): Name of attribute
+
+Returns:
+    String: Value of attribute
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="459" column="1" bodyfile="framework/core/webpageController.py" bodystart="459" bodyend="470"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a81a1be073c90a08757d003e24b24fe7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.isElementSelected</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>isElementSelected</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns whether the element is selected or not 
+
+Args:
+    elementName (String): Name of element
+
+Returns:
+    Boolean: Whether the element is selected or not
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="471" column="1" bodyfile="framework/core/webpageController.py" bodystart="471" bodyend="481"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1aa4ff1c2819d7b9cdadedc754cd0440b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getSelectedOptions</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>getSelectedOptions</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets all of the options of the select element that are currently selected
+
+Args:
+    elementName (String): Name of element
+
+Returns:
+    List of Strings: Text content of the elements that are selected
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="482" column="1" bodyfile="framework/core/webpageController.py" bodystart="482" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a80f7b2d0548fecb4fd01b75c474e5c8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getFirstSelectedOption</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>getFirstSelectedOption</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the first option that is selected
+
+Args:
+    elementName (String): Name of element
+
+Returns:
+    Strings: Text content of the first element selected
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="493" column="1" bodyfile="framework/core/webpageController.py" bodystart="493" bodyend="503"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a5798efa2531f0beed634fa6f59ba9f67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getSelectAvailableOptions</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>getSelectAvailableOptions</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the list of all of the available options that could be selected
+
+Args:
+    elementName (String): Name of element
+
+Returns:
+    List of Strings: Text content of all elements that could be selected
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="504" column="1" bodyfile="framework/core/webpageController.py" bodystart="504" bodyend="514"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ad4a21df725fe494cb6d687f4a481b958" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getUrl</definition>
+        <argsstring>(self)</argsstring>
+        <name>getUrl</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the url of the current webpage open
+
+Returns:
+    String: Url of the webpage that is open
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="515" column="1" bodyfile="framework/core/webpageController.py" bodystart="515" bodyend="522"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ac4b556a1803fb1f5029d229eccfa5655" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getAlertText</definition>
+        <argsstring>(self)</argsstring>
+        <name>getAlertText</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the text of an open web alert box
+
+Returns:
+    String: Content of the alert box if it is open, None otherwise
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="523" column="1" bodyfile="framework/core/webpageController.py" bodystart="523" bodyend="530"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ae35e7690e86b90eb55f1fd61f7263cb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.closeBrowser</definition>
+        <argsstring>(self)</argsstring>
+        <name>closeBrowser</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Ends webdriver session and closes browser
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="531" column="1" bodyfile="framework/core/webpageController.py" bodystart="531" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a12d2212355dce52c0cc6998096d42ae6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.saveScreenshot</definition>
+        <argsstring>(self, fileName)</argsstring>
+        <name>saveScreenshot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>fileName</type>
+          <defname>fileName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Saves a screenshot of the current browser view to the fileName specified the tests log folder
+
+Args:
+    fileName (String): The fileName to save the screenshot to. It will be saved as a .png file
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="538" column="1" bodyfile="framework/core/webpageController.py" bodystart="538" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ac7e01d8441ef9a3a5d404d6b80170bc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.saveHtmlSnapshot</definition>
+        <argsstring>(self, fileName)</argsstring>
+        <name>saveHtmlSnapshot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>fileName</type>
+          <defname>fileName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Saves a copy of the html of the current page the webpageController is on to the test log folder
+
+Args:
+    fileName (String): The fileName to save the html to
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="548" column="1" bodyfile="framework/core/webpageController.py" bodystart="548" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1afffae64e79f1e38f1f7d17205f74c1d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getDynamicTable</definition>
+        <argsstring>(self, elementName, text=None)</argsstring>
+        <name>getDynamicTable</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the  elements of the table as a list of lists
+
+Args:
+    elementName (String):  dynamic table name
+    text(bool): Text attribute indicator of the web element. Set to True to retreive text attribute of the webelement, defaults to None
+Returns:
+    list: list of list of dictionaries with element details
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="558" column="1" bodyfile="framework/core/webpageController.py" bodystart="558" bodyend="584"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a872353a22b0654780afb324eaeb6da79" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getDynamicTableText</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>getDynamicTableText</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the text of elements in the table as a list of list of dictionaries, with corresponding element details
+
+Args:
+    elementName (String): dynamic table name
+
+Returns:
+    list:  list of list of dictionaries with element details - type, value, text, elementName
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="585" column="1" bodyfile="framework/core/webpageController.py" bodystart="585" bodyend="597"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a138c024ffd59941383ef8f08d8eebe74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.removeTemporaryWebElements</definition>
+        <argsstring>(self)</argsstring>
+        <name>removeTemporaryWebElements</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Removes  list of temporary elements added to page&apos;s elements dictionary</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="598" column="1" bodyfile="framework/core/webpageController.py" bodystart="598" bodyend="610"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ae1f48386c5d5e2f1feabd58014c057e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.createNewTab</definition>
+        <argsstring>(self, tabName, baseUrl, webpageConfig)</argsstring>
+        <name>createNewTab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tabName</type>
+          <defname>tabName</defname>
+        </param>
+        <param>
+          <type>baseUrl</type>
+          <defname>baseUrl</defname>
+        </param>
+        <param>
+          <type>webpageConfig</type>
+          <defname>webpageConfig</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Creates a new tab and switches the webpageController to that tab
+
+Args:
+    tabName (String): Name of the tab to create. Will be used to switch back to it
+    baseUrl (String): Base url for the webpage config
+    webpageConfig (Dict): A dictionary of the webpage config ymls
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="611" column="1" bodyfile="framework/core/webpageController.py" bodystart="611" bodyend="624"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a477800733c75ce7c660bd947162b97fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.switchTab</definition>
+        <argsstring>(self, tabName)</argsstring>
+        <name>switchTab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tabName</type>
+          <defname>tabName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Switches the browser and webpageController to the tab specified. The original tab is named `default`
+
+Args:
+    tabName (String): Name of the tab to switch to
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="625" column="1" bodyfile="framework/core/webpageController.py" bodystart="625" bodyend="637"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1afdb5e874d63ec4206bab8c5f434edc20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getTabs</definition>
+        <argsstring>(self)</argsstring>
+        <name>getTabs</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns a list of the tab names that have been created
+
+Returns:
+    List(String): A list of tab names that have been created
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="638" column="1" bodyfile="framework/core/webpageController.py" bodystart="638" bodyend="645"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a8720e9dcf8f9f51a5aa68c260cd1345e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getTab</definition>
+        <argsstring>(self, tabName)</argsstring>
+        <name>getTab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tabName</type>
+          <defname>tabName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets a dictionary of the pageName and windowId of the tab specified by name
+
+Args:
+    tabName (String): Name of tab
+
+Returns:
+    Dict: A dictionary with `pageName` and `windowId` keys
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="646" column="1" bodyfile="framework/core/webpageController.py" bodystart="646" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ac3b9a7f77d3b99e83e9d66a3b54dcf1d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController.getSubElements</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>getSubElements</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns a list of elementNames for the subElements of the element passed
+
+Args:
+    elementName (String): Name of element
+
+Returns:
+    list: A list of element names that will now be included in as temporary elements in the webpageControllers config</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="665" column="1" bodyfile="framework/core/webpageController.py" bodystart="665" bodyend="683"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a7ad3cf8734e7b0ae18e66ce708497f9c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._setBaseUrl</definition>
+        <argsstring>(self, baseUrl)</argsstring>
+        <name>_setBaseUrl</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>baseUrl</type>
+          <defname>baseUrl</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Sets the base url for the controller to use
+
+Args:
+    base_url (str): Base url to navigate to the pages
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="50" column="1" bodyfile="framework/core/webpageController.py" bodystart="50" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a7d6566f807b7ea1279ef8d9a6f63541c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._setWebpageConfig</definition>
+        <argsstring>(self, webpageConfig)</argsstring>
+        <name>_setWebpageConfig</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>webpageConfig</type>
+          <defname>webpageConfig</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Sets the pages that the webpage controller has access to from the webpage config
+
+Args:
+    webpageConfig (dict): Dictionary config containing the pages
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="61" column="1" bodyfile="framework/core/webpageController.py" bodystart="61" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a7d353cf3852b5497de7937d45a5d3704" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._isConfigured</definition>
+        <argsstring>(self)</argsstring>
+        <name>_isConfigured</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Checks that the controller is configured with a url and dict of pages
+
+Raises:
+    Exception: If not configured
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="106" column="1" bodyfile="framework/core/webpageController.py" bodystart="106" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ad322795b691db3e3fcb98935b8aa2654" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._isOnPage</definition>
+        <argsstring>(self)</argsstring>
+        <name>_isOnPage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Checks that the controller is on a page
+
+Raises:
+    Exception: If not on a page
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="115" column="1" bodyfile="framework/core/webpageController.py" bodystart="115" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a745784bc892ce18ee5a1f64c59e834d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._navigateSequence</definition>
+        <argsstring>(self, sequence)</argsstring>
+        <name>_navigateSequence</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>sequence</type>
+          <defname>sequence</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Navigates through a sequence that is passed in
+
+Args:
+    sequence (dict): A dictionary containing the webpage to navigate to and sequence of interactions within that webpage to perform
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="148" column="1" bodyfile="framework/core/webpageController.py" bodystart="148" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a1fba4b2bda9151a051fed5cb6aacef08" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._checkElements</definition>
+        <argsstring>(self, elements)</argsstring>
+        <name>_checkElements</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elements</type>
+          <defname>elements</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Checks that the browser has all of the elements expected based on the current page
+
+Raises:
+    Exception: If the webpageController does not have a current page
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="160" column="1" bodyfile="framework/core/webpageController.py" bodystart="160" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a31bdd3d951a27abdce6113d84e83a242" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._validateView</definition>
+        <argsstring>(self, viewName=&quot;default&quot;)</argsstring>
+        <name>_validateView</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>viewName</type>
+          <defname>viewName</defname>
+          <defval>&quot;default&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Validates all the elements in the view. If no views exist will validate all elements on page
+
+Args:
+    viewName (str, optional): The name of the view to validate. Defaults to &quot;default&quot;.
+
+Raises:
+    Exception: If the view doesn&apos;t exist for the page
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="187" column="1" bodyfile="framework/core/webpageController.py" bodystart="187" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a92aab4658465c512039991fe71a1a50f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._getPage</definition>
+        <argsstring>(self, pageName)</argsstring>
+        <name>_getPage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pageName</type>
+          <defname>pageName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the page based on the page name
+
+Args:
+    pageName (str): Page name based on a webpage config keys
+
+Raises:
+    Exception: If page name does not match any of those in the associated webpage config
+
+Returns:
+    dict: A dictionary representing the page
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="212" column="1" bodyfile="framework/core/webpageController.py" bodystart="212" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1ac1119cf2a61cc4bfc6665d08a911f03c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._getElement</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>_getElement</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets an element based on the element name from the current page
+
+Args:
+    elementName (str): Name of the element to get
+
+Raises:
+    Exception: If the element name does not match any of those for the current page
+
+Returns:
+    dict: A dictionary representing the element
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="230" column="1" bodyfile="framework/core/webpageController.py" bodystart="230" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a13def5d8d055de5573980f55707f3644" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._getViewForElement</definition>
+        <argsstring>(self, elementName)</argsstring>
+        <name>_getViewForElement</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the name of the first view that the element belongs to
+
+Args:
+    elementName (str): Name of element
+
+Raises:
+    Exception: If element does not belong to any view
+
+Returns:
+    str: Name of view
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="261" column="1" bodyfile="framework/core/webpageController.py" bodystart="261" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a193461ca21c97e563331de55037a62b0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._getView</definition>
+        <argsstring>(self, viewName)</argsstring>
+        <name>_getView</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>viewName</type>
+          <defname>viewName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns the config for the view
+
+Args:
+    viewName (str): Name of view from the config
+
+Raises:
+    Exception: If page contains no views
+    Exception: If view does not exist for page
+
+Returns:
+    dict: Dictionary of the views elements and sequence to activate it 
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="281" column="1" bodyfile="framework/core/webpageController.py" bodystart="281" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1aa98dc7409ac38c1f2b572674a5b15205" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._activateView</definition>
+        <argsstring>(self, viewName)</argsstring>
+        <name>_activateView</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>viewName</type>
+          <defname>viewName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Activates a view based on the view name passed
+
+Args:
+    viewName (str): Name of view from config
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="306" column="1" bodyfile="framework/core/webpageController.py" bodystart="306" bodyend="319"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1aa4007ec41463df16032b15527e530694" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._getAction</definition>
+        <argsstring>(self, actionName)</argsstring>
+        <name>_getAction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>actionName</type>
+          <defname>actionName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets an action based on the action name from the current page
+
+Args:
+    actionName (str): Name of the action to get
+
+Raises:
+    Exception: If the action name does not match any of those for the current page
+
+Returns:
+    dict: A dictionary representing the action
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="320" column="1" bodyfile="framework/core/webpageController.py" bodystart="320" bodyend="338"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a04bf62cdea84d7290eeae37698ca6859" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._interactionArgsSub</definition>
+        <argsstring>(self, interactionArgs, args)</argsstring>
+        <name>_interactionArgsSub</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>interactionArgs</type>
+          <defname>interactionArgs</defname>
+        </param>
+        <param>
+          <type>args</type>
+          <defname>args</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Substitutes in any arguments passed in args into interactionArgs based on any args in interactionArgs starting with $.
+
+Example:
+interactionArgs = [&quot;admin&quot;,&quot;$password&quot;]
+args = {password:&quot;superSecretPassword98&quot;}
+
+returns = [&quot;admin&quot;,&quot;superSecretPassword98&quot;]
+
+Args:
+    interactionArgs (dict): Dictionary of arguments with potential arguments needing to be substituted
+    args (dict): _description_
+
+Returns:
+    list: List of arguments
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="408" column="1" bodyfile="framework/core/webpageController.py" bodystart="408" bodyend="436"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1webpageController_1_1webpageController_1a39a0d7c55d09394c17647dc9afb35ea1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.webpageController.webpageController._getwindowId</definition>
+        <argsstring>(self)</argsstring>
+        <name>_getwindowId</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the window handle from the webDriver
+
+Returns:
+    String: windowId of the current window
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageController.py" line="657" column="1" bodyfile="framework/core/webpageController.py" bodystart="657" bodyend="664"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/webpageController.py" line="21" column="1" bodyfile="framework/core/webpageController.py" bodystart="21" bodyend="683"/>
+    <listofallmembers>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a157427c040adcebe937adab2dda1ce20" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>__init__</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1aa98dc7409ac38c1f2b572674a5b15205" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_activateView</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a1fba4b2bda9151a051fed5cb6aacef08" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_checkElements</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1aa4007ec41463df16032b15527e530694" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_getAction</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ac1119cf2a61cc4bfc6665d08a911f03c" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_getElement</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a92aab4658465c512039991fe71a1a50f" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_getPage</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a193461ca21c97e563331de55037a62b0" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_getView</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a13def5d8d055de5573980f55707f3644" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_getViewForElement</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a39a0d7c55d09394c17647dc9afb35ea1" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_getwindowId</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a04bf62cdea84d7290eeae37698ca6859" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_interactionArgsSub</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a7d353cf3852b5497de7937d45a5d3704" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_isConfigured</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ad322795b691db3e3fcb98935b8aa2654" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_isOnPage</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a745784bc892ce18ee5a1f64c59e834d7" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_navigateSequence</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a7f09c3e9b687553fd9d34dac3082d554" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_pages</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a7ad3cf8734e7b0ae18e66ce708497f9c" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_setBaseUrl</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a7d6566f807b7ea1279ef8d9a6f63541c" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_setWebpageConfig</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a31bdd3d951a27abdce6113d84e83a242" prot="private" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>_validateView</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ae35e7690e86b90eb55f1fd61f7263cb7" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>closeBrowser</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1aa1f92dbbb9e2c7a98ba550a43016446b" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>configureWebpages</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ae1f48386c5d5e2f1feabd58014c057e8" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>createNewTab</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a340f7ddb2bc4b19665b64cd4487e5c4f" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>currentPage</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a3b324f25de48d07257e22f92f6e2c5ba" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>currentPageName</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1aee56ee7ced052f87e5cf9e1c228fa8f5" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>currentTab</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a9cb0aadf488e0626c4f40c7a4f809a24" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>currentView</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a70c77c565312d9642015e1d34564139a" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>defaultView</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ac4b556a1803fb1f5029d229eccfa5655" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getAlertText</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1afffae64e79f1e38f1f7d17205f74c1d4" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getDynamicTable</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a872353a22b0654780afb324eaeb6da79" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getDynamicTableText</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a65c5ab2db7892961d67372b99999863c" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getElementAttribute</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a80f7b2d0548fecb4fd01b75c474e5c8d" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getFirstSelectedOption</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a5798efa2531f0beed634fa6f59ba9f67" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getSelectAvailableOptions</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1aa4ff1c2819d7b9cdadedc754cd0440b9" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getSelectedOptions</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ac3b9a7f77d3b99e83e9d66a3b54dcf1d" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getSubElements</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a8720e9dcf8f9f51a5aa68c260cd1345e" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getTab</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1afdb5e874d63ec4206bab8c5f434edc20" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getTabs</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a51c8d6505e6bc273bc54bfa8a54d1ee1" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getTextOfElement</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ad4a21df725fe494cb6d687f4a481b958" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>getUrl</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1af558b1cbdfbc640c7313c92f5a8de40d" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>globalActions</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a81a1be073c90a08757d003e24b24fe7e" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>isElementSelected</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a0eb7968f537ae57b62b2132f9c2e3f31" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>log</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a491b9ed7291f17376bc34d993979fcfc" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>navigateTo</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a36929c09c9a4fe6aa74cf5e41df28c4a" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>pages</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ae98bd7ed732caba4478da723c8ee4e05" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>performAction</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a182760790ca2deb8ff3e891b8ea2fedd" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>performGlobalAction</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a1ecf6837009f9622b6cd1dfcaf968a3f" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>performInteraction</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a138c024ffd59941383ef8f08d8eebe74" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>removeTemporaryWebElements</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1ac7e01d8441ef9a3a5d404d6b80170bc2" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>saveHtmlSnapshot</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a12d2212355dce52c0cc6998096d42ae6" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>saveScreenshot</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a73618a759cd44bd161ae52b02ad43818" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>setWebpage</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a477800733c75ce7c660bd947162b97fa" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>switchTab</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a69d0634ecee31b585b7eab7b5550d75c" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>tabs</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a2ef21d6d1c89055747e128d8cb12c42f" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>url</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1aaa2760097a96bb5105f3686a7250d168" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>webDriver</name></member>
+      <member refid="classcore_1_1webpageController_1_1webpageController_1a202a274f7a2d956f16a5686a3cbd430c" prot="public" virt="non-virtual"><scope>core::webpageController::webpageController</scope><name>webpageConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

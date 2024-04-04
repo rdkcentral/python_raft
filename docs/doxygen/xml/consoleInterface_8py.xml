@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="consoleInterface_8py" kind="file" language="Python">
+    <compoundname>consoleInterface.py</compoundname>
+    <innerclass refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface" prot="public">core::commandModules::consoleInterface::consoleInterface</innerclass>
+    <innernamespace refid="namespacecore_1_1commandModules_1_1consoleInterface">core::commandModules::consoleInterface</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#!<sp/>/bin/python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#/*<sp/>*****************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">#*<sp/>Copyright<sp/>(C)<sp/>2021<sp/>Sky<sp/>group<sp/>of<sp/>companies,<sp/>All<sp/>Rights<sp/>Reserved</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#*<sp/>******************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">#*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>RAFT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@addtogroup<sp/><sp/>:<sp/>core.commandModules</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>20/11/2021</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@brief<sp/>:<sp/>wrapper<sp/>for<sp/>consoleInterface<sp/>None</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">#/*<sp/>******************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>abc<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>ABCMeta,<sp/>abstractmethod</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface" kindref="compound">consoleInterface</ref>(metaclass=ABCMeta):</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>@abstractmethod</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1a8fb3fcb3ea7b5116291f7da37ef327e3" kindref="member">write</ref>(self,<sp/>message):</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Abstract<sp/>method.<sp/>Define<sp/>how<sp/>to<sp/>write<sp/>to<sp/>the<sp/>console.</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>message<sp/>(str):<sp/>Message<sp/>to<sp/>write<sp/>into<sp/>the<sp/>console.</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>NotImplementedError(</highlight><highlight class="stringliteral">&apos;users<sp/>must<sp/>define<sp/>write()<sp/>to<sp/>use<sp/>this<sp/>base<sp/>class&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>@abstractmethod</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1ac486b1c96789b1bf00cba93bdf09d2a9" kindref="member">open</ref>(self):</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Abstract<sp/>method.<sp/>Define<sp/>how<sp/>to<sp/>open<sp/>the<sp/>console<sp/>session.</highlight></codeline>
+<codeline lineno="32"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>NotImplementedError(</highlight><highlight class="stringliteral">&apos;users<sp/>must<sp/>define<sp/>open()<sp/>to<sp/>use<sp/>this<sp/>base<sp/>class&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>@abstractmethod</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1ae6a4b1538e7f154df77bfcf8bfc9408e" kindref="member">read_all</ref>(self):</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Abstract<sp/>method.<sp/>Define<sp/>how<sp/>to<sp/>read<sp/>all<sp/>information<sp/>displayed<sp/>in<sp/>the<sp/>console.</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Should<sp/>return<sp/>the<sp/>data<sp/>read.</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>NotImplementedError(</highlight><highlight class="stringliteral">&apos;users<sp/>must<sp/>define<sp/>read_all()<sp/>to<sp/>use<sp/>this<sp/>base<sp/>class&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>@abstractmethod</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1a4023d9922c671e82ebfef3c2469d1090" kindref="member">read_until</ref>(self,<sp/>value):</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Abstract<sp/>method.<sp/>Define<sp/>how<sp/>to<sp/>read<sp/>all<sp/>the<sp/>information<sp/>displayed<sp/>in<sp/>the<sp/>console,</highlight></codeline>
+<codeline lineno="45"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>upto<sp/>the<sp/>point<sp/>a<sp/>defined<sp/>string<sp/>appears.</highlight></codeline>
+<codeline lineno="46"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Should<sp/>return<sp/>the<sp/>data<sp/>read.</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>(str):<sp/>Message<sp/>to<sp/>wait<sp/>for<sp/>in<sp/>the<sp/>console.</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>NotImplementedError(</highlight><highlight class="stringliteral">&apos;users<sp/>must<sp/>define<sp/>read_until()<sp/>to<sp/>use<sp/>this<sp/>base<sp/>class&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>@abstractmethod</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1a8dc6ccf61a085e75c32dde20d09844ab" kindref="member">close</ref>(self):</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Close<sp/>the<sp/>console<sp/>session.</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>NotImplementedError(</highlight><highlight class="stringliteral">&apos;users<sp/>must<sp/>define<sp/>close()<sp/>to<sp/>use<sp/>this<sp/>base<sp/>class&apos;</highlight><highlight class="normal">)</highlight></codeline>
+    </programlisting>
+    <location file="framework/core/commandModules/consoleInterface.py"/>
+  </compounddef>
+</doxygen>

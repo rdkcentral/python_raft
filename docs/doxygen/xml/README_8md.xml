@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">![LOGO](docs/images/RAFT_Logo.png)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>RAFT</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**R**apid<sp/>**A**pplication<sp/>**F**ramework<sp/>for<sp/>**T**esting.&lt;br&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">RAFT<sp/>is<sp/>a<sp/>Python<sp/>based<sp/>testing<sp/>framework<sp/>for<sp/>writing<sp/>engineering<sp/>tests.&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal">RAFT’s<sp/>primary<sp/>focus<sp/>is<sp/>to<sp/>provide<sp/>engineering<sp/>teams<sp/>a<sp/>modular,<sp/>config<sp/>driven,<sp/>low<sp/>level<sp/>testing<sp/>framework.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contents</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Installation](#installation)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Getting<sp/>Started](#getting-started)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Documentation](#documentation)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Contributing](#contributing)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[License](#license)</highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Requirements</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Python<sp/>(=3.11.8)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Pyenv<sp/>can<sp/>be<sp/>used<sp/>to<sp/>manage<sp/>multiple<sp/>versions<sp/>of<sp/>Python<sp/>(please<sp/>refer<sp/>to<sp/>the<sp/>[documentation](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation)).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>All<sp/>the<sp/>packages<sp/>listed<sp/>in<sp/>requirements.txt</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Can<sp/>be<sp/>installed<sp/>using<sp/>`$<sp/>pip<sp/>install<sp/>-r<sp/>requirements.txt`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>User<sp/>Installation</highlight></codeline>
+<codeline><highlight class="normal">Clone<sp/>the<sp/>repository<sp/>and<sp/>ensure<sp/>that<sp/>all<sp/>requirements<sp/>are<sp/>met.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">WIP</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">WIP</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contributing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>contributing<sp/>file:<sp/>[CONTRIBUTING.md](./CONTRIBUTING.md)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>license<sp/>file:<sp/>[LICENSE](./LICENSE)</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,262 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1hs100_1_1powerHS100" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::hs100::powerHS100</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aeceefe1fcb4ebef9a787bd10004a5a3b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.hs100.powerHS100::ip</definition>
+        <argsstring></argsstring>
+        <name>ip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="26" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1addd0167a4dc141eebbe1ab69ce6c9272" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.hs100.powerHS100::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="29" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ad19b7a21a098bdc1c2396e07af8fda42" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.hs100.powerHS100::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="30" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ae7bd38a85bdb0b9ec8aedfd49e9549c3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.hs100.powerHS100::commands</definition>
+        <argsstring></argsstring>
+        <name>commands</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="33" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a529d255b342602dd63a89eb440b21a0a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.hs100.powerHS100::powerOnState</definition>
+        <argsstring></argsstring>
+        <name>powerOnState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="91" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a70e1d2a38995cb322db059cf22bddc57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.__init__</definition>
+        <argsstring>(self, log, ip, port)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>port</type>
+          <defname>port</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="25" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="25" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aa3d802240f9d79780874afdd56ab68ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.encrypt</definition>
+        <argsstring>(self, string)</argsstring>
+        <name>encrypt</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Encryption of TP-Link Smart Home Protocol. XOR Autokey Cipher with starting key = 171</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="49" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="49" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a7666652cd6dae18b2b2db498b9f8c4ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.decrypt</definition>
+        <argsstring>(self, string)</argsstring>
+        <name>decrypt</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Decryption of TP-Link Smart Home Protocol. XOR Autokey Cipher with starting key = 171</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="59" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="59" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ad8c930adc8abcbc313e7831420d5d2e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.switchCommand</definition>
+        <argsstring>(self, key)</argsstring>
+        <name>switchCommand</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>send key command to switch
+
+Args:
+    key (str) - &apos;on&apos;\&apos;off&apos;\&apos;reboot&apos;. Refer self.commands
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="69" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="69" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a7584bc7b203688b99f7756aacc00422a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="100" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="100" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aa7d845a951e6b067e43a404af7314621" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="104" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ab15c2df850d50fa1a87cd8fe83003c32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.switchReboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>switchReboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="108" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="108" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aabec0bcedde6fb6469848c7a2e5fe26a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.hs100.powerHS100.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/hs100.py" line="112" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="112" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/hs100.py" line="23" column="1" bodyfile="framework/core/powerModules/hs100.py" bodystart="23" bodyend="120"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a70e1d2a38995cb322db059cf22bddc57" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ae7bd38a85bdb0b9ec8aedfd49e9549c3" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>commands</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a7666652cd6dae18b2b2db498b9f8c4ba" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>decrypt</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aa3d802240f9d79780874afdd56ab68ee" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>encrypt</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aeceefe1fcb4ebef9a787bd10004a5a3b" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>ip</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ad19b7a21a098bdc1c2396e07af8fda42" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>log</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1addd0167a4dc141eebbe1ab69ce6c9272" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>port</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a7584bc7b203688b99f7756aacc00422a" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aa7d845a951e6b067e43a404af7314621" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1a529d255b342602dd63a89eb440b21a0a" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>powerOnState</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1aabec0bcedde6fb6469848c7a2e5fe26a" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>reboot</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ad8c930adc8abcbc313e7831420d5d2e3" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>switchCommand</name></member>
+      <member refid="classcore_1_1powerModules_1_1hs100_1_1powerHS100_1ab15c2df850d50fa1a87cd8fe83003c32" prot="public" virt="non-virtual"><scope>core::powerModules::hs100::powerHS100</scope><name>switchReboot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

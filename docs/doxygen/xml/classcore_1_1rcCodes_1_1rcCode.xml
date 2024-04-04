@@ -1,0 +1,1313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1rcCodes_1_1rcCode" kind="class" language="Python" prot="public">
+    <compoundname>core::rcCodes::rcCode</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Enum</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a2f34ac8c98fb2eedda5a4cd6e2a7f33c" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_0</definition>
+        <argsstring></argsstring>
+        <name>NUM_0</name>
+        <initializer>=  &quot;0x00&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="19" column="1" bodyfile="framework/core/rcCodes.py" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a503530d7f036090436e8335d4c3dae0c" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_1</definition>
+        <argsstring></argsstring>
+        <name>NUM_1</name>
+        <initializer>=  &quot;0x01&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="20" column="1" bodyfile="framework/core/rcCodes.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a8851cc0deffdcbb0135e9ead7c339de8" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_2</definition>
+        <argsstring></argsstring>
+        <name>NUM_2</name>
+        <initializer>=  &quot;0x02&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="21" column="1" bodyfile="framework/core/rcCodes.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a6f1a3537fe89dfc0438e9e825ff01ecd" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_3</definition>
+        <argsstring></argsstring>
+        <name>NUM_3</name>
+        <initializer>=  &quot;0x03&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="22" column="1" bodyfile="framework/core/rcCodes.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ac7454ea22556f0525cef16c38469a11b" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_4</definition>
+        <argsstring></argsstring>
+        <name>NUM_4</name>
+        <initializer>=  &quot;0x04&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="23" column="1" bodyfile="framework/core/rcCodes.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a48ca20d46ae8ff87933f213faa5dc891" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_5</definition>
+        <argsstring></argsstring>
+        <name>NUM_5</name>
+        <initializer>=  &quot;0x05&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="24" column="1" bodyfile="framework/core/rcCodes.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1abd2e66cec5d21c102252bac5c108f67d" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_6</definition>
+        <argsstring></argsstring>
+        <name>NUM_6</name>
+        <initializer>=  &quot;0x06&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="25" column="1" bodyfile="framework/core/rcCodes.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1acd57515fb150e5887f42a7802c603934" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_7</definition>
+        <argsstring></argsstring>
+        <name>NUM_7</name>
+        <initializer>=  &quot;0x07&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="26" column="1" bodyfile="framework/core/rcCodes.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a44b3b04c925a9060977465c41c355cc0" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_8</definition>
+        <argsstring></argsstring>
+        <name>NUM_8</name>
+        <initializer>=  &quot;0x08&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="27" column="1" bodyfile="framework/core/rcCodes.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1adedfa13da0f528048db40411789e2102" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::NUM_9</definition>
+        <argsstring></argsstring>
+        <name>NUM_9</name>
+        <initializer>=  &quot;0x09&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="28" column="1" bodyfile="framework/core/rcCodes.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1abd452a5372a20672a22a5dbe47573cd4" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::POWER</definition>
+        <argsstring></argsstring>
+        <name>POWER</name>
+        <initializer>=  &quot;0x0C&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="30" column="1" bodyfile="framework/core/rcCodes.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a82daaa8af317e632d27a970d4b71e6c8" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::MUTE</definition>
+        <argsstring></argsstring>
+        <name>MUTE</name>
+        <initializer>=  &quot;0x0D&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="31" column="1" bodyfile="framework/core/rcCodes.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a300cda289c6fe3261a4f05bb355424f5" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::VOL_UP</definition>
+        <argsstring></argsstring>
+        <name>VOL_UP</name>
+        <initializer>=  &quot;0x10&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="32" column="1" bodyfile="framework/core/rcCodes.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a333a7e73df1b0e9170fa531b30ba5a17" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::VOL_DOWN</definition>
+        <argsstring></argsstring>
+        <name>VOL_DOWN</name>
+        <initializer>=  &quot;0x11&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="33" column="1" bodyfile="framework/core/rcCodes.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a032ad529b95ccb43bc26b65c0d61453f" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CHANNEL_UP</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_UP</name>
+        <initializer>=  &quot;0x20&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="34" column="1" bodyfile="framework/core/rcCodes.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ad83735edae3ffd6143ed4d2ec6b19e11" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CHANNEL_DOWN</definition>
+        <argsstring></argsstring>
+        <name>CHANNEL_DOWN</name>
+        <initializer>=  &quot;0x21&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="35" column="1" bodyfile="framework/core/rcCodes.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a2b1c11d9da1ed349065ed787fb1cf761" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::PAUSE</definition>
+        <argsstring></argsstring>
+        <name>PAUSE</name>
+        <initializer>=  &quot;0x24&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="36" column="1" bodyfile="framework/core/rcCodes.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a7495d0f107f6b2db7246ceb4d30cf09e" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::FFWD</definition>
+        <argsstring></argsstring>
+        <name>FFWD</name>
+        <initializer>=  &quot;0x28&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="37" column="1" bodyfile="framework/core/rcCodes.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a73de4b1c0e0151237825d0c6d8bbd761" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::FORWARD</definition>
+        <argsstring></argsstring>
+        <name>FORWARD</name>
+        <initializer>=  &quot;0x28&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="38" column="1" bodyfile="framework/core/rcCodes.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a1cd95b953a0d9a0d3b079ab18b1d1828" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::FFORWARD</definition>
+        <argsstring></argsstring>
+        <name>FFORWARD</name>
+        <initializer>=  &quot;0x28&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="39" column="1" bodyfile="framework/core/rcCodes.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aba8b492029c6a47d54e1855f536ab6f6" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::AUDDESC</definition>
+        <argsstring></argsstring>
+        <name>AUDDESC</name>
+        <initializer>=  &quot;0x2D&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="44" column="1" bodyfile="framework/core/rcCodes.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a70b777bb93ad992461f5ca9338767b1d" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::SUBT</definition>
+        <argsstring></argsstring>
+        <name>SUBT</name>
+        <initializer>=  &quot;0x2E&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="45" column="1" bodyfile="framework/core/rcCodes.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ad2b7e7f4177aa9938615a26740dfade9" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::REWIND</definition>
+        <argsstring></argsstring>
+        <name>REWIND</name>
+        <initializer>=  &quot;0x3D&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="47" column="1" bodyfile="framework/core/rcCodes.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a0190be37a013a7ec765f57025c9b878d" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::PLAY</definition>
+        <argsstring></argsstring>
+        <name>PLAY</name>
+        <initializer>=  &quot;0x3E&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="48" column="1" bodyfile="framework/core/rcCodes.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aab9c50b722ea0afaadfa64650838696a" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::STOP</definition>
+        <argsstring></argsstring>
+        <name>STOP</name>
+        <initializer>=  &quot;0x3F&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="49" column="1" bodyfile="framework/core/rcCodes.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1af76dc66d879d76c5ceb73a5eae46fb9e" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RECORD</definition>
+        <argsstring></argsstring>
+        <name>RECORD</name>
+        <initializer>=  &quot;0x40&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="50" column="1" bodyfile="framework/core/rcCodes.py" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a0d8ec8bf0239c7697bf79244d10d5440" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::LOBATT</definition>
+        <argsstring></argsstring>
+        <name>LOBATT</name>
+        <initializer>=  &quot;0x47&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="51" column="1" bodyfile="framework/core/rcCodes.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a45634f03e17af7c97965499f14b4c1ae" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::UP</definition>
+        <argsstring></argsstring>
+        <name>UP</name>
+        <initializer>=  &quot;0x58&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="52" column="1" bodyfile="framework/core/rcCodes.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a6ceb38710f5172ed3aad376d6c390a67" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::DOWN</definition>
+        <argsstring></argsstring>
+        <name>DOWN</name>
+        <initializer>=  &quot;0x59&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="53" column="1" bodyfile="framework/core/rcCodes.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1af29c087e9ef2a4249e4abb58104cc1b6" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::LEFT</definition>
+        <argsstring></argsstring>
+        <name>LEFT</name>
+        <initializer>=  &quot;0x5A&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="54" column="1" bodyfile="framework/core/rcCodes.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ac8066ea737ea785b3b5ebbdf689b11cf" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RIGHT</definition>
+        <argsstring></argsstring>
+        <name>RIGHT</name>
+        <initializer>=  &quot;0x5B&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="55" column="1" bodyfile="framework/core/rcCodes.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a36257c69c5d78e767c988925fc517551" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::SELECT</definition>
+        <argsstring></argsstring>
+        <name>SELECT</name>
+        <initializer>=  &quot;0x5C&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="56" column="1" bodyfile="framework/core/rcCodes.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a7309cdb39a1a9a22dbbfee5de3568a56" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RED</definition>
+        <argsstring></argsstring>
+        <name>RED</name>
+        <initializer>=  &quot;0x6D&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="57" column="1" bodyfile="framework/core/rcCodes.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1af3b20614b99486623173c4ddd26acd8c" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::GREEN</definition>
+        <argsstring></argsstring>
+        <name>GREEN</name>
+        <initializer>=  &quot;0x6E&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="58" column="1" bodyfile="framework/core/rcCodes.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a10a78fedac5b22ccab58b1cf4d0f2bbe" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::YELLOW</definition>
+        <argsstring></argsstring>
+        <name>YELLOW</name>
+        <initializer>=  &quot;0x6F&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="59" column="1" bodyfile="framework/core/rcCodes.py" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a8c8ee703466f757b00af1aabad1a226d" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::BLUE</definition>
+        <argsstring></argsstring>
+        <name>BLUE</name>
+        <initializer>=  &quot;0x70&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="60" column="1" bodyfile="framework/core/rcCodes.py" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ad6d500992f9e45aaaa0803627e9b98df" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::SEARCH</definition>
+        <argsstring></argsstring>
+        <name>SEARCH</name>
+        <initializer>=  &quot;0x7E&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="62" column="1" bodyfile="framework/core/rcCodes.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a45a485fab957f01ecbbf132349cb8e27" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::SKY</definition>
+        <argsstring></argsstring>
+        <name>SKY</name>
+        <initializer>=  &quot;0x80&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="64" column="1" bodyfile="framework/core/rcCodes.py" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a0024dfc6999c6235f847cf75edeb7b51" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::HELP</definition>
+        <argsstring></argsstring>
+        <name>HELP</name>
+        <initializer>=  &quot;0x81&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="65" column="1" bodyfile="framework/core/rcCodes.py" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ae2cbf3552b25a5979e15af7302c319bf" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::BACKUP</definition>
+        <argsstring></argsstring>
+        <name>BACKUP</name>
+        <initializer>=  &quot;0x83&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="66" column="1" bodyfile="framework/core/rcCodes.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aea817c91417e8e98338928a873b545f4" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::EXIT</definition>
+        <argsstring></argsstring>
+        <name>EXIT</name>
+        <initializer>=  &quot;0xCE&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="67" column="1" bodyfile="framework/core/rcCodes.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a80524bf4d702b3c7c3e958802fc37170" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::HOME</definition>
+        <argsstring></argsstring>
+        <name>HOME</name>
+        <initializer>=  &quot;0xCC&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="70" column="1" bodyfile="framework/core/rcCodes.py" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a1d62751fa61c8f4dd9ef011d2cf2a1a1" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::APPS</definition>
+        <argsstring></argsstring>
+        <name>APPS</name>
+        <initializer>=  &quot;0xF5&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="71" column="1" bodyfile="framework/core/rcCodes.py" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a668b951455e43720c773e9d06891a504" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::BACK</definition>
+        <argsstring></argsstring>
+        <name>BACK</name>
+        <initializer>=  &quot;BACK&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="73" column="1" bodyfile="framework/core/rcCodes.py" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a9b0c99de7578c53e545a01e508c3178a" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CROSS</definition>
+        <argsstring></argsstring>
+        <name>CROSS</name>
+        <initializer>=  &quot;CROSS&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="74" column="1" bodyfile="framework/core/rcCodes.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aefe403c6cdc7c587064a79cb6ed3152e" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::MIC</definition>
+        <argsstring></argsstring>
+        <name>MIC</name>
+        <initializer>=  &quot;MIC&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="75" column="1" bodyfile="framework/core/rcCodes.py" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a9f990696a3b113dd9794ad7898bc8502" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RGYB</definition>
+        <argsstring></argsstring>
+        <name>RGYB</name>
+        <initializer>=  &quot;RGYB&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="76" column="1" bodyfile="framework/core/rcCodes.py" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a6c5f9b2b2ea5a598fb2fbb3be0c31b39" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::PICK_UP</definition>
+        <argsstring></argsstring>
+        <name>PICK_UP</name>
+        <initializer>=  &quot;PICK_UP&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="77" column="1" bodyfile="framework/core/rcCodes.py" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ae68095646e4ee6cef0b0f1959c09e13b" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::TEST</definition>
+        <argsstring></argsstring>
+        <name>TEST</name>
+        <initializer>=  &quot;TEST&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="79" column="1" bodyfile="framework/core/rcCodes.py" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a76d503824e29d3515ee6779e65ad0981" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RST</definition>
+        <argsstring></argsstring>
+        <name>RST</name>
+        <initializer>=  &quot;RST&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="80" column="1" bodyfile="framework/core/rcCodes.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aec0177f5c691eb74c6bd8510c311dfe4" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::FAC</definition>
+        <argsstring></argsstring>
+        <name>FAC</name>
+        <initializer>=  &quot;FAC&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="81" column="1" bodyfile="framework/core/rcCodes.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a71bb295b4db188a7fbee82dc9a65a7b8" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CSM</definition>
+        <argsstring></argsstring>
+        <name>CSM</name>
+        <initializer>=  &quot;CSM&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="82" column="1" bodyfile="framework/core/rcCodes.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a29e93053566b94d339d0b14258e6b162" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::PATTERN</definition>
+        <argsstring></argsstring>
+        <name>PATTERN</name>
+        <initializer>=  &quot;PATTERN&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="83" column="1" bodyfile="framework/core/rcCodes.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aee2a8f0af91b58107df8fcf94ccc5c71" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::ANTENNA_CABLE</definition>
+        <argsstring></argsstring>
+        <name>ANTENNA_CABLE</name>
+        <initializer>=  &quot;ANTENNA_CABLE&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="84" column="1" bodyfile="framework/core/rcCodes.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ac46f116c396e056408c7972097f3635f" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::PRE_CH</definition>
+        <argsstring></argsstring>
+        <name>PRE_CH</name>
+        <initializer>=  &quot;PRE_CH&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="85" column="1" bodyfile="framework/core/rcCodes.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a693f7af3636cbff583d3ae6923786c0b" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::VOL_MAX</definition>
+        <argsstring></argsstring>
+        <name>VOL_MAX</name>
+        <initializer>=  &quot;VOL_MAX&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="86" column="1" bodyfile="framework/core/rcCodes.py" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ab2e6aac92a05f470ceeb0bff1e77766c" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CTC</definition>
+        <argsstring></argsstring>
+        <name>CTC</name>
+        <initializer>=  &quot;CTC&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="87" column="1" bodyfile="framework/core/rcCodes.py" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a5108f4e66b46b2b049e0c992bd3379c1" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::VOL_BUZZ</definition>
+        <argsstring></argsstring>
+        <name>VOL_BUZZ</name>
+        <initializer>=  &quot;VOL_BUZZ&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="88" column="1" bodyfile="framework/core/rcCodes.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a222855645bbba89252cf974b429b8880" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::MENU</definition>
+        <argsstring></argsstring>
+        <name>MENU</name>
+        <initializer>=  &quot;MENU&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="89" column="1" bodyfile="framework/core/rcCodes.py" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a28f88d5b252174b081d9de06422dc5fe" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::BI</definition>
+        <argsstring></argsstring>
+        <name>BI</name>
+        <initializer>=  &quot;BI&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="90" column="1" bodyfile="framework/core/rcCodes.py" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a75a614f05ae22c61272f418002ce4970" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CH_SCAN</definition>
+        <argsstring></argsstring>
+        <name>CH_SCAN</name>
+        <initializer>=  &quot;CH_SCAN&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="91" column="1" bodyfile="framework/core/rcCodes.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ac983e56616c3c657e770f2772deb94c9" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CCTT</definition>
+        <argsstring></argsstring>
+        <name>CCTT</name>
+        <initializer>=  &quot;CCTT&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="92" column="1" bodyfile="framework/core/rcCodes.py" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a8310b4c08f13d3b01c454c973f771679" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::PIC</definition>
+        <argsstring></argsstring>
+        <name>PIC</name>
+        <initializer>=  &quot;PIC&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="93" column="1" bodyfile="framework/core/rcCodes.py" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a393fa8c07c3c7986ca742e5a2fc8d650" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::LOG_LED</definition>
+        <argsstring></argsstring>
+        <name>LOG_LED</name>
+        <initializer>=  &quot;LOG_LED&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="94" column="1" bodyfile="framework/core/rcCodes.py" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a0e387dff509f693469b29669001682d8" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::AUDIO</definition>
+        <argsstring></argsstring>
+        <name>AUDIO</name>
+        <initializer>=  &quot;AUDIO&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="95" column="1" bodyfile="framework/core/rcCodes.py" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a3ef1d0ad4e4b992f5392254db18554f0" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::D2D3</definition>
+        <argsstring></argsstring>
+        <name>D2D3</name>
+        <initializer>=  &quot;D2D3&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="96" column="1" bodyfile="framework/core/rcCodes.py" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a1c8472231a0f7f43c2457bf7edb4bbfc" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::ARC</definition>
+        <argsstring></argsstring>
+        <name>ARC</name>
+        <initializer>=  &quot;ARC&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="97" column="1" bodyfile="framework/core/rcCodes.py" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aca28d80c38ba0a3b903c0466b17e9605" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CIP</definition>
+        <argsstring></argsstring>
+        <name>CIP</name>
+        <initializer>=  &quot;CIP&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="98" column="1" bodyfile="framework/core/rcCodes.py" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a8cc5617e46ebb4414bb2cd172577089c" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::VIRGIN</definition>
+        <argsstring></argsstring>
+        <name>VIRGIN</name>
+        <initializer>=  &quot;VIRGIN&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="99" column="1" bodyfile="framework/core/rcCodes.py" bodystart="99" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a471c68aeb5eab1574315df2900d2b1c4" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CVBS</definition>
+        <argsstring></argsstring>
+        <name>CVBS</name>
+        <initializer>=  &quot;CVBS&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="100" column="1" bodyfile="framework/core/rcCodes.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a4dddcbdad0f2ddd97fdef33f7a49ea66" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::YPBPR_SCART</definition>
+        <argsstring></argsstring>
+        <name>YPBPR_SCART</name>
+        <initializer>=  &quot;YPBPR_SCART&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="101" column="1" bodyfile="framework/core/rcCodes.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a6d7a214fad6dc9e5e7c79059e78510c5" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::HDMI</definition>
+        <argsstring></argsstring>
+        <name>HDMI</name>
+        <initializer>=  &quot;HDMI&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="102" column="1" bodyfile="framework/core/rcCodes.py" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a289a5e5333865cbdbaf40d5439d109b5" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::VGA</definition>
+        <argsstring></argsstring>
+        <name>VGA</name>
+        <initializer>=  &quot;VGA&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="103" column="1" bodyfile="framework/core/rcCodes.py" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1ae066c33bb24448e9df0fce71b0e6f7b0" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::REGIN</definition>
+        <argsstring></argsstring>
+        <name>REGIN</name>
+        <initializer>=  &quot;REGIN&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="104" column="1" bodyfile="framework/core/rcCodes.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a0ff386ebcafef4b1822bed2430f56847" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::CLONE</definition>
+        <argsstring></argsstring>
+        <name>CLONE</name>
+        <initializer>=  &quot;CLONE&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="105" column="1" bodyfile="framework/core/rcCodes.py" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a9ed453d75978cbbb732371d549fb42db" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RESERVE1</definition>
+        <argsstring></argsstring>
+        <name>RESERVE1</name>
+        <initializer>=  &quot;RESERVE1&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="106" column="1" bodyfile="framework/core/rcCodes.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1af9e18f48c7bdfbb1524c7300e6b12e86" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::DCR</definition>
+        <argsstring></argsstring>
+        <name>DCR</name>
+        <initializer>=  &quot;DCR&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="107" column="1" bodyfile="framework/core/rcCodes.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a65b4be010e9a894ea434989a3f96e7d7" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::WIFI_SSID</definition>
+        <argsstring></argsstring>
+        <name>WIFI_SSID</name>
+        <initializer>=  &quot;WIFI_SSID&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="108" column="1" bodyfile="framework/core/rcCodes.py" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aac9a720505357fa1669825e6a94c70ee" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::BLK</definition>
+        <argsstring></argsstring>
+        <name>BLK</name>
+        <initializer>=  &quot;BLK&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="109" column="1" bodyfile="framework/core/rcCodes.py" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aedbccad7d8136874d874a9fec3fb7e0b" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::WP</definition>
+        <argsstring></argsstring>
+        <name>WP</name>
+        <initializer>=  &quot;WP&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="110" column="1" bodyfile="framework/core/rcCodes.py" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a1bf5a1bf5e27965acbe4115a7166e4fc" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::LIGHT_SENSOR</definition>
+        <argsstring></argsstring>
+        <name>LIGHT_SENSOR</name>
+        <initializer>=  &quot;LIGHT_SENSOR&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="111" column="1" bodyfile="framework/core/rcCodes.py" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aec6d2e68d809296949e7c533f55db9a2" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::USB</definition>
+        <argsstring></argsstring>
+        <name>USB</name>
+        <initializer>=  &quot;USB&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="112" column="1" bodyfile="framework/core/rcCodes.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a9a6f1473ae71aa0bf5a814d8b46f937b" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RJ45</definition>
+        <argsstring></argsstring>
+        <name>RJ45</name>
+        <initializer>=  &quot;RJ45&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="113" column="1" bodyfile="framework/core/rcCodes.py" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1a0bf5029df36177bf0f46d0cea4bb0a60" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RS232</definition>
+        <argsstring></argsstring>
+        <name>RS232</name>
+        <initializer>=  &quot;RS232&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="114" column="1" bodyfile="framework/core/rcCodes.py" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rcCodes_1_1rcCode_1aec49a573e3dece12eb01612bb075c55b" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rcCodes.rcCode::RESERVE2</definition>
+        <argsstring></argsstring>
+        <name>RESERVE2</name>
+        <initializer>=  &quot;RESERVE2&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rcCodes.py" line="115" column="1" bodyfile="framework/core/rcCodes.py" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>core.rcCodes.rcCode</label>
+        <link refid="classcore_1_1rcCodes_1_1rcCode"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Enum</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>core.rcCodes.rcCode</label>
+        <link refid="classcore_1_1rcCodes_1_1rcCode"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Enum</label>
+      </node>
+    </collaborationgraph>
+    <location file="framework/core/rcCodes.py" line="17" column="1" bodyfile="framework/core/rcCodes.py" bodystart="17" bodyend="118"/>
+    <listofallmembers>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aee2a8f0af91b58107df8fcf94ccc5c71" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>ANTENNA_CABLE</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a1d62751fa61c8f4dd9ef011d2cf2a1a1" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>APPS</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a1c8472231a0f7f43c2457bf7edb4bbfc" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>ARC</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aba8b492029c6a47d54e1855f536ab6f6" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>AUDDESC</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a0e387dff509f693469b29669001682d8" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>AUDIO</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a668b951455e43720c773e9d06891a504" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>BACK</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ae2cbf3552b25a5979e15af7302c319bf" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>BACKUP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a28f88d5b252174b081d9de06422dc5fe" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>BI</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aac9a720505357fa1669825e6a94c70ee" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>BLK</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a8c8ee703466f757b00af1aabad1a226d" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>BLUE</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ac983e56616c3c657e770f2772deb94c9" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CCTT</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a75a614f05ae22c61272f418002ce4970" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CH_SCAN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ad83735edae3ffd6143ed4d2ec6b19e11" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CHANNEL_DOWN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a032ad529b95ccb43bc26b65c0d61453f" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CHANNEL_UP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aca28d80c38ba0a3b903c0466b17e9605" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CIP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a0ff386ebcafef4b1822bed2430f56847" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CLONE</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a9b0c99de7578c53e545a01e508c3178a" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CROSS</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a71bb295b4db188a7fbee82dc9a65a7b8" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CSM</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ab2e6aac92a05f470ceeb0bff1e77766c" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CTC</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a471c68aeb5eab1574315df2900d2b1c4" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>CVBS</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a3ef1d0ad4e4b992f5392254db18554f0" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>D2D3</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1af9e18f48c7bdfbb1524c7300e6b12e86" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>DCR</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a6ceb38710f5172ed3aad376d6c390a67" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>DOWN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aea817c91417e8e98338928a873b545f4" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>EXIT</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aec0177f5c691eb74c6bd8510c311dfe4" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>FAC</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a1cd95b953a0d9a0d3b079ab18b1d1828" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>FFORWARD</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a7495d0f107f6b2db7246ceb4d30cf09e" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>FFWD</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a73de4b1c0e0151237825d0c6d8bbd761" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>FORWARD</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1af3b20614b99486623173c4ddd26acd8c" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>GREEN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a6d7a214fad6dc9e5e7c79059e78510c5" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>HDMI</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a0024dfc6999c6235f847cf75edeb7b51" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>HELP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a80524bf4d702b3c7c3e958802fc37170" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>HOME</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1af29c087e9ef2a4249e4abb58104cc1b6" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>LEFT</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a1bf5a1bf5e27965acbe4115a7166e4fc" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>LIGHT_SENSOR</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a0d8ec8bf0239c7697bf79244d10d5440" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>LOBATT</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a393fa8c07c3c7986ca742e5a2fc8d650" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>LOG_LED</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a222855645bbba89252cf974b429b8880" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>MENU</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aefe403c6cdc7c587064a79cb6ed3152e" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>MIC</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a82daaa8af317e632d27a970d4b71e6c8" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>MUTE</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a2f34ac8c98fb2eedda5a4cd6e2a7f33c" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_0</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a503530d7f036090436e8335d4c3dae0c" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_1</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a8851cc0deffdcbb0135e9ead7c339de8" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_2</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a6f1a3537fe89dfc0438e9e825ff01ecd" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_3</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ac7454ea22556f0525cef16c38469a11b" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_4</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a48ca20d46ae8ff87933f213faa5dc891" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_5</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1abd2e66cec5d21c102252bac5c108f67d" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_6</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1acd57515fb150e5887f42a7802c603934" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_7</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a44b3b04c925a9060977465c41c355cc0" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_8</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1adedfa13da0f528048db40411789e2102" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>NUM_9</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a29e93053566b94d339d0b14258e6b162" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>PATTERN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a2b1c11d9da1ed349065ed787fb1cf761" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>PAUSE</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a8310b4c08f13d3b01c454c973f771679" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>PIC</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a6c5f9b2b2ea5a598fb2fbb3be0c31b39" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>PICK_UP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a0190be37a013a7ec765f57025c9b878d" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>PLAY</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1abd452a5372a20672a22a5dbe47573cd4" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>POWER</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ac46f116c396e056408c7972097f3635f" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>PRE_CH</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1af76dc66d879d76c5ceb73a5eae46fb9e" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RECORD</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a7309cdb39a1a9a22dbbfee5de3568a56" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RED</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ae066c33bb24448e9df0fce71b0e6f7b0" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>REGIN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a9ed453d75978cbbb732371d549fb42db" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RESERVE1</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aec49a573e3dece12eb01612bb075c55b" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RESERVE2</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ad2b7e7f4177aa9938615a26740dfade9" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>REWIND</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a9f990696a3b113dd9794ad7898bc8502" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RGYB</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ac8066ea737ea785b3b5ebbdf689b11cf" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RIGHT</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a9a6f1473ae71aa0bf5a814d8b46f937b" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RJ45</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a0bf5029df36177bf0f46d0cea4bb0a60" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RS232</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a76d503824e29d3515ee6779e65ad0981" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>RST</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ad6d500992f9e45aaaa0803627e9b98df" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>SEARCH</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a36257c69c5d78e767c988925fc517551" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>SELECT</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a45a485fab957f01ecbbf132349cb8e27" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>SKY</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aab9c50b722ea0afaadfa64650838696a" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>STOP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a70b777bb93ad992461f5ca9338767b1d" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>SUBT</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1ae68095646e4ee6cef0b0f1959c09e13b" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>TEST</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a45634f03e17af7c97965499f14b4c1ae" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>UP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aec6d2e68d809296949e7c533f55db9a2" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>USB</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a289a5e5333865cbdbaf40d5439d109b5" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>VGA</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a8cc5617e46ebb4414bb2cd172577089c" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>VIRGIN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a5108f4e66b46b2b049e0c992bd3379c1" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>VOL_BUZZ</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a333a7e73df1b0e9170fa531b30ba5a17" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>VOL_DOWN</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a693f7af3636cbff583d3ae6923786c0b" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>VOL_MAX</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a300cda289c6fe3261a4f05bb355424f5" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>VOL_UP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a65b4be010e9a894ea434989a3f96e7d7" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>WIFI_SSID</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1aedbccad7d8136874d874a9fec3fb7e0b" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>WP</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a10a78fedac5b22ccab58b1cf4d0f2bbe" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>YELLOW</name></member>
+      <member refid="classcore_1_1rcCodes_1_1rcCode_1a4dddcbdad0f2ddd97fdef33f7a49ea66" prot="public" virt="non-virtual"><scope>core::rcCodes::rcCode</scope><name>YPBPR_SCART</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

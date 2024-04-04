@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="webpageControlTests_8py" kind="file" language="Python">
+    <compoundname>webpageControlTests.py</compoundname>
+    <innernamespace refid="namespacewebpageControlTests">webpageControlTests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!<sp/>/bin/python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>cgi<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>test</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Add<sp/>the<sp/>framework<sp/>path<sp/>to<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">dir_path<sp/>=<sp/>os.path.dirname(os.path.realpath(__file__))</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">sys.path.append(dir_path+</highlight><highlight class="stringliteral">&quot;/../../../&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>framework.core.logModule<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>logModule</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.accessElementsTests<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>accessElementsTest</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.performActionsTests<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>performActionsTests</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.dynamicButtonsTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>dynamicButtonsTest</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.alertTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>alertTest</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.sequenceTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sequenceTest</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.elementAttributeTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>elementAttributeTest</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.selectOptionsTests<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>selectOptionsTests</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.globalActionTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>globalActionTest</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.downloadTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>downloadTest</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.saveScreenshotTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>saveScreenshotTest</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>unitTests.framework.webControlTests.dynamicTablesTest<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>dynamicTablesTest</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;__main__&quot;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>summary<sp/>=<sp/>logModule(</highlight><highlight class="stringliteral">&quot;WebpageControlTests&quot;</highlight><highlight class="normal">,<sp/>level=logModule.INFO)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>summary.testStart(</highlight><highlight class="stringliteral">&quot;WebpageControlTests&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>accessElementsTest(log=summary)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceperformActionsTests" kindref="compound">performActionsTests</ref>(log=summary)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacedynamicButtonsTest" kindref="compound">dynamicButtonsTest</ref>(log=summary)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacealertTest" kindref="compound">alertTest</ref>(log=summary)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesequenceTest" kindref="compound">sequenceTest</ref>(log=summary)</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceelementAttributeTest" kindref="compound">elementAttributeTest</ref>(log=summary)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceselectOptionsTests" kindref="compound">selectOptionsTests</ref>(log=summary)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceglobalActionTest" kindref="compound">globalActionTest</ref>(log=summary)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacedownloadTest" kindref="compound">downloadTest</ref>(log=summary)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacesaveScreenshotTest" kindref="compound">saveScreenshotTest</ref>(log=summary)</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespacedynamicTablesTest" kindref="compound">dynamicTablesTest</ref>(log=summary)</highlight></codeline>
+    </programlisting>
+    <location file="unitTests/framework/webControlTests/webpageControlTests.py"/>
+  </compounddef>
+</doxygen>

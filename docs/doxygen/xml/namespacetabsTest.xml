@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacetabsTest" kind="namespace" language="Python">
+    <compoundname>tabsTest</compoundname>
+    <innerclass refid="classtabsTest_1_1tabsTest" prot="public">tabsTest::tabsTest</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="tabsTest_8py_1a833948657b02a09686392e7d4f4be087" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tabsTest.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/tabsTest.py" line="6" column="1" bodyfile="unitTests/framework/webControlTests/tabsTest.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="tabsTest_8py_1a9b6b20e68d6b88dcb1f59e4fbbfe9b8b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>tabsTest.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>=  <ref refid="classtabsTest_1_1tabsTest" kindref="compound">tabsTest</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/tabsTest.py" line="95" column="1" bodyfile="unitTests/framework/webControlTests/tabsTest.py" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/tabsTest.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

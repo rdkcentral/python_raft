@@ -1,0 +1,1459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1logModule_1_1logModule" kind="class" language="Python" prot="public">
+    <compoundname>core::logModule::logModule</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ab51c7c9bb957350562f5bf191c881661" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::TEST_RESULT</definition>
+        <argsstring></argsstring>
+        <name>TEST_RESULT</name>
+        <initializer>=  99</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="27" column="1" bodyfile="framework/core/logModule.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a810d69ec8f91be423ede2d3247ac5ad6" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::FATAL</definition>
+        <argsstring></argsstring>
+        <name>FATAL</name>
+        <initializer>=  100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="28" column="1" bodyfile="framework/core/logModule.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a1c0fba67da1634a1c283cbb320c97f33" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.logModule.logModule::moduleName</definition>
+        <argsstring></argsstring>
+        <name>moduleName</name>
+        <initializer>=  &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="29" column="1" bodyfile="framework/core/logModule.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1acc3615f4873f1bc84a15b29eb525dfcf" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.logModule.logModule::SEPERATOR</definition>
+        <argsstring></argsstring>
+        <name>SEPERATOR</name>
+        <initializer>=      &quot; ---- &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="30" column="1" bodyfile="framework/core/logModule.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a065e7c0614303971fe7b39b4c882b2ce" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.logModule.logModule::SEPERATOR_STAR</definition>
+        <argsstring></argsstring>
+        <name>SEPERATOR_STAR</name>
+        <initializer>= &quot; **** &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="31" column="1" bodyfile="framework/core/logModule.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a97156546cd2af967b06df5e084164197" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.logModule.logModule::LARGE_SEPERATOR</definition>
+        <argsstring></argsstring>
+        <name>LARGE_SEPERATOR</name>
+        <initializer>=  &quot;==================================================&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="32" column="1" bodyfile="framework/core/logModule.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a75275b611e6b8b806c59a214e0461854" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.logModule.logModule::INDENT_DEFAULT</definition>
+        <argsstring></argsstring>
+        <name>INDENT_DEFAULT</name>
+        <initializer>= &quot;  &quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="33" column="1" bodyfile="framework/core/logModule.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a3343fe4c2dffb9c46d089ebc7d35d451" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.logModule.logModule::indentString</definition>
+        <argsstring></argsstring>
+        <name>indentString</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="34" column="1" bodyfile="framework/core/logModule.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a11748861e846906fa17f96dc81657a39" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::DEBUG</definition>
+        <argsstring></argsstring>
+        <name>DEBUG</name>
+        <initializer>= DEBUG</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="35" column="1" bodyfile="framework/core/logModule.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a3c040e72a3aa3dde67e8381a6d368e41" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::INFO</definition>
+        <argsstring></argsstring>
+        <name>INFO</name>
+        <initializer>= logging.INFO</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="36" column="1" bodyfile="framework/core/logModule.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a7627416aceee732d853eebe5da59be87" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::WARNING</definition>
+        <argsstring></argsstring>
+        <name>WARNING</name>
+        <initializer>= WARNING</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="37" column="1" bodyfile="framework/core/logModule.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1af03b570cb958e34c87863b52df52b566" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::ERROR</definition>
+        <argsstring></argsstring>
+        <name>ERROR</name>
+        <initializer>= ERROR</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="38" column="1" bodyfile="framework/core/logModule.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a1b41a21288b4623c9b03c6ff3e1f40fb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::CRITICAL</definition>
+        <argsstring></argsstring>
+        <name>CRITICAL</name>
+        <initializer>= CRITICAL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="39" column="1" bodyfile="framework/core/logModule.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a5792d28af8093b57e416e98b7bef6e3f" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::STEP</definition>
+        <argsstring></argsstring>
+        <name>STEP</name>
+        <initializer>= INFO+1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="41" column="1" bodyfile="framework/core/logModule.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a9850d0532569372454184de40b118aef" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::STEP_START</definition>
+        <argsstring></argsstring>
+        <name>STEP_START</name>
+        <initializer>= INFO+2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="42" column="1" bodyfile="framework/core/logModule.py" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a42fb3a4d5905ace700ffbaf5b79ccba6" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::TEST_START</definition>
+        <argsstring></argsstring>
+        <name>TEST_START</name>
+        <initializer>= INFO+3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="43" column="1" bodyfile="framework/core/logModule.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a2da05283ef12b63304f0b59141a91e10" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::STEP_RESULT</definition>
+        <argsstring></argsstring>
+        <name>STEP_RESULT</name>
+        <initializer>= INFO+4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="44" column="1" bodyfile="framework/core/logModule.py" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a8db30d79874034d7d93115e00c3abfc4" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::TEST_SUMMARY</definition>
+        <argsstring></argsstring>
+        <name>TEST_SUMMARY</name>
+        <initializer>= INFO+6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="46" column="1" bodyfile="framework/core/logModule.py" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a338d723f963b75a85014a6fb753e66f1" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.logModule.logModule::RESULT</definition>
+        <argsstring></argsstring>
+        <name>RESULT</name>
+        <initializer>=  STEP_RESULT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="47" column="1" bodyfile="framework/core/logModule.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1abb3b9dc3201b12faf1e1183ff45b65f1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="57" column="1" bodyfile="framework/core/logModule.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a42288056daeb32893fc9ddf58a50e89c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::moduleName</definition>
+        <argsstring></argsstring>
+        <name>moduleName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="58" column="1" bodyfile="framework/core/logModule.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a4a672a8aebe7ff7722e0899211e2dd49" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::format</definition>
+        <argsstring></argsstring>
+        <name>format</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="61" column="1" bodyfile="framework/core/logModule.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a0280a7c49dce2bb78dd98e4eff62c1cb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::logConsole</definition>
+        <argsstring></argsstring>
+        <name>logConsole</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="62" column="1" bodyfile="framework/core/logModule.py" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ab141db5c1bbf501def6c23256bbe1b80" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::csvLogger</definition>
+        <argsstring></argsstring>
+        <name>csvLogger</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="66" column="1" bodyfile="framework/core/logModule.py" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1aa430f1632cadbaf11425bd41b267f507" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::stepNum</definition>
+        <argsstring></argsstring>
+        <name>stepNum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="79" column="1" bodyfile="framework/core/logModule.py" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a5efdb3ee54b7170ab60f70379320f652" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::summaryQcID</definition>
+        <argsstring></argsstring>
+        <name>summaryQcID</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="80" column="1" bodyfile="framework/core/logModule.py" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ac4acf3784912d24460e0341e934e77d4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::summaryTestName</definition>
+        <argsstring></argsstring>
+        <name>summaryTestName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="81" column="1" bodyfile="framework/core/logModule.py" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a35855f24e7ebf020280ad52909aa35b6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::summaryTestTotal</definition>
+        <argsstring></argsstring>
+        <name>summaryTestTotal</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="82" column="1" bodyfile="framework/core/logModule.py" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a6917b8143e676f74125c47eec8d23959" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::summaryTestsFailed</definition>
+        <argsstring></argsstring>
+        <name>summaryTestsFailed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="83" column="1" bodyfile="framework/core/logModule.py" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ae843d14f1625a18215b373a799963205" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::summaryTestsPassed</definition>
+        <argsstring></argsstring>
+        <name>summaryTestsPassed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="84" column="1" bodyfile="framework/core/logModule.py" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a15c542ea448bce1126ef7aa7e9a1b972" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::totalStepsFailed</definition>
+        <argsstring></argsstring>
+        <name>totalStepsFailed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="85" column="1" bodyfile="framework/core/logModule.py" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ab74cc4a2faf8f7a5959cf4ae36b178ab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::totalStepsPassed</definition>
+        <argsstring></argsstring>
+        <name>totalStepsPassed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="86" column="1" bodyfile="framework/core/logModule.py" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a0d1bfa69ec3b5ca6989f4ef2a13780b9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::totalSteps</definition>
+        <argsstring></argsstring>
+        <name>totalSteps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="87" column="1" bodyfile="framework/core/logModule.py" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1af76a66dc6aa192affd16069586dc6cb2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::testDuration</definition>
+        <argsstring></argsstring>
+        <name>testDuration</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="88" column="1" bodyfile="framework/core/logModule.py" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1aca4c996bd2a141ce16c0045ab8275ade" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::testCountActive</definition>
+        <argsstring></argsstring>
+        <name>testCountActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="90" column="1" bodyfile="framework/core/logModule.py" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1af452bf88c2e82c8ab711a3f7b42684a8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::path</definition>
+        <argsstring></argsstring>
+        <name>path</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="91" column="1" bodyfile="framework/core/logModule.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ab1f628660f78f515cd556e894f191a44" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::logFile</definition>
+        <argsstring></argsstring>
+        <name>logFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="92" column="1" bodyfile="framework/core/logModule.py" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a44697a46132b80777c5bf39b619ae585" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::csvLogFile</definition>
+        <argsstring></argsstring>
+        <name>csvLogFile</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="93" column="1" bodyfile="framework/core/logModule.py" bodystart="93" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1aa2f25f36d01c3efc66a18489348cc303" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::logPath</definition>
+        <argsstring></argsstring>
+        <name>logPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="103" column="1" bodyfile="framework/core/logModule.py" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a8c0f82efb54f44418f990d3aaeca798a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::indentString</definition>
+        <argsstring></argsstring>
+        <name>indentString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="171" column="1" bodyfile="framework/core/logModule.py" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a01c87976738de6652ae43c99f59793d4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::testName</definition>
+        <argsstring></argsstring>
+        <name>testName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="188" column="1" bodyfile="framework/core/logModule.py" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a9f8013cbcbffbd2852e73be075153e99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::qcId</definition>
+        <argsstring></argsstring>
+        <name>qcId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="189" column="1" bodyfile="framework/core/logModule.py" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a3ab1a0a7bc7155f5f4c6051bc0642e3f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::loopCount</definition>
+        <argsstring></argsstring>
+        <name>loopCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="190" column="1" bodyfile="framework/core/logModule.py" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1aa2a8340682a72d2a236833f621005145" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::maxRunTime</definition>
+        <argsstring></argsstring>
+        <name>maxRunTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="191" column="1" bodyfile="framework/core/logModule.py" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1af14150d04c69786a9366789ce2079180" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::failedSteps</definition>
+        <argsstring></argsstring>
+        <name>failedSteps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="193" column="1" bodyfile="framework/core/logModule.py" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a5547f56e8bf629863012a874d95ecbfb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::start_time</definition>
+        <argsstring></argsstring>
+        <name>start_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="207" column="1" bodyfile="framework/core/logModule.py" bodystart="207" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a83fc55feeddd0528e238b1088ca2ff38" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::end_time</definition>
+        <argsstring></argsstring>
+        <name>end_time</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="208" column="1" bodyfile="framework/core/logModule.py" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a275545281885ff8ec9f314130ca7c829" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::timeFormat</definition>
+        <argsstring></argsstring>
+        <name>timeFormat</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="210" column="1" bodyfile="framework/core/logModule.py" bodystart="210" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ad281ff1861eab32217e2e01df98021ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::testStartTime</definition>
+        <argsstring></argsstring>
+        <name>testStartTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="219" column="1" bodyfile="framework/core/logModule.py" bodystart="219" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1a0688a06bbe566e11abe69def1bd2106c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::testActive</definition>
+        <argsstring></argsstring>
+        <name>testActive</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="220" column="1" bodyfile="framework/core/logModule.py" bodystart="220" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1logModule_1_1logModule_1ad4b8034914c693610f2f4c290f673e2f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.logModule.logModule::loopStartTime</definition>
+        <argsstring></argsstring>
+        <name>loopStartTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="233" column="1" bodyfile="framework/core/logModule.py" bodystart="233" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1ac74609124390604d692a5e8bc5ba0c07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.__init__</definition>
+        <argsstring>(self, moduleName, level=INFO)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>moduleName</type>
+          <defname>moduleName</defname>
+        </param>
+        <param>
+          <type>level</type>
+          <defname>level</defname>
+          <defval>INFO</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[init for the log module]
+
+Args:
+    moduleName ([string]): [name of hte module]
+    level ([level], optional): [DEBUG, INFO, STEP, STEP_START, STEP_RESULT, WARNING, ERROR, CRITICAL, FATAL]. Defaults to INFO.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="49" column="1" bodyfile="framework/core/logModule.py" bodystart="49" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1acbc0d65066015898f93f9cce779c3f7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.__del__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__del__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="95" column="1" bodyfile="framework/core/logModule.py" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a20ceade44293b38344111e9de87a09bb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.setFilename</definition>
+        <argsstring>(self, logPath, logFileName)</argsstring>
+        <name>setFilename</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logPath</type>
+          <defname>logPath</defname>
+        </param>
+        <param>
+          <type>logFileName</type>
+          <defname>logFileName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="99" column="1" bodyfile="framework/core/logModule.py" bodystart="99" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1afc46e66ae59b051456887e02fd941f5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.fatal</definition>
+        <argsstring>(self, message, *args, **kws)</argsstring>
+        <name>fatal</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kws</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="114" column="1" bodyfile="framework/core/logModule.py" bodystart="114" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a72f95df4bd3edf58dc7cd081cb1cd730" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.warn</definition>
+        <argsstring>(self, message, extra=None)</argsstring>
+        <name>warn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>extra</type>
+          <defname>extra</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="118" column="1" bodyfile="framework/core/logModule.py" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1aca4c2d053845f4fcc5c1f1dfcb52d307" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.error</definition>
+        <argsstring>(self, message, extra=None)</argsstring>
+        <name>error</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>extra</type>
+          <defname>extra</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="121" column="1" bodyfile="framework/core/logModule.py" bodystart="121" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a68ef33c732bfe6712a8a589a69495984" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.critical</definition>
+        <argsstring>(self, message, extra=None)</argsstring>
+        <name>critical</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>extra</type>
+          <defname>extra</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="124" column="1" bodyfile="framework/core/logModule.py" bodystart="124" bodyend="126"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a870ad83d26fa4332c09fe54f58570a7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.debug</definition>
+        <argsstring>(self, message, extra=None)</argsstring>
+        <name>debug</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>extra</type>
+          <defname>extra</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="127" column="1" bodyfile="framework/core/logModule.py" bodystart="127" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a8faacf7d2202b7589ce461ae7192a1ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.info</definition>
+        <argsstring>(self, message, extra=None)</argsstring>
+        <name>info</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>extra</type>
+          <defname>extra</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="130" column="1" bodyfile="framework/core/logModule.py" bodystart="130" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a40279111e0f32c80d3c2574a1a36803e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.stepMessage</definition>
+        <argsstring>(self, message, *args, **kws)</argsstring>
+        <name>stepMessage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kws</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="133" column="1" bodyfile="framework/core/logModule.py" bodystart="133" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1ab892caa8d22335b19dcdc67e341036a0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.stepStartMessage</definition>
+        <argsstring>(self, message, *args, **kws)</argsstring>
+        <name>stepStartMessage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kws</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="136" column="1" bodyfile="framework/core/logModule.py" bodystart="136" bodyend="138"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a3e53c99223b3b926f99ff7ba53aded2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.stepResultMessage</definition>
+        <argsstring>(self, message, *args, **kws)</argsstring>
+        <name>stepResultMessage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kws</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="139" column="1" bodyfile="framework/core/logModule.py" bodystart="139" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a0718a4e7c95fc97398214e4be1382d4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.testStartMessage</definition>
+        <argsstring>(self, message, *args, **kws)</argsstring>
+        <name>testStartMessage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kws</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="142" column="1" bodyfile="framework/core/logModule.py" bodystart="142" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1aae208989c2f2fa3024f066731df00797" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.testResultMessage</definition>
+        <argsstring>(self, message, *args, **kws)</argsstring>
+        <name>testResultMessage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kws</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="145" column="1" bodyfile="framework/core/logModule.py" bodystart="145" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1ae6b7b4ce074fec5fa50f5fd69f419b21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.testSummaryMessage</definition>
+        <argsstring>(self, message, *args, **kws)</argsstring>
+        <name>testSummaryMessage</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>*</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kws</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="148" column="1" bodyfile="framework/core/logModule.py" bodystart="148" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1ab8944248dec5e912a17d2169ec7083fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.setLevel</definition>
+        <argsstring>(self, level)</argsstring>
+        <name>setLevel</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>level</type>
+          <defname>level</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="151" column="1" bodyfile="framework/core/logModule.py" bodystart="151" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1ae23025dc0046db97b7d0610b2d374814" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.message</definition>
+        <argsstring>(self, level, output, extra=None)</argsstring>
+        <name>message</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>level</type>
+          <defname>level</defname>
+        </param>
+        <param>
+          <type>output</type>
+          <defname>output</defname>
+        </param>
+        <param>
+          <type>extra</type>
+          <defname>extra</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="154" column="1" bodyfile="framework/core/logModule.py" bodystart="154" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a3eef4dc1c9a3bad4cf2071aa93323fcd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.indent</definition>
+        <argsstring>(self, string=INDENT_DEFAULT)</argsstring>
+        <name>indent</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+          <defval>INDENT_DEFAULT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>push an indent prefix
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="167" column="1" bodyfile="framework/core/logModule.py" bodystart="167" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a7ca0dbb0a0a5a47ca7dc235288dd44a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.outdent</definition>
+        <argsstring>(self, string=INDENT_DEFAULT)</argsstring>
+        <name>outdent</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>string</type>
+          <defname>string</defname>
+          <defval>INDENT_DEFAULT</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>pop an indent
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="175" column="1" bodyfile="framework/core/logModule.py" bodystart="175" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a9b053ff9ce2057995582c0db909ee211" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.testStart</definition>
+        <argsstring>(self, testName, qcId, loops=1, maxRunTime=(60 *24))</argsstring>
+        <name>testStart</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+        </param>
+        <param>
+          <type>qcId</type>
+          <defname>qcId</defname>
+        </param>
+        <param>
+          <type>loops</type>
+          <defname>loops</defname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>maxRunTime</type>
+          <defname>maxRunTime</defname>
+          <defval>(60 *24)</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="187" column="1" bodyfile="framework/core/logModule.py" bodystart="187" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1ab0e8e91652d7f9b092860ffc69faab86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.testLoop</definition>
+        <argsstring>(self, loopIndex)</argsstring>
+        <name>testLoop</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>loopIndex</type>
+          <defname>loopIndex</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="223" column="1" bodyfile="framework/core/logModule.py" bodystart="223" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a364bc68c6a948094f3d359e010571b9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.testLoopComplete</definition>
+        <argsstring>(self, loopIndex)</argsstring>
+        <name>testLoopComplete</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>loopIndex</type>
+          <defname>loopIndex</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="227" column="1" bodyfile="framework/core/logModule.py" bodystart="227" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a70b0771a0570f3fce796adf85fc67120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.testResult</definition>
+        <argsstring>(self, message)</argsstring>
+        <name>testResult</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="235" column="1" bodyfile="framework/core/logModule.py" bodystart="235" bodyend="269"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a95f460ac1d5a804f0b16050e83184906" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.stepStart</definition>
+        <argsstring>(self, message, expected=None)</argsstring>
+        <name>stepStart</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>expected</type>
+          <defname>expected</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="270" column="1" bodyfile="framework/core/logModule.py" bodystart="270" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a9737bd8e9487df04a4d345cb44a0941c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.step</definition>
+        <argsstring>(self, message, showStepNumber=True)</argsstring>
+        <name>step</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <param>
+          <type>showStepNumber</type>
+          <defname>showStepNumber</defname>
+          <defval>True</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="280" column="1" bodyfile="framework/core/logModule.py" bodystart="280" bodyend="285"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1logModule_1_1logModule_1a80c41eece0b43e70d34834fe0fa93ff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.logModule.logModule.stepResult</definition>
+        <argsstring>(self, result, message)</argsstring>
+        <name>stepResult</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>result</type>
+          <defname>result</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/logModule.py" line="286" column="1" bodyfile="framework/core/logModule.py" bodystart="286" bodyend="299"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/logModule.py" line="26" column="1" bodyfile="framework/core/logModule.py" bodystart="26" bodyend="299"/>
+    <listofallmembers>
+      <member refid="classcore_1_1logModule_1_1logModule_1acbc0d65066015898f93f9cce779c3f7c" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>__del__</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ac74609124390604d692a5e8bc5ba0c07" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>__init__</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a1b41a21288b4623c9b03c6ff3e1f40fb" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>CRITICAL</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a68ef33c732bfe6712a8a589a69495984" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>critical</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a44697a46132b80777c5bf39b619ae585" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>csvLogFile</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ab141db5c1bbf501def6c23256bbe1b80" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>csvLogger</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a11748861e846906fa17f96dc81657a39" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>DEBUG</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a870ad83d26fa4332c09fe54f58570a7e" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>debug</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a83fc55feeddd0528e238b1088ca2ff38" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>end_time</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1af03b570cb958e34c87863b52df52b566" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>ERROR</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1aca4c2d053845f4fcc5c1f1dfcb52d307" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>error</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1af14150d04c69786a9366789ce2079180" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>failedSteps</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a810d69ec8f91be423ede2d3247ac5ad6" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>FATAL</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1afc46e66ae59b051456887e02fd941f5f" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>fatal</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a4a672a8aebe7ff7722e0899211e2dd49" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>format</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a3eef4dc1c9a3bad4cf2071aa93323fcd" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>indent</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a75275b611e6b8b806c59a214e0461854" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>INDENT_DEFAULT</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a3343fe4c2dffb9c46d089ebc7d35d451" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>indentString</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a8c0f82efb54f44418f990d3aaeca798a" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>indentString</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a3c040e72a3aa3dde67e8381a6d368e41" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>INFO</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a8faacf7d2202b7589ce461ae7192a1ce" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>info</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a97156546cd2af967b06df5e084164197" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>LARGE_SEPERATOR</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1abb3b9dc3201b12faf1e1183ff45b65f1" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>log</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a0280a7c49dce2bb78dd98e4eff62c1cb" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>logConsole</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ab1f628660f78f515cd556e894f191a44" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>logFile</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1aa2f25f36d01c3efc66a18489348cc303" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>logPath</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a3ab1a0a7bc7155f5f4c6051bc0642e3f" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>loopCount</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ad4b8034914c693610f2f4c290f673e2f" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>loopStartTime</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1aa2a8340682a72d2a236833f621005145" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>maxRunTime</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ae23025dc0046db97b7d0610b2d374814" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>message</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a1c0fba67da1634a1c283cbb320c97f33" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>moduleName</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a42288056daeb32893fc9ddf58a50e89c" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>moduleName</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a7ca0dbb0a0a5a47ca7dc235288dd44a4" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>outdent</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1af452bf88c2e82c8ab711a3f7b42684a8" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>path</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a9f8013cbcbffbd2852e73be075153e99" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>qcId</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a338d723f963b75a85014a6fb753e66f1" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>RESULT</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1acc3615f4873f1bc84a15b29eb525dfcf" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>SEPERATOR</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a065e7c0614303971fe7b39b4c882b2ce" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>SEPERATOR_STAR</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a20ceade44293b38344111e9de87a09bb" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>setFilename</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ab8944248dec5e912a17d2169ec7083fd" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>setLevel</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a5547f56e8bf629863012a874d95ecbfb" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>start_time</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a5792d28af8093b57e416e98b7bef6e3f" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>STEP</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a9737bd8e9487df04a4d345cb44a0941c" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>step</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a2da05283ef12b63304f0b59141a91e10" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>STEP_RESULT</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a9850d0532569372454184de40b118aef" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>STEP_START</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a40279111e0f32c80d3c2574a1a36803e" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>stepMessage</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1aa430f1632cadbaf11425bd41b267f507" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>stepNum</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a80c41eece0b43e70d34834fe0fa93ff3" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>stepResult</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a3e53c99223b3b926f99ff7ba53aded2c" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>stepResultMessage</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a95f460ac1d5a804f0b16050e83184906" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>stepStart</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ab892caa8d22335b19dcdc67e341036a0" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>stepStartMessage</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a5efdb3ee54b7170ab60f70379320f652" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>summaryQcID</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ac4acf3784912d24460e0341e934e77d4" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>summaryTestName</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a6917b8143e676f74125c47eec8d23959" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>summaryTestsFailed</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ae843d14f1625a18215b373a799963205" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>summaryTestsPassed</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a35855f24e7ebf020280ad52909aa35b6" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>summaryTestTotal</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ab51c7c9bb957350562f5bf191c881661" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>TEST_RESULT</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a42fb3a4d5905ace700ffbaf5b79ccba6" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>TEST_START</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a8db30d79874034d7d93115e00c3abfc4" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>TEST_SUMMARY</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a0688a06bbe566e11abe69def1bd2106c" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testActive</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1aca4c996bd2a141ce16c0045ab8275ade" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testCountActive</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1af76a66dc6aa192affd16069586dc6cb2" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testDuration</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ab0e8e91652d7f9b092860ffc69faab86" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testLoop</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a364bc68c6a948094f3d359e010571b9d" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testLoopComplete</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a01c87976738de6652ae43c99f59793d4" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testName</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a70b0771a0570f3fce796adf85fc67120" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testResult</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1aae208989c2f2fa3024f066731df00797" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testResultMessage</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a9b053ff9ce2057995582c0db909ee211" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testStart</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a0718a4e7c95fc97398214e4be1382d4d" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testStartMessage</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ad281ff1861eab32217e2e01df98021ba" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testStartTime</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ae6b7b4ce074fec5fa50f5fd69f419b21" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>testSummaryMessage</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a275545281885ff8ec9f314130ca7c829" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>timeFormat</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a0d1bfa69ec3b5ca6989f4ef2a13780b9" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>totalSteps</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a15c542ea448bce1126ef7aa7e9a1b972" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>totalStepsFailed</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1ab74cc4a2faf8f7a5959cf4ae36b178ab" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>totalStepsPassed</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a72f95df4bd3edf58dc7cd081cb1cd730" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>warn</name></member>
+      <member refid="classcore_1_1logModule_1_1logModule_1a7627416aceee732d853eebe5da59be87" prot="public" virt="non-virtual"><scope>core::logModule::logModule</scope><name>WARNING</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

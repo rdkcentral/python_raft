@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1deviceManager_1_1consoleClass" kind="class" language="Python" prot="public">
+    <compoundname>core::deviceManager::consoleClass</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1consoleClass_1a30b01851fe2c1fc3a955bcb7a2b689af" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.consoleClass::session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <initializer>=  None</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="28" column="1" bodyfile="framework/core/deviceManager.py" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1consoleClass_1a94a07458bcaf06f80bdf29058beb5322" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.consoleClass::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="45" column="1" bodyfile="framework/core/deviceManager.py" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1deviceManager_1_1consoleClass_1ab4277225cef16c36dd7dfe744581b660" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.deviceManager.consoleClass.__init__</definition>
+        <argsstring>(self, logModule log, str logPath, dict configElements)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>logPath</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>configElements</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>createConsole instance based on the params
+
+if a console is already active for the same device, it will be returned
+
+Args:
+    log (logModule): console name
+    logPath (str): path to write workspace files
+    configElements (dict): dictionary for configuration
+
+Returns:
+    class: console class
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="30" column="1" bodyfile="framework/core/deviceManager.py" bodystart="30" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/deviceManager.py" line="26" column="1" bodyfile="framework/core/deviceManager.py" bodystart="26" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classcore_1_1deviceManager_1_1consoleClass_1ab4277225cef16c36dd7dfe744581b660" prot="public" virt="non-virtual"><scope>core::deviceManager::consoleClass</scope><name>__init__</name></member>
+      <member refid="classcore_1_1deviceManager_1_1consoleClass_1a30b01851fe2c1fc3a955bcb7a2b689af" prot="public" virt="non-virtual"><scope>core::deviceManager::consoleClass</scope><name>session</name></member>
+      <member refid="classcore_1_1deviceManager_1_1consoleClass_1a94a07458bcaf06f80bdf29058beb5322" prot="public" virt="non-virtual"><scope>core::deviceManager::consoleClass</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

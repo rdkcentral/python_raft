@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1outboundClient" kind="namespace" language="Python">
+    <compoundname>core::outboundClient</compoundname>
+    <innerclass refid="classcore_1_1outboundClient_1_1outboundClientClass" prot="public">core::outboundClient::outboundClientClass</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/outboundClient.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

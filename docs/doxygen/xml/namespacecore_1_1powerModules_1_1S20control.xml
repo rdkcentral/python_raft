@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1powerModules_1_1S20control" kind="namespace" language="Python">
+    <compoundname>core::powerModules::S20control</compoundname>
+    <innerclass refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20" prot="public">core::powerModules::S20control::OrviboS20</innerclass>
+    <innerclass refid="classcore_1_1powerModules_1_1S20control_1_1powerOrviboS20" prot="public">core::powerModules::S20control::powerOrviboS20</innerclass>
+    <innerclass refid="classcore_1_1powerModules_1_1S20control_1_1UnknownPacket" prot="public">core::powerModules::S20control::UnknownPacket</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="S20control_8py_1ac784c2223f3eae32daa7e003d18c492e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.usage</definition>
+        <argsstring>()</argsstring>
+        <name>usage</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="38" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="38" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="S20control_8py_1ae72beb4d26dcb4ccd36cc3659ed59d8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="326" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="326" bodyend="435"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/S20control.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

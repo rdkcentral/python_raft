@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceframework_1_1remoteController__test" kind="namespace" language="Python">
+    <compoundname>framework::remoteController_test</compoundname>
+    <innerclass refid="classframework_1_1remoteController__test_1_1demoClass" prot="public">framework::remoteController_test::demoClass</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="remoteController__test_8py_1a23d5924d78e30e49e39ae57183a13904" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::remoteController_test.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/remoteController_test.py" line="6" column="1" bodyfile="unitTests/framework/remoteController_test.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="remoteController__test_8py_1a341550df4eb16f7109d30aadb780fd20" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::remoteController_test.demo</definition>
+        <argsstring></argsstring>
+        <name>demo</name>
+        <initializer>=  <ref refid="classframework_1_1remoteController__test_1_1demoClass" kindref="compound">demoClass</ref>( testName = &quot;remoteDemo&quot;, level=logModule.INFO )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/remoteController_test.py" line="18" column="1" bodyfile="unitTests/framework/remoteController_test.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/remoteController_test.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

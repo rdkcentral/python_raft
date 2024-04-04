@@ -1,0 +1,291 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::apcAos::powerApcAos</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1af7cbf97e927941c807bfa2f4ac9654e9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apcAos.powerApcAos::hostName</definition>
+        <argsstring></argsstring>
+        <name>hostName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="29" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a25c252125a05cd7c7c596434d8c561d5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apcAos.powerApcAos::userName</definition>
+        <argsstring></argsstring>
+        <name>userName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="30" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1ad502bde3e670948a47a4722015822ec0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apcAos.powerApcAos::password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="31" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a9d7d9a38eedbd40b216cce80a4ff4adf" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apcAos.powerApcAos::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="32" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1afeb43a137dfe6f496eb50dc7ded6cb1a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apcAos.powerApcAos::outletNumber</definition>
+        <argsstring></argsstring>
+        <name>outletNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="33" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1aba9bbc4e999d80fe5331e9fb7ed569a7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apcAos.powerApcAos::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="34" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1ad5a210ca5487fd352ec4cbc477daaf87" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apcAos.powerApcAos::telnet</definition>
+        <argsstring></argsstring>
+        <name>telnet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="35" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a110ad8db8c3b36c1670f5d7dc8c84aa8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.__init__</definition>
+        <argsstring>(self, log, hostName, userName, password, port=23, outletNumber=1)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>hostName</type>
+          <defname>hostName</defname>
+        </param>
+        <param>
+          <type>userName</type>
+          <defname>userName</defname>
+        </param>
+        <param>
+          <type>password</type>
+          <defname>password</defname>
+        </param>
+        <param>
+          <type>port</type>
+          <defname>port</defname>
+          <defval>23</defval>
+        </param>
+        <param>
+          <type>outletNumber</type>
+          <defname>outletNumber</defname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="28" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="28" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a2ed19ef418f993a85f1dae65530c1982" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.open</definition>
+        <argsstring>(self)</argsstring>
+        <name>open</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="37" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="37" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a2c7fd3a80d35556e7cadc1b21a8b9292" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.close</definition>
+        <argsstring>(self)</argsstring>
+        <name>close</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="42" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a7af3139889c67b82d650646782ef8d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.waitForPrompt</definition>
+        <argsstring>(self)</argsstring>
+        <name>waitForPrompt</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="45" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a7c9cda1d91345f4c4e187c070814f464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.sendCommand</definition>
+        <argsstring>(self, cmd)</argsstring>
+        <name>sendCommand</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cmd</type>
+          <defname>cmd</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="49" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="49" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1ad62d3fd07a7f51f98d00dcdbd390362b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="55" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="55" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a3b3c65d7020a625b0f65896b3df44e95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="60" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="60" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a95939527757804472abc67df605982cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apcAos.powerApcAos.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apcAos.py" line="65" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="65" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Power Control module for the APC power switches
+</verbatim> </para>
+    </detaileddescription>
+    <location file="framework/core/powerModules/apcAos.py" line="23" column="1" bodyfile="framework/core/powerModules/apcAos.py" bodystart="23" bodyend="74"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a110ad8db8c3b36c1670f5d7dc8c84aa8" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a2c7fd3a80d35556e7cadc1b21a8b9292" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>close</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1af7cbf97e927941c807bfa2f4ac9654e9" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>hostName</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1aba9bbc4e999d80fe5331e9fb7ed569a7" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>log</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a2ed19ef418f993a85f1dae65530c1982" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>open</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1afeb43a137dfe6f496eb50dc7ded6cb1a" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>outletNumber</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1ad502bde3e670948a47a4722015822ec0" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>password</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a9d7d9a38eedbd40b216cce80a4ff4adf" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>port</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a3b3c65d7020a625b0f65896b3df44e95" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1ad62d3fd07a7f51f98d00dcdbd390362b" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a95939527757804472abc67df605982cd" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>reboot</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a7c9cda1d91345f4c4e187c070814f464" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>sendCommand</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1ad5a210ca5487fd352ec4cbc477daaf87" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>telnet</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a25c252125a05cd7c7c596434d8c561d5" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>userName</name></member>
+      <member refid="classcore_1_1powerModules_1_1apcAos_1_1powerApcAos_1a7af3139889c67b82d650646782ef8d33" prot="public" virt="non-virtual"><scope>core::powerModules::apcAos::powerApcAos</scope><name>waitForPrompt</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

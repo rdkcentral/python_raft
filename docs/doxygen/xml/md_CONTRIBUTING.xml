@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md_CONTRIBUTING" kind="page">
+    <compoundname>md_CONTRIBUTING</compoundname>
+    <title>Contributing</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="md_CONTRIBUTING_1autotoc_md1">
+<title>First-Time Contributors</title>
+<para>First-time users are requested to agree to the <ulink url="https://wiki.rdkcentral.com/signup.action">license</ulink>.</para>
+</sect1>
+<sect1 id="md_CONTRIBUTING_1autotoc_md2">
+<title>Contribution Workflow</title>
+<para>The following flow is expected for all code submissons:<itemizedlist>
+<listitem><para>Create a branch with a name following the guidelines: <computeroutput>gh(x)_(synopsis)</computeroutput><itemizedlist>
+<listitem><para>where x is the ticket number</para>
+</listitem><listitem><para>where synopsis is a short synopsis for the reason for the branch.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Create a pull request <ulink url="https://github.com/rdkcentral/python_raft/compare">https://github.com/rdkcentral/python_raft/compare</ulink> when the code changes are ready for review.</para>
+</listitem><listitem><para>The team will review, and if accepted your changes will be merged to the mainline.</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>All changes must be submitted for review with a corresponding issue, <ulink url="https://github.com/rdkcentral/python_raft/issues">python_raft/issues</ulink>.</bold></para>
+<para><emphasis>If an issue does not exist for the change you wish to contribute, please create one with a detailed description of the reason for your change.</emphasis> </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

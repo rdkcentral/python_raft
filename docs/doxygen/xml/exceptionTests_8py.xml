@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="exceptionTests_8py" kind="file" language="Python">
+    <compoundname>exceptionTests.py</compoundname>
+    <innerclass refid="classframework_1_1exceptionTests_1_1framework__test1" prot="public">framework::exceptionTests::framework_test1</innerclass>
+    <innernamespace refid="namespaceframework_1_1exceptionTests">framework::exceptionTests</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!<sp/>/bin/python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>os</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>sys</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#<sp/>Add<sp/>the<sp/>framework<sp/>path<sp/>to<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal">dir_path<sp/>=<sp/>os.path.dirname(os.path.realpath(__file__))</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">sys.path.append(dir_path+</highlight><highlight class="stringliteral">&quot;/../../&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>framework.core.testControl<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>testController</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>framework.core.logModule<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>logModule</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="classframework_1_1exceptionTests_1_1framework__test1" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classframework_1_1exceptionTests_1_1framework__test1" kindref="compound">framework_test1</ref>(testController):</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">__init__(self,<sp/>log=None,<sp/>exitOnError=False):</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classframework_1_1exceptionTests_1_1framework__test1_1a434021c6149f5bc6548d68520d59978c" kindref="member">exitOnError</ref><sp/>=<sp/>exitOnError</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super().__init__(</highlight><highlight class="stringliteral">&quot;framework_test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">,<sp/>log=log)</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.run()</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">waitForBoot(self):</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.log.step(</highlight><highlight class="stringliteral">&quot;waitForBoot<sp/>Removed&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">testFunction(self):</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classframework_1_1exceptionTests_1_1framework__test1_1a434021c6149f5bc6548d68520d59978c" kindref="member">exitOnError</ref><sp/>==<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.log.stepStart(</highlight><highlight class="stringliteral">&quot;UnitTest<sp/>2<sp/>Started&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>test<sp/>will<sp/>fail&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">raise</highlight><highlight class="normal"><sp/>Exception(</highlight><highlight class="stringliteral">&quot;I<sp/>want<sp/>to<sp/>raise<sp/>an<sp/>exception&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.utils.wait(<sp/>1<sp/>)</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.log.stepStart(</highlight><highlight class="stringliteral">&quot;UnitTest<sp/>2<sp/>Started&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;This<sp/>test<sp/>will<sp/>pass&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.log.step(</highlight><highlight class="stringliteral">&quot;unit_test2<sp/>Completed.&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.log.stepResult(<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Happy<sp/>with<sp/>this<sp/>stage&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.utils.wait(<sp/>2<sp/>)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal">testExceptionCleanUp(self):</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Although<sp/>this<sp/>function<sp/>is<sp/>available,<sp/>each<sp/>test<sp/>should<sp/>setup<sp/>it&apos;s<sp/>requirements<sp/>for<sp/>operation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>But<sp/>if<sp/>a<sp/>test<sp/>would<sp/>do<sp/>something<sp/>out<sp/>of<sp/>the<sp/>ordinary,<sp/>e.g.<sp/>erase<sp/>some<sp/>part<sp/>of<sp/>the<sp/>serialsation<sp/>data,<sp/>or<sp/>change<sp/>the<sp/>retry<sp/>count<sp/>to<sp/>large<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Then<sp/>in<sp/>this<sp/>case<sp/>you<sp/>would<sp/>use<sp/>this<sp/>function<sp/>to<sp/>reprogram<sp/>the<sp/>defaults,<sp/>if<sp/>an<sp/>exception<sp/>occurs.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>The<sp/>descrive<sp/>test<sp/>should<sp/>already<sp/>be<sp/>cleaning<sp/>up,<sp/>after<sp/>it&apos;s<sp/>passed<sp/>without<sp/>an<sp/>excpetion</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.log.warn(</highlight><highlight class="stringliteral">&quot;testExceptionCleanUp()-&gt;<sp/>Only<sp/>to<sp/>be<sp/>used<sp/>for<sp/>major<sp/>test<sp/>recovery&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#quit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>__name__<sp/>==<sp/></highlight><highlight class="stringliteral">&apos;__main__&apos;</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Run<sp/>a<sp/>group<sp/>test,<sp/>this<sp/>will<sp/>cause<sp/>all<sp/>the<sp/>tests<sp/>to<sp/>be<sp/>grouped<sp/>under<sp/>the<sp/>same<sp/>parent</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#├──<sp/>framework_test-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#│  <sp/>├──<sp/>test-1.log</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#│  <sp/>├──<sp/>test-2.log</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#│  <sp/>└──<sp/>test-3.log</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#└──<sp/>test_summary.log</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>summary<sp/>=<sp/>logModule(</highlight><highlight class="stringliteral">&quot;GroupTest1&quot;</highlight><highlight class="normal">,<sp/>level=logModule.INFO)</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>summary.testStart(</highlight><highlight class="stringliteral">&quot;GroupTest1&quot;</highlight><highlight class="normal">,<sp/>qcId<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;1234&quot;</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classframework_1_1exceptionTests_1_1framework__test1" kindref="compound">framework_test1</ref>(summary,<sp/>exitOnError=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classframework_1_1exceptionTests_1_1framework__test1" kindref="compound">framework_test1</ref>(summary)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classframework_1_1exceptionTests_1_1framework__test1" kindref="compound">framework_test1</ref>(summary,<sp/>exitOnError=</highlight><highlight class="keyword">True</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>summary.testResult(</highlight><highlight class="stringliteral">&quot;GroupTest1<sp/>Completed&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#<sp/>Perform<sp/>a<sp/>test<sp/>on<sp/>a<sp/>single<sp/>run<sp/>on<sp/>it&apos;s<sp/>own,<sp/>this<sp/>will<sp/>cause<sp/>a<sp/>new<sp/>root<sp/>directory</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#└──<sp/>framework_test-1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#├──<sp/>test-0.log</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">#└──<sp/>test_summary.log</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classframework_1_1exceptionTests_1_1framework__test1" kindref="compound">framework_test1</ref>()</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="unitTests/framework/exceptionTests.py"/>
+  </compounddef>
+</doxygen>

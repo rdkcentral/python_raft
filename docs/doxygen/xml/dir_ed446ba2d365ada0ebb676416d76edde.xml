@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_ed446ba2d365ada0ebb676416d76edde" kind="dir">
+    <compoundname>framework/core/commandModules</compoundname>
+    <innerfile refid="framework_2core_2commandModules_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="consoleInterface_8py">consoleInterface.py</innerfile>
+    <innerfile refid="serialClass_8py">serialClass.py</innerfile>
+    <innerfile refid="sshConsole_8py">sshConsole.py</innerfile>
+    <innerfile refid="telnetClass_8py">telnetClass.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/commandModules/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceframework_1_1powerSwitch__tests" kind="namespace" language="Python">
+    <compoundname>framework::powerSwitch_tests</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a2b9fee900bf1233fe8157cf76e523cc7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="6" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a9b350c103c0cf878dde55c920479f11f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <initializer>=  logModule(&quot;powerSwitchTest&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="18" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1ade97bca1fa4e66ca526257cf0cc3ac4d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.utils</definition>
+        <argsstring></argsstring>
+        <name>utils</name>
+        <initializer>=  utilities( log )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="21" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a55e1c5927f7a3e4a525d4b06054823dc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <initializer>=  decodeParams(log)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="23" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a32a2d61f0af21067f2d1866b57419f6a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.rackControl</definition>
+        <argsstring></argsstring>
+        <name>rackControl</name>
+        <initializer>=  rackController( config.rackConfig )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="24" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a4f238f486c9dd7e4800723ec9c4f4e00" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.rack</definition>
+        <argsstring></argsstring>
+        <name>rack</name>
+        <initializer>=  rackControl.getRackByIndex( 0 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="27" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a4e0599d37ff96cc80fa5724632c6e86f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.slot</definition>
+        <argsstring></argsstring>
+        <name>slot</name>
+        <initializer>=  rack.getSlot(config.args.slotNumber )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="29" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a2e50a333eb52411a2de99e3df6e8765b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.devices</definition>
+        <argsstring></argsstring>
+        <name>devices</name>
+        <initializer>=  deviceManager( slot.config.get(&quot;devices&quot;), log, &quot;./logs&quot; )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="33" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1aa97ae23720f1609a2990fe6090c7fbd1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.dut</definition>
+        <argsstring></argsstring>
+        <name>dut</name>
+        <initializer>=  devices.getDevice(&quot;dut&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="34" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="powerSwitch__tests_8py_1a456537000d934608d7ea5083a6c670d5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::powerSwitch_tests.power</definition>
+        <argsstring></argsstring>
+        <name>power</name>
+        <initializer>=  dut.powerControl</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/powerSwitch_tests.py" line="35" column="1" bodyfile="unitTests/framework/powerSwitch_tests.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/powerSwitch_tests.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

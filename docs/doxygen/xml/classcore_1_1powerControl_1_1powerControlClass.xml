@@ -1,0 +1,248 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerControl_1_1powerControlClass" kind="class" language="Python" prot="public">
+    <compoundname>core::powerControl::powerControlClass</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1a0d6c0f742d901a6ed7ef04af151a201f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="51" column="1" bodyfile="framework/core/powerControl.py" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1a9bb3678bee317f22d6c1675439b6474a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::utils</definition>
+        <argsstring></argsstring>
+        <name>utils</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="52" column="1" bodyfile="framework/core/powerControl.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1a4c10d430f3de5e34358e407be0cbec68" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::ip</definition>
+        <argsstring></argsstring>
+        <name>ip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="53" column="1" bodyfile="framework/core/powerControl.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1ab166ec98ce176cd7e27f67c412205d05" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="54" column="1" bodyfile="framework/core/powerControl.py" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1aa338e1dcab02121a21b42092524ebb7f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::retryCount</definition>
+        <argsstring></argsstring>
+        <name>retryCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="57" column="1" bodyfile="framework/core/powerControl.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1aac150d6829ce80e1925e6d4cb3137a29" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::retryDelay</definition>
+        <argsstring></argsstring>
+        <name>retryDelay</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="58" column="1" bodyfile="framework/core/powerControl.py" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1a2ede2c90c9904b6dbb5a639eed8e7e40" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::powerOnState</definition>
+        <argsstring></argsstring>
+        <name>powerOnState</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="61" column="1" bodyfile="framework/core/powerControl.py" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerControl_1_1powerControlClass_1a43ce290a5f30d3324df22827ede1f15b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerControl.powerControlClass::powerSwitch</definition>
+        <argsstring></argsstring>
+        <name>powerSwitch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="64" column="1" bodyfile="framework/core/powerControl.py" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerControl_1_1powerControlClass_1aae94eb671edb6249e0441156b7e4f2b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerControl.powerControlClass.__init__</definition>
+        <argsstring>(self, logModule log, dict config)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initalise the power controller 
+
+Args:
+    log (logModule): log module class
+    config (dict): configuration from the .yml file
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="44" column="1" bodyfile="framework/core/powerControl.py" bodystart="44" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerControl_1_1powerControlClass_1ab4150f540a0773e2f3abc9ed763b34d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerControl.powerControlClass.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="85" column="1" bodyfile="framework/core/powerControl.py" bodystart="85" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerControl_1_1powerControlClass_1a4f5d0aebb3ffddece29324b2dd2f12c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerControl.powerControlClass.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="93" column="1" bodyfile="framework/core/powerControl.py" bodystart="93" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerControl_1_1powerControlClass_1a401ef47420a50215dea8c4047c043142" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerControl.powerControlClass.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="101" column="1" bodyfile="framework/core/powerControl.py" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerControl_1_1powerControlClass_1a074a1e2e092c9359384e2fefb67ccda8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerControl.powerControlClass.powerRetry</definition>
+        <argsstring>(self, powerMethod)</argsstring>
+        <name>powerRetry</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>powerMethod</type>
+          <defname>powerMethod</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Performs the passed powerMethod and retries it if it fails
+
+Args:
+    powerMethod (Method): The powerMethod to perform
+
+Raises:
+    e: Exception for if the powerMethod fails after all of the retries
+
+Returns:
+    boolean: Whether the powerMethod was successfully performed
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerControl.py" line="105" column="1" bodyfile="framework/core/powerControl.py" bodystart="105" bodyend="127"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerControl.py" line="42" column="1" bodyfile="framework/core/powerControl.py" bodystart="42" bodyend="127"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1aae94eb671edb6249e0441156b7e4f2b4" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a4c10d430f3de5e34358e407be0cbec68" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>ip</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a0d6c0f742d901a6ed7ef04af151a201f" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>log</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1ab166ec98ce176cd7e27f67c412205d05" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>name</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a4f5d0aebb3ffddece29324b2dd2f12c9" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1ab4150f540a0773e2f3abc9ed763b34d4" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a2ede2c90c9904b6dbb5a639eed8e7e40" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>powerOnState</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a074a1e2e092c9359384e2fefb67ccda8" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>powerRetry</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a43ce290a5f30d3324df22827ede1f15b" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>powerSwitch</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a401ef47420a50215dea8c4047c043142" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>reboot</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1aa338e1dcab02121a21b42092524ebb7f" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>retryCount</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1aac150d6829ce80e1925e6d4cb3137a29" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>retryDelay</name></member>
+      <member refid="classcore_1_1powerControl_1_1powerControlClass_1a9bb3678bee317f22d6c1675439b6474a" prot="public" virt="non-virtual"><scope>core::powerControl::powerControlClass</scope><name>utils</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

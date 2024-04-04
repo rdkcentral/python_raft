@@ -1,0 +1,134 @@
+core package
+============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   core.commandModules
+   core.powerModules
+
+Submodules
+----------
+
+core.capture module
+-------------------
+
+.. automodule:: core.capture
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.commonRemote module
+------------------------
+
+.. automodule:: core.commonRemote
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.configParser module
+------------------------
+
+.. automodule:: core.configParser
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.configParserBase module
+----------------------------
+
+.. automodule:: core.configParserBase
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.decodeParams module
+------------------------
+
+.. automodule:: core.decodeParams
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.deviceManager module
+-------------------------
+
+.. automodule:: core.deviceManager
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.logModule module
+---------------------
+
+.. automodule:: core.logModule
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.outboundClient module
+--------------------------
+
+.. automodule:: core.outboundClient
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.powerControl module
+------------------------
+
+.. automodule:: core.powerControl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.rackController module
+--------------------------
+
+.. automodule:: core.rackController
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.rcCodes module
+-------------------
+
+.. automodule:: core.rcCodes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.testControl module
+-----------------------
+
+.. automodule:: core.testControl
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.utilities module
+---------------------
+
+.. automodule:: core.utilities
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+core.webpageController module
+-----------------------------
+
+.. automodule:: core.webpageController
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: core
+   :members:
+   :undoc-members:
+   :show-inheritance:

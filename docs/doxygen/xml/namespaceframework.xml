@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceframework" kind="namespace" language="Python">
+    <compoundname>framework</compoundname>
+    <innernamespace refid="namespaceframework_1_1exceptionTests">framework::exceptionTests</innernamespace>
+    <innernamespace refid="namespaceframework_1_1logging__tests">framework::logging_tests</innernamespace>
+    <innernamespace refid="namespaceframework_1_1powerSwitch__tests">framework::powerSwitch_tests</innernamespace>
+    <innernamespace refid="namespaceframework_1_1remoteController__test">framework::remoteController_test</innernamespace>
+    <innernamespace refid="namespaceframework_1_1startup">framework::startup</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="unitTests_2framework_2____init_____8py_1acb5aee3291f0cdf6e2ce35aa61690388" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/__init__.py" line="6" column="1" bodyfile="unitTests/framework/__init__.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

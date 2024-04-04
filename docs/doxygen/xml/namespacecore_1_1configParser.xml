@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1configParser" kind="namespace" language="Python">
+    <compoundname>core::configParser</compoundname>
+    <innerclass refid="classcore_1_1configParser_1_1configParser" prot="public">core::configParser::configParser</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="configParser_8py_1ada21957a92759615d0c490c6f3ec75e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.getImageField</definition>
+        <argsstring>(self, imageName, fieldName, fieldValue)</argsstring>
+        <name>getImageField</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>imageName</type>
+          <defname>imageName</defname>
+        </param>
+        <param>
+          <type>fieldName</type>
+          <defname>fieldName</defname>
+        </param>
+        <param>
+          <type>fieldValue</type>
+          <defname>fieldValue</defname>
+        </param>
+        <briefdescription>
+<para>Debate on these functions should they. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Search and return the image field specified
+
+Args:
+    imageName ([string]): [image name to search for]
+    fieldName ([string]): [field to search for]
+    fieldValue ([string]): [pattern to match the field]
+
+Returns:
+    [string]: [url]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="233" column="1" bodyfile="framework/core/configParser.py" bodystart="233" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="function" id="configParser_8py_1a79a787da305d485df16a4d307e90f732" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.getNegativeImageUrlViaPlatform</definition>
+        <argsstring>(self, platform)</argsstring>
+        <name>getNegativeImageUrlViaPlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get the negative image location via the platform
+
+Args:
+    platform ([string]): [platform string e.g. xione.de, llama.uk]
+Returns:
+    [string]: [url or none if not found]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="277" column="1" bodyfile="framework/core/configParser.py" bodystart="277" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="configParser_8py_1ac9f37e26965ca842be5c0d3b7b4eaeb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.getValidImageUrlViaPlatform</definition>
+        <argsstring>(self, imageName, platform)</argsstring>
+        <name>getValidImageUrlViaPlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>imageName</type>
+          <defname>imageName</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[gets a valid image from the specified platform name]
+
+Args:
+    imageName ([string]): [image name , &quot;PCI1, PCI2, PDRI, BDRI etc&quot; from the config]
+    platform ([string]): [platform name e.g. &quot;xione.de&quot;]
+Returns:
+    [string]: [url]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="288" column="1" bodyfile="framework/core/configParser.py" bodystart="288" bodyend="299"/>
+      </memberdef>
+      <memberdef kind="function" id="configParser_8py_1a3979b3c9ff3030c25895f782045de9f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.getValidImages</definition>
+        <argsstring>(self, platform, filterString)</argsstring>
+        <name>getValidImages</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <param>
+          <type>filterString</type>
+          <defname>filterString</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>For the given platform, gets valid image names for the imageType in the testConfig
+
+Args:
+    filterString (str) - To filter the matching valid image names Ex: PCI \ DRI etc.,
+    platform (str) - device platform. Ex: ada.sr300 or xione.de etc.,
+
+Returns:
+    validNames (list) - List of matching image names in testConfig (Ex: For DRI, it returns BDRI\PDRI)
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="300" column="1" bodyfile="framework/core/configParser.py" bodystart="300" bodyend="323"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/configParser.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

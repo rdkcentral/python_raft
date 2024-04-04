@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacedynamicTablesTest" kind="namespace" language="Python">
+    <compoundname>dynamicTablesTest</compoundname>
+    <innerclass refid="classdynamicTablesTest_1_1dynamicTablesTest" prot="public">dynamicTablesTest::dynamicTablesTest</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="dynamicTablesTest_8py_1a06b1ccea620e182835eeedf1bfdb8bf6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dynamicTablesTest.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/dynamicTablesTest.py" line="9" column="1" bodyfile="unitTests/framework/webControlTests/dynamicTablesTest.py" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="dynamicTablesTest_8py_1a04650b13284a4c0dfd1abb0de1463467" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>dynamicTablesTest.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>=  <ref refid="classdynamicTablesTest_1_1dynamicTablesTest" kindref="compound">dynamicTablesTest</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/dynamicTablesTest.py" line="150" column="1" bodyfile="unitTests/framework/webControlTests/dynamicTablesTest.py" bodystart="150" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/dynamicTablesTest.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

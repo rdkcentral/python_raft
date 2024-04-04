@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classsequenceTest_1_1sequenceTest" kind="class" language="Python" prot="public">
+    <compoundname>sequenceTest::sequenceTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsequenceTest_1_1sequenceTest_1a9034b08ba1c668a7e92c5e05432fc42f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sequenceTest.sequenceTest.__init__</definition>
+        <argsstring>(self, testName=&quot;sequenceTest&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;sequenceTest&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/sequenceTest.py" line="14" column="1" bodyfile="unitTests/framework/webControlTests/sequenceTest.py" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classsequenceTest_1_1sequenceTest_1a4806eb858352f3356a0cfd0038da6d80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def sequenceTest.sequenceTest.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/sequenceTest.py" line="18" column="1" bodyfile="unitTests/framework/webControlTests/sequenceTest.py" bodystart="18" bodyend="37"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>sequenceTest.sequenceTest</label>
+        <link refid="classsequenceTest_1_1sequenceTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>sequenceTest.sequenceTest</label>
+        <link refid="classsequenceTest_1_1sequenceTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/sequenceTest.py" line="13" column="1" bodyfile="unitTests/framework/webControlTests/sequenceTest.py" bodystart="13" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classsequenceTest_1_1sequenceTest_1a9034b08ba1c668a7e92c5e05432fc42f" prot="public" virt="non-virtual"><scope>sequenceTest::sequenceTest</scope><name>__init__</name></member>
+      <member refid="classsequenceTest_1_1sequenceTest_1a4806eb858352f3356a0cfd0038da6d80" prot="public" virt="non-virtual"><scope>sequenceTest::sequenceTest</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceframework_1_1exceptionTests" kind="namespace" language="Python">
+    <compoundname>framework::exceptionTests</compoundname>
+    <innerclass refid="classframework_1_1exceptionTests_1_1framework__test1" prot="public">framework::exceptionTests::framework_test1</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="exceptionTests_8py_1a548063fd316a03ec3eb15759b32972f7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::exceptionTests.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="6" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="exceptionTests_8py_1a2bc3ee7af0dafa8b2db0095098d1b18e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::exceptionTests.summary</definition>
+        <argsstring></argsstring>
+        <name>summary</name>
+        <initializer>=  logModule(&quot;GroupTest1&quot;, level=logModule.INFO)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="52" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="exceptionTests_8py_1acefd5bb9f7c79a60fc7af1f36808fd4b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::exceptionTests.qcId</definition>
+        <argsstring></argsstring>
+        <name>qcId</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="53" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="exceptionTests_8py_1a26701b2c4102a1bcfd82a99797fb33e8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::exceptionTests.exitOnError</definition>
+        <argsstring></argsstring>
+        <name>exitOnError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="55" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/exceptionTests.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

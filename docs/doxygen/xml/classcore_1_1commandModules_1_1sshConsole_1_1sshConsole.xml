@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole" kind="class" language="Python" prot="public">
+    <compoundname>core::commandModules::sshConsole::sshConsole</compoundname>
+    <basecompoundref refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface" prot="public" virt="non-virtual">core.commandModules.consoleInterface.consoleInterface</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1ac7e7ba4a66deed9f1396099020580cc5" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::address</definition>
+        <argsstring></argsstring>
+        <name>address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="33" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a54a1d3d645382bc0a1918d35e39d113e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::username</definition>
+        <argsstring></argsstring>
+        <name>username</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="34" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1af7e7f27a2c32690df5156c9341038fce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="35" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1afbe6f5eae1422df80054848fa9db745d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="36" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1adf9268ec4d8684dc9e00b877dfd9f43a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::console</definition>
+        <argsstring></argsstring>
+        <name>console</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="37" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a40aa8e86218c777b7aa8dc30218984ab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="39" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a8f3e658129a3d66553aefea1791518b2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::stdout</definition>
+        <argsstring></argsstring>
+        <name>stdout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="40" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a8fb7540bf26f808d4005ecb82c05fdd9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="41" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a849e9308f512b585952812f91b762ef6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commandModules.sshConsole.sshConsole::stderr</definition>
+        <argsstring></argsstring>
+        <name>stderr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="56" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a465e877024e551e80917d71f3becac01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>None</type>
+        <definition> None core.commandModules.sshConsole.sshConsole.__init__</definition>
+        <argsstring>(self, address, username, password, key=None, known_hosts=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>address</type>
+          <defname>address</defname>
+        </param>
+        <param>
+          <type>username</type>
+          <defname>username</defname>
+        </param>
+        <param>
+          <type>password</type>
+          <defname>password</defname>
+        </param>
+        <param>
+          <type>key</type>
+          <defname>key</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>known_hosts</type>
+          <defname>known_hosts</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="32" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="32" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a946d10ffe79e3f27e61563515f5e73ce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commandModules.sshConsole.sshConsole.open</definition>
+        <argsstring>(self)</argsstring>
+        <name>open</name>
+        <reimplements refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1ac486b1c96789b1bf00cba93bdf09d2a9">open</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Open the SSH session.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="43" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="43" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a314f4df96471ce30d7f8183714d13c0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commandModules.sshConsole.sshConsole.write</definition>
+        <argsstring>(self, message)</argsstring>
+        <name>write</name>
+        <reimplements refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1a8fb3fcb3ea7b5116291f7da37ef327e3">write</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>message</type>
+          <defname>message</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Write a message into the console.
+
+Args:
+    message (str): String to write into the console.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="48" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="48" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1ab84d4bd6bfbdac0e0699f2c5eeb77356" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commandModules.sshConsole.sshConsole.read_all</definition>
+        <argsstring>(self)</argsstring>
+        <name>read_all</name>
+        <reimplements refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1ae6a4b1538e7f154df77bfcf8bfc9408e">read_all</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Capture all lines that are displayed in the console.
+
+Returns:
+    List: List of strings, with each being a line displayed in the console.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="58" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="58" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a36e14bc475d492d89d278665934f7380" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commandModules.sshConsole.sshConsole.read_until</definition>
+        <argsstring>(self, value)</argsstring>
+        <name>read_until</name>
+        <reimplements refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1a4023d9922c671e82ebfef3c2469d1090">read_until</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Read the console until a message appears.
+
+Args:
+    value (str): The message to wait for in the console.
+
+Returns:
+    List: List of string, with each being a line displayed in the console up to the value entered.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="71" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="71" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1afa6787a9df7c6ea32226e555961beafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commandModules.sshConsole.sshConsole.close</definition>
+        <argsstring>(self)</argsstring>
+        <name>close</name>
+        <reimplements refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface_1a8dc6ccf61a085e75c32dde20d09844ab">close</reimplements>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Close the SSH session
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/sshConsole.py" line="89" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="89" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>sshConsole is a consoleInterface class to interface with SSH console sessions
+
+Args:
+    address (str): IP address of the host to connect to.
+    username (str): Username for logging into the host.
+    password (str): Password for logging into the host.
+    key (str, optional): Filepath of ssh key to use.
+    known_hosts (str, optional): Filepath of known_hosts file to use.
+</verbatim> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>core.commandModules.consoleInterface.consoleInterface</label>
+        <link refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ABCMeta</label>
+      </node>
+      <node id="1">
+        <label>core.commandModules.sshConsole.sshConsole</label>
+        <link refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>metaclass</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>core.commandModules.consoleInterface.consoleInterface</label>
+        <link refid="classcore_1_1commandModules_1_1consoleInterface_1_1consoleInterface"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ABCMeta</label>
+      </node>
+      <node id="1">
+        <label>core.commandModules.sshConsole.sshConsole</label>
+        <link refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>metaclass</label>
+      </node>
+    </collaborationgraph>
+    <location file="framework/core/commandModules/sshConsole.py" line="21" column="1" bodyfile="framework/core/commandModules/sshConsole.py" bodystart="21" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a465e877024e551e80917d71f3becac01" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>__init__</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1ac7e7ba4a66deed9f1396099020580cc5" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>address</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a40aa8e86218c777b7aa8dc30218984ab" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>buffer</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1afa6787a9df7c6ea32226e555961beafe" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>close</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1adf9268ec4d8684dc9e00b877dfd9f43a" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>console</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1afbe6f5eae1422df80054848fa9db745d" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>key</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a946d10ffe79e3f27e61563515f5e73ce" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>open</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1af7e7f27a2c32690df5156c9341038fce" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>password</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1ab84d4bd6bfbdac0e0699f2c5eeb77356" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>read_all</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a36e14bc475d492d89d278665934f7380" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>read_until</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a849e9308f512b585952812f91b762ef6" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>stderr</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a8f3e658129a3d66553aefea1791518b2" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>stdout</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a8fb7540bf26f808d4005ecb82c05fdd9" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>type</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a54a1d3d645382bc0a1918d35e39d113e" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>username</name></member>
+      <member refid="classcore_1_1commandModules_1_1sshConsole_1_1sshConsole_1a314f4df96471ce30d7f8183714d13c0f" prot="public" virt="non-virtual"><scope>core::commandModules::sshConsole::sshConsole</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

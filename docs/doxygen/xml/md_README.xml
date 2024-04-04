@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="md_README" kind="page">
+    <compoundname>md_README</compoundname>
+    <title>README</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><image type="html" name="RAFT_Logo.png" inline="yes"></image>
+</para>
+<sect1 id="md_README_1autotoc_md3">
+<title>RAFT</title>
+<para>**R**apid **A**pplication **F**ramework for **T**esting.<linebreak/>
+</para>
+<para>RAFT is a Python based testing framework for writing engineering tests.<linebreak/>
+ RAFT’s primary focus is to provide engineering teams a modular, config driven, low level testing framework.</para>
+<sect2 id="md_README_1autotoc_md4">
+<title>Contents</title>
+<para><itemizedlist>
+<listitem><para><ulink url="#installation">Installation</ulink></para>
+</listitem><listitem><para><ulink url="#getting-started">Getting Started</ulink></para>
+</listitem><listitem><para><ulink url="#documentation">Documentation</ulink></para>
+</listitem><listitem><para><ulink url="#contributing">Contributing</ulink> </para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md5">
+<title>* &lt;a href=&quot;#license&quot;&gt;License&lt;/a&gt;</title>
+</sect2>
+<sect2 id="md_README_1autotoc_md6">
+<title>Installation</title>
+<sect3 id="md_README_1autotoc_md7">
+<title>Requirements</title>
+<para><itemizedlist>
+<listitem><para>Python (=3.11.8)<itemizedlist>
+<listitem><para>Pyenv can be used to manage multiple versions of Python (please refer to the <ulink url="https://github.com/pyenv/pyenv?tab=readme-ov-file#installation">documentation</ulink>).</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>All the packages listed in requirements.txt<itemizedlist>
+<listitem><para>Can be installed using <computeroutput>$ pip install -r requirements.txt</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="md_README_1autotoc_md8">
+<title>User Installation</title>
+<para>Clone the repository and ensure that all requirements are met.</para>
+</sect3>
+</sect2>
+<sect2 id="md_README_1autotoc_md9">
+<title>Getting Started</title>
+<para>WIP</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md10">
+<title>Documentation</title>
+<para>WIP</para>
+</sect2>
+<sect2 id="md_README_1autotoc_md11">
+<title>Contributing</title>
+<para>See contributing file: <ref refid="md_CONTRIBUTING" kindref="compound">CONTRIBUTING.md</ref></para>
+</sect2>
+<sect2 id="md_README_1autotoc_md12">
+<title>License</title>
+<para>See license file: <ulink url="./LICENSE">LICENSE</ulink> </para>
+</sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

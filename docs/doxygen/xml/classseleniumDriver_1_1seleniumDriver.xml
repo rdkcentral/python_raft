@@ -1,0 +1,803 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classseleniumDriver_1_1seleniumDriver" kind="class" language="Python" prot="public">
+    <compoundname>seleniumDriver::seleniumDriver</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classseleniumDriver_1_1seleniumDriver_1a3af432ad94167a7c9af2be61884834e2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>seleniumDriver.seleniumDriver::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="27" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classseleniumDriver_1_1seleniumDriver_1a728c5aba7155630fce52c32f30ad0bcc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>seleniumDriver.seleniumDriver::browser</definition>
+        <argsstring></argsstring>
+        <name>browser</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="57" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a69c1d3278312adbda3a8324419b1a7d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.__init__</definition>
+        <argsstring>(self, log, webDriverConfig)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>webDriverConfig</type>
+          <defname>webDriverConfig</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="26" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1aa3022fff85cd00d965a28a226b1eb3dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.navigateTo</definition>
+        <argsstring>(self, url)</argsstring>
+        <name>navigateTo</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>url</type>
+          <defname>url</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Naviagates to the url
+
+Args:
+    url (str): The url to be navigated to
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="63" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="63" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a76419d47b762f097d612a5294a335e8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getElementType</definition>
+        <argsstring>(self, str elementType)</argsstring>
+        <name>getElementType</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>elementType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gives the selenium element type based on the config type passed
+
+Args:
+    elementType (str): The type of element in the config
+
+Returns:
+    Selenium Element Type: _description_
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="71" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="71" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a95b282e5f9ebdb6f26f55a5e3f451c42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.waitForElement</definition>
+        <argsstring>(self, element, timeout=10)</argsstring>
+        <name>waitForElement</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <param>
+          <type>timeout</type>
+          <defname>timeout</defname>
+          <defval>10</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Wait for presence of element in the webpage
+
+Args:
+    element ({type: str, value: str}): A dictionary containing a type and value, which can be used to determine the element in the webpage
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="95" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="95" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a2247c2525344832bf3f7e365e1d7b2ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.sendKeys</definition>
+        <argsstring>(self, element, keys)</argsstring>
+        <name>sendKeys</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <param>
+          <type>keys</type>
+          <defname>keys</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Send keys to an element on the webpage
+
+Args:
+    element ({type: str, value: str}): A dictionary containing a type and value, which can be used to determine the element in the webpage
+    keys (str): The keys to be sent to the element
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="110" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="110" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a0b0fc1945d269d3770cec19a51f4c0e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.click</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>click</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Click an element on the webpage (Ex: button, hyperlink)
+
+Args:
+    element ({type: str, value: str}): A dictionary containing a type and value, which can be used to determine the element in the webpage
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="119" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="119" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a53e205f7416ce195592e1caa78c472ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.selectFromDropdown</definition>
+        <argsstring>(self, element, value)</argsstring>
+        <name>selectFromDropdown</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Selects a value from a element which represents a dropdown list
+
+Args:
+    element ({type: str, value: str}): A dictionary containing a type and value, which can be used to determine the element in the webpage
+    value (str): The option to select
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="128" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="128" bodyend="137"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a05e1a56d0cba9aad2d22e15048aef226" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getText</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>getText</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="152" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="152" bodyend="154"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a1ab78f9324f224cea851e6e88fb2a1a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.clear</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>clear</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Resets the content of an element 
+
+Args:
+    element ({type: str, value: str}): A dictionary containing a type and value, which can be used to determine the element in the webpage
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="155" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="155" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a1660db3a7455cb5a5cf6dc3f17550218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.acceptAlert</definition>
+        <argsstring>(self)</argsstring>
+        <name>acceptAlert</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Accepts an alert if one is present on the webpage
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="165" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="165" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a310ccd735fa954c908a856ba5d822f5f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.refresh</definition>
+        <argsstring>(self)</argsstring>
+        <name>refresh</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Refreshes the webpage
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="176" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="176" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a7ec0cdb44f016469076a7c1669595637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getElementAttribute</definition>
+        <argsstring>(self, element, attribute)</argsstring>
+        <name>getElementAttribute</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <param>
+          <type>attribute</type>
+          <defname>attribute</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="181" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="181" bodyend="183"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1ab3faacb89ea1f3c163ec10ba84e2f803" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.isElementSelected</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>isElementSelected</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="184" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="184" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a9dd9092419878483531b6a1ceebcf72b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getSelectedOptions</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>getSelectedOptions</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="187" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="187" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a39496db57b8c85c0fb132c9f0980fdc7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getFirstSelectedOption</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>getFirstSelectedOption</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="194" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="194" bodyend="197"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a95860a0ea255d7c02cdb88bb9e0dc5a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getSelectAvailableOptions</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>getSelectAvailableOptions</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="198" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="198" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a281e0379f84e3f71dd2457f9c9dd7b22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getAlertText</definition>
+        <argsstring>(self)</argsstring>
+        <name>getAlertText</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="205" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="205" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1af3dc1c1bb290541c64c0b95be57638fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.dismissAlert</definition>
+        <argsstring>(self)</argsstring>
+        <name>dismissAlert</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="214" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="214" bodyend="222"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a0066d624591d977382db36cf189213dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.saveScreenshot</definition>
+        <argsstring>(self, directory, fileName)</argsstring>
+        <name>saveScreenshot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>directory</type>
+          <defname>directory</defname>
+        </param>
+        <param>
+          <type>fileName</type>
+          <defname>fileName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="223" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="223" bodyend="225"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1af8eee5ee8407e91d999405ddba4a9968" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getHtml</definition>
+        <argsstring>(self)</argsstring>
+        <name>getHtml</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="226" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="226" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a8c3a496c65055940a5a2eb37f68e0a4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getTableElements</definition>
+        <argsstring>(self, element, elementName, text=None)</argsstring>
+        <name>getTableElements</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <param>
+          <type>text</type>
+          <defname>text</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the elements of dynamic table as a list of list of dictionaries 
+
+Args:
+    element (dictionary): A dictionary representing the dynamic element
+    elementName (string): Name of the dynamic element
+    text (bool, optional): Text attribute indicator of the web element. Set to True to retreive text attribute of the webelement. Defaults to None.
+
+Returns:
+    list: list of list of dictionaries with element details - element locator type, element locator value , text (if text=true)
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="230" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="230" bodyend="266"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1ac3fc4f1043e2afc0806214ac83f587c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getXpath</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>getXpath</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Returns the xpath of a webelement
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="267" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="267" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1aa9c05562c5b8b3ba13841274ee395a0f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.newTab</definition>
+        <argsstring>(self)</argsstring>
+        <name>newTab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Creates a new tab on the selenium driver
+
+Returns:
+    (String, String): A tuple of the original tab and the new tab window handles</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="314" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="314" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1abf114b6f9a8f9872bb779e3491ee68a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.switchTab</definition>
+        <argsstring>(self, tab)</argsstring>
+        <name>switchTab</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>tab</type>
+          <defname>tab</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Switchs tab on the selenium driver
+
+Args:
+    tab (String): Window handle for tab
+
+Returns:
+    (String, String): A tuple of the original tab and the new tab window handles</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="326" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="326" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1acad0f901bc4fe962f26b8ccbfeb9e6e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getWindowId</definition>
+        <argsstring>(self)</argsstring>
+        <name>getWindowId</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets the current window handle of the browser
+
+Returns:
+    String: Window handle of the current tab/window
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="341" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="341" bodyend="348"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1ae79add76f5d212bf1101c42eea579e6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver.getSubElements</definition>
+        <argsstring>(self, element, elementName)</argsstring>
+        <name>getSubElements</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="349" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="349" bodyend="359"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a90de6ef845b244cb1d076e4a152cfd64" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver._setWebdriver</definition>
+        <argsstring>(self, webDriverConfig)</argsstring>
+        <name>_setWebdriver</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>webDriverConfig</type>
+          <defname>webDriverConfig</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Provides the webDriver config to properly configure the selenium webdriver
+
+Args:
+    webDriverConfig (dict): Dictionary containing appropriate config for selenium webdriver
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="30" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="30" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a135f9dc4a7d2ab026081b4b799be84c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver._getElement</definition>
+        <argsstring>(self, element)</argsstring>
+        <name>_getElement</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>element</type>
+          <defname>element</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Gets an element object from the selenium webdriver based on the dict passed
+
+Args:
+    element ({type: str, value: str}): A dictionary containing a type and value, which can be used to determine the element in the webpage
+
+Returns:
+    WebElement 
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="138" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="138" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classseleniumDriver_1_1seleniumDriver_1a2079462f553d6c7927f6123fe97f1296" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def seleniumDriver.seleniumDriver._createElementsDictionary</definition>
+        <argsstring>(self, elementName, elementLocatorType, elementLocatorValue, **kwargs)</argsstring>
+        <name>_createElementsDictionary</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>elementName</type>
+          <defname>elementName</defname>
+        </param>
+        <param>
+          <type>elementLocatorType</type>
+          <defname>elementLocatorType</defname>
+        </param>
+        <param>
+          <type>elementLocatorValue</type>
+          <defname>elementLocatorValue</defname>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Creates a dictonary of element&apos;s details
+
+Args:
+    elementName (String): The name of the web element
+    elementLocatorType (String): The locator type for the web element (Eg: XPATH, ID, TAG etc)
+    elementLocatorValue (String): Actual value of the locator for the web element
+    text (bool, optional): Text attribute indicator of the web element. Set to True to retreive text attribute of the webelement. Defaults to None.
+    temporaryFlag(bool, optional) : Indicates if the webelement is temporary or not. Set to True for temporary element. Defaults to False.
+Returns:
+    dict:  A dictionary representing the attributes of element
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/webpageModules/seleniumDriver.py" line="290" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="290" bodyend="313"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/webpageModules/seleniumDriver.py" line="25" column="1" bodyfile="framework/core/webpageModules/seleniumDriver.py" bodystart="25" bodyend="359"/>
+    <listofallmembers>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a69c1d3278312adbda3a8324419b1a7d6" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>__init__</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a2079462f553d6c7927f6123fe97f1296" prot="private" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>_createElementsDictionary</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a135f9dc4a7d2ab026081b4b799be84c1" prot="private" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>_getElement</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a90de6ef845b244cb1d076e4a152cfd64" prot="private" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>_setWebdriver</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a1660db3a7455cb5a5cf6dc3f17550218" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>acceptAlert</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a728c5aba7155630fce52c32f30ad0bcc" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>browser</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a1ab78f9324f224cea851e6e88fb2a1a9" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>clear</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a0b0fc1945d269d3770cec19a51f4c0e2" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>click</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1af3dc1c1bb290541c64c0b95be57638fc" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>dismissAlert</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a281e0379f84e3f71dd2457f9c9dd7b22" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getAlertText</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a7ec0cdb44f016469076a7c1669595637" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getElementAttribute</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a76419d47b762f097d612a5294a335e8f" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getElementType</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a39496db57b8c85c0fb132c9f0980fdc7" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getFirstSelectedOption</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1af8eee5ee8407e91d999405ddba4a9968" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getHtml</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a95860a0ea255d7c02cdb88bb9e0dc5a3" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getSelectAvailableOptions</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a9dd9092419878483531b6a1ceebcf72b" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getSelectedOptions</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1ae79add76f5d212bf1101c42eea579e6f" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getSubElements</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a8c3a496c65055940a5a2eb37f68e0a4d" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getTableElements</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a05e1a56d0cba9aad2d22e15048aef226" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getText</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1acad0f901bc4fe962f26b8ccbfeb9e6e9" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getWindowId</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1ac3fc4f1043e2afc0806214ac83f587c1" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>getXpath</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1ab3faacb89ea1f3c163ec10ba84e2f803" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>isElementSelected</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a3af432ad94167a7c9af2be61884834e2" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>log</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1aa3022fff85cd00d965a28a226b1eb3dd" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>navigateTo</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1aa9c05562c5b8b3ba13841274ee395a0f" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>newTab</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a310ccd735fa954c908a856ba5d822f5f" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>refresh</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a0066d624591d977382db36cf189213dd" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>saveScreenshot</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a53e205f7416ce195592e1caa78c472ea" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>selectFromDropdown</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a2247c2525344832bf3f7e365e1d7b2ed" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>sendKeys</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1abf114b6f9a8f9872bb779e3491ee68a2" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>switchTab</name></member>
+      <member refid="classseleniumDriver_1_1seleniumDriver_1a95b282e5f9ebdb6f26f55a5e3f451c42" prot="public" virt="non-virtual"><scope>seleniumDriver::seleniumDriver</scope><name>waitForElement</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classtabsTest_1_1tabsTest" kind="class" language="Python" prot="public">
+    <compoundname>tabsTest::tabsTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtabsTest_1_1tabsTest_1a2e50362dfaa91e6af310e26caaf114de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tabsTest.tabsTest.__init__</definition>
+        <argsstring>(self, testName=&quot;tabsTest&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;tabsTest&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/tabsTest.py" line="12" column="1" bodyfile="unitTests/framework/webControlTests/tabsTest.py" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classtabsTest_1_1tabsTest_1ac9d9cffb7f6cda274eb22c1cc2c50c6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def tabsTest.tabsTest.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/tabsTest.py" line="16" column="1" bodyfile="unitTests/framework/webControlTests/tabsTest.py" bodystart="16" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>tabsTest.tabsTest</label>
+        <link refid="classtabsTest_1_1tabsTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>tabsTest.tabsTest</label>
+        <link refid="classtabsTest_1_1tabsTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/tabsTest.py" line="11" column="1" bodyfile="unitTests/framework/webControlTests/tabsTest.py" bodystart="11" bodyend="94"/>
+    <listofallmembers>
+      <member refid="classtabsTest_1_1tabsTest_1a2e50362dfaa91e6af310e26caaf114de" prot="public" virt="non-virtual"><scope>tabsTest::tabsTest</scope><name>__init__</name></member>
+      <member refid="classtabsTest_1_1tabsTest_1ac9d9cffb7f6cda274eb22c1cc2c50c6f" prot="public" virt="non-virtual"><scope>tabsTest::tabsTest</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

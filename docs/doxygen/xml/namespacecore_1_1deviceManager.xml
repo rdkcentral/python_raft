@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1deviceManager" kind="namespace" language="Python">
+    <compoundname>core::deviceManager</compoundname>
+    <innerclass refid="classcore_1_1deviceManager_1_1consoleClass" prot="public">core::deviceManager::consoleClass</innerclass>
+    <innerclass refid="classcore_1_1deviceManager_1_1deviceClass" prot="public">core::deviceManager::deviceClass</innerclass>
+    <innerclass refid="classcore_1_1deviceManager_1_1deviceManager" prot="public">core::deviceManager::deviceManager</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="deviceManager_8py_1aa8e389b65d5290ff2d36aa130e88e9d2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core::deviceManager.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="24" column="1" bodyfile="framework/core/deviceManager.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/deviceManager.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

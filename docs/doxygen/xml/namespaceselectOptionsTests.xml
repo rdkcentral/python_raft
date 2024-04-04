@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceselectOptionsTests" kind="namespace" language="Python">
+    <compoundname>selectOptionsTests</compoundname>
+    <innerclass refid="classselectOptionsTests_1_1selectOptionsTests" prot="public">selectOptionsTests::selectOptionsTests</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="selectOptionsTests_8py_1a637c2cf95fae96151a16e7646fd745cc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>selectOptionsTests.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/selectOptionsTests.py" line="8" column="1" bodyfile="unitTests/framework/webControlTests/selectOptionsTests.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="selectOptionsTests_8py_1aeb7d56ce9af293935da32f4d9541c717" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>selectOptionsTests.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>=  <ref refid="classselectOptionsTests_1_1selectOptionsTests" kindref="compound">selectOptionsTests</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/selectOptionsTests.py" line="63" column="1" bodyfile="unitTests/framework/webControlTests/selectOptionsTests.py" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/selectOptionsTests.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

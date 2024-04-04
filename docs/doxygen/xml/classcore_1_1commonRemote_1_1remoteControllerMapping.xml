@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1commonRemote_1_1remoteControllerMapping" kind="class" language="Python" prot="public">
+    <compoundname>core::commonRemote::remoteControllerMapping</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1remoteControllerMapping_1a54223e1c65d3e4d2d4e7d408de0f26fc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.remoteControllerMapping::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="33" column="1" bodyfile="framework/core/commonRemote.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1remoteControllerMapping_1aa4dc6d3576a34a0b54c2dd9029e27836" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.remoteControllerMapping::currentMap</definition>
+        <argsstring></argsstring>
+        <name>currentMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="34" column="1" bodyfile="framework/core/commonRemote.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1remoteControllerMapping_1a8c2241c4c7c5d853008b916ffd9ccf17" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.remoteControllerMapping::maps</definition>
+        <argsstring></argsstring>
+        <name>maps</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="35" column="1" bodyfile="framework/core/commonRemote.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1remoteControllerMapping_1a3302350880be58454b9c57fd2d6ffcf0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.remoteControllerMapping.__init__</definition>
+        <argsstring>(self, logModule log, dict mappingConfig)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>mappingConfig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initialise the remote controller key mapping class
+
+Args:
+    log (logModule): log class
+    mappingConfig (dict): mapping dictionary
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="26" column="1" bodyfile="framework/core/commonRemote.py" bodystart="26" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1remoteControllerMapping_1ab8a73d11b15463f04fe92d7676c32e33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.remoteControllerMapping.getMappedKey</definition>
+        <argsstring>(self, str key)</argsstring>
+        <name>getMappedKey</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>get the mapped key
+
+Args:
+    key (str): key to translate
+
+Returns:
+    str: key translated key via map or none on failure
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="42" column="1" bodyfile="framework/core/commonRemote.py" bodystart="42" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1remoteControllerMapping_1a62d91b2c7e45c7333a01c02d65565816" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.remoteControllerMapping.getKeyMap</definition>
+        <argsstring>(self)</argsstring>
+        <name>getKeyMap</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>get key Map
+
+Returns:
+    dict: active key map
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="64" column="1" bodyfile="framework/core/commonRemote.py" bodystart="64" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1remoteControllerMapping_1ab3a9b8d21b0992782c11ec1d9d5ee190" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.remoteControllerMapping.setKeyMap</definition>
+        <argsstring>(self, dict newMapName)</argsstring>
+        <name>setKeyMap</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>newMapName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>set the key map
+
+Args:
+    newMapName (dict): key map dictionary
+
+Returns:
+    bool: True on success, or False if failure
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="72" column="1" bodyfile="framework/core/commonRemote.py" bodystart="72" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/commonRemote.py" line="24" column="1" bodyfile="framework/core/commonRemote.py" bodystart="24" bodyend="97"/>
+    <listofallmembers>
+      <member refid="classcore_1_1commonRemote_1_1remoteControllerMapping_1a3302350880be58454b9c57fd2d6ffcf0" prot="public" virt="non-virtual"><scope>core::commonRemote::remoteControllerMapping</scope><name>__init__</name></member>
+      <member refid="classcore_1_1commonRemote_1_1remoteControllerMapping_1aa4dc6d3576a34a0b54c2dd9029e27836" prot="public" virt="non-virtual"><scope>core::commonRemote::remoteControllerMapping</scope><name>currentMap</name></member>
+      <member refid="classcore_1_1commonRemote_1_1remoteControllerMapping_1a62d91b2c7e45c7333a01c02d65565816" prot="public" virt="non-virtual"><scope>core::commonRemote::remoteControllerMapping</scope><name>getKeyMap</name></member>
+      <member refid="classcore_1_1commonRemote_1_1remoteControllerMapping_1ab8a73d11b15463f04fe92d7676c32e33" prot="public" virt="non-virtual"><scope>core::commonRemote::remoteControllerMapping</scope><name>getMappedKey</name></member>
+      <member refid="classcore_1_1commonRemote_1_1remoteControllerMapping_1a54223e1c65d3e4d2d4e7d408de0f26fc" prot="public" virt="non-virtual"><scope>core::commonRemote::remoteControllerMapping</scope><name>log</name></member>
+      <member refid="classcore_1_1commonRemote_1_1remoteControllerMapping_1a8c2241c4c7c5d853008b916ffd9ccf17" prot="public" virt="non-virtual"><scope>core::commonRemote::remoteControllerMapping</scope><name>maps</name></member>
+      <member refid="classcore_1_1commonRemote_1_1remoteControllerMapping_1ab3a9b8d21b0992782c11ec1d9d5ee190" prot="public" virt="non-virtual"><scope>core::commonRemote::remoteControllerMapping</scope><name>setKeyMap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

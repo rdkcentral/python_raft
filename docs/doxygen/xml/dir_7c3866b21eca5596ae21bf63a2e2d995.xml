@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_7c3866b21eca5596ae21bf63a2e2d995" kind="dir">
+    <compoundname>framework/core</compoundname>
+    <innerdir refid="dir_ed446ba2d365ada0ebb676416d76edde">framework/core/commandModules</innerdir>
+    <innerdir refid="dir_e36ba64977d65a0761a291213aecd3cd">framework/core/powerModules</innerdir>
+    <innerdir refid="dir_8cdaaede5e395ce5a2b7dcd448eefcc0">framework/core/remoteControllerModules</innerdir>
+    <innerdir refid="dir_8f7813a2e1199496bc4aeee3a1228541">framework/core/webpageModules</innerdir>
+    <innerfile refid="framework_2core_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="capture_8py">capture.py</innerfile>
+    <innerfile refid="commonRemote_8py">commonRemote.py</innerfile>
+    <innerfile refid="configParser_8py">configParser.py</innerfile>
+    <innerfile refid="configParserBase_8py">configParserBase.py</innerfile>
+    <innerfile refid="decodeParams_8py">decodeParams.py</innerfile>
+    <innerfile refid="deviceManager_8py">deviceManager.py</innerfile>
+    <innerfile refid="logModule_8py">logModule.py</innerfile>
+    <innerfile refid="outboundClient_8py">outboundClient.py</innerfile>
+    <innerfile refid="powerControl_8py">powerControl.py</innerfile>
+    <innerfile refid="rackController_8py">rackController.py</innerfile>
+    <innerfile refid="rcCodes_8py">rcCodes.py</innerfile>
+    <innerfile refid="testControl_8py">testControl.py</innerfile>
+    <innerfile refid="utilities_8py">utilities.py</innerfile>
+    <innerfile refid="webpageController_8py">webpageController.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/"/>
+  </compounddef>
+</doxygen>

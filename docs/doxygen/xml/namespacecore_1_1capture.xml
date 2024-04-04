@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1capture" kind="namespace" language="Python">
+    <compoundname>core::capture</compoundname>
+    <innerclass refid="classcore_1_1capture_1_1capture" prot="public">core::capture::capture</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/capture.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

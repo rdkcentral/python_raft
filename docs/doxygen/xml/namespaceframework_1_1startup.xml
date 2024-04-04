@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceframework_1_1startup" kind="namespace" language="Python">
+    <compoundname>framework::startup</compoundname>
+    <innerclass refid="classframework_1_1startup_1_1framework__test1" prot="public">framework::startup::framework_test1</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="startup_8py_1a9dd32707e8db509ceee5302c21b45cfc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::startup.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/startup.py" line="6" column="1" bodyfile="unitTests/framework/startup.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="startup_8py_1ad6ba7725e727904cdec4abbcd3188563" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework::startup.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>=  <ref refid="classframework_1_1startup_1_1framework__test1" kindref="compound">framework_test1</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/startup.py" line="24" column="1" bodyfile="unitTests/framework/startup.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/startup.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

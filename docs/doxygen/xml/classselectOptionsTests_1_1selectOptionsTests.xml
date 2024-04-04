@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classselectOptionsTests_1_1selectOptionsTests" kind="class" language="Python" prot="public">
+    <compoundname>selectOptionsTests::selectOptionsTests</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classselectOptionsTests_1_1selectOptionsTests_1a8f9ebeead6acbedd959b2e96063b4f36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def selectOptionsTests.selectOptionsTests.__init__</definition>
+        <argsstring>(self, testName=&quot;selectOptionsTests&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;selectOptionsTests&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/selectOptionsTests.py" line="14" column="1" bodyfile="unitTests/framework/webControlTests/selectOptionsTests.py" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classselectOptionsTests_1_1selectOptionsTests_1aa54e7363ae9758c3e67f3e413839b032" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def selectOptionsTests.selectOptionsTests.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/selectOptionsTests.py" line="18" column="1" bodyfile="unitTests/framework/webControlTests/selectOptionsTests.py" bodystart="18" bodyend="61"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>selectOptionsTests.selectOptionsTests</label>
+        <link refid="classselectOptionsTests_1_1selectOptionsTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>selectOptionsTests.selectOptionsTests</label>
+        <link refid="classselectOptionsTests_1_1selectOptionsTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/selectOptionsTests.py" line="13" column="1" bodyfile="unitTests/framework/webControlTests/selectOptionsTests.py" bodystart="13" bodyend="62"/>
+    <listofallmembers>
+      <member refid="classselectOptionsTests_1_1selectOptionsTests_1a8f9ebeead6acbedd959b2e96063b4f36" prot="public" virt="non-virtual"><scope>selectOptionsTests::selectOptionsTests</scope><name>__init__</name></member>
+      <member refid="classselectOptionsTests_1_1selectOptionsTests_1aa54e7363ae9758c3e67f3e413839b032" prot="public" virt="non-virtual"><scope>selectOptionsTests::selectOptionsTests</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

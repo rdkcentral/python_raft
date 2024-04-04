@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1rackController" kind="namespace" language="Python">
+    <compoundname>core::rackController</compoundname>
+    <innerclass refid="classcore_1_1rackController_1_1configDecoderClass" prot="public">core::rackController::configDecoderClass</innerclass>
+    <innerclass refid="classcore_1_1rackController_1_1rack" prot="public">core::rackController::rack</innerclass>
+    <innerclass refid="classcore_1_1rackController_1_1rackController" prot="public">core::rackController::rackController</innerclass>
+    <innerclass refid="classcore_1_1rackController_1_1rackSlot" prot="public">core::rackController::rackSlot</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/rackController.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

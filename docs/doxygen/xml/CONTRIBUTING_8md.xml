@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="CONTRIBUTING_8md" kind="file" language="Markdown">
+    <compoundname>CONTRIBUTING.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Contributing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>First-Time<sp/>Contributors</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">First-time<sp/>users<sp/>are<sp/>requested<sp/>to<sp/>agree<sp/>to<sp/>the<sp/>[license](https://wiki.rdkcentral.com/signup.action).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contribution<sp/>Workflow</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>flow<sp/>is<sp/>expected<sp/>for<sp/>all<sp/>code<sp/>submissons:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Create<sp/>a<sp/>branch<sp/>with<sp/>a<sp/>name<sp/>following<sp/>the<sp/>guidelines:<sp/>`gh(x)_(synopsis)`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>where<sp/>x<sp/>is<sp/>the<sp/>ticket<sp/>number</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>where<sp/>synopsis<sp/>is<sp/>a<sp/>short<sp/>synopsis<sp/>for<sp/>the<sp/>reason<sp/>for<sp/>the<sp/>branch.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Create<sp/>a<sp/>pull<sp/>request<sp/>[https://github.com/rdkcentral/python_raft/compare](https://github.com/rdkcentral/python_raft/compare)<sp/>when<sp/>the<sp/>code<sp/>changes<sp/>are<sp/>ready<sp/>for<sp/>review.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>team<sp/>will<sp/>review,<sp/>and<sp/>if<sp/>accepted<sp/>your<sp/>changes<sp/>will<sp/>be<sp/>merged<sp/>to<sp/>the<sp/>mainline.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**All<sp/>changes<sp/>must<sp/>be<sp/>submitted<sp/>for<sp/>review<sp/>with<sp/>a<sp/>corresponding<sp/>issue,<sp/>[python_raft/issues](https://github.com/rdkcentral/python_raft/issues).**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*If<sp/>an<sp/>issue<sp/>does<sp/>not<sp/>exist<sp/>for<sp/>the<sp/>change<sp/>you<sp/>wish<sp/>to<sp/>contribute,<sp/>please<sp/>create<sp/>one<sp/>with<sp/>a<sp/>detailed<sp/>description<sp/>of<sp/>the<sp/>reason<sp/>for<sp/>your<sp/>change.*</highlight></codeline>
+    </programlisting>
+    <location file="CONTRIBUTING.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_644e041c3a6521da7b27eba0e4eb2b95" kind="dir">
+    <compoundname>framework</compoundname>
+    <innerdir refid="dir_7c3866b21eca5596ae21bf63a2e2d995">framework/core</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/"/>
+  </compounddef>
+</doxygen>

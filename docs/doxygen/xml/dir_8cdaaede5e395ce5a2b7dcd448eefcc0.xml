@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_8cdaaede5e395ce5a2b7dcd448eefcc0" kind="dir">
+    <compoundname>framework/core/remoteControllerModules</compoundname>
+    <innerfile refid="arduino_8py">arduino.py</innerfile>
+    <innerfile refid="remoteControllerModules_2none_8py">none.py</innerfile>
+    <innerfile refid="remoteControllerModules_2olimex_8py">olimex.py</innerfile>
+    <innerfile refid="skyProc_8py">skyProc.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/remoteControllerModules/"/>
+  </compounddef>
+</doxygen>

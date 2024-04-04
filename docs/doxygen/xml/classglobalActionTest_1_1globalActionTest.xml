@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classglobalActionTest_1_1globalActionTest" kind="class" language="Python" prot="public">
+    <compoundname>globalActionTest::globalActionTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classglobalActionTest_1_1globalActionTest_1a1af82eca51237058cfa7b8a6fd66f457" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def globalActionTest.globalActionTest.__init__</definition>
+        <argsstring>(self, testName=&quot;globalActionTest&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;globalActionTest&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/globalActionTest.py" line="12" column="1" bodyfile="unitTests/framework/webControlTests/globalActionTest.py" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classglobalActionTest_1_1globalActionTest_1af6549390256f87dbc5fa8073cec3a8e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def globalActionTest.globalActionTest.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/globalActionTest.py" line="16" column="1" bodyfile="unitTests/framework/webControlTests/globalActionTest.py" bodystart="16" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>globalActionTest.globalActionTest</label>
+        <link refid="classglobalActionTest_1_1globalActionTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>globalActionTest.globalActionTest</label>
+        <link refid="classglobalActionTest_1_1globalActionTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/globalActionTest.py" line="11" column="1" bodyfile="unitTests/framework/webControlTests/globalActionTest.py" bodystart="11" bodyend="98"/>
+    <listofallmembers>
+      <member refid="classglobalActionTest_1_1globalActionTest_1a1af82eca51237058cfa7b8a6fd66f457" prot="public" virt="non-virtual"><scope>globalActionTest::globalActionTest</scope><name>__init__</name></member>
+      <member refid="classglobalActionTest_1_1globalActionTest_1af6549390256f87dbc5fa8073cec3a8e2" prot="public" virt="non-virtual"><scope>globalActionTest::globalActionTest</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

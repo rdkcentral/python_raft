@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classframework_1_1exceptionTests_1_1framework__test1" kind="class" language="Python" prot="public">
+    <compoundname>framework::exceptionTests::framework_test1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classframework_1_1exceptionTests_1_1framework__test1_1a434021c6149f5bc6548d68520d59978c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>framework.exceptionTests.framework_test1::exitOnError</definition>
+        <argsstring></argsstring>
+        <name>exitOnError</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="15" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classframework_1_1exceptionTests_1_1framework__test1_1a3d7781e123e62d86177e40cfc5c0ac32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def framework.exceptionTests.framework_test1.__init__</definition>
+        <argsstring>(self, log=None, exitOnError=False)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>exitOnError</type>
+          <defname>exitOnError</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="14" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="14" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classframework_1_1exceptionTests_1_1framework__test1_1a8012077f9528752ac219e9c2f4acd4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def framework.exceptionTests.framework_test1.waitForBoot</definition>
+        <argsstring>(self)</argsstring>
+        <name>waitForBoot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="19" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classframework_1_1exceptionTests_1_1framework__test1_1a651336ec22fb040fbbf826dd86f95bae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def framework.exceptionTests.framework_test1.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="23" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="23" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classframework_1_1exceptionTests_1_1framework__test1_1a9977705fd8e9e9fdf458c4e69ac24f9b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def framework.exceptionTests.framework_test1.testExceptionCleanUp</definition>
+        <argsstring>(self)</argsstring>
+        <name>testExceptionCleanUp</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/exceptionTests.py" line="35" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="35" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>framework.exceptionTests.framework_test1</label>
+        <link refid="classframework_1_1exceptionTests_1_1framework__test1"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>framework.exceptionTests.framework_test1</label>
+        <link refid="classframework_1_1exceptionTests_1_1framework__test1"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/exceptionTests.py" line="12" column="1" bodyfile="unitTests/framework/exceptionTests.py" bodystart="12" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classframework_1_1exceptionTests_1_1framework__test1_1a3d7781e123e62d86177e40cfc5c0ac32" prot="public" virt="non-virtual"><scope>framework::exceptionTests::framework_test1</scope><name>__init__</name></member>
+      <member refid="classframework_1_1exceptionTests_1_1framework__test1_1a434021c6149f5bc6548d68520d59978c" prot="public" virt="non-virtual"><scope>framework::exceptionTests::framework_test1</scope><name>exitOnError</name></member>
+      <member refid="classframework_1_1exceptionTests_1_1framework__test1_1a9977705fd8e9e9fdf458c4e69ac24f9b" prot="public" virt="non-virtual"><scope>framework::exceptionTests::framework_test1</scope><name>testExceptionCleanUp</name></member>
+      <member refid="classframework_1_1exceptionTests_1_1framework__test1_1a651336ec22fb040fbbf826dd86f95bae" prot="public" virt="non-virtual"><scope>framework::exceptionTests::framework_test1</scope><name>testFunction</name></member>
+      <member refid="classframework_1_1exceptionTests_1_1framework__test1_1a8012077f9528752ac219e9c2f4acd4b6" prot="public" virt="non-virtual"><scope>framework::exceptionTests::framework_test1</scope><name>waitForBoot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

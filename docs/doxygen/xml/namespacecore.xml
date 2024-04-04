@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore" kind="namespace" language="Python">
+    <compoundname>core</compoundname>
+    <innernamespace refid="namespacecore_1_1capture">core::capture</innernamespace>
+    <innernamespace refid="namespacecore_1_1commandModules">core::commandModules</innernamespace>
+    <innernamespace refid="namespacecore_1_1commonRemote">core::commonRemote</innernamespace>
+    <innernamespace refid="namespacecore_1_1configParser">core::configParser</innernamespace>
+    <innernamespace refid="namespacecore_1_1configParserBase">core::configParserBase</innernamespace>
+    <innernamespace refid="namespacecore_1_1decodeParams">core::decodeParams</innernamespace>
+    <innernamespace refid="namespacecore_1_1deviceManager">core::deviceManager</innernamespace>
+    <innernamespace refid="namespacecore_1_1logModule">core::logModule</innernamespace>
+    <innernamespace refid="namespacecore_1_1outboundClient">core::outboundClient</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerControl">core::powerControl</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules">core::powerModules</innernamespace>
+    <innernamespace refid="namespacecore_1_1rackController">core::rackController</innernamespace>
+    <innernamespace refid="namespacecore_1_1rcCodes">core::rcCodes</innernamespace>
+    <innernamespace refid="namespacecore_1_1testControl">core::testControl</innernamespace>
+    <innernamespace refid="namespacecore_1_1utilities">core::utilities</innernamespace>
+    <innernamespace refid="namespacecore_1_1webpageController">core::webpageController</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

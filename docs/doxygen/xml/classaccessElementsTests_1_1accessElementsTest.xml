@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classaccessElementsTests_1_1accessElementsTest" kind="class" language="Python" prot="public">
+    <compoundname>accessElementsTests::accessElementsTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classaccessElementsTests_1_1accessElementsTest_1a0ca3b324d7eb9a1580e192945e5b24c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def accessElementsTests.accessElementsTest.__init__</definition>
+        <argsstring>(self, testName=&quot;accessElementsTest&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;accessElementsTest&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/accessElementsTests.py" line="12" column="1" bodyfile="unitTests/framework/webControlTests/accessElementsTests.py" bodystart="12" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classaccessElementsTests_1_1accessElementsTest_1ab612ce2a7774b693c3d42f47b982d823" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def accessElementsTests.accessElementsTest.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/accessElementsTests.py" line="16" column="1" bodyfile="unitTests/framework/webControlTests/accessElementsTests.py" bodystart="16" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>accessElementsTests.accessElementsTest</label>
+        <link refid="classaccessElementsTests_1_1accessElementsTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>accessElementsTests.accessElementsTest</label>
+        <link refid="classaccessElementsTests_1_1accessElementsTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/accessElementsTests.py" line="11" column="1" bodyfile="unitTests/framework/webControlTests/accessElementsTests.py" bodystart="11" bodyend="63"/>
+    <listofallmembers>
+      <member refid="classaccessElementsTests_1_1accessElementsTest_1a0ca3b324d7eb9a1580e192945e5b24c3" prot="public" virt="non-virtual"><scope>accessElementsTests::accessElementsTest</scope><name>__init__</name></member>
+      <member refid="classaccessElementsTests_1_1accessElementsTest_1ab612ce2a7774b693c3d42f47b982d823" prot="public" virt="non-virtual"><scope>accessElementsTests::accessElementsTest</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

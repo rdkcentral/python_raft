@@ -1,0 +1,576 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1outboundClient_1_1outboundClientClass" kind="class" language="Python" prot="public">
+    <compoundname>core::outboundClient::outboundClientClass</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1a746bca8c74c6256558acaa6155594337" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="38" column="1" bodyfile="framework/core/outboundClient.py" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1af9a5ede1a0c4b33ba8afe25679fbf386" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::logBase</definition>
+        <argsstring></argsstring>
+        <name>logBase</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="39" column="1" bodyfile="framework/core/outboundClient.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1a04f78388d2a10a550d59b376c54edae7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::workspaceDirectory</definition>
+        <argsstring></argsstring>
+        <name>workspaceDirectory</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="43" column="1" bodyfile="framework/core/outboundClient.py" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1a31a2718e15c6b58825c15ccec0f68aac" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::upload_url</definition>
+        <argsstring></argsstring>
+        <name>upload_url</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="47" column="1" bodyfile="framework/core/outboundClient.py" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1a91c302a8fbbd7b14c725770ae09675ba" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::uploadPath</definition>
+        <argsstring></argsstring>
+        <name>uploadPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="48" column="1" bodyfile="framework/core/outboundClient.py" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1a69876e4ce6d6e76301e03a07581e54d4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::httpProxy</definition>
+        <argsstring></argsstring>
+        <name>httpProxy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="49" column="1" bodyfile="framework/core/outboundClient.py" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1a8839e55706155da6b1fff1acdae3b5f4" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::uploadPort</definition>
+        <argsstring></argsstring>
+        <name>uploadPort</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="67" column="1" bodyfile="framework/core/outboundClient.py" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1outboundClient_1_1outboundClientClass_1a22eace743bea4b91bb462e61525ffa2c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.outboundClient.outboundClientClass::uploadAddress</definition>
+        <argsstring></argsstring>
+        <name>uploadAddress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="74" column="1" bodyfile="framework/core/outboundClient.py" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a5f7c139adba2b44d95562c9109a3d335" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.__init__</definition>
+        <argsstring>(self, logModule log=None, str workspaceDirectory=None, str upload_url=None, str httpProxy=&quot;&quot;, **kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>workspaceDirectory</declname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>upload_url</declname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>httpProxy</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>**</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Intialise class
+
+Args:
+    log ([logModule], optional): [logging class from parent if required]. Defaults to None.
+    workspaceDirectory ([str]): [local workspace folder to download files too]
+    upload_url ([str], optional): [description]. Defaults to None.
+    httpProxy (str, optional): [httpProxy if required, used for downloading via http]. Defaults to &quot;&quot;.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="29" column="1" bodyfile="framework/core/outboundClient.py" bodystart="29" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a23a22cd18263d8fbdc5294511dfcda52" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.__del__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__del__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="52" column="1" bodyfile="framework/core/outboundClient.py" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a30acedd6dc3d7cc32a647961181dca46" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.__configureUploadProtocol__</definition>
+        <argsstring>(self, str upload_url)</argsstring>
+        <name>__configureUploadProtocol__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>upload_url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>configure the TFTP client if required
+
+Args:
+    upload_url ([str]): [upload folder including the TFTP requirements]
+
+Returns:
+    [bool]: [True - on success, otherwise False]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="56" column="1" bodyfile="framework/core/outboundClient.py" bodystart="56" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a729995657a1d8319e7545208de3dfd73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.downloadFile</definition>
+        <argsstring>(self, str url, str filename=None)</argsstring>
+        <name>downloadFile</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>filename</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[downloadFile a file from the url and save to the workspace]
+
+Args:
+    url ([str]): [url of the file to be downloadeds]
+    filename ([str]): [optional name of the download file]
+
+Returns:
+    [bool]: [True - on success, otherwise False]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="79" column="1" bodyfile="framework/core/outboundClient.py" bodystart="79" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1ad636553b07510fcb72ac33dbfe9365f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.prepareOutboundWithImageFromUrl</definition>
+        <argsstring>(self, str imageType, str url)</argsstring>
+        <name>prepareOutboundWithImageFromUrl</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>imageType</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>url</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>program the given image name , from the url given
+
+Args:
+    imageType ([str]): [image, PCI1, PCI2, etc. as required]
+    url ([str]): [url for the source image, http://, or sftp:// ]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="105" column="1" bodyfile="framework/core/outboundClient.py" bodystart="105" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1ad9a9f1b4bdffd4b07abdd64025ed067b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.translateImageTypeToImageFilename</definition>
+        <argsstring>(self, str imageType)</argsstring>
+        <name>translateImageTypeToImageFilename</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>imageType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Convert imageType to imageFilename 
+
+    TODO: This function will need extending to read the imageType translations to filename translations
+
+Args:
+    imageType ([str]): [imageType, PCI1, PCI2, PDRI, BDRI etc.]
+Returns:
+    imageFilename ([str]): [Filename returned with extension]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="123" column="1" bodyfile="framework/core/outboundClient.py" bodystart="123" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1ad883426ac8f8e863e35191ca2628a108" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.getSizeInHumanReadable</definition>
+        <argsstring>(self, int size)</argsstring>
+        <name>getSizeInHumanReadable</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>get size in Human Readable form
+
+Args:
+    size ([int]): [size in bytes]
+
+Returns:
+    [int]: [size string]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="136" column="1" bodyfile="framework/core/outboundClient.py" bodystart="136" bodyend="152"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a5bd3c24616164a3c9cc46273cd5f62ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.__downloadSFTP__</definition>
+        <argsstring>(self, str url, str filename=None)</argsstring>
+        <name>__downloadSFTP__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>filename</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Download the given url via SFTP protocol
+
+Args:
+    url ([str]): [source url]
+    filename ([str]): [optional destination filename]
+
+Returns:
+    [bool]: [True - on success, otherwise False]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="153" column="1" bodyfile="framework/core/outboundClient.py" bodystart="153" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a09bf9e485673029f68d9b1fb23c82e87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.cleanWorkspace</definition>
+        <argsstring>(self)</argsstring>
+        <name>cleanWorkspace</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Clean the workspace folder
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="186" column="1" bodyfile="framework/core/outboundClient.py" bodystart="186" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a6bc7ddce52c996661c0db6e17f73afc1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.__uploadSFTP__</definition>
+        <argsstring>(self, str filename)</argsstring>
+        <name>__uploadSFTP__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Upload the specified file via sftp protocol
+    Note: This function will create directories as required
+
+Args:
+    filename ([str]): [filename from workspace]
+
+Returns:
+    [bool]: [True - on success, otherwise False]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="192" column="1" bodyfile="framework/core/outboundClient.py" bodystart="192" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1a7b4154c350070c9e5df7187fb1266f6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.progressSFTP</definition>
+        <argsstring>(self, str filename, int size, int sent)</argsstring>
+        <name>progressSFTP</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>filename</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>size</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>sent</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>SSH Progress callback
+
+Args:
+    filename ([str]): [filename]
+    size ([int]): [total size]
+    sent ([int]): [current sent]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="229" column="1" bodyfile="framework/core/outboundClient.py" bodystart="229" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1af7375f9fb14cac4e173756a787c57ec7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.__downloadHTTP__</definition>
+        <argsstring>(self, str url, str filename=None)</argsstring>
+        <name>__downloadHTTP__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>url</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>filename</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Download the given url via HTTP protocol
+
+Args:
+    url ([str]): [source url]
+    filename ([str]): [optional destination filename]
+
+Returns:
+    [bool]: [True - on success, otherwise False]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="240" column="1" bodyfile="framework/core/outboundClient.py" bodystart="240" bodyend="282"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1af5b1feece341cae6b1c94ab714f8d93d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.uploadFile</definition>
+        <argsstring>(self, str filename)</argsstring>
+        <name>uploadFile</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[upload the file specified from the workspace to the outputfolder ]
+
+Args:
+    file ([str]): [file to be uploaded]
+
+Returns:
+    [bool]: [True - on success, otherwise False]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="283" column="1" bodyfile="framework/core/outboundClient.py" bodystart="283" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1outboundClient_1_1outboundClientClass_1ad146e1bffa69523f5ef307b87df4ab9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.outboundClient.outboundClientClass.retrieveListofFilenamesFromUrl</definition>
+        <argsstring>(self, str inputUrl)</argsstring>
+        <name>retrieveListofFilenamesFromUrl</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>inputUrl</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Retrieves list of build\image names using the input url
+
+Args:
+    inputUrl ([str]) - Url of the build binaries
+
+Returns:
+    imagesList (list) - List of image names available in the binaries folder
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/outboundClient.py" line="306" column="1" bodyfile="framework/core/outboundClient.py" bodystart="306" bodyend="332"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/outboundClient.py" line="27" column="1" bodyfile="framework/core/outboundClient.py" bodystart="27" bodyend="332"/>
+    <listofallmembers>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a30acedd6dc3d7cc32a647961181dca46" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>__configureUploadProtocol__</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a23a22cd18263d8fbdc5294511dfcda52" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>__del__</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1af7375f9fb14cac4e173756a787c57ec7" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>__downloadHTTP__</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a5bd3c24616164a3c9cc46273cd5f62ee" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>__downloadSFTP__</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a5f7c139adba2b44d95562c9109a3d335" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>__init__</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a6bc7ddce52c996661c0db6e17f73afc1" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>__uploadSFTP__</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a09bf9e485673029f68d9b1fb23c82e87" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>cleanWorkspace</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a729995657a1d8319e7545208de3dfd73" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>downloadFile</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1ad883426ac8f8e863e35191ca2628a108" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>getSizeInHumanReadable</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a69876e4ce6d6e76301e03a07581e54d4" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>httpProxy</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a746bca8c74c6256558acaa6155594337" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>log</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1af9a5ede1a0c4b33ba8afe25679fbf386" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>logBase</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1ad636553b07510fcb72ac33dbfe9365f4" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>prepareOutboundWithImageFromUrl</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a7b4154c350070c9e5df7187fb1266f6f" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>progressSFTP</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1ad146e1bffa69523f5ef307b87df4ab9a" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>retrieveListofFilenamesFromUrl</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1ad9a9f1b4bdffd4b07abdd64025ed067b" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>translateImageTypeToImageFilename</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a31a2718e15c6b58825c15ccec0f68aac" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>upload_url</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a22eace743bea4b91bb462e61525ffa2c" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>uploadAddress</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1af5b1feece341cae6b1c94ab714f8d93d" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>uploadFile</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a91c302a8fbbd7b14c725770ae09675ba" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>uploadPath</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a8839e55706155da6b1fff1acdae3b5f4" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>uploadPort</name></member>
+      <member refid="classcore_1_1outboundClient_1_1outboundClientClass_1a04f78388d2a10a550d59b376c54edae7" prot="public" virt="non-virtual"><scope>core::outboundClient::outboundClientClass</scope><name>workspaceDirectory</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

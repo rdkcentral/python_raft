@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1rackController_1_1rackController" kind="class" language="Python" prot="public">
+    <compoundname>core::rackController::rackController</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1rackController_1_1rackController_1a47e0d3a23101ea731c552b55f7385587" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list core.rackController.rackController::racks</definition>
+        <argsstring></argsstring>
+        <name>racks</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="153" column="1" bodyfile="framework/core/rackController.py" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1rackController_1_1rackController_1a0cc9a94730e5ae0137ed7fa93f4701c2" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string core.rackController.rackController::description</definition>
+        <argsstring></argsstring>
+        <name>description</name>
+        <initializer>=  &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="154" column="1" bodyfile="framework/core/rackController.py" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1rackController_1_1rackController_1a52d7c3b3cbe1caa7a3f330639d11d771" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.rackController.rackController::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="174" column="1" bodyfile="framework/core/rackController.py" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackController_1ab5c326778a56885d1b89be9a92e36d66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackController.decodeRackConfig</definition>
+        <argsstring>(self, rackConfig)</argsstring>
+        <name>decodeRackConfig</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rackConfig</type>
+          <defname>rackConfig</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="156" column="1" bodyfile="framework/core/rackController.py" bodystart="156" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackController_1ad6171fbea80646fefcef61fe1df21b3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackController.__init__</definition>
+        <argsstring>(self, config)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="173" column="1" bodyfile="framework/core/rackController.py" bodystart="173" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackController_1a0ad3bf37fe8f7538c6ba9413141e8863" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackController.getRackByName</definition>
+        <argsstring>(self, rackName)</argsstring>
+        <name>getRackByName</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rackName</type>
+          <defname>rackName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="183" column="1" bodyfile="framework/core/rackController.py" bodystart="183" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackController_1a5842ea13f74f1c0123dfe5463af151b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackController.getRackByIndex</definition>
+        <argsstring>(self, rackIndex)</argsstring>
+        <name>getRackByIndex</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rackIndex</type>
+          <defname>rackIndex</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="190" column="1" bodyfile="framework/core/rackController.py" bodystart="190" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackController_1a413dafe402c691f707b219d7f7ba3230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackController.getRackServerHostname</definition>
+        <argsstring>(self, name)</argsstring>
+        <name>getRackServerHostname</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="199" column="1" bodyfile="framework/core/rackController.py" bodystart="199" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackController_1a1a775e97a8aec486a21a1dcc8a9b9f03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackController.getRackDescription</definition>
+        <argsstring>(self, name)</argsstring>
+        <name>getRackDescription</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="205" column="1" bodyfile="framework/core/rackController.py" bodystart="205" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/rackController.py" line="152" column="1" bodyfile="framework/core/rackController.py" bodystart="152" bodyend="213"/>
+    <listofallmembers>
+      <member refid="classcore_1_1rackController_1_1rackController_1ad6171fbea80646fefcef61fe1df21b3e" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>__init__</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1ab5c326778a56885d1b89be9a92e36d66" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>decodeRackConfig</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1a0cc9a94730e5ae0137ed7fa93f4701c2" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>description</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1a5842ea13f74f1c0123dfe5463af151b4" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>getRackByIndex</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1a0ad3bf37fe8f7538c6ba9413141e8863" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>getRackByName</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1a1a775e97a8aec486a21a1dcc8a9b9f03" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>getRackDescription</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1a413dafe402c691f707b219d7f7ba3230" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>getRackServerHostname</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1a52d7c3b3cbe1caa7a3f330639d11d771" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>log</name></member>
+      <member refid="classcore_1_1rackController_1_1rackController_1a47e0d3a23101ea731c552b55f7385587" prot="public" virt="non-virtual"><scope>core::rackController::rackController</scope><name>racks</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

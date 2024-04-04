@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classperformActionsTests_1_1performActionsTests" kind="class" language="Python" prot="public">
+    <compoundname>performActionsTests::performActionsTests</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classperformActionsTests_1_1performActionsTests_1a1b35c86139387645455674e586979a3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def performActionsTests.performActionsTests.__init__</definition>
+        <argsstring>(self, testName=&quot;performActionTests&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;performActionTests&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/performActionsTests.py" line="14" column="1" bodyfile="unitTests/framework/webControlTests/performActionsTests.py" bodystart="14" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classperformActionsTests_1_1performActionsTests_1aef026acf9d1178e401defdabd63159d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def performActionsTests.performActionsTests.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/performActionsTests.py" line="18" column="1" bodyfile="unitTests/framework/webControlTests/performActionsTests.py" bodystart="18" bodyend="101"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>performActionsTests.performActionsTests</label>
+        <link refid="classperformActionsTests_1_1performActionsTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>performActionsTests.performActionsTests</label>
+        <link refid="classperformActionsTests_1_1performActionsTests"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/performActionsTests.py" line="13" column="1" bodyfile="unitTests/framework/webControlTests/performActionsTests.py" bodystart="13" bodyend="102"/>
+    <listofallmembers>
+      <member refid="classperformActionsTests_1_1performActionsTests_1a1b35c86139387645455674e586979a3e" prot="public" virt="non-virtual"><scope>performActionsTests::performActionsTests</scope><name>__init__</name></member>
+      <member refid="classperformActionsTests_1_1performActionsTests_1aef026acf9d1178e401defdabd63159d4" prot="public" virt="non-virtual"><scope>performActionsTests::performActionsTests</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

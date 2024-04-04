@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1deviceManager_1_1deviceManager" kind="class" language="Python" prot="public">
+    <compoundname>core::deviceManager::deviceManager</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceManager_1a7f9159f7217c8ecbb1562ac79477d9cf" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceManager::rawConfig</definition>
+        <argsstring></argsstring>
+        <name>rawConfig</name>
+        <initializer>=  dict()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="183" column="1" bodyfile="framework/core/deviceManager.py" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceManager_1ad014c9fdd20908eceee8942977dfc2fb" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceManager::devices</definition>
+        <argsstring></argsstring>
+        <name>devices</name>
+        <initializer>=  dict()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="184" column="1" bodyfile="framework/core/deviceManager.py" bodystart="184" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceManager_1a5879801507d3ab71bf136af883467ffe" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceManager::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="193" column="1" bodyfile="framework/core/deviceManager.py" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceManager_1a08cedf0100c0470f48b42ca064d9f5c2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceManager::logPath</definition>
+        <argsstring></argsstring>
+        <name>logPath</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="194" column="1" bodyfile="framework/core/deviceManager.py" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1deviceManager_1_1deviceManager_1a8e00ebc43a4a19861c23dd5f85a0ffca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.deviceManager.deviceManager.__init__</definition>
+        <argsstring>(self, dict deviceConfig, logModule log, str logPath=&quot;&quot;)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>deviceConfig</declname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>logPath</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initalise the device Managers
+
+Args:
+    deviceConfig (dict): device list
+    log (logModule): upper device module class
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="186" column="1" bodyfile="framework/core/deviceManager.py" bodystart="186" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1deviceManager_1_1deviceManager_1a1dda6d63a9e09d49265346dfa593a518" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.deviceManager.deviceManager.getDevice</definition>
+        <argsstring>(self, str deviceName=&quot;dut&quot;)</argsstring>
+        <name>getDevice</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>deviceName</declname>
+          <defval>&quot;dut&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get an individual device configuration
+
+Args:
+    deviceName (str, optional): device name. Defaults to &quot;dut&quot;.
+
+Returns:
+    dict: device dictionary, or None on failure
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="200" column="1" bodyfile="framework/core/deviceManager.py" bodystart="200" bodyend="214"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/deviceManager.py" line="181" column="1" bodyfile="framework/core/deviceManager.py" bodystart="181" bodyend="214"/>
+    <listofallmembers>
+      <member refid="classcore_1_1deviceManager_1_1deviceManager_1a8e00ebc43a4a19861c23dd5f85a0ffca" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceManager</scope><name>__init__</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceManager_1ad014c9fdd20908eceee8942977dfc2fb" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceManager</scope><name>devices</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceManager_1a1dda6d63a9e09d49265346dfa593a518" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceManager</scope><name>getDevice</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceManager_1a5879801507d3ab71bf136af883467ffe" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceManager</scope><name>log</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceManager_1a08cedf0100c0470f48b42ca064d9f5c2" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceManager</scope><name>logPath</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceManager_1a7f9159f7217c8ecbb1562ac79477d9cf" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceManager</scope><name>rawConfig</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

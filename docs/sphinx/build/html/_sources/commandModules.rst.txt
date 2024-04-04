@@ -1,0 +1,45 @@
+commandModules package
+======================
+
+Submodules
+----------
+
+commandModules.consoleInterface module
+--------------------------------------
+
+.. automodule:: commandModules.consoleInterface
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+commandModules.serialClass module
+---------------------------------
+
+.. automodule:: commandModules.serialClass
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+commandModules.sshConsole module
+--------------------------------
+
+.. automodule:: commandModules.sshConsole
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+commandModules.telnetClass module
+---------------------------------
+
+.. automodule:: commandModules.telnetClass
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: commandModules
+   :members:
+   :undoc-members:
+   :show-inheritance:

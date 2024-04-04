@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1none_1_1powerNone" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::none::powerNone</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.none.powerNone::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/none.py" line="18" column="1" bodyfile="framework/core/powerModules/none.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1none_1_1powerNone_1abef37c22f479d485f2251ce0b1ff5cd0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.none.powerNone.__init__</definition>
+        <argsstring>(self, log)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/none.py" line="17" column="1" bodyfile="framework/core/powerModules/none.py" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1none_1_1powerNone_1a0a0f118c06b0638a4223b2eae0b9e2dd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.none.powerNone.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/none.py" line="22" column="1" bodyfile="framework/core/powerModules/none.py" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1none_1_1powerNone_1aec78fbef34d255076d5338f521860b9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.none.powerNone.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/none.py" line="26" column="1" bodyfile="framework/core/powerModules/none.py" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1none_1_1powerNone_1a15b85dd88de34738ba09e51b88fcc8ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.none.powerNone.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/none.py" line="30" column="1" bodyfile="framework/core/powerModules/none.py" bodystart="30" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/none.py" line="15" column="1" bodyfile="framework/core/powerModules/none.py" bodystart="15" bodyend="38"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1none_1_1powerNone_1abef37c22f479d485f2251ce0b1ff5cd0" prot="public" virt="non-virtual"><scope>core::powerModules::none::powerNone</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aa62d87179a61c1239bb199531e2f73f1" prot="public" virt="non-virtual"><scope>core::powerModules::none::powerNone</scope><name>log</name></member>
+      <member refid="classcore_1_1powerModules_1_1none_1_1powerNone_1aec78fbef34d255076d5338f521860b9d" prot="public" virt="non-virtual"><scope>core::powerModules::none::powerNone</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerModules_1_1none_1_1powerNone_1a0a0f118c06b0638a4223b2eae0b9e2dd" prot="public" virt="non-virtual"><scope>core::powerModules::none::powerNone</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerModules_1_1none_1_1powerNone_1a15b85dd88de34738ba09e51b88fcc8ba" prot="public" virt="non-virtual"><scope>core::powerModules::none::powerNone</scope><name>reboot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

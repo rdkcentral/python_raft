@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classnone_1_1remoteNone" kind="class" language="Python" prot="public">
+    <compoundname>none::remoteNone</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classnone_1_1remoteNone_1aa59ed1098f29f7b5e46887c8cc730ba0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>none.remoteNone::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/none.py" line="26" column="1" bodyfile="framework/core/remoteControllerModules/none.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnone_1_1remoteNone_1a8341e32ef721b920df42daa8d6efa553" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def none.remoteNone.__init__</definition>
+        <argsstring>(self, logModule log, dict remoteConfig)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>remoteConfig</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Initalise a remoteNone class
+
+Args:
+    log (logModule): logging module
+    remoteConfig (dict): remote controller configuration
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/none.py" line="19" column="1" bodyfile="framework/core/remoteControllerModules/none.py" bodystart="19" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classnone_1_1remoteNone_1acf5d530ad59aa9d4606f94f6912002b4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def none.remoteNone.sendKey</definition>
+        <argsstring>(self, str code, int repeat, int delay)</argsstring>
+        <name>sendKey</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>repeat</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Send a key
+
+Args:
+    code (str): keycode
+    repeat (int): number of repeats required
+    delay (int): delay in seconds between repeats
+
+Returns:
+    bool: true on success otherwise failure
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/none.py" line="28" column="1" bodyfile="framework/core/remoteControllerModules/none.py" bodystart="28" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/remoteControllerModules/none.py" line="17" column="1" bodyfile="framework/core/remoteControllerModules/none.py" bodystart="17" bodyend="46"/>
+    <listofallmembers>
+      <member refid="classnone_1_1remoteNone_1a8341e32ef721b920df42daa8d6efa553" prot="public" virt="non-virtual"><scope>none::remoteNone</scope><name>__init__</name></member>
+      <member refid="classnone_1_1remoteNone_1aa59ed1098f29f7b5e46887c8cc730ba0" prot="public" virt="non-virtual"><scope>none::remoteNone</scope><name>log</name></member>
+      <member refid="classnone_1_1remoteNone_1acf5d530ad59aa9d4606f94f6912002b4" prot="public" virt="non-virtual"><scope>none::remoteNone</scope><name>sendKey</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classolimex_1_1remoteOlimex" kind="class" language="Python" prot="public">
+    <compoundname>olimex::remoteOlimex</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classolimex_1_1remoteOlimex_1aab6ef78b3bede73ae44410877039f8b9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>olimex.remoteOlimex::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/olimex.py" line="23" column="1" bodyfile="framework/core/remoteControllerModules/olimex.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classolimex_1_1remoteOlimex_1a0ba7390c595be557f16ea12590b70588" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>olimex.remoteOlimex::remoteController</definition>
+        <argsstring></argsstring>
+        <name>remoteController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/olimex.py" line="24" column="1" bodyfile="framework/core/remoteControllerModules/olimex.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classolimex_1_1remoteOlimex_1a650f02847c0fd11959d8e55fcb1131ab" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>olimex.remoteOlimex::telnet</definition>
+        <argsstring></argsstring>
+        <name>telnet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/olimex.py" line="27" column="1" bodyfile="framework/core/remoteControllerModules/olimex.py" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classolimex_1_1remoteOlimex_1a596605db539464eded841242eb3f80c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def olimex.remoteOlimex.__init__</definition>
+        <argsstring>(self, logModule log, dict remoteController)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>remoteController</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/olimex.py" line="22" column="1" bodyfile="framework/core/remoteControllerModules/olimex.py" bodystart="22" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classolimex_1_1remoteOlimex_1a85ece3223e91147d26f0861b964b3f58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def olimex.remoteOlimex.command</definition>
+        <argsstring>(self, str cmd)</argsstring>
+        <name>command</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/olimex.py" line="26" column="1" bodyfile="framework/core/remoteControllerModules/olimex.py" bodystart="26" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classolimex_1_1remoteOlimex_1a456f0583d53ceabfca16dfc4e0a515f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def olimex.remoteOlimex.sendKey</definition>
+        <argsstring>(self, str code, int repeat, int delay)</argsstring>
+        <name>sendKey</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>code</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>repeat</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/remoteControllerModules/olimex.py" line="38" column="1" bodyfile="framework/core/remoteControllerModules/olimex.py" bodystart="38" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/remoteControllerModules/olimex.py" line="20" column="1" bodyfile="framework/core/remoteControllerModules/olimex.py" bodystart="20" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classolimex_1_1remoteOlimex_1a596605db539464eded841242eb3f80c1" prot="public" virt="non-virtual"><scope>olimex::remoteOlimex</scope><name>__init__</name></member>
+      <member refid="classolimex_1_1remoteOlimex_1a85ece3223e91147d26f0861b964b3f58" prot="public" virt="non-virtual"><scope>olimex::remoteOlimex</scope><name>command</name></member>
+      <member refid="classolimex_1_1remoteOlimex_1aab6ef78b3bede73ae44410877039f8b9" prot="public" virt="non-virtual"><scope>olimex::remoteOlimex</scope><name>log</name></member>
+      <member refid="classolimex_1_1remoteOlimex_1a0ba7390c595be557f16ea12590b70588" prot="public" virt="non-virtual"><scope>olimex::remoteOlimex</scope><name>remoteController</name></member>
+      <member refid="classolimex_1_1remoteOlimex_1a456f0583d53ceabfca16dfc4e0a515f2" prot="public" virt="non-virtual"><scope>olimex::remoteOlimex</scope><name>sendKey</name></member>
+      <member refid="classolimex_1_1remoteOlimex_1a650f02847c0fd11959d8e55fcb1131ab" prot="public" virt="non-virtual"><scope>olimex::remoteOlimex</scope><name>telnet</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

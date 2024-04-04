@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1powerModules_1_1kasaControl" kind="namespace" language="Python">
+    <compoundname>core::powerModules::kasaControl</compoundname>
+    <innerclass refid="classcore_1_1powerModules_1_1kasaControl_1_1powerKasa" prot="public">core::powerModules::kasaControl::powerKasa</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/kasaControl.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

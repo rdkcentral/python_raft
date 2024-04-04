@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1rackController_1_1configDecoderClass" kind="class" language="Python" prot="public">
+    <compoundname>core::rackController::configDecoderClass</compoundname>
+    <derivedcompoundref refid="classcore_1_1rackController_1_1rack" prot="public" virt="non-virtual">core.rackController.rack</derivedcompoundref>
+    <derivedcompoundref refid="classcore_1_1rackController_1_1rackSlot" prot="public" virt="non-virtual">core.rackController.rackSlot</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1rackController_1_1configDecoderClass_1a0b5524f8d0f8cda636edde3b83d65dce" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.configDecoderClass.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="23" column="1" bodyfile="framework/core/rackController.py" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1configDecoderClass_1a26fa498416f84a6b8a1011073704a33e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.configDecoderClass.checkRequiredField</definition>
+        <argsstring>(self, config, name)</argsstring>
+        <name>checkRequiredField</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="26" column="1" bodyfile="framework/core/rackController.py" bodystart="26" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1configDecoderClass_1a9bc61535f5249bc96bbe3b9a3a2adaea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.configDecoderClass.decodeConfigItem</definition>
+        <argsstring>(self, config, value, nameTable)</argsstring>
+        <name>decodeConfigItem</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <param>
+          <type>nameTable</type>
+          <defname>nameTable</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="34" column="1" bodyfile="framework/core/rackController.py" bodystart="34" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1configDecoderClass_1afb4fa1e70e2337242386530e5cf23e6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.configDecoderClass.setConfigValue</definition>
+        <argsstring>(self, name, value)</argsstring>
+        <name>setConfigValue</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="42" column="1" bodyfile="framework/core/rackController.py" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1configDecoderClass_1a21f53d7e0aaa4eb1b99f9f82cfbff9c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.configDecoderClass.dumpValue</definition>
+        <argsstring>(self, x)</argsstring>
+        <name>dumpValue</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>x</type>
+          <defname>x</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="46" column="1" bodyfile="framework/core/rackController.py" bodystart="46" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>core.rackController.rack</label>
+        <link refid="classcore_1_1rackController_1_1rack"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>core.rackController.rackSlot</label>
+        <link refid="classcore_1_1rackController_1_1rackSlot"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>core.rackController.configDecoderClass</label>
+        <link refid="classcore_1_1rackController_1_1configDecoderClass"/>
+      </node>
+    </inheritancegraph>
+    <location file="framework/core/rackController.py" line="21" column="1" bodyfile="framework/core/rackController.py" bodystart="21" bodyend="50"/>
+    <listofallmembers>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a0b5524f8d0f8cda636edde3b83d65dce" prot="public" virt="non-virtual"><scope>core::rackController::configDecoderClass</scope><name>__init__</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a26fa498416f84a6b8a1011073704a33e" prot="public" virt="non-virtual"><scope>core::rackController::configDecoderClass</scope><name>checkRequiredField</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a9bc61535f5249bc96bbe3b9a3a2adaea" prot="public" virt="non-virtual"><scope>core::rackController::configDecoderClass</scope><name>decodeConfigItem</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a21f53d7e0aaa4eb1b99f9f82cfbff9c5" prot="public" virt="non-virtual"><scope>core::rackController::configDecoderClass</scope><name>dumpValue</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1afb4fa1e70e2337242386530e5cf23e6f" prot="public" virt="non-virtual"><scope>core::rackController::configDecoderClass</scope><name>setConfigValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

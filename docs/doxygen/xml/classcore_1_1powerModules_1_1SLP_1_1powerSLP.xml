@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1SLP_1_1powerSLP" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::SLP::powerSLP</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1afb302038cf6587005c6e4dcc2b0b15dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.SLP.powerSLP::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="21" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a9a9216fc03d7d657db71c4758effbbc0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.SLP.powerSLP::ip</definition>
+        <argsstring></argsstring>
+        <name>ip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="22" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1ac7f90cf534115653cc722b59c571a3bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.SLP.powerSLP::username</definition>
+        <argsstring></argsstring>
+        <name>username</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="23" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a64c897786c5438073ee464ebe0a2f04a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.SLP.powerSLP::password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="24" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a68fcf630b3a8c1c7660bfe7c36a0b247" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.SLP.powerSLP::outlet</definition>
+        <argsstring></argsstring>
+        <name>outlet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="25" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a7c1d46d6c21f486666fb89ff1957022d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.SLP.powerSLP::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="26" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1ad2af4cacf517a0be5d69a184b0358e63" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.SLP.powerSLP::telnet</definition>
+        <argsstring></argsstring>
+        <name>telnet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="29" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a0101220b9650ec9e162f8e78c9f854f0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.SLP.powerSLP.__init__</definition>
+        <argsstring>(self, log, ip, username, password, outlet_id, port=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>username</type>
+          <defname>username</defname>
+        </param>
+        <param>
+          <type>password</type>
+          <defname>password</defname>
+        </param>
+        <param>
+          <type>outlet_id</type>
+          <defname>outlet_id</defname>
+        </param>
+        <param>
+          <type>port</type>
+          <defname>port</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="20" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="20" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a6471ce6051805d55424ab2ce6ad1ed75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.SLP.powerSLP.command</definition>
+        <argsstring>(self, cmd)</argsstring>
+        <name>command</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>cmd</type>
+          <defname>cmd</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="32" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="32" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a600b83914f57cde650089a4f72c2587f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.SLP.powerSLP.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="47" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="47" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1af492de50d9b6e6fa951cd3fab51f2c66" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.SLP.powerSLP.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="53" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="53" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a7db547b3a6186fd99da0363227c808a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.SLP.powerSLP.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/SLP.py" line="59" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="59" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/SLP.py" line="18" column="1" bodyfile="framework/core/powerModules/SLP.py" bodystart="18" bodyend="64"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a0101220b9650ec9e162f8e78c9f854f0" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a6471ce6051805d55424ab2ce6ad1ed75" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>command</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a9a9216fc03d7d657db71c4758effbbc0" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>ip</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1afb302038cf6587005c6e4dcc2b0b15dd" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>log</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a68fcf630b3a8c1c7660bfe7c36a0b247" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>outlet</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a64c897786c5438073ee464ebe0a2f04a" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>password</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a7c1d46d6c21f486666fb89ff1957022d" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>port</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a600b83914f57cde650089a4f72c2587f" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1af492de50d9b6e6fa951cd3fab51f2c66" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1a7db547b3a6186fd99da0363227c808a3" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>reboot</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1ad2af4cacf517a0be5d69a184b0358e63" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>telnet</name></member>
+      <member refid="classcore_1_1powerModules_1_1SLP_1_1powerSLP_1ac7f90cf534115653cc722b59c571a3bb" prot="public" virt="non-virtual"><scope>core::powerModules::SLP::powerSLP</scope><name>username</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

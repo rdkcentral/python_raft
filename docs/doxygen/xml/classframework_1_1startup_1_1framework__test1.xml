@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classframework_1_1startup_1_1framework__test1" kind="class" language="Python" prot="public">
+    <compoundname>framework::startup::framework_test1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classframework_1_1startup_1_1framework__test1_1ad83d53ffea104faff3328d44d28d42f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def framework.startup.framework_test1.__init__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/startup.py" line="13" column="1" bodyfile="unitTests/framework/startup.py" bodystart="13" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classframework_1_1startup_1_1framework__test1_1ad59eb12e6b1d2dfd614948c922ca3ccb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def framework.startup.framework_test1.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/startup.py" line="18" column="1" bodyfile="unitTests/framework/startup.py" bodystart="18" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>framework.startup.framework_test1</label>
+        <link refid="classframework_1_1startup_1_1framework__test1"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>framework.startup.framework_test1</label>
+        <link refid="classframework_1_1startup_1_1framework__test1"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/startup.py" line="11" column="1" bodyfile="unitTests/framework/startup.py" bodystart="11" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classframework_1_1startup_1_1framework__test1_1ad83d53ffea104faff3328d44d28d42f9" prot="public" virt="non-virtual"><scope>framework::startup::framework_test1</scope><name>__init__</name></member>
+      <member refid="classframework_1_1startup_1_1framework__test1_1ad59eb12e6b1d2dfd614948c922ca3ccb" prot="public" virt="non-virtual"><scope>framework::startup::framework_test1</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

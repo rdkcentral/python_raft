@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1rackController_1_1rack" kind="class" language="Python" prot="public">
+    <compoundname>core::rackController::rack</compoundname>
+    <basecompoundref refid="classcore_1_1rackController_1_1configDecoderClass" prot="public" virt="non-virtual">core.rackController.configDecoderClass</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1rackController_1_1rack_1ad136f4dccbc62e2246236965cce45e42" prot="public" static="yes" mutable="no">
+        <type>list</type>
+        <definition>list core.rackController.rack::slot</definition>
+        <argsstring></argsstring>
+        <name>slot</name>
+        <initializer>=  []</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="124" column="1" bodyfile="framework/core/rackController.py" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1rackController_1_1rack_1a47a9e21dd1448dbae958bc03c3550311" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.rackController.rack::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="129" column="1" bodyfile="framework/core/rackController.py" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rack_1a26b58739f17c494dffa11fe440dd7cba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rack.__init__</definition>
+        <argsstring>(self, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="126" column="1" bodyfile="framework/core/rackController.py" bodystart="126" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rack_1aa4c3eed1911d906e12c126108a0f877b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rack.addSlot</definition>
+        <argsstring>(self, rackSlot)</argsstring>
+        <name>addSlot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type><ref refid="classcore_1_1rackController_1_1rackSlot" kindref="compound">rackSlot</ref></type>
+          <defname>rackSlot</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="132" column="1" bodyfile="framework/core/rackController.py" bodystart="132" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rack_1aa088fcd1b498cf0350941cc68472f271" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rack.getSlot</definition>
+        <argsstring>(self, slotIndex)</argsstring>
+        <name>getSlot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>slotIndex</type>
+          <defname>slotIndex</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="135" column="1" bodyfile="framework/core/rackController.py" bodystart="135" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rack_1a5f9651a991b06ae3253f45790d9dba00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rack.getSlotByName</definition>
+        <argsstring>(self, slotName)</argsstring>
+        <name>getSlotByName</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>slotName</type>
+          <defname>slotName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="145" column="1" bodyfile="framework/core/rackController.py" bodystart="145" bodyend="151"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>core.rackController.rack</label>
+        <link refid="classcore_1_1rackController_1_1rack"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core.rackController.configDecoderClass</label>
+        <link refid="classcore_1_1rackController_1_1configDecoderClass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>core.rackController.rack</label>
+        <link refid="classcore_1_1rackController_1_1rack"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core.rackController.configDecoderClass</label>
+        <link refid="classcore_1_1rackController_1_1configDecoderClass"/>
+      </node>
+    </collaborationgraph>
+    <location file="framework/core/rackController.py" line="122" column="1" bodyfile="framework/core/rackController.py" bodystart="122" bodyend="152"/>
+    <listofallmembers>
+      <member refid="classcore_1_1rackController_1_1rack_1a26b58739f17c494dffa11fe440dd7cba" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>__init__</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a0b5524f8d0f8cda636edde3b83d65dce" prot="public" virt="non-virtual" ambiguityscope="core::rackController::configDecoderClass."><scope>core::rackController::rack</scope><name>__init__</name></member>
+      <member refid="classcore_1_1rackController_1_1rack_1aa4c3eed1911d906e12c126108a0f877b" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>addSlot</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a26fa498416f84a6b8a1011073704a33e" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>checkRequiredField</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a9bc61535f5249bc96bbe3b9a3a2adaea" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>decodeConfigItem</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a21f53d7e0aaa4eb1b99f9f82cfbff9c5" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>dumpValue</name></member>
+      <member refid="classcore_1_1rackController_1_1rack_1aa088fcd1b498cf0350941cc68472f271" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>getSlot</name></member>
+      <member refid="classcore_1_1rackController_1_1rack_1a5f9651a991b06ae3253f45790d9dba00" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>getSlotByName</name></member>
+      <member refid="classcore_1_1rackController_1_1rack_1a47a9e21dd1448dbae958bc03c3550311" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>log</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1afb4fa1e70e2337242386530e5cf23e6f" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>setConfigValue</name></member>
+      <member refid="classcore_1_1rackController_1_1rack_1ad136f4dccbc62e2246236965cce45e42" prot="public" virt="non-virtual"><scope>core::rackController::rack</scope><name>slot</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

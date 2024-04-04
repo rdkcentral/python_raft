@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_8f7813a2e1199496bc4aeee3a1228541" kind="dir">
+    <compoundname>framework/core/webpageModules</compoundname>
+    <innerfile refid="seleniumDriver_8py">seleniumDriver.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/webpageModules/"/>
+  </compounddef>
+</doxygen>

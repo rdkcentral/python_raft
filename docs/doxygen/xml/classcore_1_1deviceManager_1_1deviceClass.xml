@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1deviceManager_1_1deviceClass" kind="class" language="Python" prot="public">
+    <compoundname>core::deviceManager::deviceClass</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceClass_1a4b9470131c888fde5f67fb5f286f5d99" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceClass::consoles</definition>
+        <argsstring></argsstring>
+        <name>consoles</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="122" column="1" bodyfile="framework/core/deviceManager.py" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceClass_1a4b6f75cb50b31b96a7a6bea645a4ada1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceClass::powerControl</definition>
+        <argsstring></argsstring>
+        <name>powerControl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="123" column="1" bodyfile="framework/core/deviceManager.py" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceClass_1acf457a93bee57cf279c3e68fdc495f69" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceClass::outBoundClient</definition>
+        <argsstring></argsstring>
+        <name>outBoundClient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="124" column="1" bodyfile="framework/core/deviceManager.py" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceClass_1ac26a44907fa48b09e8ff93db7616ab62" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceClass::remoteController</definition>
+        <argsstring></argsstring>
+        <name>remoteController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="125" column="1" bodyfile="framework/core/deviceManager.py" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceClass_1a63c64577e020e0e879db228bb4a3677a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceClass::rawConfig</definition>
+        <argsstring></argsstring>
+        <name>rawConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="127" column="1" bodyfile="framework/core/deviceManager.py" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1deviceManager_1_1deviceClass_1a3d82938549342ff76c4705f0d02bcd5e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.deviceManager.deviceClass::deviceName</definition>
+        <argsstring></argsstring>
+        <name>deviceName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="129" column="1" bodyfile="framework/core/deviceManager.py" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1deviceManager_1_1deviceClass_1a723d0246df0d3c33bdd65a7e1ad4f120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.deviceManager.deviceClass.__init__</definition>
+        <argsstring>(self, logModule log, str logPath, dict devices)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>logPath</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>devices</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Intialise a single decode from the config
+
+Args:
+    log (logModule): log Module class
+    logPath (str): path to write workspace files
+    devices (dict): devices to initialise
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="107" column="1" bodyfile="framework/core/deviceManager.py" bodystart="107" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1deviceManager_1_1deviceClass_1ac803a4d528b1401cf823cd49194d6b6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.deviceManager.deviceClass.getField</definition>
+        <argsstring>(self, str fieldName, dict itemsList=None)</argsstring>
+        <name>getField</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>fieldName</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>itemsList</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>get a named field from the device
+
+Args:
+    fieldName (str): name of the field to return
+    itemsList (dict): get field from the items list, or None to start at the top
+
+Returns:
+    str: field value, None on error
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="145" column="1" bodyfile="framework/core/deviceManager.py" bodystart="145" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1deviceManager_1_1deviceClass_1ac545fb27bd0b4df4aeb194d01d757492" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.deviceManager.deviceClass.getConsoleSession</definition>
+        <argsstring>(self, str consoleName=&quot;default&quot;)</argsstring>
+        <name>getConsoleSession</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>str</type>
+          <declname>consoleName</declname>
+          <defval>&quot;default&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>get the device console
+
+Args:
+    consoleName (str, optional): console name. Defaults to &quot;default&quot;.
+
+Returns:
+    consoleClass: console class, or None on failure
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/deviceManager.py" line="167" column="1" bodyfile="framework/core/deviceManager.py" bodystart="167" bodyend="180"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Single device with all controllers
+
+Raises:
+    exception: none
+
+Returns:
+    class: device class
+</verbatim> </para>
+    </detaileddescription>
+    <location file="framework/core/deviceManager.py" line="97" column="1" bodyfile="framework/core/deviceManager.py" bodystart="97" bodyend="181"/>
+    <listofallmembers>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1a723d0246df0d3c33bdd65a7e1ad4f120" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>__init__</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1a4b9470131c888fde5f67fb5f286f5d99" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>consoles</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1a3d82938549342ff76c4705f0d02bcd5e" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>deviceName</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1ac545fb27bd0b4df4aeb194d01d757492" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>getConsoleSession</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1ac803a4d528b1401cf823cd49194d6b6f" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>getField</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1acf457a93bee57cf279c3e68fdc495f69" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>outBoundClient</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1a4b6f75cb50b31b96a7a6bea645a4ada1" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>powerControl</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1a63c64577e020e0e879db228bb4a3677a" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>rawConfig</name></member>
+      <member refid="classcore_1_1deviceManager_1_1deviceClass_1ac26a44907fa48b09e8ff93db7616ab62" prot="public" virt="non-virtual"><scope>core::deviceManager::deviceClass</scope><name>remoteController</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

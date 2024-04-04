@@ -1,0 +1,410 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::S20control::OrviboS20</compoundname>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a78742a6bc7ef7392c5372c7262fa6c3d" prot="public" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int core.powerModules.S20control.OrviboS20::DEBUG</definition>
+        <argsstring></argsstring>
+        <name>DEBUG</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="91" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1aca24b3f4bb6fe93f98249d7a0e35f219" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.S20control.OrviboS20::subscribed</definition>
+        <argsstring></argsstring>
+        <name>subscribed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="100" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1acc2c94057ad0bd1ed567df2cd7ca39f7" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.S20control.OrviboS20::exitontimeout</definition>
+        <argsstring></argsstring>
+        <name>exitontimeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="101" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1ad49088dc973b195834c2bbf652b57df9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.S20control.OrviboS20::sock</definition>
+        <argsstring></argsstring>
+        <name>sock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="104" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a10a14b524d334a59693608d83a373e00" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.__enter__</definition>
+        <argsstring>(self)</argsstring>
+        <name>__enter__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="93" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a23ad4abe25f208d333f602d3a802dbd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.__exit__</definition>
+        <argsstring>(self, exc_type, exc_val, exc_tb)</argsstring>
+        <name>__exit__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>exc_type</type>
+          <defname>exc_type</defname>
+        </param>
+        <param>
+          <type>exc_val</type>
+          <defname>exc_val</defname>
+        </param>
+        <param>
+          <type>exc_tb</type>
+          <defname>exc_tb</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="96" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="96" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a6a9f36e837d28b65e7b7b72f29fc636b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.__init__</definition>
+        <argsstring>(self, port=10000)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>port</type>
+          <defname>port</defname>
+          <defval>10000</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="99" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="99" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a224c02639cae41593576814a110bfc1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.close</definition>
+        <argsstring>(self)</argsstring>
+        <name>close</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="112" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="112" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1acb2fd905ff7e064f149a5af55b371ac5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.listen</definition>
+        <argsstring>(self)</argsstring>
+        <name>listen</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="233" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="233" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a6a3b52ba88499ddc7549dc6cd0744f63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.discover</definition>
+        <argsstring>(self, ip, mac)</argsstring>
+        <name>discover</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>mac</type>
+          <defname>mac</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="238" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="238" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1ae98666d6d274242962981f22398e4f02" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.globaldiscover</definition>
+        <argsstring>(self, ip)</argsstring>
+        <name>globaldiscover</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="255" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="255" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a8b37697ee976c4c0072f383b757a054c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.subscribe</definition>
+        <argsstring>(self, ip, mac)</argsstring>
+        <name>subscribe</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>mac</type>
+          <defname>mac</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="268" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="268" bodyend="289"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1af3902b3cbb1fd50acc2cd7f115ef0fd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.poweron</definition>
+        <argsstring>(self, ip=None, mac=None)</argsstring>
+        <name>poweron</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>mac</type>
+          <defname>mac</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="303" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="303" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a452b31b58b0c231361de0e6ea95c5347" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20.poweroff</definition>
+        <argsstring>(self, ip=None, mac=None)</argsstring>
+        <name>poweroff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>mac</type>
+          <defname>mac</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="314" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="314" bodyend="325"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1abe5ba89a63891a23d90af017525f2815" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20._settimeout</definition>
+        <argsstring>(self, timeout=None)</argsstring>
+        <name>_settimeout</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>timeout</type>
+          <defname>timeout</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="118" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="118" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a4568672364400371b52738693be599cf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20._sendpacket</definition>
+        <argsstring>(self, payload, ip)</argsstring>
+        <name>_sendpacket</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>payload</type>
+          <defname>payload</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="122" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="122" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a2c1632aeee00ca08e2a8b4671a00229a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20._listendiscover</definition>
+        <argsstring>(self)</argsstring>
+        <name>_listendiscover</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="128" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="128" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a730f887afda988d97e10665029af2935" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.S20control.OrviboS20._subscribeifneeded</definition>
+        <argsstring>(self, ip, mac)</argsstring>
+        <name>_subscribeifneeded</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>ip</type>
+          <defname>ip</defname>
+        </param>
+        <param>
+          <type>mac</type>
+          <defname>mac</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/S20control.py" line="290" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="290" bodyend="302"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>main class for Orvibo S20
+</verbatim> </para>
+    </detaileddescription>
+    <location file="framework/core/powerModules/S20control.py" line="87" column="1" bodyfile="framework/core/powerModules/S20control.py" bodystart="87" bodyend="326"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a10a14b524d334a59693608d83a373e00" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>__enter__</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a23ad4abe25f208d333f602d3a802dbd1" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>__exit__</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a6a9f36e837d28b65e7b7b72f29fc636b" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a2c1632aeee00ca08e2a8b4671a00229a" prot="private" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>_listendiscover</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a4568672364400371b52738693be599cf" prot="private" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>_sendpacket</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1abe5ba89a63891a23d90af017525f2815" prot="private" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>_settimeout</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a730f887afda988d97e10665029af2935" prot="private" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>_subscribeifneeded</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a224c02639cae41593576814a110bfc1a" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>close</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a78742a6bc7ef7392c5372c7262fa6c3d" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>DEBUG</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a6a3b52ba88499ddc7549dc6cd0744f63" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>discover</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1acc2c94057ad0bd1ed567df2cd7ca39f7" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>exitontimeout</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1ae98666d6d274242962981f22398e4f02" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>globaldiscover</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1acb2fd905ff7e064f149a5af55b371ac5" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>listen</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a452b31b58b0c231361de0e6ea95c5347" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>poweroff</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1af3902b3cbb1fd50acc2cd7f115ef0fd3" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>poweron</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1ad49088dc973b195834c2bbf652b57df9" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>sock</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1a8b37697ee976c4c0072f383b757a054c" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>subscribe</name></member>
+      <member refid="classcore_1_1powerModules_1_1S20control_1_1OrviboS20_1aca24b3f4bb6fe93f98249d7a0e35f219" prot="public" virt="non-virtual"><scope>core::powerModules::S20control::OrviboS20</scope><name>subscribed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

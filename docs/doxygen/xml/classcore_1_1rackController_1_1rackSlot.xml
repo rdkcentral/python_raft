@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1rackController_1_1rackSlot" kind="class" language="Python" prot="public">
+    <compoundname>core::rackController::rackSlot</compoundname>
+    <basecompoundref refid="classcore_1_1rackController_1_1configDecoderClass" prot="public" virt="non-virtual">core.rackController.configDecoderClass</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classcore_1_1rackController_1_1rackSlot_1ac3a5b7de4f9b5349d16df951f10b0ff9" prot="public" static="yes" mutable="no">
+        <type></type>
+        <definition>core.rackController.rackSlot::config</definition>
+        <argsstring></argsstring>
+        <name>config</name>
+        <initializer>=  dict()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="52" column="1" bodyfile="framework/core/rackController.py" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1rackController_1_1rackSlot_1a34fe4b58ddb3946853101d93b7148cbb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.rackController.rackSlot::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="57" column="1" bodyfile="framework/core/rackController.py" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a4494e4456611af87b6a23cc39f742568" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.__init__</definition>
+        <argsstring>(self, dict config, logModule log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>config</declname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="54" column="1" bodyfile="framework/core/rackController.py" bodystart="54" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a4534171f2adb2c6fe10f62ea028feb5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getDevice</definition>
+        <argsstring>(self, deviceName)</argsstring>
+        <name>getDevice</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>deviceName</type>
+          <defname>deviceName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="61" column="1" bodyfile="framework/core/rackController.py" bodystart="61" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a61a1c3c8d50357a5de6ee762582ad685" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.find_name</definition>
+        <argsstring>(self, table, name)</argsstring>
+        <name>find_name</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>table</type>
+          <defname>table</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="64" column="1" bodyfile="framework/core/rackController.py" bodystart="64" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a530da3c3d8777e3de2d06e25f8c9387e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.get</definition>
+        <argsstring>(self)</argsstring>
+        <name>get</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="74" column="1" bodyfile="framework/core/rackController.py" bodystart="74" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a83ac35e056b7a3f5672b0b817d1965ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getName</definition>
+        <argsstring>(self)</argsstring>
+        <name>getName</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="77" column="1" bodyfile="framework/core/rackController.py" bodystart="77" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a6199f05c2281320b19feeb9ed77fbff3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getRackName</definition>
+        <argsstring>(self)</argsstring>
+        <name>getRackName</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="80" column="1" bodyfile="framework/core/rackController.py" bodystart="80" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a9f6b36d2c8164327619ef368e9c15279" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.setRackName</definition>
+        <argsstring>(self, rackName)</argsstring>
+        <name>setRackName</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>rackName</type>
+          <defname>rackName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="83" column="1" bodyfile="framework/core/rackController.py" bodystart="83" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1ad14e9c21001b968bc7299a9e82d5cc57" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getRemoteKeyType</definition>
+        <argsstring>(self, deviceName=&quot;dut&quot;)</argsstring>
+        <name>getRemoteKeyType</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>deviceName</type>
+          <defname>deviceName</defname>
+          <defval>&quot;dut&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="86" column="1" bodyfile="framework/core/rackController.py" bodystart="86" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1ac1b3fe210e3c7ab3f24518b5baa41143" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getDeviceAddress</definition>
+        <argsstring>(self, deviceName=&quot;dut&quot;)</argsstring>
+        <name>getDeviceAddress</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>deviceName</type>
+          <defname>deviceName</defname>
+          <defval>&quot;dut&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="92" column="1" bodyfile="framework/core/rackController.py" bodystart="92" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a21817f37fbbe9b33e9f73c80d7cc8fb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getDeviceIp</definition>
+        <argsstring>(self, deviceName=&quot;dut&quot;)</argsstring>
+        <name>getDeviceIp</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>deviceName</type>
+          <defname>deviceName</defname>
+          <defval>&quot;dut&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="99" column="1" bodyfile="framework/core/rackController.py" bodystart="99" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a0da66ab02ae05c5afc5694a03fd4bc11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getPlatform</definition>
+        <argsstring>(self, deviceName=&quot;dut&quot;)</argsstring>
+        <name>getPlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>deviceName</type>
+          <defname>deviceName</defname>
+          <defval>&quot;dut&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="104" column="1" bodyfile="framework/core/rackController.py" bodystart="104" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1aeab10e74c8c4cb1e42cab4da771f2a48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getOutboundUploadDirectory</definition>
+        <argsstring>(self, deviceName=&quot;dut&quot;)</argsstring>
+        <name>getOutboundUploadDirectory</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>deviceName</type>
+          <defname>deviceName</defname>
+          <defval>&quot;dut&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="109" column="1" bodyfile="framework/core/rackController.py" bodystart="109" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a148ef535d368213d41622910a55d8c40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.getOutboundDownloadDirectory</definition>
+        <argsstring>(self, deviceName=&quot;dut&quot;)</argsstring>
+        <name>getOutboundDownloadDirectory</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>deviceName</type>
+          <defname>deviceName</defname>
+          <defval>&quot;dut&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="114" column="1" bodyfile="framework/core/rackController.py" bodystart="114" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1rackController_1_1rackSlot_1a6ccd24423a7903e185389969c96d3565" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.rackController.rackSlot.show</definition>
+        <argsstring>(self)</argsstring>
+        <name>show</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/rackController.py" line="119" column="1" bodyfile="framework/core/rackController.py" bodystart="119" bodyend="121"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>core.rackController.rackSlot</label>
+        <link refid="classcore_1_1rackController_1_1rackSlot"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core.rackController.configDecoderClass</label>
+        <link refid="classcore_1_1rackController_1_1configDecoderClass"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>core.rackController.rackSlot</label>
+        <link refid="classcore_1_1rackController_1_1rackSlot"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>core.rackController.configDecoderClass</label>
+        <link refid="classcore_1_1rackController_1_1configDecoderClass"/>
+      </node>
+    </collaborationgraph>
+    <location file="framework/core/rackController.py" line="50" column="1" bodyfile="framework/core/rackController.py" bodystart="50" bodyend="122"/>
+    <listofallmembers>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a4494e4456611af87b6a23cc39f742568" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>__init__</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a0b5524f8d0f8cda636edde3b83d65dce" prot="public" virt="non-virtual" ambiguityscope="core::rackController::configDecoderClass."><scope>core::rackController::rackSlot</scope><name>__init__</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a26fa498416f84a6b8a1011073704a33e" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>checkRequiredField</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1ac3a5b7de4f9b5349d16df951f10b0ff9" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>config</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a9bc61535f5249bc96bbe3b9a3a2adaea" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>decodeConfigItem</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1a21f53d7e0aaa4eb1b99f9f82cfbff9c5" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>dumpValue</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a61a1c3c8d50357a5de6ee762582ad685" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>find_name</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a530da3c3d8777e3de2d06e25f8c9387e" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>get</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a4534171f2adb2c6fe10f62ea028feb5c" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getDevice</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1ac1b3fe210e3c7ab3f24518b5baa41143" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getDeviceAddress</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a21817f37fbbe9b33e9f73c80d7cc8fb8" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getDeviceIp</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a83ac35e056b7a3f5672b0b817d1965ee" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getName</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a148ef535d368213d41622910a55d8c40" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getOutboundDownloadDirectory</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1aeab10e74c8c4cb1e42cab4da771f2a48" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getOutboundUploadDirectory</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a0da66ab02ae05c5afc5694a03fd4bc11" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getPlatform</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a6199f05c2281320b19feeb9ed77fbff3" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getRackName</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1ad14e9c21001b968bc7299a9e82d5cc57" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>getRemoteKeyType</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a34fe4b58ddb3946853101d93b7148cbb" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>log</name></member>
+      <member refid="classcore_1_1rackController_1_1configDecoderClass_1afb4fa1e70e2337242386530e5cf23e6f" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>setConfigValue</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a9f6b36d2c8164327619ef368e9c15279" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>setRackName</name></member>
+      <member refid="classcore_1_1rackController_1_1rackSlot_1a6ccd24423a7903e185389969c96d3565" prot="public" virt="non-virtual"><scope>core::rackController::rackSlot</scope><name>show</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

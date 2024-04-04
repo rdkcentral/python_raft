@@ -1,0 +1,167 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1configParserBase_1_1configParserBase" kind="class" language="Python" prot="public">
+    <compoundname>core::configParserBase::configParserBase</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1configParserBase_1_1configParserBase_1abdf0237ce95f86dc3f16214491f8a2e0" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.configParserBase.configParserBase::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParserBase.py" line="25" column="1" bodyfile="framework/core/configParserBase.py" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1configParserBase_1_1configParserBase_1acc7687afeda34482cc37136486888f87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParserBase.configParserBase.__init__</definition>
+        <argsstring>(self, config, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Class: configParser
+Args:
+    config (dict): [dict of the decoded class]
+    log ([class], optional): [parent log class if required]. Defaults to None.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParserBase.py" line="19" column="1" bodyfile="framework/core/configParserBase.py" bodystart="19" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParserBase_1_1configParserBase_1ad53b61cafebeb0b7ac82a88025a69bcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParserBase.configParserBase.decodeTable</definition>
+        <argsstring>(self, parent, config)</argsstring>
+        <name>decodeTable</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>decode parent table
+
+Args:
+    parent ([dict]): parent]
+    config ([dict]): config to decode]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParserBase.py" line="29" column="1" bodyfile="framework/core/configParserBase.py" bodystart="29" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParserBase_1_1configParserBase_1a6f7dfadb523697b9a4154a970a123d1f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParserBase.configParserBase.decodeParam</definition>
+        <argsstring>(self, parent, name, value)</argsstring>
+        <name>decodeParam</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <param>
+          <type>value</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Decode a single param
+
+Args:
+    parent ([dict]): [parent string to fill out]
+    name ([string]): [name]
+    value ([string]): [value]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParserBase.py" line="39" column="1" bodyfile="framework/core/configParserBase.py" bodystart="39" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParserBase_1_1configParserBase_1a61c44715a7510feed6e4f2b0fc532b48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParserBase.configParserBase.__getFieldValue__</definition>
+        <argsstring>(self, fieldDict, fieldName)</argsstring>
+        <name>__getFieldValue__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>fieldDict</type>
+          <defname>fieldDict</defname>
+        </param>
+        <param>
+          <type>fieldName</type>
+          <defname>fieldName</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get the value from the group field, also confirm
+
+Args:
+    fieldDict ([object]): [field dictionary]
+    fieldName ([string]): [field name]
+
+Returns:
+    [string]: [field value if present, otherwise None]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParserBase.py" line="50" column="1" bodyfile="framework/core/configParserBase.py" bodystart="50" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/configParserBase.py" line="17" column="1" bodyfile="framework/core/configParserBase.py" bodystart="17" bodyend="67"/>
+    <listofallmembers>
+      <member refid="classcore_1_1configParserBase_1_1configParserBase_1a61c44715a7510feed6e4f2b0fc532b48" prot="public" virt="non-virtual"><scope>core::configParserBase::configParserBase</scope><name>__getFieldValue__</name></member>
+      <member refid="classcore_1_1configParserBase_1_1configParserBase_1acc7687afeda34482cc37136486888f87" prot="public" virt="non-virtual"><scope>core::configParserBase::configParserBase</scope><name>__init__</name></member>
+      <member refid="classcore_1_1configParserBase_1_1configParserBase_1a6f7dfadb523697b9a4154a970a123d1f" prot="public" virt="non-virtual"><scope>core::configParserBase::configParserBase</scope><name>decodeParam</name></member>
+      <member refid="classcore_1_1configParserBase_1_1configParserBase_1ad53b61cafebeb0b7ac82a88025a69bcf" prot="public" virt="non-virtual"><scope>core::configParserBase::configParserBase</scope><name>decodeTable</name></member>
+      <member refid="classcore_1_1configParserBase_1_1configParserBase_1abdf0237ce95f86dc3f16214491f8a2e0" prot="public" virt="non-virtual"><scope>core::configParserBase::configParserBase</scope><name>log</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1powerModules_1_1apc_1_1powerAPC" kind="class" language="Python" prot="public">
+    <compoundname>core::powerModules::apc::powerAPC</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a52d9f8ec0225e000d44f036fa9842b7f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apc.powerAPC::hostName</definition>
+        <argsstring></argsstring>
+        <name>hostName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="31" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a99a03a08653bd7b3bc1827d4a7148922" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apc.powerAPC::userName</definition>
+        <argsstring></argsstring>
+        <name>userName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="32" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a61267cd492763edc3b49e45cbf0a0549" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apc.powerAPC::password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="33" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a760459c3a0e8c1d80acea747ab1ba924" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apc.powerAPC::outletNumber</definition>
+        <argsstring></argsstring>
+        <name>outletNumber</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="34" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a1b254846081adc415bf2694f1c274b1f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apc.powerAPC::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="35" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1aa4c8ba9ab7d45bdac615e49c4325623e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.powerModules.apc.powerAPC::telnet</definition>
+        <argsstring></argsstring>
+        <name>telnet</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="36" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ad5833c1af096872cc63ee6298b1cd813" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.__init__</definition>
+        <argsstring>(self, log, hostName, userName, password, outletNumber=1)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <param>
+          <type>hostName</type>
+          <defname>hostName</defname>
+        </param>
+        <param>
+          <type>userName</type>
+          <defname>userName</defname>
+        </param>
+        <param>
+          <type>password</type>
+          <defname>password</defname>
+        </param>
+        <param>
+          <type>outletNumber</type>
+          <defname>outletNumber</defname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="30" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="30" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1af54e2fa65ff3681137fc1bc105972d5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.pduPowerSetting</definition>
+        <argsstring>(self, powerMode)</argsstring>
+        <name>pduPowerSetting</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>powerMode</type>
+          <defname>powerMode</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="38" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="38" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a732ca6e71fb58331f0b2dfe44265b845" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.checkConnection</definition>
+        <argsstring>(self)</argsstring>
+        <name>checkConnection</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="68" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="68" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a885d70eb3ea1004d0a612f44b232af4d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.open</definition>
+        <argsstring>(self)</argsstring>
+        <name>open</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="77" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="77" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ad8e8a9c36b4cf6bc2cda36db4ec480ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.close</definition>
+        <argsstring>(self)</argsstring>
+        <name>close</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="88" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="88" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a6ab8ab40d936da621e849858d1462d16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.waitAPCNextline</definition>
+        <argsstring>(self)</argsstring>
+        <name>waitAPCNextline</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="102" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="102" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1aacbaeda6521d97eb0fced1b3addc45d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.configurePDU</definition>
+        <argsstring>(self)</argsstring>
+        <name>configurePDU</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="107" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="107" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ab588ceb4b71d0c2e003ad622da686288" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.selectPDUOutlet</definition>
+        <argsstring>(self, outletNumber)</argsstring>
+        <name>selectPDUOutlet</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>outletNumber</type>
+          <defname>outletNumber</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="128" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="128" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a010c759d88d8deed2b8f8138327c4953" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.sendPowerON</definition>
+        <argsstring>(self)</argsstring>
+        <name>sendPowerON</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="135" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="135" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1aad9cd252bf4d7d2d466ac523a4228020" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.sendPowerOFF</definition>
+        <argsstring>(self)</argsstring>
+        <name>sendPowerOFF</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="147" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="147" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ae049d8eb54371699a6beea2369619453" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.powerOff</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOff</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="159" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="159" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1acb20dd2b72100b6b91793756ed3c201b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.powerOn</definition>
+        <argsstring>(self)</argsstring>
+        <name>powerOn</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="163" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="163" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a00dd5df757621b2d661aea3fabb8861d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.powerModules.apc.powerAPC.reboot</definition>
+        <argsstring>(self)</argsstring>
+        <name>reboot</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/apc.py" line="167" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="167" bodyend="176"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>Power Control module for the APC power switches
+</verbatim> </para>
+    </detaileddescription>
+    <location file="framework/core/powerModules/apc.py" line="25" column="1" bodyfile="framework/core/powerModules/apc.py" bodystart="25" bodyend="176"/>
+    <listofallmembers>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ad5833c1af096872cc63ee6298b1cd813" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>__init__</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a732ca6e71fb58331f0b2dfe44265b845" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>checkConnection</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ad8e8a9c36b4cf6bc2cda36db4ec480ef" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>close</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1aacbaeda6521d97eb0fced1b3addc45d7" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>configurePDU</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a52d9f8ec0225e000d44f036fa9842b7f" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>hostName</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a1b254846081adc415bf2694f1c274b1f" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>log</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a885d70eb3ea1004d0a612f44b232af4d" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>open</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a760459c3a0e8c1d80acea747ab1ba924" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>outletNumber</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a61267cd492763edc3b49e45cbf0a0549" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>password</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1af54e2fa65ff3681137fc1bc105972d5c" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>pduPowerSetting</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ae049d8eb54371699a6beea2369619453" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>powerOff</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1acb20dd2b72100b6b91793756ed3c201b" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>powerOn</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a00dd5df757621b2d661aea3fabb8861d" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>reboot</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1ab588ceb4b71d0c2e003ad622da686288" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>selectPDUOutlet</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1aad9cd252bf4d7d2d466ac523a4228020" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>sendPowerOFF</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a010c759d88d8deed2b8f8138327c4953" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>sendPowerON</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1aa4c8ba9ab7d45bdac615e49c4325623e" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>telnet</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a99a03a08653bd7b3bc1827d4a7148922" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>userName</name></member>
+      <member refid="classcore_1_1powerModules_1_1apc_1_1powerAPC_1a6ab8ab40d936da621e849858d1462d16" prot="public" virt="non-virtual"><scope>core::powerModules::apc::powerAPC</scope><name>waitAPCNextline</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

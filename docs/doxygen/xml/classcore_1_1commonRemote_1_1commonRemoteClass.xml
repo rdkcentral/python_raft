@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1commonRemote_1_1commonRemoteClass" kind="class" language="Python" prot="public">
+    <compoundname>core::commonRemote::commonRemoteClass</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1commonRemoteClass_1acdc09b2e720cb76658b283a1a75db3e8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.commonRemoteClass::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="106" column="1" bodyfile="framework/core/commonRemote.py" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a779e31c14713bfd5f97a093258931c3a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.commonRemoteClass::remoteConfig</definition>
+        <argsstring></argsstring>
+        <name>remoteConfig</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="107" column="1" bodyfile="framework/core/commonRemote.py" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a1b4432e1c35988924411cd2719e33b97" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.commonRemoteClass::remoteMap</definition>
+        <argsstring></argsstring>
+        <name>remoteMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="110" column="1" bodyfile="framework/core/commonRemote.py" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a8c2717fbef3b00c09cd9c2089a9a85f1" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.commonRemoteClass::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="112" column="1" bodyfile="framework/core/commonRemote.py" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a50013ea72054c86ddd97e5e51909f02c" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.commonRemote.commonRemoteClass::remoteController</definition>
+        <argsstring></argsstring>
+        <name>remoteController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="114" column="1" bodyfile="framework/core/commonRemote.py" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a622090b1cae39550fd3bcf0a7be95295" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.commonRemoteClass.__init__</definition>
+        <argsstring>(self, logModule log, dict remoteConfig, **dict kwargs)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>logModule</type>
+          <declname>log</declname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>remoteConfig</declname>
+        </param>
+        <param>
+          <type>**dict</type>
+          <declname>kwargs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Intialise a commonRemote
+
+Args:
+    log (logModule): log module.
+    remoteConfig (dict): configuration file
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="99" column="1" bodyfile="framework/core/commonRemote.py" bodystart="99" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a01fdb89cc3bab5b1a48c38260f0849b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.commonRemoteClass.sendKey</definition>
+        <argsstring>(self, dict keycode, int delay=1, int repeat=1, int randomRepeat=0)</argsstring>
+        <name>sendKey</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>keycode</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>repeat</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>randomRepeat</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>send a key to the remoteCommander
+
+Args:
+    keycode (dict): key value pair
+    delay (int, optional): delay in seconds between repeats. Defaults to 1.
+    repeat (int, optional): how many key repeats. Defaults to 1.
+    randomRepeat (int, optional): random Key repeat value. Defaults to 0.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="146" column="1" bodyfile="framework/core/commonRemote.py" bodystart="146" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1commonRemoteClass_1ac217a9afd4e643ceee2c56cabe41c1e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.commonRemoteClass.setKeyMap</definition>
+        <argsstring>(self, dict name)</argsstring>
+        <name>setKeyMap</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>dict</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>set the Key Translation Map
+
+Args:
+    name (dict): translation dictionary
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="168" column="1" bodyfile="framework/core/commonRemote.py" bodystart="168" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a9a19cb7a5e6ae304e41a9ec8f14a4065" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.commonRemoteClass.getKeyMap</definition>
+        <argsstring>(self)</argsstring>
+        <name>getKeyMap</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>get the Key Translation Map
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="176" column="1" bodyfile="framework/core/commonRemote.py" bodystart="176" bodyend="180"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classcore_1_1commonRemote_1_1commonRemoteClass_1a97561bdb7d627e654fad970e269977fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.commonRemote.commonRemoteClass.__decodeRemoteMapConfig</definition>
+        <argsstring>(self)</argsstring>
+        <name>__decodeRemoteMapConfig</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>decode the remote map configuration file
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commonRemote.py" line="122" column="1" bodyfile="framework/core/commonRemote.py" bodystart="122" bodyend="145"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/commonRemote.py" line="97" column="1" bodyfile="framework/core/commonRemote.py" bodystart="97" bodyend="180"/>
+    <listofallmembers>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a97561bdb7d627e654fad970e269977fe" prot="private" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>__decodeRemoteMapConfig</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a622090b1cae39550fd3bcf0a7be95295" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>__init__</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a9a19cb7a5e6ae304e41a9ec8f14a4065" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>getKeyMap</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1acdc09b2e720cb76658b283a1a75db3e8" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>log</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a779e31c14713bfd5f97a093258931c3a" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>remoteConfig</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a50013ea72054c86ddd97e5e51909f02c" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>remoteController</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a1b4432e1c35988924411cd2719e33b97" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>remoteMap</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a01fdb89cc3bab5b1a48c38260f0849b9" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>sendKey</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1ac217a9afd4e643ceee2c56cabe41c1e2" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>setKeyMap</name></member>
+      <member refid="classcore_1_1commonRemote_1_1commonRemoteClass_1a8c2717fbef3b00c09cd9c2089a9a85f1" prot="public" virt="non-virtual"><scope>core::commonRemote::commonRemoteClass</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

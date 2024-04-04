@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacesequenceTest" kind="namespace" language="Python">
+    <compoundname>sequenceTest</compoundname>
+    <innerclass refid="classsequenceTest_1_1sequenceTest" prot="public">sequenceTest::sequenceTest</innerclass>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="sequenceTest_8py_1a4abdf870eed0c85bc60d95caa45b87c8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sequenceTest.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/sequenceTest.py" line="8" column="1" bodyfile="unitTests/framework/webControlTests/sequenceTest.py" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="sequenceTest_8py_1ad4db24bce3db1acb9042978d6bbc491b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>sequenceTest.test</definition>
+        <argsstring></argsstring>
+        <name>test</name>
+        <initializer>=  <ref refid="classsequenceTest_1_1sequenceTest" kindref="compound">sequenceTest</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/sequenceTest.py" line="39" column="1" bodyfile="unitTests/framework/webControlTests/sequenceTest.py" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/sequenceTest.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

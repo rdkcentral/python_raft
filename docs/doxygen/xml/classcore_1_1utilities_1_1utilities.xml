@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1utilities_1_1utilities" kind="class" language="Python" prot="public">
+    <compoundname>core::utilities::utilities</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1utilities_1_1utilities_1a911d6fd05cadfec58d2b1ff5034ac173" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.utilities.utilities::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/utilities.py" line="20" column="1" bodyfile="framework/core/utilities.py" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1utilities_1_1utilities_1a6874b5c6957a31618c2e920318daa478" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.utilities.utilities.__init__</definition>
+        <argsstring>(self, log)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/utilities.py" line="19" column="1" bodyfile="framework/core/utilities.py" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1utilities_1_1utilities_1ad71635b4c107d133f55a35dfebaf7485" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.utilities.utilities.wait</definition>
+        <argsstring>(self, seconds, minutes=0, hours=0)</argsstring>
+        <name>wait</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>seconds</type>
+          <defname>seconds</defname>
+        </param>
+        <param>
+          <type>minutes</type>
+          <defname>minutes</defname>
+          <defval>0</defval>
+        </param>
+        <param>
+          <type>hours</type>
+          <defname>hours</defname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/utilities.py" line="22" column="1" bodyfile="framework/core/utilities.py" bodystart="22" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1utilities_1_1utilities_1a499382aa9fa62f10fc957e4cdd32454f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.utilities.utilities.fuzzyCompareText</definition>
+        <argsstring>(self, expText, actualText, exactMatch=False)</argsstring>
+        <name>fuzzyCompareText</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>expText</type>
+          <defname>expText</defname>
+        </param>
+        <param>
+          <type>actualText</type>
+          <defname>actualText</defname>
+        </param>
+        <param>
+          <type>exactMatch</type>
+          <defname>exactMatch</defname>
+          <defval>False</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/utilities.py" line="35" column="1" bodyfile="framework/core/utilities.py" bodystart="35" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1utilities_1_1utilities_1a714107261eb66ce8cc60f8f0ff340393" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.utilities.utilities.value1HigherThanValue2</definition>
+        <argsstring>(self, value1, value2)</argsstring>
+        <name>value1HigherThanValue2</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>value1</type>
+          <defname>value1</defname>
+        </param>
+        <param>
+          <type>value2</type>
+          <defname>value2</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Compares input values and returns result
+
+Args:
+    value1 and value 2 (str) - values to be compared
+
+Returns:
+    result (bool) - True if value1 is higher than value 2 else False
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/utilities.py" line="50" column="1" bodyfile="framework/core/utilities.py" bodystart="50" bodyend="78"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/utilities.py" line="18" column="1" bodyfile="framework/core/utilities.py" bodystart="18" bodyend="78"/>
+    <listofallmembers>
+      <member refid="classcore_1_1utilities_1_1utilities_1a6874b5c6957a31618c2e920318daa478" prot="public" virt="non-virtual"><scope>core::utilities::utilities</scope><name>__init__</name></member>
+      <member refid="classcore_1_1utilities_1_1utilities_1a499382aa9fa62f10fc957e4cdd32454f" prot="public" virt="non-virtual"><scope>core::utilities::utilities</scope><name>fuzzyCompareText</name></member>
+      <member refid="classcore_1_1utilities_1_1utilities_1a911d6fd05cadfec58d2b1ff5034ac173" prot="public" virt="non-virtual"><scope>core::utilities::utilities</scope><name>log</name></member>
+      <member refid="classcore_1_1utilities_1_1utilities_1a714107261eb66ce8cc60f8f0ff340393" prot="public" virt="non-virtual"><scope>core::utilities::utilities</scope><name>value1HigherThanValue2</name></member>
+      <member refid="classcore_1_1utilities_1_1utilities_1ad71635b4c107d133f55a35dfebaf7485" prot="public" virt="non-virtual"><scope>core::utilities::utilities</scope><name>wait</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,481 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classcore_1_1configParser_1_1configParser" kind="class" language="Python" prot="public">
+    <compoundname>core::configParser::configParser</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">configParserBase</basecompoundref>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classcore_1_1configParser_1_1configParser_1ac3e0ab882facc683e11188122260b621" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.configParser.configParser::log</definition>
+        <argsstring></argsstring>
+        <name>log</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="26" column="1" bodyfile="framework/core/configParser.py" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1configParser_1_1configParser_1ad31a5acab8392249a1bf98fc9d8dddd2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.configParser.configParser::local</definition>
+        <argsstring></argsstring>
+        <name>local</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="31" column="1" bodyfile="framework/core/configParser.py" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1configParser_1_1configParser_1a4fcfa832fc75f176749853926e7e28bb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.configParser.configParser::cpe</definition>
+        <argsstring></argsstring>
+        <name>cpe</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="32" column="1" bodyfile="framework/core/configParser.py" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1configParser_1_1configParser_1ac502c9a22e4d48a98b4ad834747f3691" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.configParser.configParser::memoryMap</definition>
+        <argsstring></argsstring>
+        <name>memoryMap</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="33" column="1" bodyfile="framework/core/configParser.py" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classcore_1_1configParser_1_1configParser_1acb91abe06c63e64f57f3720d09f9ab89" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core.configParser.configParser::validImages</definition>
+        <argsstring></argsstring>
+        <name>validImages</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="34" column="1" bodyfile="framework/core/configParser.py" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1acd00d9779d76772218d09c57d4eea5bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.__init__</definition>
+        <argsstring>(self, config=None, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+          <defval>None</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Class: configParser
+Args:
+    config (dict): [dict of the decoded class]
+    log ([class], optional): [parent log class if required]. Defaults to None.
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="20" column="1" bodyfile="framework/core/configParser.py" bodystart="20" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1a3ce6d9921fa53434af95831961ece75e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.decodeConfig</definition>
+        <argsstring>(self, config)</argsstring>
+        <name>decodeConfig</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>decode the test config section top level
+    local:      -   Local config
+    cpe:        -   cpe device configuration
+    memoryMap:  -   memoryMap configuration
+
+Args:
+    config ([dict]): [config dictionary]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="38" column="1" bodyfile="framework/core/configParser.py" bodystart="38" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1a90afb1742c52411c5c88e6c8f8af5a9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.__decodeMemoryMapConfig__</definition>
+        <argsstring>(self, parent, config)</argsstring>
+        <name>__decodeMemoryMapConfig__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>decode the memory map config
+
+Args:
+    config ([dict]): [config for the memory map sections]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="57" column="1" bodyfile="framework/core/configParser.py" bodystart="57" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1adb1dc0fb084b89e3eb274e4fe7ce3ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.updateCPEConfig</definition>
+        <argsstring>(self, config)</argsstring>
+        <name>updateCPEConfig</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>update the CPE config
+
+Args:
+    config ([dict]): [config for the cpe section]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="71" column="1" bodyfile="framework/core/configParser.py" bodystart="71" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1ad416a4decc67a0433e8edb9106c21e28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.createCpeConfig</definition>
+        <argsstring>(self, imageLocationDict, platform)</argsstring>
+        <name>createCpeConfig</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>imageLocationDict</type>
+          <defname>imageLocationDict</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Creates template of deviceConfig cpe entry
+
+Args:
+    imageLocationDict (dict) 
+    Ex: {PCI1: &quot;http://testwebsite.com/image.bin&quot;}
+
+    platform (str) - platorm of the device (Ex: ada.sr300)
+
+Returns:
+    cpeConfig (dict)
+    Ex:{
+    {platform: &quot;test_platform&quot;,
+    validImage:
+        {PCI1: &quot;http://testwebsite.com/image.bin&quot;}
+    }
+}                
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="89" column="1" bodyfile="framework/core/configParser.py" bodystart="89" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1a2804437b31dd192235a844464f3abbcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.__decodeCPEConfig__</definition>
+        <argsstring>(self, parent, config)</argsstring>
+        <name>__decodeCPEConfig__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>parent</type>
+          <defname>parent</defname>
+        </param>
+        <param>
+          <type>config</type>
+          <defname>config</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>decode the CPE config
+
+Args:
+    config ([dict]): [config for the cpe section]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="114" column="1" bodyfile="framework/core/configParser.py" bodystart="114" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1a941dbe9940d9bf8775d7205562952295" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.getCPEEntryViaPlatform</definition>
+        <argsstring>(self, platform)</argsstring>
+        <name>getCPEEntryViaPlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[find the cpe entry via the platform ]
+
+Args:
+    platform ([string]): [platform name e.g. &quot;xione.de&quot;]
+
+Returns:
+    [dict]: [cpe dict entry, or None if not found]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="128" column="1" bodyfile="framework/core/configParser.py" bodystart="128" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1a46ec40e4ad71a892abee1e71da110fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.getCPEFieldViaPlatform</definition>
+        <argsstring>(self, platform, field)</argsstring>
+        <name>getCPEFieldViaPlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <param>
+          <type>field</type>
+          <defname>field</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[find the cpe entry via the platform ]
+
+Args:
+    platform ([string]): [platform name e.g. &quot;xione.de&quot;]
+
+Returns:
+    [dict]: [cpe dict entry, or None if not found]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="144" column="1" bodyfile="framework/core/configParser.py" bodystart="144" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1a3f41e8dbb66802b45b7c4852109ceee5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.getMemoryMapViaPlatform</definition>
+        <argsstring>(self, platform)</argsstring>
+        <name>getMemoryMapViaPlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[find the Memory Map entry via the platform ]
+
+Args:
+    platform ([string]): [platform name e.g. &quot;xione.de&quot;]
+
+Returns:
+    [dict]: [memory map dict entry, or None if not found]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="166" column="1" bodyfile="framework/core/configParser.py" bodystart="166" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1ae868566e7fd03e0d1578b85e34d1770f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.getMemoryMapValueViaPlatform</definition>
+        <argsstring>(self, platform, name)</argsstring>
+        <name>getMemoryMapValueViaPlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <param>
+          <type>name</type>
+          <defname>name</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[find the Memory Map item via the platform ]
+
+Args:
+    platform ([string]): [platform name e.g. &quot;xione.de&quot;]
+    name ([string]): [name of the section like &quot;BL1Offset&quot;]
+
+Returns:
+    [dict]: [memory map dict entry, or None if not found]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="188" column="1" bodyfile="framework/core/configParser.py" bodystart="188" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1ad674283907058f14a13fec34bb74a05d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.getWorkspaceDirectory</definition>
+        <argsstring>(self)</argsstring>
+        <name>getWorkspaceDirectory</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>[get the workspace directory]
+
+Returns:
+    [string]: [workspace directory]
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="206" column="1" bodyfile="framework/core/configParser.py" bodystart="206" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="classcore_1_1configParser_1_1configParser_1a53438334bef260fd65097b8bbd81f00b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def core.configParser.configParser.getAlternativePlatform</definition>
+        <argsstring>(self, platform)</argsstring>
+        <name>getAlternativePlatform</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>platform</type>
+          <defname>platform</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>Get the alternative platform from device config
+</verbatim> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/configParser.py" line="222" column="1" bodyfile="framework/core/configParser.py" bodystart="222" bodyend="230"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>configParserBase</label>
+      </node>
+      <node id="1">
+        <label>core.configParser.configParser</label>
+        <link refid="classcore_1_1configParser_1_1configParser"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>configParserBase</label>
+      </node>
+      <node id="1">
+        <label>core.configParser.configParser</label>
+        <link refid="classcore_1_1configParser_1_1configParser"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="framework/core/configParser.py" line="18" column="1" bodyfile="framework/core/configParser.py" bodystart="18" bodyend="231"/>
+    <listofallmembers>
+      <member refid="classcore_1_1configParser_1_1configParser_1a2804437b31dd192235a844464f3abbcf" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>__decodeCPEConfig__</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1a90afb1742c52411c5c88e6c8f8af5a9c" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>__decodeMemoryMapConfig__</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1acd00d9779d76772218d09c57d4eea5bf" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>__init__</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1a4fcfa832fc75f176749853926e7e28bb" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>cpe</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1ad416a4decc67a0433e8edb9106c21e28" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>createCpeConfig</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1a3ce6d9921fa53434af95831961ece75e" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>decodeConfig</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1a53438334bef260fd65097b8bbd81f00b" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>getAlternativePlatform</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1a941dbe9940d9bf8775d7205562952295" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>getCPEEntryViaPlatform</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1a46ec40e4ad71a892abee1e71da110fb0" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>getCPEFieldViaPlatform</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1ae868566e7fd03e0d1578b85e34d1770f" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>getMemoryMapValueViaPlatform</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1a3f41e8dbb66802b45b7c4852109ceee5" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>getMemoryMapViaPlatform</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1ad674283907058f14a13fec34bb74a05d" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>getWorkspaceDirectory</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1ad31a5acab8392249a1bf98fc9d8dddd2" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>local</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1ac3e0ab882facc683e11188122260b621" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>log</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1ac502c9a22e4d48a98b4ad834747f3691" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>memoryMap</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1adb1dc0fb084b89e3eb274e4fe7ce3ed3" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>updateCPEConfig</name></member>
+      <member refid="classcore_1_1configParser_1_1configParser_1acb91abe06c63e64f57f3720d09f9ab89" prot="public" virt="non-virtual"><scope>core::configParser::configParser</scope><name>validImages</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

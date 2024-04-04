@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1powerModules" kind="namespace" language="Python">
+    <compoundname>core::powerModules</compoundname>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1apc">core::powerModules::apc</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1apcAos">core::powerModules::apcAos</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1hs100">core::powerModules::hs100</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1kasaControl">core::powerModules::kasaControl</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1none">core::powerModules::none</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1olimex">core::powerModules::olimex</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1S20control">core::powerModules::S20control</innernamespace>
+    <innernamespace refid="namespacecore_1_1powerModules_1_1SLP">core::powerModules::SLP</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="framework_2core_2powerModules_2____init_____8py_1a99e075e502c375b167e26b3a3694496a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core::powerModules.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/powerModules/__init__.py" line="6" column="1" bodyfile="framework/core/powerModules/__init__.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

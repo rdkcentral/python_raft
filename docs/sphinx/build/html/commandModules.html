@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>commandModules package &#8212; python_raft  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=b3ba4146"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="commandmodules-package">
+<h1>commandModules package<a class="headerlink" href="#commandmodules-package" title="Permalink to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-commandModules.consoleInterface">
+<span id="commandmodules-consoleinterface-module"></span><h2>commandModules.consoleInterface module<a class="headerlink" href="#module-commandModules.consoleInterface" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="commandModules.consoleInterface.consoleInterface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandModules.consoleInterface.</span></span><span class="sig-name descname"><span class="pre">consoleInterface</span></span><a class="headerlink" href="#commandModules.consoleInterface.consoleInterface" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.consoleInterface.consoleInterface.close">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.consoleInterface.consoleInterface.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the console session.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.consoleInterface.consoleInterface.open">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.consoleInterface.consoleInterface.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method. Define how to open the console session.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.consoleInterface.consoleInterface.read_all">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.consoleInterface.consoleInterface.read_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method. Define how to read all information displayed in the console.
+Should return the data read.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.consoleInterface.consoleInterface.read_until">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">read_until</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.consoleInterface.consoleInterface.read_until" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Abstract method. Define how to read all the information displayed in the console,</dt><dd><p>upto the point a defined string appears.
+Should return the data read.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – Message to wait for in the console.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.consoleInterface.consoleInterface.write">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.consoleInterface.consoleInterface.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Abstract method. Define how to write to the console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – Message to write into the console.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="commandmodules-serialclass-module">
+<h2>commandModules.serialClass module<a class="headerlink" href="#commandmodules-serialclass-module" title="Permalink to this heading">¶</a></h2>
+</section>
+<section id="module-commandModules.sshConsole">
+<span id="commandmodules-sshconsole-module"></span><h2>commandModules.sshConsole module<a class="headerlink" href="#module-commandModules.sshConsole" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="commandModules.sshConsole.sshConsole">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandModules.sshConsole.</span></span><span class="sig-name descname"><span class="pre">sshConsole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">known_hosts</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.sshConsole.sshConsole" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandModules.consoleInterface.consoleInterface" title="commandModules.consoleInterface.consoleInterface"><code class="xref py py-class docutils literal notranslate"><span class="pre">consoleInterface</span></code></a></p>
+<p>sshConsole is a consoleInterface class to interface with SSH console sessions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>str</em>) – IP address of the host to connect to.</p></li>
+<li><p><strong>username</strong> (<em>str</em>) – Username for logging into the host.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password for logging into the host.</p></li>
+<li><p><strong>key</strong> (<em>str</em><em>, </em><em>optional</em>) – Filepath of ssh key to use.</p></li>
+<li><p><strong>known_hosts</strong> (<em>str</em><em>, </em><em>optional</em>) – Filepath of known_hosts file to use.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.sshConsole.sshConsole.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.sshConsole.sshConsole.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the SSH session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.sshConsole.sshConsole.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.sshConsole.sshConsole.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the SSH session.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.sshConsole.sshConsole.read_all">
+<span class="sig-name descname"><span class="pre">read_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.sshConsole.sshConsole.read_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture all lines that are displayed in the console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of strings, with each being a line displayed in the console.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.sshConsole.sshConsole.read_until">
+<span class="sig-name descname"><span class="pre">read_until</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.sshConsole.sshConsole.read_until" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the console until a message appears.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – The message to wait for in the console.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of string, with each being a line displayed in the console up to the value entered.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.sshConsole.sshConsole.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.sshConsole.sshConsole.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a message into the console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – String to write into the console.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-commandModules.telnetClass">
+<span id="commandmodules-telnetclass-module"></span><h2>commandModules.telnetClass module<a class="headerlink" href="#module-commandModules.telnetClass" title="Permalink to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandModules.telnetClass.</span></span><span class="sig-name descname"><span class="pre">telnet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">log</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">workspacePath</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">23</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandModules.consoleInterface.consoleInterface" title="commandModules.consoleInterface.consoleInterface"><code class="xref py py-class docutils literal notranslate"><span class="pre">consoleInterface</span></code></a></p>
+<p>telnet is a consoleInterface class to interface with telnet console sessions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>log</strong> (<em>logModule</em>) – Log module to be used.</p></li>
+<li><p><strong>workspacePath</strong> (<em>str</em>) – Path of the tests worksapce to create the sesson.log file.</p></li>
+<li><p><strong>host</strong> (<em>str</em>) – IP address of the host to open a session with.</p></li>
+<li><p><strong>username</strong> (<em>str</em>) – Username to login to the session with.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password to login to the session with.</p></li>
+<li><p><strong>port</strong> (<em>int</em><em>, </em><em>optional</em>) – Listening telnet port on host. Defaults to 23.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the telnet session</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username_prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'login:</span> <span class="pre">'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password_prompt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Password:</span> <span class="pre">'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the telnet session</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>username_prompt</strong> (<em>str</em><em>, </em><em>optional</em>) – Expected prompt shown for entering the username.</p></li>
+<li><p><strong>password_prompt</strong> (<em>str</em><em>, </em><em>optional</em>) – Expected prompt shown for entering the password.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True if session opened successfully.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the telnet session</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the telnet session.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.read_all">
+<span class="sig-name descname"><span class="pre">read_all</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.read_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all readily available information displayed in the console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Information currently displayed in the console.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.read_eager">
+<span class="sig-name descname"><span class="pre">read_eager</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.read_eager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all readily available information displayed in the console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Information currently displayed in the console.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.read_some">
+<span class="sig-name descname"><span class="pre">read_some</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.read_some" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read information displayed in the console until EOF hit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Information currently displayed in the console.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.read_until">
+<span class="sig-name descname"><span class="pre">read_until</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.read_until" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the console until a message appears.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>str</em>) – The message to wait for in the console.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Information displayed in the console up to the value entered.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.read_very_eager">
+<span class="sig-name descname"><span class="pre">read_very_eager</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.read_very_eager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read all readily available information displayed in the console, without blocking I/O.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Information currently displayed in the console.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandModules.telnetClass.telnet.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#commandModules.telnetClass.telnet.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a message into the session console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>message</strong> (<em>str</em>) – Message to write into the console.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>True when the message is successfully written to the console.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-commandModules">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-commandModules" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">python_raft</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2024, python-raft-team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/commandModules.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

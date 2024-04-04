@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_8a371890c7df54832bedf6136b86116e" kind="dir">
+    <compoundname>unitTests/framework/webControlTests</compoundname>
+    <innerfile refid="accessElementsTests_8py">accessElementsTests.py</innerfile>
+    <innerfile refid="alertTest_8py">alertTest.py</innerfile>
+    <innerfile refid="downloadTest_8py">downloadTest.py</innerfile>
+    <innerfile refid="dynamicButtonsTest_8py">dynamicButtonsTest.py</innerfile>
+    <innerfile refid="dynamicTablesTest_8py">dynamicTablesTest.py</innerfile>
+    <innerfile refid="elementAttributeTest_8py">elementAttributeTest.py</innerfile>
+    <innerfile refid="globalActionTest_8py">globalActionTest.py</innerfile>
+    <innerfile refid="performActionsTests_8py">performActionsTests.py</innerfile>
+    <innerfile refid="saveScreenshotTest_8py">saveScreenshotTest.py</innerfile>
+    <innerfile refid="selectOptionsTests_8py">selectOptionsTests.py</innerfile>
+    <innerfile refid="sequenceTest_8py">sequenceTest.py</innerfile>
+    <innerfile refid="tabsTest_8py">tabsTest.py</innerfile>
+    <innerfile refid="webpageControlTests_8py">webpageControlTests.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="unitTests/framework/webControlTests/"/>
+  </compounddef>
+</doxygen>

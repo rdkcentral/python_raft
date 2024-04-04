@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classframework_1_1remoteController__test_1_1demoClass" kind="class" language="Python" prot="public">
+    <compoundname>framework::remoteController_test::demoClass</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>framework.remoteController_test.demoClass</label>
+        <link refid="classframework_1_1remoteController__test_1_1demoClass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>framework.remoteController_test.demoClass</label>
+        <link refid="classframework_1_1remoteController__test_1_1demoClass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/remoteController_test.py" line="13" column="1" bodyfile="unitTests/framework/remoteController_test.py" bodystart="13" bodyend="16"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

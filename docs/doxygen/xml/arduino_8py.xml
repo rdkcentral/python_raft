@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="arduino_8py" kind="file" language="Python">
+    <compoundname>arduino.py</compoundname>
+    <innerclass refid="classarduino_1_1remoteArduino" prot="public">arduino::remoteArduino</innerclass>
+    <innernamespace refid="namespacearduino">arduino</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">#!/usr/bin/env<sp/>python3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">#**<sp/>*****************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">#*<sp/>Copyright<sp/>(C)<sp/>2022<sp/>Sky<sp/>group<sp/>of<sp/>companies,<sp/>All<sp/>Rights<sp/>Reserved</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">#*<sp/>******************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">#*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>Project<sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>RAFT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@addtogroup<sp/><sp/>:<sp/>core.remoteControllerModules</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@date<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>25/02/2022</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**<sp/>@brief<sp/>:<sp/>remote<sp/>arduino<sp/>uno<sp/>IR<sp/>transmitter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">#*<sp/><sp/><sp/>**</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">#*<sp/>******************************************************************************</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>time</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>serial</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/>framework.core.logModule<sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>logModule</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="classarduino_1_1remoteArduino" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classarduino_1_1remoteArduino" kindref="compound">remoteArduino</ref>():</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classarduino_1_1remoteArduino_1a9058e6c19a536f91fab8c710305be493" kindref="member">__init__</ref>(<sp/>self,<sp/>log:logModule,<sp/>remoteConfig:dict()<sp/>):</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;intialise<sp/>the<sp/>arduino<sp/>module</highlight></codeline>
+<codeline lineno="23"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="24"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="25"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>log<sp/>(logModule):<sp/>log<sp/>class</highlight></codeline>
+<codeline lineno="26"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>remoteConfig<sp/>(dict):<sp/>remote<sp/>configuration</highlight></codeline>
+<codeline lineno="27"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classarduino_1_1remoteArduino_1af6edc29127dd329785d7e776232022d2" kindref="member">log</ref><sp/>=<sp/>log</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classarduino_1_1remoteArduino_1a086f5b76964476d57970020af49a2501" kindref="member">remoteConfig</ref><sp/>=<sp/>remoteConfig</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classarduino_1_1remoteArduino_1adc865ae7196d63cf04d950efe4cb53a4" kindref="member">arduino</ref><sp/>=<sp/>serial.Serial(port=self.<ref refid="classarduino_1_1remoteArduino_1a086f5b76964476d57970020af49a2501" kindref="member">remoteConfig</ref>.get(</highlight><highlight class="stringliteral">&quot;port&quot;</highlight><highlight class="normal">),<sp/>baudrate=self.<ref refid="classarduino_1_1remoteArduino_1a086f5b76964476d57970020af49a2501" kindref="member">remoteConfig</ref>.get(</highlight><highlight class="stringliteral">&quot;baudrate&quot;</highlight><highlight class="normal">),<sp/>timeout=300)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classarduino_1_1remoteArduino_1affee5c514754e57742af360150b03bc6" kindref="member">firstKeyPressInTc</ref><sp/>=<sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">def<sp/></highlight><highlight class="normal"><ref refid="classarduino_1_1remoteArduino_1a27b3aed53b96dad15e90add56afdadce" kindref="member">sendKey</ref>(self,<sp/>key,<sp/>repeat=1,<sp/>delay=1):</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;&quot;&quot;Send<sp/>IR<sp/>key<sp/>using<sp/>arduino<sp/>module</highlight></codeline>
+<codeline lineno="35"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="36"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Args:</highlight></codeline>
+<codeline lineno="37"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>key<sp/>(str)<sp/>-<sp/>Key<sp/>to<sp/>be<sp/>sent<sp/>to<sp/>device#</highlight></codeline>
+<codeline lineno="38"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>repeat<sp/>(int)<sp/>-<sp/>Number<sp/>of<sp/>times<sp/>the<sp/>key<sp/>has<sp/>to<sp/>be<sp/>pressed.<sp/>Defaults<sp/>to<sp/>1</highlight></codeline>
+<codeline lineno="39"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>delay<sp/>(int)<sp/>-<sp/>wait<sp/>time<sp/>after<sp/>pressing<sp/>the<sp/>key</highlight></codeline>
+<codeline lineno="40"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>self.<ref refid="classarduino_1_1remoteArduino_1affee5c514754e57742af360150b03bc6" kindref="member">firstKeyPressInTc</ref>:</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(5)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classarduino_1_1remoteArduino_1affee5c514754e57742af360150b03bc6" kindref="member">firstKeyPressInTc</ref><sp/>=<sp/></highlight><highlight class="keyword">False</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>_<sp/></highlight><highlight class="keywordflow">in</highlight><highlight class="normal"><sp/>range(repeat):</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>self.<ref refid="classarduino_1_1remoteArduino_1adc865ae7196d63cf04d950efe4cb53a4" kindref="member">arduino</ref>.write(key.encode())</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>time.sleep(delay)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">True</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="framework/core/remoteControllerModules/arduino.py"/>
+  </compounddef>
+</doxygen>

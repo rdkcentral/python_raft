@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_e36ba64977d65a0761a291213aecd3cd" kind="dir">
+    <compoundname>framework/core/powerModules</compoundname>
+    <innerfile refid="framework_2core_2powerModules_2____init_____8py">__init__.py</innerfile>
+    <innerfile refid="apc_8py">apc.py</innerfile>
+    <innerfile refid="apcAos_8py">apcAos.py</innerfile>
+    <innerfile refid="hs100_8py">hs100.py</innerfile>
+    <innerfile refid="kasaControl_8py">kasaControl.py</innerfile>
+    <innerfile refid="powerModules_2none_8py">none.py</innerfile>
+    <innerfile refid="powerModules_2olimex_8py">olimex.py</innerfile>
+    <innerfile refid="S20control_8py">S20control.py</innerfile>
+    <innerfile refid="SLP_8py">SLP.py</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/powerModules/"/>
+  </compounddef>
+</doxygen>

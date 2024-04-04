@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classdynamicTablesTest_1_1dynamicTablesTest" kind="class" language="Python" prot="public">
+    <compoundname>dynamicTablesTest::dynamicTablesTest</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testController</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classdynamicTablesTest_1_1dynamicTablesTest_1a683ca822c597ea0d8e2bece2a1ee2501" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def dynamicTablesTest.dynamicTablesTest.__init__</definition>
+        <argsstring>(self, testName=&quot;dynamicTablesTest&quot;, log=None)</argsstring>
+        <name>__init__</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>testName</type>
+          <defname>testName</defname>
+          <defval>&quot;dynamicTablesTest&quot;</defval>
+        </param>
+        <param>
+          <type>log</type>
+          <defname>log</defname>
+          <defval>None</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/dynamicTablesTest.py" line="15" column="1" bodyfile="unitTests/framework/webControlTests/dynamicTablesTest.py" bodystart="15" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamicTablesTest_1_1dynamicTablesTest_1abe58e6c2f30759e5a79e084f5fc0a43e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def dynamicTablesTest.dynamicTablesTest.testFunction</definition>
+        <argsstring>(self)</argsstring>
+        <name>testFunction</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/dynamicTablesTest.py" line="19" column="1" bodyfile="unitTests/framework/webControlTests/dynamicTablesTest.py" bodystart="19" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classdynamicTablesTest_1_1dynamicTablesTest_1acce86a9dd49daae2ea7f5d7fc668d7d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>def</type>
+        <definition>def dynamicTablesTest.dynamicTablesTest.getTemporaryElementList</definition>
+        <argsstring>(self, pageElementDict)</argsstring>
+        <name>getTemporaryElementList</name>
+        <param>
+          <type>self</type>
+          <defname>self</defname>
+        </param>
+        <param>
+          <type>pageElementDict</type>
+          <defname>pageElementDict</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="unitTests/framework/webControlTests/dynamicTablesTest.py" line="140" column="1" bodyfile="unitTests/framework/webControlTests/dynamicTablesTest.py" bodystart="140" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>dynamicTablesTest.dynamicTablesTest</label>
+        <link refid="classdynamicTablesTest_1_1dynamicTablesTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>dynamicTablesTest.dynamicTablesTest</label>
+        <link refid="classdynamicTablesTest_1_1dynamicTablesTest"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testController</label>
+      </node>
+    </collaborationgraph>
+    <location file="unitTests/framework/webControlTests/dynamicTablesTest.py" line="14" column="1" bodyfile="unitTests/framework/webControlTests/dynamicTablesTest.py" bodystart="14" bodyend="149"/>
+    <listofallmembers>
+      <member refid="classdynamicTablesTest_1_1dynamicTablesTest_1a683ca822c597ea0d8e2bece2a1ee2501" prot="public" virt="non-virtual"><scope>dynamicTablesTest::dynamicTablesTest</scope><name>__init__</name></member>
+      <member refid="classdynamicTablesTest_1_1dynamicTablesTest_1acce86a9dd49daae2ea7f5d7fc668d7d7" prot="public" virt="non-virtual"><scope>dynamicTablesTest::dynamicTablesTest</scope><name>getTemporaryElementList</name></member>
+      <member refid="classdynamicTablesTest_1_1dynamicTablesTest_1abe58e6c2f30759e5a79e084f5fc0a43e" prot="public" virt="non-virtual"><scope>dynamicTablesTest::dynamicTablesTest</scope><name>testFunction</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

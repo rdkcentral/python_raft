@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="requirements_8txt" kind="file" language="C++">
+    <compoundname>requirements.txt</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">aiohttp==3.9.3</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">aiosignal==1.3.1</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">annotated-types==0.6.0</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">anyio==4.3.0</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">async-timeout==4.0.3</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">asyncclick==8.1.7.2</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">asyncio==3.4.3</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">attrs==23.2.0</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">bcrypt==4.1.2</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">beautifulsoup4==4.12.3</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">boto3==1.34.70</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">botocore==1.34.70</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">cdrouter==0.9.7</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">certifi==2024.2.2</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">cffi==1.16.0</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">charset-normalizer==3.3.2</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">cryptography==42.0.5</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">decorator==5.1.1</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">Deprecated==1.2.14</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">fabric==3.2.2</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">frozenlist==1.4.1</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">future==1.0.0</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">h11==0.14.0</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">idna==3.6</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">invoke==2.2.0</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">jmespath==1.0.1</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">marshmallow==3.21.1</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">multidict==6.0.5</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">numpy==1.26.4</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">opencv-python==4.9.0.80</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">outcome==1.3.0.post0</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">packaging==24.0</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">paramiko==3.4.0</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">pillow==10.2.0</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">pipdeptree==2.16.2</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">pycparser==2.21</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">pydantic==2.6.4</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">pydantic_core==2.16.3</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">PyNaCl==1.5.0</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">pyserial==3.5</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">PySocks==1.7.1</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">pytesseract==0.3.10</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">python-dateutil==2.9.0.post0</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">python-kasa==0.6.2.1</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">PyYAML==6.0.1</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">requests==2.31.0</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">requests-toolbelt==1.0.0</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">s3transfer==0.10.1</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">selenium==4.18.1</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">six==1.16.0</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">sniffio==1.3.1</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">sortedcontainers==2.4.0</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">soupsieve==2.5</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">trio==0.25.0</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">trio-websocket==0.11.1</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">typing_extensions==4.10.0</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">urllib3==1.26.18</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">wrapt==1.16.0</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">wsproto==1.2.0</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">yarl==1.9.4</highlight></codeline>
+    </programlisting>
+    <location file="requirements.txt"/>
+  </compounddef>
+</doxygen>

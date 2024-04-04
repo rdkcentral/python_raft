@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespacecore_1_1commandModules" kind="namespace" language="Python">
+    <compoundname>core::commandModules</compoundname>
+    <innernamespace refid="namespacecore_1_1commandModules_1_1consoleInterface">core::commandModules::consoleInterface</innernamespace>
+    <innernamespace refid="namespacecore_1_1commandModules_1_1serialClass">core::commandModules::serialClass</innernamespace>
+    <innernamespace refid="namespacecore_1_1commandModules_1_1sshConsole">core::commandModules::sshConsole</innernamespace>
+    <innernamespace refid="namespacecore_1_1commandModules_1_1telnetClass">core::commandModules::telnetClass</innernamespace>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="framework_2core_2commandModules_2____init_____8py_1acb9ce35b276057827e721470f0bdf15f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>core::commandModules.dir_path</definition>
+        <argsstring></argsstring>
+        <name>dir_path</name>
+        <initializer>=  os.path.dirname(os.path.realpath(__file__))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="framework/core/commandModules/__init__.py" line="6" column="1" bodyfile="framework/core/commandModules/__init__.py" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="framework/core/commandModules/__init__.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>
