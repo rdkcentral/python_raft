@@ -23,7 +23,7 @@ class telnet(consoleInterface):
 
     Args:
         log (logModule): Log module to be used.
-        workspacePath (str): Path of the tests worksapce to create the sesson.log file.
+        workspacePath (str): Path of the tests workspace to create the session.log file.
         host (str): IP address of the host to open a session with.
         username (str): Username to login to the session with.
         password (str): Password to login to the session with.
@@ -60,7 +60,7 @@ class telnet(consoleInterface):
         self.connect()
 
     def close(self):
-        """Close the telnet session
+        """Close the telnet session.
         """
         self.disconnect()
 
@@ -103,7 +103,7 @@ class telnet(consoleInterface):
         """Close the telnet session
 
         Returns:
-            bool: True
+            bool: True if session closed successfully.
         """
         self.tn.close()
         return True

@@ -75,7 +75,7 @@ class sshConsole(consoleInterface):
             value (str): The message to wait for in the console.
 
         Returns:
-            List: List of string, with each being a line displayed in the console up to the value entered.
+            List: List of strings, with each being a line displayed in the console up to the value entered.
         """
         data = ""
         self.buffer.extend(self.stdout.readlines())
