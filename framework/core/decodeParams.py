@@ -24,7 +24,14 @@ import os
 class decodeParams():
     """Decodes the input arguments and sets the slot details
     """
+    
     def __init__(self, log):
+        """
+        Initialises a DecodeParams instance based on the parameters.
+
+        Args:
+            log (logModule): Log module instance.
+        """
         self.jobId = None
         self.rackJobExecutionId = None
         self.testMode = False
@@ -82,6 +89,8 @@ class decodeParams():
             self.loop = self.args.loop
 
     def decodeDeviceConfig( self ):
+        """Decodes the device configuration.
+        """
         self.deviceConfig = None
         deviceConfigFile = self.args.deviceConfigFile
         if deviceConfigFile == None:
@@ -97,6 +106,15 @@ class decodeParams():
         self.deviceConfig = self.decodeConfigIntoDictionary(deviceConfigFile)
 
     def decodeConfigIntoDictionary(self, configFile):
+        """
+        Decodes the configuration file into a dictionary.
+
+        Args:
+            configFile (str): Path to the configuration file.
+
+        Returns:
+            dict: The decoded configuration.
+        """
         fullPath = configFile
         if fullPath.startswith("."):
             fullPath = os.path.abspath(configFile)
