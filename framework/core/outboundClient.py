@@ -27,13 +27,13 @@ from framework.core.logModule import logModule as logModule
 class outboundClientClass():
 
     def __init__(self, log:logModule=None, workspaceDirectory:str=None, upload_url:str=None, httpProxy:str="", **kwargs):
-        """Intialise class
+        """Initialize the class.
 
         Args:
-            log ([logModule], optional): [logging class from parent if required]. Defaults to None.
-            workspaceDirectory ([str]): [local workspace folder to download files too]
-            upload_url ([str], optional): [description]. Defaults to None.
-            httpProxy (str, optional): [httpProxy if required, used for downloading via http]. Defaults to "".
+            log (logModule, optional): Logging class from parent if required. Defaults to None.
+            workspaceDirectory (str, optional): Local workspace folder to download files to. Defaults to None.
+            upload_url (str, optional): Upload URL. Defaults to None.
+            httpProxy (str, optional): HTTP proxy if required, used for downloading via HTTP. Defaults to "".
         """
         self.log = log
         self.logBase = False
@@ -50,17 +50,18 @@ class outboundClientClass():
         self.__configureUploadProtocol__( upload_url )
     
     def __del__(self):
+        """Destructor method."""
         if self.logBase == True:
             self.log.log.removeHandler(self.log.log.handlers[0])
 
     def __configureUploadProtocol__(self, upload_url:str):
-        """configure the TFTP client if required
+        """Configure the upload protocol if required.
 
         Args:
-            upload_url ([str]): [upload folder including the TFTP requirements]
+            upload_url (str): Upload folder including the protocol requirements.
 
         Returns:
-            [bool]: [True - on success, otherwise False]
+            bool: True on success, otherwise False.
         """
         parse = urlparse( upload_url )
         if parse.scheme == "sftp":
@@ -77,14 +78,14 @@ class outboundClientClass():
         self.uploadPath = parse.path
 
     def downloadFile(self, url:str, filename:str = None):
-        """[downloadFile a file from the url and save to the workspace]
+        """Download a file from the URL and save it to the workspace.
 
         Args:
-            url ([str]): [url of the file to be downloadeds]
-            filename ([str]): [optional name of the download file]
+            url (str): URL of the file to be downloaded.
+            filename (str, optional): Optional name of the downloaded file.
 
         Returns:
-            [bool]: [True - on success, otherwise False]
+            bool: True on success, otherwise False.
         """
         if not os.path.exists(self.workspaceDirectory):
             os.makedirs(self.workspaceDirectory)  # create folder if it does not exist
@@ -103,11 +104,14 @@ class outboundClientClass():
         return False
 
     def prepareOutboundWithImageFromUrl( self, imageType:str, url:str):
-        """program the given image name , from the url given
+        """Program the given image name from the provided URL.
 
         Args:
-            imageType ([str]): [image, PCI1, PCI2, etc. as required]
-            url ([str]): [url for the source image, http://, or sftp:// ]
+            imageType (str): Type of image (e.g., 'image', 'PCI1', 'PCI2').
+            url (str): URL for the source image (HTTP or SFTP).
+
+        Returns:
+            bool: True on success, otherwise False.
         """
         try:
             imageFilename = self.translateImageTypeToImageFilename( imageType )
@@ -121,26 +125,26 @@ class outboundClientClass():
             raise Exception('Failed to prepareOutboundWithImageFromUrl - {} url {}'.format(imageType, url))
 
     def translateImageTypeToImageFilename(self, imageType:str):
-        """Convert imageType to imageFilename 
-        
-            TODO: This function will need extending to read the imageType translations to filename translations
+        """Convert imageType to imageFilename.
 
         Args:
-            imageType ([str]): [imageType, PCI1, PCI2, PDRI, BDRI etc.]
+            imageType (str): Image type (e.g., 'PCI1', 'PCI2', 'PDRI', 'BDRI').
+
         Returns:
-            imageFilename ([str]): [Filename returned with extension]
+            str: Filename returned with extension.
         """
+
         imageFilename = imageType+".bin" 
         return imageFilename;
 
     def getSizeInHumanReadable(self, size:int):
-        """get size in Human Readable form
+        """Get size in human-readable form.
 
         Args:
-            size ([int]): [size in bytes]
+            size (int): Size in bytes.
 
         Returns:
-            [int]: [size string]
+            str: Size string.
         """
         units = ['B', 'KB', 'MB', 'GB']
         index = 0
@@ -151,14 +155,14 @@ class outboundClientClass():
         return f'{size} {units[index]}'
 
     def __downloadSFTP__(self, url:str, filename:str=None ):
-        """Download the given url via SFTP protocol
+        """Download the given URL via SFTP protocol.
 
         Args:
-            url ([str]): [source url]
-            filename ([str]): [optional destination filename]
+            url (str): Source URL.
+            filename (str, optional): Optional destination filename.
 
         Returns:
-            [bool]: [True - on success, otherwise False]
+            bool: True on success, otherwise False.
         """
         parse = urlparse( url )
         port = int(22)
@@ -184,8 +188,7 @@ class outboundClientClass():
         return True
 
     def cleanWorkspace(self):
-        """Clean the workspace folder
-        """
+        """Clean the workspace folder."""
         self.log.info("Clean workspace folder [{}]")
 
 
@@ -227,25 +230,25 @@ class outboundClientClass():
         return True
 
     def progressSFTP(self, filename:str, size:int, sent:int):
-        """SSH Progress callback
+        """SSH Progress callback.
 
         Args:
-            filename ([str]): [filename]
-            size ([int]): [total size]
-            sent ([int]): [current sent]
+            filename (str): Filename.
+            size (int): Total size.
+            sent (int): Current sent.
         """
         done = int(50 * sent / size)
         sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )
 
     def __downloadHTTP__(self, url:str, filename:str=None ):
-        """Download the given url via HTTP protocol
+        """Download the given URL via HTTP protocol.
 
         Args:
-            url ([str]): [source url]
-            filename ([str]): [optional destination filename]
+            url (str): Source URL.
+            filename (str, optional): Optional destination filename.
 
         Returns:
-            [bool]: [True - on success, otherwise False]
+            bool: True on success, otherwise False.
         """
         httpProxy = None
         if self.httpProxy != 'None':
@@ -281,13 +284,13 @@ class outboundClientClass():
         return filename
 
     def  uploadFile(self,filename:str):
-        """[upload the file specified from the workspace to the outputfolder ]
+        """Upload the file specified from the workspace to the output folder.
 
         Args:
-            file ([str]): [file to be uploaded]
+            filename (str): File to be uploaded.
 
         Returns:
-            [bool]: [True - on success, otherwise False]
+            bool: True on success, otherwise False.
         """
         sourceFilename = os.path.join(self.workspaceDirectory, filename)
         if os.path.isfile(sourceFilename) == False:
@@ -304,13 +307,13 @@ class outboundClientClass():
         return False
 
     def retrieveListofFilenamesFromUrl(self, inputUrl:str):
-        """Retrieves list of build\image names using the input url
-        
+        """Retrieve a list of build/image names using the input URL.
+
         Args:
-            inputUrl ([str]) - Url of the build binaries
-        
+            inputUrl (str): URL of the build binaries.
+
         Returns:
-            imagesList (list) - List of image names available in the binaries folder
+            list: List of image names available in the binaries folder.
         """
         self.log.step("outboundClient.retrieveListofFilenamesFromUrl")
         if inputUrl.startswith("http://") or inputUrl.startswith("https://"):
