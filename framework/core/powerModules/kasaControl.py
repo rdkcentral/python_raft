@@ -81,6 +81,15 @@ class powerKasa():
         self.args = args
 
     def split_with_quotes(self, inputString):
+        """
+        Split a string considering quotes.
+
+        Args:
+            inputString (str): The input string to split.
+
+        Returns:
+            list: The list of substrings.
+        """
         result = []
         quotes = False
         for substring in inputString.split('"'):
@@ -92,6 +101,15 @@ class powerKasa():
         return result
 
     def remove_empty_strings(self, inputList):
+        """
+        Remove empty strings from a list.
+
+        Args:
+            inputList (list): The list to clean.
+
+        Returns:
+            list: The cleaned list.
+        """
         empty_strings = []
         for string in inputList:
             if (string != ""):
@@ -99,6 +117,17 @@ class powerKasa():
         return empty_strings;
 
     def performCommand(self, command, noOptions = False, noArgs = False):
+        """
+        Perform a command.
+
+        Args:
+            command (str): The command to execute.
+            noOptions (bool, optional): Whether to exclude options. Defaults to False.
+            noArgs (bool, optional): Whether to exclude arguments. Defaults to False.
+
+        Returns:
+            str: The command output.
+        """
         extension = ""
         extension += "--host {} ".format(self.ip)
         if noOptions == False:
@@ -114,6 +143,12 @@ class powerKasa():
         return data.stdout
 
     def powerOff(self):
+        """
+        Turn off the device.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         self.__getstate__()
         if self.is_off:
             return True
@@ -124,6 +159,12 @@ class powerKasa():
         return self.is_off
 
     def powerOn(self):
+        """
+        Turn on the device.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         self.__getstate__()
         if self.is_on:
             return True
@@ -134,6 +175,8 @@ class powerKasa():
         return self.is_on
 
     def __getstate__(self):
+        """Get the state of the device.
+        """
         if "strip" in self.options:
             # We have a strip look at the status of the strip, and check the index and the device state
             #Device state: ON
@@ -179,6 +222,12 @@ class powerKasa():
                 self.log.debug("Device state: ON")
 
     def reboot(self):
+        """
+        Reboot the device.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         result = self.powerOff()
         if result == True:
             time.sleep(1)

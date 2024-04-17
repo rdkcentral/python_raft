@@ -18,6 +18,17 @@ from framework.core.commandModules.telnetClass import telnet
 class powerSLP():
 
     def __init__(self, log, ip, username, password, outlet_id, port=None):
+        """
+        Initializes the PDU control object.
+
+        Args:
+            log: The logger object for logging messages.
+            ip (str): The IP address of the Power Distribution Unit (PDU).
+            username (str): The username for authentication.
+            password (str): The password for authentication.
+            outlet_id (int): The ID of the outlet to control.
+            port (int, optional): The port for Telnet connection. Defaults to 23.
+        """
         self.log = log
         self.ip = ip
         self.username = username
@@ -30,6 +41,15 @@ class powerSLP():
                              self.username, self.password)
 
     def command(self, cmd):
+        """
+        Send a command to the Power Distribution Unit (PDU) via Telnet.
+
+        Args:
+            cmd (str): The command to be executed.
+
+        Returns:
+            bool: True if the command was successful, False otherwise.
+        """
         result = True
         if self.telnet.connect(username_prompt='Username: ',
                                password_prompt='Password: ') is False:
@@ -45,18 +65,36 @@ class powerSLP():
         return result
 
     def powerOff(self):
+        """
+        Turn off the outlet.
+
+        Returns:
+            bool: True if the operation was successful, False otherwise.
+        """
         result = self.command('OFF {}\n'.format(self.outlet))
         if result != True:
             self.log.error(" Power Failed off")
         return result
 
     def powerOn(self):
+        """
+        Turn on the outlet.
+
+        Returns:
+            bool: True if the operation was successful, False otherwise.
+        """
         result = self.command('ON {}\n'.format(self.outlet))
         if result != True:
             self.log.error(" Power Failed on")
         return result
 
     def reboot(self):
+        """
+        Reboot the outlet by powering it off and then on.
+
+        Returns:
+            bool: True if the operation was successful, False otherwise.
+        """
         result = self.powerOff()
         if result is True:
             result = self.powerOn()
