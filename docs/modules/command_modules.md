@@ -1,6 +1,8 @@
-<img src="../images/RAFT_Logo.png" alt="LOGO" width="130"/>
+# Command Modules
 
-# Comand Modules
+**Directory:** `framework/core/commandModules`
+
+**Purpose:**
 
 The command modules facilitate seamless interaction with various console-based systems, including SSH, serial, and Telnet.
 They offer a comprehensive set of essential methods, such as `write`, `read_all`, `read_until`, `open`, and `close`, which are 
