@@ -27,9 +27,10 @@ RAFT’s primary focus is to provide engineering teams a modular, config driven,
 ### User Installation
 Clone the repository and ensure that all requirements are met.
 
-## Getting Started
+## [Getting Started](docs/Getting_started.md)
 
-WIP
+Please follow the Getting_started.md guide found [here](docs/Getting_started.md)
+
 
 ## Documentation
 
