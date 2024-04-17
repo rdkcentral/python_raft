@@ -23,6 +23,14 @@ import framework.core.logModule
 class powerHS100():
     
     def __init__( self, log, ip, port ):
+        """
+        Initialize the SmartPlug object.
+
+        Args:
+            log: Logger object for logging messages.
+            ip (str): IP address of the TP-Link Smart Plug.
+            port (int): Port number for the connection.
+        """
         self.ip = ip
         if port is None:
             port = 9999
@@ -47,7 +55,15 @@ class powerHS100():
                          }
 
     def encrypt(self, string):
-        """Encryption of TP-Link Smart Home Protocol. XOR Autokey Cipher with starting key = 171"""
+        """
+        Encrypt a string using XOR Autokey Cipher with starting key = 171.
+
+        Args:
+            string (str): The string to encrypt.
+
+        Returns:
+            bytes: The encrypted bytes.
+        """
         key = 171
         result = pack('>I', len(string))
         for i in string:
@@ -57,7 +73,15 @@ class powerHS100():
         return result
 
     def decrypt(self, string):
-        """Decryption of TP-Link Smart Home Protocol. XOR Autokey Cipher with starting key = 171"""
+        """
+        Decrypt a string using XOR Autokey Cipher with starting key = 171.
+
+        Args:
+            string (bytes): The encrypted bytes to decrypt.
+
+        Returns:
+            str: The decrypted string.
+        """
         key = 171
         result = ""
         for i in string:
@@ -67,10 +91,14 @@ class powerHS100():
         return result
 
     def switchCommand(self, key):
-        """send key command to switch
+        """
+        Send a command to the switch.
 
         Args:
-            key (str) - 'on'\'off'\'reboot'. Refer self.commands
+            key (str): The command key. Refer to self.commands for available keys.
+
+        Returns:
+            bool: True if the command is successful, False otherwise.
         """
         result = False
         counter = 0
@@ -98,18 +126,42 @@ class powerHS100():
         return result
 
     def powerOff(self):
+        """
+        Turn off the Smart Plug.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         result = self.switchCommand('off')
         return result
 
     def powerOn(self):
+        """
+        Turn on the Smart Plug.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         result = self.switchCommand('on')
         return result
 
     def switchReboot(self):
+        """
+        Reboot the Smart Plug.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         result = self.switchCommand('reboot')
         return result
 
     def reboot(self):
+        """
+        Reboot the Smart Plug.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         result = self.powerOff()
         if result != True:
             self.log.error(" Power Failed off")
