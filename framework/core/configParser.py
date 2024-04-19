@@ -18,12 +18,17 @@ from framework.core.configParserBase import configParserBase
 class configParser(configParserBase):
 
     def __init__(self, config=None, log=None ):
-        """Initializes a ConfigParser object.
-        
-        Args:
-            config (dict): A dictionary containing the decoded class.
-            log (class, optional): The parent log class if required. Defaults to None.
         """
+        Initializes a ConfigParser object.
+
+        ConfigParser is a class designed to parse configuration data.
+    
+        Args:
+            config (dict): A dictionary containing the decoded configuration data.
+            log (logModule, optional): The logModule to use for logging. 
+                Defaults to None, in which case the ConfigParser starts its own logModule.
+        """
+        
         self.log = log
         if log == None:
             self.log = logModule( "configParser" )
