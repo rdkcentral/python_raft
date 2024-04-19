@@ -72,4 +72,3 @@ my_remote.remoteConfig = new_remote_config
 * **Decouples Test Logic:** Your test scripts don't need to know about the specifics of each remote control.
 * **Manageability:**  Changing key translations can be done in configuration files rather than modifying your test code.
 
-**Let me know if you have a specific remote control scenario in mind, and I can provide a more tailored example!*
