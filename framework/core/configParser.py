@@ -16,12 +16,12 @@ from framework.core.logModule import logModule as logModule
 from framework.core.configParserBase import configParserBase
 
 class configParser(configParserBase):
+    """ConfigParser is a class designed to parse configuration data.
+    """
 
     def __init__(self, config=None, log=None ):
         """
         Initializes a ConfigParser object.
-
-        ConfigParser is a class designed to parse configuration data.
     
         Args:
             config (dict): A dictionary containing the decoded configuration data.
