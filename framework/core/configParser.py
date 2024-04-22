@@ -16,13 +16,19 @@ from framework.core.logModule import logModule as logModule
 from framework.core.configParserBase import configParserBase
 
 class configParser(configParserBase):
+    """ConfigParser is a class designed to parse configuration data.
+    """
 
     def __init__(self, config=None, log=None ):
-        """Class: configParser
-        Args:
-            config (dict): [dict of the decoded class]
-            log ([class], optional): [parent log class if required]. Defaults to None.
         """
+        Initializes a ConfigParser object.
+    
+        Args:
+            config (dict): A dictionary containing the decoded configuration data.
+            log (logModule, optional): The logModule to use for logging. 
+                Defaults to None, in which case the ConfigParser starts its own logModule.
+        """
+        
         self.log = log
         if log == None:
             self.log = logModule( "configParser" )
@@ -36,13 +42,13 @@ class configParser(configParserBase):
             self.decodeConfig( config )
 
     def decodeConfig(self, config ):
-        """decode the test config section top level
+        """Decodes the top-level test config section.
             local:      -   Local config
             cpe:        -   cpe device configuration
             memoryMap:  -   memoryMap configuration
-
+        
         Args:
-            config ([dict]): [config dictionary]
+            config (dict): The config dictionary.
         """
         for x in config:
             # Items from rack config
@@ -55,10 +61,11 @@ class configParser(configParserBase):
                 self.__decodeMemoryMapConfig__( x, config[x] )
 
     def __decodeMemoryMapConfig__(self, parent, config):
-        """decode the memory map config
-
+        """Decodes the memory map config.
+        
         Args:
-            config ([dict]): [config for the memory map sections]
+            parent (str): The parent key in the config.
+            config (dict): The config for the memory map sections.
         """
         self.memoryMap[parent] = dict()
         parent = self.memoryMap[parent]
@@ -69,10 +76,10 @@ class configParser(configParserBase):
                 self.decodeParam( parent, x, config[x] )
     
     def updateCPEConfig(self, config):
-        """update the CPE config
-
+        """Updates the CPE config.
+        
         Args:
-            config ([dict]): [config for the cpe section]
+            config (dict): The config for the CPE section.
         """
         # Find the config that has the same cpe.platform, this will be the override
         for x in self.cpe:
@@ -87,23 +94,15 @@ class configParser(configParserBase):
                 break
 
     def createCpeConfig(self, imageLocationDict, platform):
-        """Creates template of deviceConfig cpe entry
-
+        """Creates a template of deviceConfig CPE entry.
+        
         Args:
-            imageLocationDict (dict) 
-            Ex: {PCI1: "http://testwebsite.com/image.bin"}
-
-            platform (str) - platorm of the device (Ex: ada.sr300)
+            imageLocationDict (dict): A dictionary containing image locations.
+            platform (str): The platform of the device.
 
         Returns:
-            cpeConfig (dict)
-            Ex:{
-                    {platform: "test_platform",
-                    validImage:
-                        {PCI1: "http://testwebsite.com/image.bin"}
-                    }
-                }                
-        """
+            cpeConfig (dict): A dictionary representing the CPE config.
+        """             
         # TODO: Cover more params in future
         cpeConfig = {
             'platform': platform,
@@ -112,10 +111,11 @@ class configParser(configParserBase):
         return cpeConfig
 
     def __decodeCPEConfig__(self, parent, config):
-        """decode the CPE config
-
+        """Decodes the CPE config.
+        
         Args:
-            config ([dict]): [config for the cpe section]
+            parent (str): The parent key in the config.
+            config (dict): The config for the CPE section.
         """
         self.cpe[parent] = dict()
         parent = self.cpe[parent]
@@ -126,13 +126,13 @@ class configParser(configParserBase):
                 self.decodeParam( parent, x, config[x] )
 
     def getCPEEntryViaPlatform(self, platform):
-        """[find the cpe entry via the platform ]
-
+        """Finds the CPE entry via the platform.
+        
         Args:
-            platform ([string]): [platform name e.g. "xione.de"]
+            platform (str): The platform name.
 
         Returns:
-            [dict]: [cpe dict entry, or None if not found]
+            dict: The CPE dict entry, or None if not found.
         """
         for cpeParent in self.cpe:
             cpeEntry = self.cpe[cpeParent]
@@ -142,13 +142,14 @@ class configParser(configParserBase):
         return None
 
     def getCPEFieldViaPlatform(self, platform, field):
-        """[find the cpe entry via the platform ]
-
+        """Finds the CPE field via the platform.
+        
         Args:
-            platform ([string]): [platform name e.g. "xione.de"]
+            platform (str): The platform name.
+            field (str): The field to search for.
 
         Returns:
-            [dict]: [cpe dict entry, or None if not found]
+            dict: The CPE dict entry, or None if not found.
         """
         self.log.debug("configParser.getCPEFieldViaPlatform([{}][{}])".format(platform,field))
         for cpeParent in self.cpe:
@@ -164,13 +165,13 @@ class configParser(configParserBase):
         return None
 
     def getMemoryMapViaPlatform(self, platform):
-        """[find the Memory Map entry via the platform ]
-
+        """Finds the Memory Map entry via the platform.
+        
         Args:
-            platform ([string]): [platform name e.g. "xione.de"]
+            platform (str): The platform name.
 
         Returns:
-            [dict]: [memory map dict entry, or None if not found]
+            dict: The memory map dict entry, or None if not found.
         """
         cpe = self.getCPEEntryViaPlatform( platform )
         if cpe == None:
@@ -186,14 +187,14 @@ class configParser(configParserBase):
         return None
 
     def getMemoryMapValueViaPlatform(self, platform, name ):
-        """[find the Memory Map item via the platform ]
-
+        """Finds the Memory Map item via the platform.
+        
         Args:
-            platform ([string]): [platform name e.g. "xione.de"]
-            name ([string]): [name of the section like "BL1Offset"]
+            platform (str): The platform name.
+            name (str): The name of the section.
 
         Returns:
-            [dict]: [memory map dict entry, or None if not found]
+            dict: The memory map dict entry, or None if not found.
         """
         map = self.getMemoryMapViaPlatform( platform )
         try:
@@ -204,10 +205,10 @@ class configParser(configParserBase):
         return data
 
     def getWorkspaceDirectory(self):
-        """[get the workspace directory]
+        """Gets the workspace directory.
 
         Returns:
-            [string]: [workspace directory]
+            str: The workspace directory.
         """
         result = self.__getFieldValue__( self.local, "workspaceDirectory" )
         if result is None:
@@ -220,7 +221,7 @@ class configParser(configParserBase):
         return result
 
     def getAlternativePlatform(self, platform):
-        """Get the alternative platform from device config
+        """Gets the alternative platform from device config.
         """
         cpe = self.getCPEEntryViaPlatform( platform )
         if cpe == None:
@@ -231,15 +232,15 @@ class configParser(configParserBase):
 ## Debate on these functions should they 
 
     def getImageField( self, imageName, fieldName, fieldValue ):
-        """Search and return the image field specified
-
+        """Searches and returns the image field specified.
+        
         Args:
-            imageName ([string]): [image name to search for]
-            fieldName ([string]): [field to search for]
-            fieldValue ([string]): [pattern to match the field]
+            imageName (str): The image name to search for.
+            fieldName (str): The field to search for.
+            fieldValue (str): The pattern to match the field.
 
         Returns:
-            [string]: [url]
+            str: The URL.
         """
         self.log.debug("getImageField([{}] [{}] [{}])".format( imageName, fieldName, fieldValue ))
         for cpeParent in self.cpe:
@@ -275,37 +276,39 @@ class configParser(configParserBase):
         return None
 
     def getNegativeImageUrlViaPlatform(self, platform):
-        """Get the negative image location via the platform
-
+        """Gets the negative image location via the platform.
+        
         Args:
-            platform ([string]): [platform string e.g. xione.de, llama.uk]
+            platform (str): The platform string.
+
         Returns:
-            [string]: [url or none if not found]
+            str: The URL, or None if not found.
         """
         value = self.getCPEFieldViaPlatform( platform, "negativeImageLocation" )
         return value
 
     def getValidImageUrlViaPlatform(self, imageName, platform ):
-        """[gets a valid image from the specified platform name]
-
+        """Gets a valid image from the specified platform name.
+        
         Args:
-            imageName ([string]): [image name , "PCI1, PCI2, PDRI, BDRI etc" from the config]
-            platform ([string]): [platform name e.g. "xione.de"]
+            imageName (str): The image name.
+            platform (str): The platform name.
+
         Returns:
-            [string]: [url]
+            str: The URL.
         """
         self.log.debug("getValidImageUrlViaPlatform([{}] [{}] [{}])".format( imageName, "platform", platform ))
         return self.getImageField( imageName, "platform", platform )
 
     def getValidImages(self, platform, filterString):
-        """For the given platform, gets valid image names for the imageType in the testConfig
-
+        """For the given platform, gets valid image names for the imageType in the testConfig.
+        
         Args:
-            filterString (str) - To filter the matching valid image names Ex: PCI \ DRI etc.,
-            platform (str) - device platform. Ex: ada.sr300 or xione.de etc.,
+            platform (str): The device platform.
+            filterString (str): The string to filter the matching valid image names.
 
         Returns:
-            validNames (list) - List of matching image names in testConfig (Ex: For DRI, it returns BDRI\PDRI)
+            list: List of matching image names in testConfig.
         """
         validNames = []
         for cpeParent in self.cpe:
