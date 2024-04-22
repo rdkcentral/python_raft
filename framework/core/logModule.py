@@ -47,11 +47,12 @@ class logModule():
     RESULT = STEP_RESULT
 
     def __init__(self, moduleName, level=INFO):
-        """[init for the log module]
+        """
+        Initialises the log module.
 
         Args:
-            moduleName ([string]): [name of hte module]
-            level ([level], optional): [DEBUG, INFO, STEP, STEP_START, STEP_RESULT, WARNING, ERROR, CRITICAL, FATAL]. Defaults to INFO.
+            moduleName (str): Name of the module.
+            level (int, optional): Logging level. Defaults to INFO.
         """
         # Initialize python logger
         self.log = logging.getLogger(moduleName)
@@ -93,10 +94,19 @@ class logModule():
         self.csvLogFile = None
 
     def __del__(self):
+        """Deletes the logger instance.
+        """
         while self.log.hasHandlers():
             self.log.removeHandler(self.log.handlers[0])
 
     def setFilename( self, logPath, logFileName ):
+        """
+        Sets the filename for logging.
+
+        Args:
+            logPath (str): The path to write log files.
+            logFileName (str): The name of the log file.
+        """
         if self.logFile != None:
             #Log file already set don't set a new one
             return
@@ -112,46 +122,145 @@ class logModule():
         self.log.info( "Log File: [{}]".format(logFileName) )
 
     def fatal(self, message,*args, **kws):
+        """
+        Logs a fatal error and exits the program.
+
+        Args:
+            message (str): The message to log.
+            *args: Additional positional arguments.
+            **kws: Additional keyword arguments.
+        """
         self.log._log(self.FATAL, self.indentString+str(message), args, **kws)
         os._exit(1)
 
     def warn(self,message,extra=None):
+        """
+        Logs a warning message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log.warning(self.indentString+str(message),extra=extra)
 
     def error(self,message,extra=None):
+        """
+        Logs an error message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log.error(self.indentString+str(message),extra=extra)
 
     def critical(self,message,extra=None):
+        """
+        Logs a critical message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log.critical(self.indentString+str(message),extra=extra)
 
     def debug(self,message,extra=None):
+        """
+        Logs a debug message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log.debug(self.indentString+str(message),extra=extra)
 
     def info(self,message,extra=None):
+        """
+        Logs an info message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log.info(self.indentString+str(message),extra=extra)
 
     def stepMessage(self,message,*args, **kws):
+        """
+        Logs a step message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log._log(self.STEP, message, args, **kws)
 
     def stepStartMessage(self,message,*args, **kws):
+        """
+        Logs a step start message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log._log(self.STEP_START, message, args, **kws)
 
     def stepResultMessage(self,message,*args, **kws):
+        """
+        Logs a step result message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log._log(self.STEP_RESULT, message, args, **kws)
 
     def testStartMessage(self,message,*args, **kws):
+        """
+        Logs a test start message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log._log(self.TEST_START, message, args, **kws)
 
     def testResultMessage(self,message,*args, **kws):
+        """
+        Logs a test result message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log._log(self.TEST_RESULT, message, args, **kws)
 
     def testSummaryMessage(self,message,*args, **kws):
+        """
+        Logs a test summary message.
+
+        Args:
+            message (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         self.log._log(self.TEST_SUMMARY, message, args, **kws)
 
     def setLevel( self, level ):
+        """
+        Sets the logging level for the logger.
+
+        Args:
+            level (int): The logging level to set.
+        """
         self.log.setLevel( level )
 
     def message( self, level, output, extra=None):
+        """
+        Logs a message with the specified logging level.
+
+        Args:
+            level (int): The logging level.
+            output (str): The message to log.
+            extra (Any, optional): Additional information to include. Defaults to None.
+        """
         levelFunctions = {
             DEBUG: self.debug,
             INFO: self.info,
@@ -165,7 +274,14 @@ class logModule():
         return func( output, extra )
 
     def indent( self, string=INDENT_DEFAULT):
-        """ push an indent prefix
+        """
+        Pushes an indentation prefix.
+
+        Args:
+            string (str, optional): The string used for indentation. Defaults to INDENT_DEFAULT.
+
+        Returns:
+            bool: False
         """
         #indentLength = len(self.indentString)
         self.indentString=self.indentString+string
@@ -173,7 +289,14 @@ class logModule():
         return False
 
     def outdent(self, string=INDENT_DEFAULT):
-        """ pop an indent
+        """
+        Pops an indentation prefix.
+
+        Args:
+            string (str, optional): The string used for indentation. Defaults to INDENT_DEFAULT.
+
+        Returns:
+            bool: True if successful, False otherwise.
         """
         indentLength = len(self.indentString)
         stringLength = len(string)
@@ -185,6 +308,18 @@ class logModule():
         return True
 
     def testStart(self, testName, qcId, loops=1, maxRunTime=(60*24) ):
+        """
+        Starts a test.
+
+        Args:
+            testName (str): The name of the test.
+            qcId (str): The QC ID of the test.
+            loops (int, optional): The number of loops for the test. Defaults to 1.
+            maxRunTime (int, optional): The maximum runtime for the test in minutes. Defaults to 1440.
+
+        Returns:
+            datetime: The end time of the test.
+        """
         self.testName=testName
         self.qcId = qcId
         self.loopCount = loops
@@ -221,10 +356,22 @@ class logModule():
         return self.end_time
 
     def testLoop(self, loopIndex):
+        """
+        Starts a test loop.
+
+        Args:
+            loopIndex (int): The index of the test loop.
+        """
         self.step(logModule.SEPERATOR_STAR+"Test Loop:[" + str(loopIndex) + "], Start Time: ["+self.testStartTime.strftime(self.timeFormat)+"]" )
         #self.indent()
 
     def testLoopComplete(self, loopIndex):
+        """
+        Marks the completion of a test loop.
+
+        Args:
+            loopIndex (int): The index of the completed test loop.
+        """
         #self.outdent()
         loopEndTime = datetime.datetime.now()
         loopDuration = loopEndTime - self.testStartTime
@@ -233,7 +380,12 @@ class logModule():
         self.loopStartTime = None
 
     def testResult(self, message):
+        """
+        Logs the result of a test.
 
+        Args:
+            message (str): The result message.
+        """
         if self.testCountActive >= 1:
             self.testCountActive -= 1
 
@@ -268,6 +420,13 @@ class logModule():
             self.csvLogger.info("{},{},{},{},{},{}". format(self.qcId, self.testName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
 
     def stepStart(self, message, expected=None):
+        """
+        Starts a step in the test.
+
+        Args:
+            message (str): The description of the step.
+            expected (Any, optional): The expected outcome of the step. Defaults to None.
+        """
         self.totalSteps += 1
         self.stepNum += 1
         self.step("====================Step Start====================", showStepNumber=False)
@@ -278,12 +437,26 @@ class logModule():
         #self.indent()
 
     def step(self, message, showStepNumber=True):
+        """
+        Logs a step in the test.
+
+        Args:
+            message (str): The message to log.
+            showStepNumber (bool, optional): Whether to show the step number. Defaults to True.
+        """
         output = "[{}]: {}{}".format(self.stepNum, self.indentString, message)
         if showStepNumber == False:
             output = "{}{}".format(self.indentString,message)
         self.stepMessage( output )
 
     def stepResult(self, result, message):
+        """
+        Logs the result of a step in the test.
+
+        Args:
+            result (bool): The result of the step.
+            message (str): The result message.
+        """
         #self.outdent()
         if result == True:
             resultMessage = "PASSED"
