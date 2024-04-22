@@ -49,6 +49,16 @@ class testController():
     TEST_MAX_RUN_TIME = (60*60*24*30) #  Test all tests max run time to 30 days
 
     def __init__(self, testName="", qcId="", maxRunTime=TEST_MAX_RUN_TIME, level=logModule.STEP, loop=1, log=None):
+        """Initialize the test class.
+
+        Args:
+            testName (str, optional): Name of the test. Defaults to "".
+            qcId (str, optional): QC ID of the test. Defaults to "".
+            maxRunTime (int, optional): Maximum runtime of the test. Defaults to TEST_MAX_RUN_TIME.
+            level (int, optional): Log level. Defaults to logModule.STEP.
+            loop (int, optional): Number of test loops. Defaults to 1.
+            log (class, optional): Parent log class. Defaults to None.
+        """
         self.testStartTime = ''
         self.log = logModule(testName)
         self.log.setLevel(level)
@@ -168,6 +178,14 @@ class testController():
             self.overrideCpeConfig = self.processBuildConfiguration(self.config.overrideCpeConfig)
 
     def addDelimiter( self, path ):
+        """Add delimiter to the path if required.
+
+        Args:
+            path (str): Path to add delimiter.
+
+        Returns:
+            str: Path with added delimiter if required.
+        """
         delimiter = self.logConfig.get("delimiter")
         if path[-1] == delimiter:
             return path
@@ -175,17 +193,14 @@ class testController():
         return path
 
     def constructLogPath(self, rackName, slotName):
-        """Construct the path required for all Logs
-
-            localLogs/
-            └── rackName
-                └── slotName 
-                    └── 210629-10:00:00.0000 -> logPath
-            since the directory has the time in it to the second it's unique  
+        """Construct the path required for all logs.
 
         Args:
+            rackName (str): Name of the rack.
+            slotName (str): Name of the slot.
+
         Returns:
-            [string]: [string with added delimiter if required]
+            str: Constructed log path.
         """
         #Check if the summary path was previous set, if so then we take that one instead of our new one
         if self.summaryLog.path != None:
@@ -208,20 +223,10 @@ class testController():
         return logPath
    
     def constructTestPath(self):
-        """Construst the path required for all Logs
+        """Construct the path required for all test logs.
 
-            localLogs/
-            └── rackName
-                └── slotName -> logPath
-                    └── 210629-10:00:00.0000 -> logPath
-                        └── testName:xx-testId:xx -> testPath
-                            ├── serial.log
-                            └── test.log
-            since the directory has the time in it to the second it's unique  
-
-        Args:
         Returns:
-            [string]: [string with added delimiter if required]
+            str: Constructed test log path.
         """
         testPath = self.addDelimiter( self.logPath + self.testName + "-" + self.qcId )
         try:
@@ -234,37 +239,41 @@ class testController():
         return testPath
     
     def waitForBoot(self):
-        """[wait for the system to boot]
-            Actual functionality is depending on the parent class 
+        """Wait for the system to boot.
+
         Returns:
-            [bool]: [True if system booted]
+            bool: True if system booted, False otherwise.
         """
         return True
     
     def testFunction(self):
-        """Executes the main actions for performing the test.
+        """Execute the main actions for performing the test.
 
-        Should be overloaded in the test script to contain the main actions executed during the rest. Is run in stressTest.run()
-        
+        Should be overloaded in the test script to contain the main actions executed during the test.
+
         Returns:
-            True / False 
-        """ 
+            bool: True if test passes, False otherwise.
+        """
         return True
 
     def testPrepareFunction(self):
-        """Executes the pre-test setup
+        """Execute the pre-test setup.
 
-        Should be overloaded in the test scrip to execute all necessary pre-test setup. Is run in stressTest.run() and is not part of the main test loop.
-        
+        Should be overloaded in the test script to execute all necessary pre-test setup.
+
         Returns:
-            True / False
+            bool: True if pre-test setup succeeds, False otherwise.
         """
         return True
     
     def testEndFunction(self, powerOff=True):
-        """Close device sessions and release the resources used for test execution
+        """Close device sessions and release test resources.
+
         Args:
-            powerOff( bool ): Default True, power off after test
+            powerOff (bool, optional): Whether to power off after the test. Defaults to True.
+
+        Returns:
+            bool: True if cleanup succeeds, False otherwise.
         """
         self.session.close()
         if powerOff:
@@ -276,17 +285,19 @@ class testController():
         return True
 
     def testExceptionCleanUp(self):
-        """Cleans up a test if required by the test
+        """Clean up test if required.
+
+        Should be overloaded in the test script.
         """
         return
 
     def waitSeconds(self, seconds, startMessage=True, endMessage=False):
-        """Sleep the test for a number of seconds
+        """Sleep the test for a number of seconds.
 
         Args:
-            seconds (_type_): number of sections to wait
-            startMessage (bool, optional): display a start message. Defaults to False.
-            endMessage (bool, optional): display an end message. Defaults to False.
+            seconds (int): Number of seconds to wait.
+            startMessage (bool, optional): Display a start message. Defaults to False.
+            endMessage (bool, optional): Display an end message. Defaults to False.
         """
         if ( True == startMessage ):
             self.log.info("waitSeconds["+str(seconds)+"]")
@@ -296,13 +307,13 @@ class testController():
             self.log.info("Waited:[" + str(seconds) + "]")    
 
     def waitForSessionMessage(self, message):
-        """User friendly function to Wait for the given message or timeout as required
+        """Wait for the given message in the session.
 
         Args:
-            message ([string): [message to wait for]
+            message (str): Message to wait for.
 
         Returns:
-            result (boolean)
+            bool: True if message found, False otherwise.
         """
         self.log.step( "testControl.waitForSessionMessage("+message+")" )
         #return self.session.read_until(message)
@@ -319,20 +330,23 @@ class testController():
         return True
 
     def writeMessageToSession(self,message):
-        """User friendly function to write a message to the current session
+        """Write a message to the current session.
 
         Args:
-            message ([string]): [Write to the session]
+            message (str): Message to write to the session.
         """
         self.log.step( "testControl.writeMessageToSession({})".format(message.strip()) )
         self.session.write(message)
 
     def programOutboundWithValidImage( self, sourceImageType,  destinationImageType = None ):
-        """program an image from the valid list based on platform
+        """Program an image from the valid list based on platform.
 
         Args:
-            sourceImageType ([string]): [PCI1, PCI2, PDRI, BDRI etc. based on test_config.yml image types ]
-            destinationImageType ([string]): [PCI1, PCI2, PDRI, BDRI etc.]
+            sourceImageType (str): Source image type.
+            destinationImageType (str, optional): Destination image type. Defaults to None.
+
+        Returns:
+            bool: True if programming succeeds, False otherwise.
         """
         platform = self.slotInfo.getPlatform()
         if destinationImageType == None: 
@@ -342,13 +356,13 @@ class testController():
         return result
 
     def processBuildConfiguration(self, inputUrl):
-        """Downloads and retrives information from config file at inputUrl
+        """Download and retrieve information from a config file.
 
         Args:
-            inputUrl (url) - location of config file
+            inputUrl (str): Location of the config file.
 
         Returns:
-            outputDict (dict) - dictionary decoded from config file
+            dict: Decoded dictionary from the config file.
         """
         self.log.step("testControl.processBuildConfiguration")
         try:
@@ -362,13 +376,13 @@ class testController():
         return outputDict
 
     def validatePlatform(self, platform):
-        """Validate the platform by comparing it against platform and alternative platform
+        """Validate the platform against platform and alternative platform.
 
         Args:
-            platform (str)
+            platform (str): Platform to validate.
 
         Returns:
-            result (boolean)
+            bool: True if platform is valid, False otherwise.
         """
         self.log.info("validatePlatform - {}".format(platform))
         if platform == self.buildConfig['platform']:
@@ -379,14 +393,13 @@ class testController():
         return False
  
     def run(self, powerOff=True):
-        """
-        Run the test
-        Check if the box is alive, before we start our testing. If the box hasn't responded at this point we, cannot run the test.
+        """Run the test.
+
         Args:
-            powerOff (bool, optional): don't turn off the power after the test completes. Defaults to True.
+            powerOff (bool, optional): Whether to turn off power after the test. Defaults to True.
 
         Returns:
-            _type_: TRUE - on test pass, otherwise failure
+            bool: True if test passes, False otherwise.
         """
         self.session.open()
 
@@ -457,13 +470,13 @@ class testController():
         return result
 
     def parseException(self, exception):
-        """Parses an exception into the a dictionary to get the, exception thrown and the file, line and method it was thrown on
+        """Parse an exception into a dictionary.
 
         Args:
-            exception (String): An exception as generated by traceback.format_exc()
+            exception (str): Exception generated by traceback.format_exc().
 
         Returns:
-            dict: _description_
+            dict: Dictionary containing parsed exception information.
         """
         lines = exception.split("\n")
         exceptionInfo = {}
@@ -498,11 +511,11 @@ class testController():
 
     
     def signal_handler(self, signal, frame):
-        """Signal handler support for CTRL-C
+        """Signal handler support for CTRL-C.
 
         Args:
-            signal (_type_): signal input
-            frame (_type_): signal frame
+            signal (_type_): Signal input.
+            frame (_type_): Signal frame.
         """
         #result = True
         self.log.info( "signal_handler [{}]".format(frame) )
@@ -510,16 +523,16 @@ class testController():
         sys.exit(1)
 
     def runHostCommand(self, command, supressErrors=False, supressOutput=False, supress=False):
-        """Run a host command
+        """Run a host command.
 
         Args:
-            command (_type_): command to run
-            supressErrors (bool, optional): suppress all errors. Defaults to False.
-            supressOutput (bool, optional): suppress the output. Defaults to False.
-            supress (bool, optional): suppre. Defaults to False.
+            command (_type_): Command to run.
+            suppressErrors (bool, optional): Suppress all errors. Defaults to False.
+            suppressOutput (bool, optional): Suppress the output. Defaults to False.
+            suppress (bool, optional): Suppress both errors and output. Defaults to False.
 
         Returns:
-            _type_: anyh errors listed
+            _type_: Any errors listed.
         """
         self.log.debug( command )
         args = shlex.split( command )
@@ -542,17 +555,15 @@ class testController():
         return errs
 
     def syscmd(self, cmd, encoding='', returnCode=False):
-        """ Runs a command on the system, waits for the command to finish, and then
-            returns the text output of the command. If the command produces no text
-            output, the command's return code will be returned instead.
+        """Run a command on the system.
 
         Args:
-            cmd (string): command 
-            encoding (str, optional): encoding required. Defaults to ''.
-            returnCode (bool, optional): check for return codes. Defaults to False.
+            cmd (str): Command to run.
+            encoding (str, optional): Encoding required. Defaults to ''.
+            returnCode (bool, optional): Check for return codes. Defaults to False.
 
         Returns:
-            string: command result
+            str or int: Command result or return code.
         """
         self.log.debug( "command: ["+str(cmd)+"]")
         p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,close_fds=True)
@@ -571,7 +582,16 @@ class testController():
     
 
     def pingTest(self, deviceName="dut", logPingTime=False):
-    #Ping the box till the box responds after the boot
+        """Perform a ping test against the given device.
+
+        Args:
+            deviceName (str, optional): Device from the configuration to ping. Defaults to "dut".
+            logPingTime (bool, optional): Log ping time. Defaults to False.
+
+        Returns:
+            bool: True if host is up, False otherwise.
+        """
+        #Ping the box till the box responds after the boot
         if(logPingTime):
             self.log.step("waitForBoot( {} )".format(self.slotInfo.getDeviceAddress()))
             pingStartTime = time.time()
@@ -591,13 +611,13 @@ class testController():
         return self.alive
 
     def _pingTestOnly(self, deviceName="dut"):
-        """perform a ping test against the given device
+        """Perform a ping test against the given device.
 
         Args:
-            deviceName (string): device from the configuration to ping 
+            deviceName (str, optional): Device from the configuration to ping. Defaults to "dut".
 
         Returns:
-            bool: TRUE - host is up, otherwise host is down
+            bool: True if host is up, False otherwise.
         """
         hostIsUp = False
         ip = self.slotInfo.getDeviceAddress( deviceName )
@@ -630,10 +650,13 @@ class testController():
         return hostIsUp
 
     def waitForPrompt(self, prompt=None):
-        """
-           This function must wait for the first log prompt to denote that the target is booted.
-           Try for every 10 seconds and read the console for the prompt. If a prompt presents, the box booted successfully, if not retry
-           maximum time limit is 2 minutes and the reports box is not in proper state.
+        """Wait for the prompt to denote that the target is booted.
+
+        Args:
+            prompt (str, optional): Prompt to wait for. Defaults to None.
+
+        Returns:
+            bool: True if prompt found, False otherwise.
         """
         if prompt == None:
             prompt = self.getCPEFieldValue("prompt")
