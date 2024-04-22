@@ -1,0 +1,6 @@
+# The information defined in this config is consistent across all devices of a type.
+
+deviceConfig:
+    cpe1:
+        platform:   "linux"
+        model:      "PC"
