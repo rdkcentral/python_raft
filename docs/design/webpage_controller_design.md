@@ -21,10 +21,10 @@ Finally there is the basic selenium code which can still be utilised if needed, 
 
 ```mermaid
 erDiagram
-		testController ||--o{ webpageController : uses 
-		webpageController ||--o{ webPageConfig : uses
-		webpageController ||--o{ seleniumDriver : uses
-		seleniumDriver ||--o{ selenium : uses
+    testController ||--o{ webpageController : uses 
+    webpageController ||--o{ webPageConfig : uses
+    webpageController ||--o{ seleniumDriver : uses
+    seleniumDriver ||--o{ selenium : uses
 ```
 
 When a test is ran the testController creates an instance of the webpageController reading from the rackConfig global config to determine which webDriver to use:
@@ -64,14 +64,14 @@ The WebController utilises a config file which represents the webpage to navigat
 The pages are the highest level of the config file. 
 ```yml
 buffer:
-	pages:
-		test_locator_page:
-			...
-		form_page:
-			...
-		form_results_page:
-			...
-		
+  pages:
+    test_locator_page:
+      ...
+    form_page:
+      ...
+    form_results_page:
+      ...
+    
 ```
 
 The above defines 3 different pages; `test_locator_page`, `form_page` and `form_results_page`
@@ -82,30 +82,30 @@ Each page config will have a list of web elements in it. Not every element has t
 To access the following element any of the following identifiers can be used. If however any other element shares the same identifiers it will only locate the first element that matches.
 ```html
 <p id="p1" name="pName1" class="normal">
-	This is a paragraph text
+  This is a paragraph text
 </p>
 ```
 
 ```yml
-	pages:
-		test_locator:
-			...
-			elements:
-				paragraph_a_XPATH:
-					type: 'XPATH'
-					value: '/html/body/div[2]/p[1]'
-				paragraph_a_ID:
-					type: 'ID'
-					value: 'p1'
-				paragraph_a_NAME:
-					type: 'NAME'
-					value: 'pName1'
-				paragraph_a_CLASS_NAME:
-					type: 'CLASS_NAME'
-					value: 'normal'    
-				paragraph_a_TAG_NAME:
-					type: 'TAG_NAME'
-					value: 'p'      
+  pages:
+    test_locator:
+      ...
+      elements:
+        paragraph_a_XPATH:
+          type: 'XPATH'
+          value: '/html/body/div[2]/p[1]'
+        paragraph_a_ID:
+          type: 'ID'
+          value: 'p1'
+        paragraph_a_NAME:
+          type: 'NAME'
+          value: 'pName1'
+        paragraph_a_CLASS_NAME:
+          type: 'CLASS_NAME'
+          value: 'normal'    
+        paragraph_a_TAG_NAME:
+          type: 'TAG_NAME'
+          value: 'p'      
 ```
 
 ## Views
@@ -213,20 +213,20 @@ webpageControl.performAction("change_ssid_pass", ssid="WifiHub")
 ### Interactions
 There are a set of interactions that can be used from in the config. These require the appropriate methods to be implemented in the webpageModule, which the seleniumDriver class currently does. The following are the available interactions and how to use them.
 ```yml
-	send_keys:
-		element: 'username_input'
-		args:
-			keys: 'admin'
-	click:
-		element: 'submit_button'
-	accept_alert:
-	clear:
-		element: 'filled_input'
-	refresh:
-	select:
-		element: 'dropdown_input'
-		args:
-			selectVal: 'valFromDropdown'
+  send_keys:
+    element: 'username_input'
+    args:
+      keys: 'admin'
+  click:
+    element: 'submit_button'
+  accept_alert:
+  clear:
+    element: 'filled_input'
+  refresh:
+  select:
+    element: 'dropdown_input'
+    args:
+      selectVal: 'valFromDropdown'
 ```
 
 As stated in [actions](#actions) if an arg starts with `$` it will expect to be substituted.
@@ -294,10 +294,10 @@ Similar to view sequences this allows for these sequences to be chained together
 Global actions can be accessed from anywhere, these actions do not require the test to already have navigated to a certain webpage. These allow actions that act across multiple pages to be defined. Creating a set of methods that will always be accessible. These actions have a list of pages, and then the corresponding action to perform on that page.
 
 ```yml
-	global_actions:
-	  alert_action:
-		- alerts_page: "create_alert_confirm"
-		- form_page: "fill_form"
+  global_actions:
+    alert_action:
+    - alerts_page: "create_alert_confirm"
+    - form_page: "fill_form"
 ```
 
 Global actions are defined alongside pages in the yml file, rather than inside pages. `alert_action` will first navigate to the `alters_page` and perform the action `create_alert_confirm`. It will then navigate to the `form_page` and perform the action `fill_form`
@@ -501,8 +501,8 @@ buffer:
           - click:
               element: alert_button
           - accept_alert:
-	global_actions:
-	  alert_action:
-		- alerts_page: "create_alert_confirm"
-		- form_page: "fill_form"
+  global_actions:
+    alert_action:
+    - alerts_page: "create_alert_confirm"
+    - form_page: "fill_form"
 ```
