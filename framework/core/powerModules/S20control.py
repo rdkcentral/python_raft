@@ -56,6 +56,15 @@ class UnknownPacket(Exception):
 class powerOrviboS20:
 
     def __init__(self, log, ip, mac, port):
+        """
+        Initialize the PowerSwitch instance.
+
+        Args:
+            log: The log module.
+            ip (str): The IP address of the power switch.
+            mac (str): The MAC address of the power switch.
+            port (int): The port number.
+        """
         self.log = log
         self.ip = ip
         self.mac = mac
@@ -65,18 +74,36 @@ class powerOrviboS20:
         self.switch = OrviboS20(self.port)
 
     def powerOn(self):
+        """
+        Turn on the power.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         self.log.info("powerSwitchNone().powerOn")
         result = self.switch.poweron( self.ip, self.mac )
         # TODO: Work out the result code at some point not important at the moment
         return True
 
     def powerOff(self):
+        """
+        Turn off the power.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         self.log.info("powerSwitchNone().powerOff")
         result = self.switch.poweroff( self.ip, self.mac )
         # TODO: Work out the result code at some point not important at the moment
         return True
 
     def reboot(self):
+        """
+        Reboot the device.
+
+        Returns:
+            bool: True if the operation is successful, False otherwise.
+        """
         self.log.info("powerSwitchNone().reboot")
         result = self.powerOff()
         if result == True:
@@ -91,12 +118,22 @@ class OrviboS20:
     DEBUG=0
 
     def __enter__(self):
+        """Enter method for context management. Returns the instance itself.
+        """
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
+        """Exit method for context management. Closes the socket connection.
+        """
         self.close()
 
     def __init__(self, port=10000):
+        """
+        Initialize the PowerSwitchUDP instance.
+
+        Args:
+            port (int): The port number to bind the socket to.
+        """
         self.subscribed = None
         self.exitontimeout = False
         # TODO: get a lock (file lock?) for port 10000
@@ -110,22 +147,43 @@ class OrviboS20:
         self.sock.bind(('', port))
 
     def close(self):
+        """Close the socket connection.
+        """
         try:
             self.sock.close()
         except Exception as exc:
             print(exc)
 
     def _settimeout(self, timeout=None):
+        """
+        Set the timeout for socket operations.
+
+        Args:
+            timeout (float): The timeout value in seconds.
+        """
         self.sock.settimeout(timeout)  # seconds - in reality << 1 is needed, None = blocking (wait forever)
 
     # takes payload excluding first 4 (magic, size) bytes
     def _sendpacket(self, payload, ip):
+        """
+        Send a packet to the specified IP address.
+
+        Args:
+            payload (bytes): The payload of the packet.
+            ip (str): The IP address to send the packet to.
+        """
         data = [0x68, 0x64, 0x00, len(payload) + 4]
         data.extend(payload)
         # print data
         self.sock.sendto(b''.join([struct.pack('B', x) for x in data]), (ip, 10000))
 
     def _listendiscover(self):
+        """
+        Listen for discover packets.
+
+        Returns:
+            dict: A dictionary containing information about the received packet.
+        """
         status = {
             'exit': True,
             'timeout': False,
@@ -231,11 +289,27 @@ class OrviboS20:
         return status
 
     def listen(self):
+        """
+        Listen for discover packets.
+
+        Returns:
+            dict: A dictionary containing information about the received packet.
+        """
         self._settimeout(None)  # set blocking
         self.exitontimeout = False
         return self._listendiscover()
 
     def discover(self, ip, mac):
+        """
+        Discover devices with the specified IP address and MAC address.
+
+        Args:
+            ip (str): The IP address to send the discover packet to.
+            mac (str): The MAC address of the device.
+
+        Returns:
+            list: A list of dictionaries containing information about the discovered devices.
+        """
         self._settimeout(2)
         self.exitontimeout = True
         # macasbin = ''.join ( [ struct.pack ( 'B', int(x,16) ) for x in mac.split ( ':' ) ] )
@@ -253,6 +327,15 @@ class OrviboS20:
         return data
 
     def globaldiscover(self, ip):
+        """
+        Perform a global discovery.
+
+        Args:
+            ip (str): The IP address to send the global discovery packet to.
+
+        Returns:
+            list: A list of dictionaries containing information about the discovered devices.
+        """
         self._settimeout(2)
         self.exitontimeout = True
         # self.sock.sendto ( 'hd\x00\x06\x71\x61' , ( ip, 10000 ) )
@@ -266,6 +349,16 @@ class OrviboS20:
         return data
 
     def subscribe(self, ip, mac):
+        """
+        Subscribe to a device with the specified IP address and MAC address.
+
+        Args:
+            ip (str): The IP address to send the subscribe packet to.
+            mac (str): The MAC address of the device.
+
+        Returns:
+            dict: A dictionary containing information about the subscription.
+        """
         self._settimeout(2)
         self.exitontimeout = True
         data = [0x63, 0x6c]
@@ -288,6 +381,13 @@ class OrviboS20:
         return resp
 
     def _subscribeifneeded(self, ip, mac):
+        """
+        Subscribe to a device if needed.
+
+        Args:
+            ip (str): The IP address of the device.
+            mac (str): The MAC address of the device.
+        """
         if mac is None and self.subscribed is not None:
             # already subscribed
             pass

@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
 #** *****************************************************************************
-#* Copyright (C) 2022 Sky group of companies, All Rights Reserved
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2023 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
 #* ******************************************************************************
 #*
 #*   ** Project      : RAFT
@@ -24,21 +42,23 @@ from framework.core.commonRemote import commonRemoteClass
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 class consoleClass():
-
+    """Represents a console for interacting with a device.
+    """
     session = None
 
     def __init__(self, log:logModule, logPath:str, configElements:dict):
-        """createConsole instance based on the params
+        """
+        Initialises a console instance based on the parameters.
 
-        if a console is already active for the same device, it will be returned
+        If a console is already active for the same device, it will be returned.
 
         Args:
-            log (logModule): console name
-            logPath (str): path to write workspace files
-            configElements (dict): dictionary for configuration
+            log (logModule): Log module instance.
+            logPath (str): Path to write workspace files.
+            configElements (dict): Dictionary for configuration.
 
         Returns:
-            class: console class
+            class: Console class instance.
         """
         for element in configElements:
             config = configElements.get(element)
@@ -94,23 +114,19 @@ class consoleClass():
             self.session = telnet(log, "", address, username, password, port)
         else:
             raise exception ("Unknown console type".format(self.type))
+
 class deviceClass():
-    """Single device with all controllers
-
-    Raises:
-        exception: none
-
-    Returns:
-        class: device class
+    """Represents a single device with all controllers
     """
 
     def __init__(self, log:logModule, logPath:str, devices:dict):
-        """Intialise a single decode from the config
+        """
+        Initialises a single device from the config.
 
         Args:
-            log (logModule): log Module class
-            logPath (str): path to write workspace files
-            devices (dict): devices to initialise
+            log (logModule): Log module class.
+            logPath (str): Path to write workspace files.
+            devices (dict): Devices to initialize.
         """
         #     # powerControl 
         #     # consoles
@@ -143,11 +159,11 @@ class deviceClass():
                 self.remoteController = commonRemoteClass(log, config)
 
     def getField(self, fieldName:str, itemsList:dict = None):
-        """get a named field from the device
+        """Gets a named field from the device
 
         Args:
             fieldName (str): name of the field to return
-            itemsList (dict): get field from the items list, or None to start at the top
+            itemsList (dict): gets field from the items list, or None to start at the top
 
         Returns:
             str: field value, None on error
@@ -165,13 +181,13 @@ class deviceClass():
         return None
 
     def getConsoleSession(self, consoleName:str="default" ):
-        """get the device console
+        """Gets the device console
 
         Args:
             consoleName (str, optional): console name. Defaults to "default".
 
         Returns:
-            consoleClass: console class, or None on failure
+            consoleClass: Console class, or None on failure
         """
         console = self.consoles[consoleName]
         if console == None:
@@ -179,16 +195,19 @@ class deviceClass():
         return console.session
 
 class deviceManager():
-
+    """Manages device configurations.
+    """
+    
     rawConfig = dict()
     devices = dict()
 
     def __init__(self, deviceConfig:dict, log:logModule, logPath:str=""):
-        """Initalise the device Managers
+        """Initalises the device managers
 
         Args:
-            deviceConfig (dict): device list
-            log (logModule): upper device module class
+            deviceConfig (dict): Device list.
+            log (logModule): Upper device module class.
+            logPath (str, optional): Path to write log files. Defaults to "".
         """
         self.log = log
         self.logPath = logPath
@@ -198,13 +217,13 @@ class deviceManager():
                 self.devices[name] = deviceClass( log, logPath, x )
 
     def getDevice(self, deviceName:str="dut"):
-        """Get an individual device configuration
+        """Gets an individual device configuration
 
         Args:
-            deviceName (str, optional): device name. Defaults to "dut".
+            deviceName (str, optional): Device name. Defaults to "dut".
 
         Returns:
-            dict: device dictionary, or None on failure
+            dict: Device dictionary, or None on failure
         """
         device = self.devices.get(deviceName)
         if device == None:

@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
 #** *****************************************************************************
-#* Copyright (C) 2019 Sky group of companies, All Rights Reserved
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2023 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
 #* ******************************************************************************
 #*
 #*   ** Project      : RAFT
@@ -17,9 +35,26 @@ import time
 
 class utilities():
     def __init__(self, log):
+        """
+        Initializes the utilities class.
+
+        Args:
+            log (logger object): Logger object for logging messages.
+        """
         self.log = log
 
     def wait(self, seconds, minutes=0, hours=0):        
+        """
+        Pause the program execution for a specified duration.
+
+        Args:
+            seconds (int): Number of seconds to wait.
+            minutes (int, optional): Number of minutes to wait. Defaults to 0.
+            hours (int, optional): Number of hours to wait. Defaults to 0.
+
+        Returns:
+            None
+        """
         self.log.info("Wait for [{}] seconds [{}] mins [{}] Hours".format(seconds, minutes, hours))
         waitTime = seconds
         if hours:
@@ -33,6 +68,17 @@ class utilities():
         return
 
     def fuzzyCompareText(self, expText, actualText, exactMatch=False):        
+        """
+        Compare two strings with possible variations.
+
+        Args:
+            expText (str): The expected text.
+            actualText (str): The actual text to compare.
+            exactMatch (bool, optional): If True, perform an exact match. Defaults to False.
+
+        Returns:
+            bool: True if the texts match, False otherwise.
+        """
         self.log.info('fuzzyCompareText: expText - [{}] actualText - [{}]'.format(expText, actualText))
         
         result = False
@@ -48,13 +94,14 @@ class utilities():
         return result
 
     def value1HigherThanValue2(self, value1, value2):
-        """Compares input values and returns result
+        """Compares two version numbers and returns True if value1 is higher than value2.
 
         Args:
-            value1 and value 2 (str) - values to be compared
+            value1 (str): First version number to compare.
+            value2 (str): Second version number to compare.
 
         Returns:
-            result (bool) - True if value1 is higher than value 2 else False
+            bool: True if value1 is higher than value2, False otherwise.
         """
         self.log.info('utils.value1HigherThanValue2 - value1 ({}), value2 ({})'.format(value1, value2))
         value1 = value1.split('.')

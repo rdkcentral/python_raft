@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
 #** *****************************************************************************
-#* Copyright (C) 2021 Sky group of companies, All Rights Reserved
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2023 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
 #* ******************************************************************************
 #*
 #*   ** Project      : RAFT
@@ -22,7 +40,6 @@ from framework.core.remoteControllerModules.arduino import remoteArduino
 from framework.core.remoteControllerModules.none import remoteNone
 
 class remoteControllerMapping():
-    
     def __init__(self, log:logModule, mappingConfig:dict):
         """Initialise the remote controller key mapping class
 
@@ -38,15 +55,15 @@ class remoteControllerMapping():
         except:
             defaultMap = None
         self.setKeyMap( defaultMap )
-    
+
     def getMappedKey(self, key:str):
-        """get the mapped key
+        """Get the mapped key
 
         Args:
-            key (str): key to translate
+            key (str): Key to translate
 
         Returns:
-            str: key translated key via map or none on failure
+            str: Translated key via map or None on failure
         """
         if self.currentMap == None:
             #self.log.info("No map defined")
@@ -62,18 +79,18 @@ class remoteControllerMapping():
         return returnedKey
 
     def getKeyMap(self):
-        """get key Map
+        """Get key Map
 
         Returns:
-            dict: active key map
+            dict: Active key map
         """
         return self.currentMap
     
     def setKeyMap(self, newMapName:dict ):
-        """set the key map
+        """Set the key map
 
         Args:
-            newMapName (dict): key map dictionary
+            newMapName (dict): Key map dictionary
 
         Returns:
             bool: True on success, or False if failure
@@ -95,7 +112,6 @@ class remoteControllerMapping():
         return True
 
 class commonRemoteClass():
-
     def __init__(self, log:logModule, remoteConfig:dict, **kwargs:dict):
         """Intialise a commonRemote
 
@@ -120,7 +136,7 @@ class commonRemoteClass():
             self.remoteController = remoteNone( self.log, remoteConfig )
 
     def __decodeRemoteMapConfig(self):
-        """decode the remote map configuration file
+        """Decode the remote map configuration file
         """
         configFile = self.remoteConfig.get("config")
         if configFile == None:
@@ -144,13 +160,13 @@ class commonRemoteClass():
         return keyDictionary
 
     def sendKey(self, keycode:dict, delay:int=1, repeat:int=1, randomRepeat:int=0):
-        """send a key to the remoteCommander
+        """Send a key to the remoteCommander
 
         Args:
-            keycode (dict): key value pair
-            delay (int, optional): delay in seconds between repeats. Defaults to 1.
-            repeat (int, optional): how many key repeats. Defaults to 1.
-            randomRepeat (int, optional): random Key repeat value. Defaults to 0.
+            keycode (dict): Key value pair
+            delay (int, optional): Delay in seconds between repeats. Defaults to 1.
+            repeat (int, optional): How many key repeats. Defaults to 1.
+            randomRepeat (int, optional): Random Key repeat value. Defaults to 0.
         """
         if (randomRepeat != 0):
             import random
@@ -166,14 +182,14 @@ class commonRemoteClass():
         result = self.remoteController.sendKey( mappedCode, repeat, delay)
 
     def setKeyMap( self, name:dict ):
-        """set the Key Translation Map
+        """Set the Key Translation Map
 
         Args:
-            name (dict): translation dictionary
+            name (dict): Translation dictionary
         """
         self.remoteMap.setKeyMap( name )
 
     def getKeyMap( self ):
-        """get the Key Translation Map
+        """Get the Key Translation Map
         """
         self.remoteMap.getKeyMap()

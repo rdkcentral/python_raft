@@ -1,7 +1,25 @@
 
 #!/usr/bin/env python3
 #** ******************************************************************************
-#* Copyright (C) 2021 Sky group of companies, All Rights Reserved
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2023 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
 #* ******************************************************************************
 #*
 #*   ** Project      : RAFT
@@ -24,7 +42,14 @@ import os
 class decodeParams():
     """Decodes the input arguments and sets the slot details
     """
+    
     def __init__(self, log):
+        """
+        Initialises a DecodeParams instance based on the parameters.
+
+        Args:
+            log (logModule): Log module instance.
+        """
         self.jobId = None
         self.rackJobExecutionId = None
         self.testMode = False
@@ -82,6 +107,8 @@ class decodeParams():
             self.loop = self.args.loop
 
     def decodeDeviceConfig( self ):
+        """Decodes the device configuration.
+        """
         self.deviceConfig = None
         deviceConfigFile = self.args.deviceConfigFile
         if deviceConfigFile == None:
@@ -97,6 +124,15 @@ class decodeParams():
         self.deviceConfig = self.decodeConfigIntoDictionary(deviceConfigFile)
 
     def decodeConfigIntoDictionary(self, configFile):
+        """
+        Decodes the configuration file into a dictionary.
+
+        Args:
+            configFile (str): Path to the configuration file.
+
+        Returns:
+            dict: The decoded configuration.
+        """
         fullPath = configFile
         if fullPath.startswith("."):
             fullPath = os.path.abspath(configFile)
