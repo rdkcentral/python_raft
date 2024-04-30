@@ -1,4 +1,4 @@
-#! /bin/python3
+#!/usr/bin/env python3
 from cgi import test
 import os
 import sys
