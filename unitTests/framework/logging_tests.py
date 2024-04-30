@@ -31,6 +31,7 @@
 #* ******************************************************************************/
 import os 
 import sys
+# import argparse
 
 # Add the framework path to system
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -40,11 +41,12 @@ import framework.core.logModule as logModule
 
 # Testing module if you run this class locally
 if __name__ == "__main__":
-
+    
     log = logModule("logging_tests.py")
     moduleLog = logModule("module")
 
-    log.setFilename( "testLog.log" )
+    current_directory = os.path.dirname(os.path.realpath(__file__))
+    log.setFilename(os.path.join(current_directory, "../../unitTests/"), "testLog.log" )
 
     log.setLevel( log.CRITICAL )
 
@@ -119,3 +121,8 @@ if __name__ == "__main__":
     moduleLog.debug("Message from the module, not shown")
     moduleLog.error("Error from the module")
 
+    # Generate XML output if XML output is enabled
+    if moduleLog.xml_output:
+        data = log.readCSV(os.path.join(current_directory, "../../unitTests/testLog.log.csv"))
+        log.buildXml(data, "testLog.xml", "TestSuiteName", "TestAgentName")
+           

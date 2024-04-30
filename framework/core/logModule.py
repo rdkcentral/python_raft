@@ -34,6 +34,9 @@ import os
 import logging
 import time
 import datetime
+import sys
+import csv
+
 #from datetime import datetime
 from os import path
 
@@ -64,7 +67,7 @@ class logModule():
     TEST_SUMMARY=INFO+6
     RESULT = STEP_RESULT
 
-    def __init__(self, moduleName, level=INFO):
+    def __init__(self, moduleName, level=INFO, xml_output=True):
         """
         Initialises the log module.
 
@@ -75,6 +78,7 @@ class logModule():
         # Initialize python logger
         self.log = logging.getLogger(moduleName)
         self.moduleName = moduleName
+        self.xml_output = xml_output
 
         # Console Handler
         self.format = logging.Formatter('%(asctime)-15s, %(name)s, %(levelname)-12s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S' )
@@ -487,3 +491,82 @@ class logModule():
         self.step("=====================Step End======================",showStepNumber=False)
         self.stepResultMessage(message)
             
+
+    def readCSV(self, path):
+        """Reads a CSV file and returns the data as a list of dictionaries.
+
+        Args:
+            path (str): Path to the CSV file to read.
+
+        Returns:
+            list: A list of dictionaries representing each row in the CSV.
+        """
+        with open(path) as csvFile:
+            data = [row for row in csv.DictReader(csvFile, skipinitialspace=True)]
+            return data
+
+    def buildXml(data, fileName: str, testSuite, testAgent, xml_output=True):
+        log = logModule("buildXml", logModule.INFO, xml_output)  # Initialize logModule for logging
+
+        if not fileName.endswith(".xml"):
+            fileName = fileName + ".xml"
+            
+        fails = 0
+
+        for row in data:
+            if row.get("Result") == "FAILED":
+                fails += 1 
+
+        log.info(f'Writing results to file "{fileName}" in Jenkins XML format')
+
+        with open(fileName, 'w') as xmlFile:
+            xmlFile.write(f'<testsuite name="{testSuite}" failures="{fails}" tests="{len(data)}">\n')
+            xmlFile.write(f"""
+        <properties>
+            <property name="TestAgent" value="{testAgent}"/>
+        </properties>""")
+            for row in data:
+                d = row.get('Duration [hh:mm:ss]')
+                try:
+                    h, m, s = d.split(':')
+                    secs = int(datetime.timedelta(hours=int(h), minutes=int(m), seconds=int(float(s))).total_seconds()) 
+                except Exception as e:
+                    log.error(f'Could not parse time from CSV for test [{row["QcId"]} - {row["TestName"]}]. Error: {e}')
+                    secs = -1  
+
+                xmlFile.write(f'\t<testcase classname="{testSuite}.{row["TestName"]}" name="{row["QcId"]} - {row["TestName"]}" time="{secs}" >\n')
+                if row["Result"] == "FAILED":
+                    xmlFile.write('\t<failure message="test failure">')
+                    xmlFile.write(f'failure - {removeXmlSpecialChars(row["Failure"])}, failure step - {row["Failed Step"]}\n')
+                    xmlFile.write('\t</failure>\n')
+                elif row["Result"] in ['pending', 'skipped']:
+                    xmlFile.write('\t<skipped/>\n')
+                xmlFile.write('\t</testcase>\n')
+
+            xmlFile.write('</testsuite>\n')    
+            log.info(f'Results written to file "{fileName}"')
+        
+        return fileName
+
+    def removeXmlSpecialChars(string):
+        specialChars = ["&", "<", ">", "\"", "'"]
+        escapeChars = {"<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;", "&": "&amp;"}
+        for char in specialChars:
+            string = string.replace(char, escapeChars.get(char))
+        return string
+
+    if __name__ == '_main_':
+        if len(sys.argv) < 5:
+            print("Usage: python script.py <csvFilePath> <xmlFilePath> <testSuite> <testAgent>")
+            sys.exit(1)
+
+        csvFilePath = sys.argv[1]
+        xmlFilePath = sys.argv[2]
+        testSuite = sys.argv[3]
+        testAgent = sys.argv[4]
+
+        # Add a command-line switch to enable/disable XML output
+        xml_output = "--xml" in sys.argv
+
+        data = readCSV(csvFilePath)
+        buildXml(data, xmlFilePath, testSuite, testAgent, xml_output)
