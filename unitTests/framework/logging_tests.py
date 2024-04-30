@@ -120,9 +120,3 @@ if __name__ == "__main__":
 
     moduleLog.debug("Message from the module, not shown")
     moduleLog.error("Error from the module")
-
-    # Generate XML output if XML output is enabled
-    if moduleLog.xml_output:
-        data = log.readCSV(os.path.join(current_directory, "../../unitTests/testLog.log.csv"))
-        log.buildXml(data, "testLog.xml", "TestSuiteName", "TestAgentName")
-           

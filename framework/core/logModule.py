@@ -36,6 +36,7 @@ import time
 import datetime
 import sys
 import csv
+import xml
 
 #from datetime import datetime
 from os import path
@@ -88,6 +89,8 @@ class logModule():
         self.log.setLevel(level)
         self.csvLogger = logging.getLogger(self.moduleName+"csv")
         self.csvLogger.setLevel( logging.DEBUG )
+        self.xmlLogger = logging.getLogger('xml_logger')
+        self.xmlLogger.setLevel( logging.DEBUG )
 
         # Add some extra levels
         logging.addLevelName( self.TEST_START, "TEST_START" )
@@ -114,6 +117,25 @@ class logModule():
         self.path = None
         self.logFile = None
         self.csvLogFile = None
+        self.xmlLogFile = None
+
+        # # Create logger
+        # self.xmlLogger = logging.getLogger('xml_logger')
+        # self.xmlLogger.setLevel(logging.INFO)
+
+        # Create file handler
+        current_directory = os.path.dirname(os.path.realpath(__file__))
+        file_handler = logging.FileHandler(os.path.join(current_directory, "../../unitTests/testLog.xml"))
+        file_handler.setLevel(logging.INFO)
+
+        # Create formatter
+        formatter = logging.Formatter('<log>%(message)s</log>')  # XML format
+
+        # Add formatter to handler
+        file_handler.setFormatter(formatter)
+
+        # Add handler to logger
+        self.xmlLogger.addHandler(file_handler)
 
     def __del__(self):
         """Deletes the logger instance.
@@ -141,6 +163,12 @@ class logModule():
         self.csvLogFile = logging.FileHandler( logFileName+".csv" )
         self.csvLogger.addHandler( self.csvLogFile )
         self.csvLogger.info("QcId, TestName, Result, Failed Step, Failure, Duration [hh:mm:ss]")
+        self.log.info( "Log File: [{}]".format(logFileName) )
+
+        # Create the XML Logger module
+        self.xmlLogFile = logging.FileHandler(logFileName + ".xml")
+        self.xmlLogger.addHandler(self.xmlLogFile)
+        self.xmlLogger.info("QcId, TestName, Result, Failed Step, Failure, Duration [hh:mm:ss]")
         self.log.info( "Log File: [{}]".format(logFileName) )
 
     def fatal(self, message,*args, **kws):
@@ -438,8 +466,11 @@ class logModule():
             self.step("====================End Of Test====================\r\n", showStepNumber=False)
             self.testCountActive = 0
             self.csvLogger.info("{},{},{},{},{},{}". format(self.summaryQcID, self.summaryTestName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
+            self.xmlLogger.info("{},{},{},{},{},{}". format(self.summaryQcID, self.summaryTestName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
+
         else:
             self.csvLogger.info("{},{},{},{},{},{}". format(self.qcId, self.testName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
+            self.xmlLogger.info("{},{},{},{},{},{}". format(self.qcId, self.testName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
 
     def stepStart(self, message, expected=None):
         """
@@ -492,81 +523,52 @@ class logModule():
         self.stepResultMessage(message)
             
 
-    def readCSV(self, path):
-        """Reads a CSV file and returns the data as a list of dictionaries.
+    # def buildXml(data, fileName, testSuite, testAgent, xml_output=True):
+    #     # log = logModule("buildXml", logModule.INFO, xml_output)  # Initialize logModule for logging
 
-        Args:
-            path (str): Path to the CSV file to read.
-
-        Returns:
-            list: A list of dictionaries representing each row in the CSV.
-        """
-        with open(path) as csvFile:
-            data = [row for row in csv.DictReader(csvFile, skipinitialspace=True)]
-            return data
-
-    def buildXml(data, fileName: str, testSuite, testAgent, xml_output=True):
-        log = logModule("buildXml", logModule.INFO, xml_output)  # Initialize logModule for logging
-
-        if not fileName.endswith(".xml"):
-            fileName = fileName + ".xml"
+    #     if not fileName.endswith(".xml"):
+    #         fileName = fileName + ".xml"
             
-        fails = 0
+    #     fails = 0
 
-        for row in data:
-            if row.get("Result") == "FAILED":
-                fails += 1 
+    #     for row in data:
+    #         if row.get("Result") == "FAILED":
+    #             fails += 1 
 
-        log.info(f'Writing results to file "{fileName}" in Jenkins XML format')
+    #     log.info(f'Writing results to file "{fileName}" in Jenkins XML format')
 
-        with open(fileName, 'w') as xmlFile:
-            xmlFile.write(f'<testsuite name="{testSuite}" failures="{fails}" tests="{len(data)}">\n')
-            xmlFile.write(f"""
-        <properties>
-            <property name="TestAgent" value="{testAgent}"/>
-        </properties>""")
-            for row in data:
-                d = row.get('Duration [hh:mm:ss]')
-                try:
-                    h, m, s = d.split(':')
-                    secs = int(datetime.timedelta(hours=int(h), minutes=int(m), seconds=int(float(s))).total_seconds()) 
-                except Exception as e:
-                    log.error(f'Could not parse time from CSV for test [{row["QcId"]} - {row["TestName"]}]. Error: {e}')
-                    secs = -1  
+    #     with open(fileName, 'w') as xmlFile:
+    #         xmlFile.write(f'<testsuite name="{testSuite}" failures="{fails}" tests="{len(data)}">\n')
+    #         xmlFile.write(f"""
+    #     <properties>
+    #         <property name="TestAgent" value="{testAgent}"/>
+    #     </properties>""")
+    #         for row in data:
+    #             d = row.get('Duration [hh:mm:ss]')
+    #             try:
+    #                 h, m, s = d.split(':')
+    #                 secs = int(datetime.timedelta(hours=int(h), minutes=int(m), seconds=int(float(s))).total_seconds()) 
+    #             except Exception as e:
+    #                 log.error(f'Could not parse time from CSV for test [{row["QcId"]} - {row["TestName"]}]. Error: {e}')
+    #                 secs = -1  
 
-                xmlFile.write(f'\t<testcase classname="{testSuite}.{row["TestName"]}" name="{row["QcId"]} - {row["TestName"]}" time="{secs}" >\n')
-                if row["Result"] == "FAILED":
-                    xmlFile.write('\t<failure message="test failure">')
-                    xmlFile.write(f'failure - {removeXmlSpecialChars(row["Failure"])}, failure step - {row["Failed Step"]}\n')
-                    xmlFile.write('\t</failure>\n')
-                elif row["Result"] in ['pending', 'skipped']:
-                    xmlFile.write('\t<skipped/>\n')
-                xmlFile.write('\t</testcase>\n')
+    #             xmlFile.write(f'\t<testcase classname="{testSuite}.{row["TestName"]}" name="{row["QcId"]} - {row["TestName"]}" time="{secs}" >\n')
+    #             if row["Result"] == "FAILED":
+    #                 xmlFile.write('\t<failure message="test failure">')
+    #                 xmlFile.write(f'failure - {removeXmlSpecialChars(row["Failure"])}, failure step - {row["Failed Step"]}\n')
+    #                 xmlFile.write('\t</failure>\n')
+    #             elif row["Result"] in ['pending', 'skipped']:
+    #                 xmlFile.write('\t<skipped/>\n')
+    #             xmlFile.write('\t</testcase>\n')
 
-            xmlFile.write('</testsuite>\n')    
-            log.info(f'Results written to file "{fileName}"')
+    #         xmlFile.write('</testsuite>\n')    
+    #         log.info(f'Results written to file "{fileName}"')
         
-        return fileName
+    #     return fileName
 
-    def removeXmlSpecialChars(string):
-        specialChars = ["&", "<", ">", "\"", "'"]
-        escapeChars = {"<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;", "&": "&amp;"}
-        for char in specialChars:
-            string = string.replace(char, escapeChars.get(char))
-        return string
-
-    if __name__ == '_main_':
-        if len(sys.argv) < 5:
-            print("Usage: python script.py <csvFilePath> <xmlFilePath> <testSuite> <testAgent>")
-            sys.exit(1)
-
-        csvFilePath = sys.argv[1]
-        xmlFilePath = sys.argv[2]
-        testSuite = sys.argv[3]
-        testAgent = sys.argv[4]
-
-        # Add a command-line switch to enable/disable XML output
-        xml_output = "--xml" in sys.argv
-
-        data = readCSV(csvFilePath)
-        buildXml(data, xmlFilePath, testSuite, testAgent, xml_output)
+    # def removeXmlSpecialChars(string):
+    #     specialChars = ["&", "<", ">", "\"", "'"]
+    #     escapeChars = {"<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;", "&": "&amp;"}
+    #     for char in specialChars:
+    #         string = string.replace(char, escapeChars.get(char))
+    #     return string
