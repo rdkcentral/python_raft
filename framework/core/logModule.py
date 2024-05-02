@@ -457,24 +457,22 @@ class logModule():
             self.testSummaryMessage(message)
             self.step("====================End Of Test====================\r\n", showStepNumber=False)
             self.testCountActive = 0
+            
             self.csvLogger.info("{},{},{},{},{},{}". format(self.summaryQcID, self.summaryTestName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
-            # self.xmlLogger.info("{},{},{},{},{},{}". format(self.summaryQcID, self.summaryTestName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
-
-            if self.xml_output:
-                self.xmlLogger.info(
-                    f'<testcase classname="{self.moduleName}.{self.summaryTestName}" name="{self.summaryQcID} - {self.summaryTestName}" time="{testDuration.total_seconds()}" >')
-                if resultMessage == "FAILED":
-                    self.xmlLogger.info(
-                        f'<error message="test failure">failure - {self.failedSteps[self.stepNum]}, failure step - {list(self.failedSteps.keys())[-1]}\n</error>')
-                self.xmlLogger.info('</testcase>')
         
+            if self.xml_output:
+                with open(self.xmlLogFile.baseFilename, "a") as xml_file:
+                    xml_file.write(f'<testcase classname="{self.moduleName}.{self.summaryTestName}" name="{self.summaryQcID} - {self.summaryTestName}" time="{testDuration.total_seconds()}" >\n')
+                    if resultMessage == "FAILED":
+                        xml_file.write(f'   <error message="test failure">failure - {self.failedSteps[self.stepNum]}, failure step - {list(self.failedSteps.keys())[-1]}\n</error>\n')
+                    xml_file.write('</testcase>\n')
+
         else:
             self.csvLogger.info("{},{},{},{},{},{}". format(self.qcId, self.testName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
-            # self.xmlLogger.info("{},{},{},{},{},{}". format(self.qcId, self.testName, resultMessage, list(self.failedSteps.keys())[-1], list(self.failedSteps.values())[-1], str(testDuration)) )
+            
             if self.xml_output:
-                self.xmlLogger.info(
-                    f'<testcase classname="{self.moduleName}.{self.testName}" name="{self.qcId} - {self.testName}" time="{testDuration.total_seconds()}" />')
-
+                with open(self.xmlLogFile.baseFilename, "a") as xml_file:
+                    xml_file.write(f'<testcase classname="{self.moduleName}.{self.testName}" name="{self.qcId} - {self.testName}" time="{testDuration.total_seconds()}" />\n')
 
     def stepStart(self, message, expected=None):
         """
@@ -527,52 +525,58 @@ class logModule():
         self.stepResultMessage(message)
             
 
-    def buildXml(data, fileName, testSuite=None, testAgent=None, xml_output=True):
-        # log = logModule("buildXml", logModule.INFO, xml_output)  # Initialize logModule for logging
+    # def buildXml(fileName, testSuite=None, xml_output=True):
+    #     # log = logModule("buildXml", logModule.INFO, xml_output)  # Initialize logModule for logging
 
-        if not fileName.endswith(".xml"):
-            fileName = fileName + ".xml"
+    #     if not fileName.endswith(".xml"):
+    #         fileName = fileName + ".xml"
             
-        fails = 0
+    #     fails = 0
 
-        for row in data:
-            if row.get("Result") == "FAILED":
-                fails += 1 
-
-        log.info(f'Writing results to file "{fileName}" in Jenkins XML format')
-
-        with open(fileName, 'w') as xmlFile:
-            xmlFile.write(f'<testsuite name="{testSuite}" failures="{fails}" tests="{len(data)}">\n')
-            xmlFile.write(f"""
-        <properties>
-            <property name="TestAgent" value="{testAgent}"/>
-        </properties>""")
-            for row in data:
-                d = row.get('Duration [hh:mm:ss]')
-                try:
-                    h, m, s = d.split(':')
-                    secs = int(datetime.timedelta(hours=int(h), minutes=int(m), seconds=int(float(s))).total_seconds()) 
-                except Exception as e:
-                    log.error(f'Could not parse time from CSV for test [{row["QcId"]} - {row["TestName"]}]. Error: {e}')
-                    secs = -1  
-
-                xmlFile.write(f'\t<testcase classname="{testSuite}.{row["TestName"]}" name="{row["QcId"]} - {row["TestName"]}" time="{secs}" >\n')
-                if row["Result"] == "FAILED":
-                    xmlFile.write('\t<failure message="test failure">')
-                    xmlFile.write(f'failure - {removeXmlSpecialChars(row["Failure"])}, failure step - {row["Failed Step"]}\n')
-                    xmlFile.write('\t</failure>\n')
-                elif row["Result"] in ['pending', 'skipped']:
-                    xmlFile.write('\t<skipped/>\n')
-                xmlFile.write('\t</testcase>\n')
-
-            xmlFile.write('</testsuite>\n')    
-            log.info(f'Results written to file "{fileName}"')
         
-        return fileName
+    #     data = []
+    #     with open(fileName, "r") as file:
+    #         for line in file:
+    #             data.append(line.strip())  #to remove leading/trailing whitespaces
+        
+    #     for row in data:
+    #         if row.get("Result") == "FAILED":
+    #             fails += 1 
 
-    def removeXmlSpecialChars(string):
-        specialChars = ["&", "<", ">", "\"", "'"]
-        escapeChars = {"<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;", "&": "&amp;"}
-        for char in specialChars:
-            string = string.replace(char, escapeChars.get(char))
-        return string
+    #     log.info(f'Writing results to file "{fileName}" in Jenkins XML format')
+
+    #     with open(fileName, 'w') as xmlFile:
+    #         xmlFile.write(f'<testsuite name="{testSuite}" failures="{fails}" tests="{len(data)}">\n')
+    #     #     xmlFile.write(f"""
+    #     # <properties>
+    #     #     <property name="TestAgent" value="{testAgent}"/>
+    #     # </properties>""")
+    #         for row in data:
+    #             d = row.get('Duration [hh:mm:ss]')
+    #             try:
+    #                 h, m, s = d.split(':')
+    #                 secs = int(datetime.timedelta(hours=int(h), minutes=int(m), seconds=int(float(s))).total_seconds()) 
+    #             except Exception as e:
+    #                 log.error(f'Could not parse time from CSV for test [{row["QcId"]} - {row["TestName"]}]. Error: {e}')
+    #                 secs = -1  
+
+    #             xmlFile.write(f'\t<testcase classname="{testSuite}.{row["TestName"]}" name="{row["QcId"]} - {row["TestName"]}" time="{secs}" >\n')
+    #             if row["Result"] == "FAILED":
+    #                 xmlFile.write('\t<failure message="test failure">')
+    #                 xmlFile.write(f'failure - {removeXmlSpecialChars(row["Failure"])}, failure step - {row["Failed Step"]}\n')
+    #                 xmlFile.write('\t</failure>\n')
+    #             elif row["Result"] in ['pending', 'skipped']:
+    #                 xmlFile.write('\t<skipped/>\n')
+    #             xmlFile.write('\t</testcase>\n')
+
+    #         xmlFile.write('</testsuite>\n')    
+    #         log.info(f'Results written to file "{fileName}"')
+        
+    #     return fileName
+
+    # def removeXmlSpecialChars(string):
+    #     specialChars = ["&", "<", ">", "\"", "'"]
+    #     escapeChars = {"<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&apos;", "&": "&amp;"}
+    #     for char in specialChars:
+    #         string = string.replace(char, escapeChars.get(char))
+    #     return string
