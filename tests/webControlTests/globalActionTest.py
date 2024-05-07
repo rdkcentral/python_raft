@@ -2,37 +2,30 @@
 import os
 import sys
 
-
-
 # Add the framework path to system
 dir_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(dir_path+"/../../../")
+sys.path.append(dir_path+"/../../")
 
 from framework.core.testControl import testController
 
-class performActionsTests(testController):
-    def __init__(self, testName="performActionTests", log=None):
+class globalActionTest(testController):
+    def __init__(self, testName="globalActionTest", log=None):
         super().__init__(testName=testName, log=log)
         self.run()
 
     def testFunction(self):
-        webpageControl = self.webpageController
+        testClass = self
+        webpageControl = testClass.webpageController
 
         webpageConfig = self.config.decodeConfigIntoDictionary("./unitTests/framework/webControlTests/webPageTest.yml")
         webpageControl.configureWebpages("https://testpages.herokuapp.com/styled", webpageConfig)
 
-        webpageControl.navigateTo("form_page")
-
-        self.log.stepStart("Starting action fill_form")
-        webpageControl.performAction("fill_form",
+        webpageControl.performGlobalAction("alert_action",
             password="password123",
             path=os.path.abspath("unitTests/framework/webControlTests/mockUploadFile.txt"),
             multi_1="Selection Item 2",
             multi_2="Selection Item 4",
             dropdown="Drop Down Item 6")
-        self.log.stepResult(True, "Finished action fill_form")
-
-        print(webpageControl.webDriver.browser.current_url)
 
         webpageControl.setWebpage("form_results_page")
 
@@ -99,7 +92,10 @@ class performActionsTests(testController):
         else:
             self.log.stepResult(True, "Dropdown did match input of form")
 
+
+    
+
 if __name__ == "__main__":
-    test = performActionsTests()
+    test = globalActionTest()
 
     

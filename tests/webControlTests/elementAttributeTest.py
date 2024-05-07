@@ -6,12 +6,12 @@ import sys
 
 # Add the framework path to system
 dir_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(dir_path+"/../../../")
+sys.path.append(dir_path+"/../../")
 
 from framework.core.testControl import testController
 
-class sequenceTest(testController):
-    def __init__(self, testName="sequenceTest", log=None):
+class elementAttributeTest(testController):
+    def __init__(self, testName="elementAttributeTest", log=None):
         super().__init__(testName=testName, log=log)
         self.run()
 
@@ -21,21 +21,19 @@ class sequenceTest(testController):
         webpageConfig = self.config.decodeConfigIntoDictionary("./unitTests/framework/webControlTests/webPageTest.yml")
         webpageControl.configureWebpages("https://testpages.herokuapp.com/styled", webpageConfig)
 
-        self.log.stepStart("Navigating through sequence to sequence_page")
-        webpageControl.navigateTo("sequence_page")
+        webpageControl.navigateTo("attributes_page")
 
-        self.utils.wait(10)
-
-        text = webpageControl.getTextOfElement("content")
-        if text == "You have been successfully redirected.":
-            self.log.stepResult(True, "Text is as expected")
+        self.log.stepStart("Getting attribute from element")
+        attributeVal = webpageControl.getElementAttribute("paragraph", "title")
+        if attributeVal == "a paragraph to test attributes on":
+            self.log.stepResult(True, "Attribute was as expected")
         else:
-            self.log.stepResult(False, "Text is not as expected")
+            self.log.stepResult(False, "Attribute was not as expected")
 
 
 
 
 if __name__ == "__main__":
-    test = sequenceTest()
+    test = elementAttributeTest()
 
     
