@@ -26,34 +26,33 @@ The RAFT framework provides a flexible environment for engineering-level device 
 
 ## Features:
 
-### Configuration Driven Testing
+### Configuration Management
 
-Test environments are defined in dedicated configuration files. These files describe the racks, the devices within them, network settings and other essential test parameters. Allowing in ultimate flexibility in testing setup, without needing to modify the test.
+The system includes a flexible parsing mechanism for configuration. This allows simple environment configuration for describing racks, the devices within them, network settings and other essential test parameters. Providing ultimate flexibility in testing setup, without needing to modify the test.
 
-### Command-Line Test Control
+### Command-Line Customisation
 
-Test runs can be customised by providing command-line arguments when you start a test. These arguments might specify which rack to use, device slots to target, debug mode, and other runtime settings. The system intelligently combines these arguments with your pre-defined configurations.
+Test runs can be customised by providing dynamic command-line arguments. These arguments might specify which rack to use, device slots to target, debug mode, and other runtime settings. The system intelligently combines these arguments with your pre-defined configurations.
 
 ### Device Control and Management
 
-Centralized Device Management: The core of your system is a device manager that provides a centralized way to organize and control multiple devices in the testing setup. It understands how to:
-- **Model Devices**: Represents each device as an object, encapsulating its configuration details.
-- **Establish Consoles**: Establishes different types of communication channels with devices, supporting protocols like SSH, Telnet, or Serial for management and control.
+**Centralized Device Management**: The core of the system is a device manager that provides a centralized way to organize and control multiple devices in the testing setup. 
+
+It understands how to:
+- **Model Devices**: Representing each device as an object, encapsulating its configuration details.
+- **Establish Consoles**: Establishing different types of communication channels with devices, supporting protocols like SSH, Telnet, or Serial for management and control.
 - **Manage Power**: Integrates with power control mechanisms to cycle the power state of devices as needed during testing.
-- **Handle Outbound Connections**: Configures devices to initiate outbound connections if required by your test scenarios.
+- **Handle Inbound/Outbound Connections**: Configures devices to initiate inbound/outbound connections if required by your test scenarios.
 - **Remote Control**: Provides a unified interface for sending remote control commands to your devices, abstracting differences between remote types.
 
 
 ## Why Use This System
 
-**Organization**: It introduces structure to your test environment, making it easier to manage test cases and scenarios.
-
-**Flexibility**: Supports various devices, communication protocols, and integrates with different power control systems.
-
-**Ease of Use**: Provides a clear interface to interact with devices, simplifying your test scripts and focusing on the test logic itself.
-
-**Minimal set up requirements**: With just python and some pip packages installed, you're ready to begin testing.
-
+- **Minimal Infrastructure**: Adaptive minimal testing infrastructure requiring no specialised hardware.
+- **Quick setup**: With python and some pip packages installed, testing can begin.
+- **Flexibility**: Supports various devices, communication protocols, and integrates with different power control systems.
+- **Ease of Use**: Provides a clear interface to interact with devices, simplifying your test scripts and focusing on the test logic itself.
+- **Organization**: Introduces structure to your test environment, making it easier to manage test cases and scenarios.
 
 ## Installation
 
