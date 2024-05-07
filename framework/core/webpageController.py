@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
 #** *****************************************************************************
-#* Copyright (C) 2019 Sky group of companies, All Rights Reserved
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2023 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
 #* ******************************************************************************
 #*
 #*   ** Project      : RAFT
@@ -21,6 +39,15 @@ from framework.core.webpageModules.seleniumDriver import seleniumDriver
 class webpageController():
 
     def __init__(self, log, webDriverConfig, baseUrl = None, webpageConfig = None):
+        """
+        Initializes a WebpageController instance.
+
+        Args:
+            log (logModule): The log module instance.
+            webDriverConfig (dict): Configuration for the web driver.
+            baseUrl (str, optional): The base URL to navigate to the pages. Defaults to None.
+            webpageConfig (dict, optional): Configuration containing the pages. Defaults to None.
+        """
         self._pages = None
         self.webDriver = None
         self.log = log
@@ -48,10 +75,10 @@ class webpageController():
         self.tabs = {}
 
     def _setBaseUrl(self, baseUrl):
-        """Sets the base url for the controller to use
+        """Sets the base url for the controller to use.
 
         Args:
-            base_url (str): Base url to navigate to the pages
+            base_url (str): Base url to navigate to the pages.
         """
         if "http://" in baseUrl or "https://" in baseUrl:
             self.url = baseUrl
@@ -60,31 +87,31 @@ class webpageController():
 
     def _setWebpageConfig(self, webpageConfig): 
         """
-        Sets the pages that the webpage controller has access to from the webpage config
+        Sets the pages that the webpage controller has access to from the webpage config.
 
         Args:
-            webpageConfig (dict): Dictionary config containing the pages
-        """ 
+            webpageConfig (dict): Dictionary config containing the pages.
+        """
         self.webpageConfig = webpageConfig
         self._pages = webpageConfig.get("pages")
         self.globalActions = webpageConfig.get("global_actions")
 
     def configureWebpages(self, baseUrl, webpageConfig):  
         """
-        Sets the webpage base url as well as the webpage config if they were not set in the constructor
+        Sets the webpage base url as well as the webpage config if they were not set in the constructor.
 
         Args:
-            base_url (str): Base url to navigate to the pages
-            webpageConfig (dict): Dictionary config containing the pages
+            base_url (str): Base url to navigate to the pages.
+            webpageConfig (dict): Dictionary config containing the pages.
         """
         self._setBaseUrl(baseUrl)
         self._setWebpageConfig(webpageConfig)
 
     def setWebpage(self, pageName):
-        """Tells the controller that the browser is on a different page than what is set in the controller. For use after a redirect
+        """Tells the controller that the browser is on a different page than what is set in the controller. For use after a redirect.
 
         Args:
-            pageName (str): Name of the page that the browser is now on
+            pageName (str): Name of the page that the browser is now on.
         """
         self.tabs[self.currentTab] = {"pageName":pageName, "windowId":self._getwindowId(), "baseUrl": self.url, "webpageConfig":self.webpageConfig}
         if not pageName:
@@ -104,19 +131,19 @@ class webpageController():
         self._validateView()
 
     def _isConfigured(self):
-        """Checks that the controller is configured with a url and dict of pages
+        """Checks that the controller is configured with a url and dictionary of pages.
 
         Raises:
-            Exception: If not configured
+            Exception: If not configured.
         """
         if not self.url and self._pages:
             raise Exception("Base url and / or webpageConfig not configured in webpageController")
 
     def _isOnPage(self):
-        """Checks that the controller is on a page
+        """Checks that the controller is on a page.
 
         Raises:
-            Exception: If not on a page
+            Exception: If not on a page.
         """
         if not self.currentPage:
             raise Exception("No page has been navigated too")
@@ -124,10 +151,10 @@ class webpageController():
 
     def navigateTo(self, pageName):
         """
-        Navigates the the pageName specified based on the pages config. Then checks the expected elements are present
+        Navigates to the pageName specified based on the pages config. Then checks that the expected elements are present.
 
         Args:
-            pageName (str): Name of the page to navigate to based on a key in the pages config
+            pageName (str): Name of the page to navigate to based on a key in the pages config.
         """
         self._isConfigured()
         self.removeTemporaryWebElements()
@@ -147,10 +174,10 @@ class webpageController():
 
     def _navigateSequence(self, sequence):
         """
-        Navigates through a sequence that is passed in
+        Navigates through a sequence that is passed in.
 
         Args:
-            sequence (dict): A dictionary containing the webpage to navigate to and sequence of interactions within that webpage to perform
+            sequence (dict): A dictionary containing the webpage to navigate to and sequence of interactions within that webpage to perform.
         """
         for page, action in sequence.items():
             self.navigateTo(page)
@@ -159,10 +186,10 @@ class webpageController():
 
     def _checkElements(self, elements):
         """
-        Checks that the browser has all of the elements expected based on the current page
+        Checks that the browser has all of the elements expected based on the current page.
 
         Raises:
-            Exception: If the webpageController does not have a current page
+            Exception: If the webpageController does not have a current page.
         """
         if not self.currentPage:
             raise Exception("Not on a page to check elements for")
@@ -191,7 +218,7 @@ class webpageController():
             viewName (str, optional): The name of the view to validate. Defaults to "default".
 
         Raises:
-            Exception: If the view doesn't exist for the page
+            Exception: If the view doesn't exist for the page.
         """
         views = self.currentPage.get("views")
         if views:
@@ -214,13 +241,13 @@ class webpageController():
         Gets the page based on the page name
 
         Args:
-            pageName (str): Page name based on a webpage config keys
+            pageName (str): Page name based on a webpage config keys.
 
         Raises:
-            Exception: If page name does not match any of those in the associated webpage config
+            Exception: If page name does not match any of those in the associated webpage config.
 
         Returns:
-            dict: A dictionary representing the page
+            dict: A dictionary representing the page.
         """
         page = self.pages.get(pageName)
         if not page:
@@ -229,16 +256,16 @@ class webpageController():
 
     def _getElement(self, elementName):
         """
-        Gets an element based on the element name from the current page
+        Gets an element based on the element name from the current page.
 
         Args:
-            elementName (str): Name of the element to get
+            elementName (str): Name of the element to get.
 
         Raises:
-            Exception: If the element name does not match any of those for the current page
+            Exception: If the element name does not match any of those for the current page.
 
         Returns:
-            dict: A dictionary representing the element
+            dict: A dictionary representing the element.
         """
         self._isOnPage()
         element = self.currentPage.get("elements").get(elementName)
@@ -259,16 +286,16 @@ class webpageController():
         return element
 
     def _getViewForElement(self, elementName):
-        """Gets the name of the first view that the element belongs to
+        """Gets the name of the first view that the element belongs to.
 
         Args:
-            elementName (str): Name of element
+            elementName (str): Name of element.
 
         Raises:
-            Exception: If element does not belong to any view
+            Exception: If element does not belong to any view.
 
         Returns:
-            str: Name of view
+            str: Name of view.
         """
         views = self.currentPage.get("views")
         for viewName, viewContent in views.items():
@@ -279,17 +306,17 @@ class webpageController():
         raise Exception(error)
 
     def _getView(self, viewName):
-        """Returns the config for the view
+        """Returns the config for the view.
 
         Args:
-            viewName (str): Name of view from the config
+            viewName (str): Name of view from the config.
 
         Raises:
-            Exception: If page contains no views
-            Exception: If view does not exist for page
+            Exception: If page contains no views.
+            Exception: If view does not exist for page.
 
         Returns:
-            dict: Dictionary of the views elements and sequence to activate it 
+            dict: Dictionary of the view's elements and sequence to activate it. 
         """
         views = self.currentPage.get("views")
         if views is None:
@@ -304,10 +331,10 @@ class webpageController():
         return view
 
     def _activateView(self, viewName):
-        """Activates a view based on the view name passed
+        """Activates a view based on the view name passed.
 
         Args:
-            viewName (str): Name of view from config
+            viewName (str): Name of view from config.
         """
         self.log.info(f"Activating view '{viewName}'")
         view = self._getView(viewName)
@@ -319,16 +346,16 @@ class webpageController():
 
     def _getAction(self, actionName):
         """
-        Gets an action based on the action name from the current page
+        Gets an action based on the action name from the current page.
 
         Args:
-            actionName (str): Name of the action to get
+            actionName (str): Name of the action to get.
 
         Raises:
-            Exception: If the action name does not match any of those for the current page
+            Exception: If the action name does not match any of those for the current page.
 
         Returns:
-            dict: A dictionary representing the action
+            dict: A dictionary representing the action.
         """
         self._isOnPage()
         action = self.currentPage.get("actions").get(actionName)
@@ -338,19 +365,19 @@ class webpageController():
 
     @property
     def pages(self):
-        """Gets the dictionary of the pages that the webpage config has provided
+        """Gets the dictionary of the pages that the webpage config has provided.
 
         Returns:
-            dict: Dictionary of the pages that the webpage config has provided
+            dict: Dictionary of the pages that the webpage config has provided.
         """
         return self._pages.copy()
 
     def performAction(self, actionName, **kwargs):
         """
-        Performs the action that is passed in action name, any additional arguments are subbed into any args values starting with $
+        Performs the action that is passed in action name, any additional arguments are subbed into any args values starting with $.
 
         Args:
-            actionName (str): The name of the action to perform
+            actionName (str): The name of the action to perform.
         """
         action = self._getAction(actionName)
         for interactions in action:
@@ -366,16 +393,25 @@ class webpageController():
                 self.performInteraction(interactionType, elementName, args)
 
     def getTextOfElement(self, elementName):
+        """
+        Gets the text content of a specified element on the webpage.
+
+        Args:
+            elementName (str): The name of the element to get text from.
+
+        Returns:
+            str: The text content of the specified element.
+        """
         return self.webDriver.getText(self._getElement(elementName))
 
 
     def performInteraction(self, interactionName, elementName=None, args=None):
         """
-        Performs a single interaction with the browser based on the type passed
+        Performs a single interaction with the browser based on the type passed.
 
         Args:
-            interaction (str): The interaction to perform
-            args (dict): Any arguments to substitute into the interaction
+            interaction (str): The interaction to perform.
+            args (dict): Any arguments to substitute into the interaction.
         """ 
         debugInfo = f"Performing interaction '{interactionName}'"
         if elementName:
@@ -435,14 +471,14 @@ class webpageController():
         return newArgs
 
     def performGlobalAction(self, globalActionName, **kwargs):
-        """Performs a global action
+        """Performs a global action.
 
         Args:
-            globalActionName (String): Name of the action to perform
-            kwargs: Variable number of optional arguments for the actions
+            globalActionName (String): Name of the action to perform.
+            kwargs: Variable number of optional arguments for the actions.
 
         Raises:
-            Exception: If webpage config does not contain any global action
+            Exception: If webpage config does not contain any global action.
         """
         if not self.globalActions:
             raise Exception("Webpage config does not contain global actions")
@@ -457,112 +493,112 @@ class webpageController():
 
 
     def getElementAttribute(self, elementName, attributeName):
-        """Gets the value of the element attribute specified
+        """Gets the value of the element attribute specified.
 
         Args:
-            elementName (String): Name of element
-            attributeName (String): Name of attribute
+            elementName (String): Name of element.
+            attributeName (String): Name of attribute.
 
         Returns:
-            String: Value of attribute
+            String: Value of attribute.
         """
         return self.webDriver.getElementAttribute(self._getElement(elementName), attributeName)
 
     def isElementSelected(self, elementName):
-        """Returns whether the element is selected or not 
+        """Returns whether the element is selected or not. 
 
         Args:
-            elementName (String): Name of element
+            elementName (String): Name of element.
 
         Returns:
-            Boolean: Whether the element is selected or not
+            Boolean: Whether the element is selected or not.
         """
         return self.webDriver.isElementSelected(self._getElement(elementName))
 
     def getSelectedOptions(self, elementName):
-        """Gets all of the options of the select element that are currently selected
+        """Gets all of the options of the select element that are currently selected.
 
         Args:
-            elementName (String): Name of element
+            elementName (String): Name of element.
 
         Returns:
-            List of Strings: Text content of the elements that are selected
+            List of Strings: Text content of the elements that are selected.
         """
         return self.webDriver.getSelectedOptions(self._getElement(elementName))
 
     def getFirstSelectedOption(self, elementName):
-        """Gets the first option that is selected
+        """Gets the first option that is selected.
 
         Args:
-            elementName (String): Name of element
+            elementName (String): Name of element.
 
         Returns:
-            Strings: Text content of the first element selected
+            Strings: Text content of the first element selected.
         """
         return self.webDriver.getFirstSelectedOption(self._getElement(elementName))
 
     def getSelectAvailableOptions(self, elementName):
-        """Gets the list of all of the available options that could be selected
+        """Gets the list of all of the available options that could be selected.
 
         Args:
-            elementName (String): Name of element
+            elementName (String): Name of element.
 
         Returns:
-            List of Strings: Text content of all elements that could be selected
+            List of Strings: Text content of all elements that could be selected.
         """
         return self.webDriver.getSelectAvailableOptions(self._getElement(elementName))
 
     def getUrl(self):
-        """Gets the url of the current webpage open
+        """Gets the url of the current webpage open.
 
         Returns:
-            String: Url of the webpage that is open
+            String: Url of the webpage that is open.
         """
         return self.webDriver.browser.current_url  
 
     def getAlertText(self):
-        """Gets the text of an open web alert box
+        """Gets the text of an open web alert box.
 
         Returns:
-            String: Content of the alert box if it is open, None otherwise
+            String: Content of the alert box if it is open, None otherwise.
         """
         return self.webDriver.getAlertText()
 
     def closeBrowser(self):
-        """Ends webdriver session and closes browser
+        """Ends webdriver session and closes browser.
         """
         self.log.debug("Closing the browser")
         if self.webDriver != None:
             self.webDriver.browser.close()
 
     def saveScreenshot(self, fileName):
-        """Saves a screenshot of the current browser view to the fileName specified the tests log folder
+        """Saves a screenshot of the current browser view to the fileName specified the tests log folder.
 
         Args:
-            fileName (String): The fileName to save the screenshot to. It will be saved as a .png file
+            fileName (String): The fileName to save the screenshot to. It will be saved as a .png file.
         """
 
         self.log.debug(f"Saving screenshot to {self.log.logPath}browser/{fileName}.png")
         self.webDriver.saveScreenshot(f"{self.log.logPath}browser/", fileName)
 
     def saveHtmlSnapshot(self, fileName):
-        """Saves a copy of the html of the current page the webpageController is on to the test log folder
+        """Saves a copy of the html of the current page the webpageController is on to the test log folder.
 
         Args:
-            fileName (String): The fileName to save the html to
+            fileName (String): The fileName to save the html to.
         """
         self.log.debug(f"Saving html snapshot to {self.log.logPath}browser/{fileName}.html")
         with open(f'{self.log.logPath}browser/{fileName}.html', 'w') as f:
             f.write(self.webDriver.getHtml())
     
     def getDynamicTable(self, elementName, text = None):
-        """Gets the  elements of the table as a list of lists
+        """Gets the  elements of the table as a list of lists.
 
         Args:
-            elementName (String):  dynamic table name
-            text(bool): Text attribute indicator of the web element. Set to True to retreive text attribute of the webelement, defaults to None
+            elementName (String):  dynamic table name.
+            text(bool): Text attribute indicator of the web element. Set to True to retrieve text attribute of the webelement, defaults to None.
         Returns:
-            list: list of list of dictionaries with element details
+            list: list of list of dictionaries with element details.
         """
         
         #Remove temporary dynamic elements if already present in current page elements dictionary
@@ -583,20 +619,20 @@ class webpageController():
     
 
     def getDynamicTableText(self, elementName):
-        """Gets the text of elements in the table as a list of list of dictionaries, with corresponding element details
+        """Gets the text of elements in the table as a list of list of dictionaries, with corresponding element details.
 
         Args:
-            elementName (String): dynamic table name
+            elementName (String): dynamic table name.
 
         Returns:
-            list:  list of list of dictionaries with element details - type, value, text, elementName
+            list:  list of list of dictionaries with element details - type, value, text, elementName.
         """
         self.log.warn("METHOD getDynamicTableText() SOON TO BE DEPRECIATED DO NOT USE")
         return self.getDynamicTable(elementName, text = True)
     
     
     def removeTemporaryWebElements(self):
-        """Removes  list of temporary elements added to page's elements dictionary
+        """Removes  list of temporary elements added to page's elements dictionary.
         
         """  
         temporaryElementList = []
@@ -609,12 +645,12 @@ class webpageController():
                 self.currentPage["elements"].pop(tempElement)
                     
     def createNewTab(self, tabName, baseUrl, webpageConfig):
-        """Creates a new tab and switches the webpageController to that tab
+        """Creates a new tab and switches the webpageController to that tab.
 
         Args:
-            tabName (String): Name of the tab to create. Will be used to switch back to it
-            baseUrl (String): Base url for the webpage config
-            webpageConfig (Dict): A dictionary of the webpage config ymls
+            tabName (String): Name of the tab to create. Will be used to switch back to it.
+            baseUrl (String): Base url for the webpage config.
+            webpageConfig (Dict): A dictionary of the webpage config ymls.
         """
         self.log.info(f"Creating new tab {tabName} with baseUrl: {baseUrl}")
         self.webDriver.newTab()
@@ -623,10 +659,10 @@ class webpageController():
         self.setWebpage(None)
 
     def switchTab(self, tabName):
-        """Switches the browser and webpageController to the tab specified. The original tab is named `default`
+        """Switches the browser and webpageController to the tab specified. The original tab is named `default`.
 
         Args:
-            tabName (String): Name of the tab to switch to
+            tabName (String): Name of the tab to switch to.
         """
         self.log.info(f"Switching to tab {tabName} from tab {self.currentTab}")
         tab = self.tabs.get(tabName)
@@ -636,40 +672,40 @@ class webpageController():
         self.setWebpage(tab["pageName"])
 
     def getTabs(self):
-        """Returns a list of the tab names that have been created
+        """Returns a list of the tab names that have been created.
 
         Returns:
-            List(String): A list of tab names that have been created
+            List(String): A list of tab names that have been created.
         """
         return list(self.tabs.keys())
     
     def getTab(self, tabName):
-        """Gets a dictionary of the pageName and windowId of the tab specified by name
+        """Gets a dictionary of the pageName and windowId of the tab specified by name.
 
         Args:
-            tabName (String): Name of tab
+            tabName (String): Name of tab.
 
         Returns:
-            Dict: A dictionary with `pageName` and `windowId` keys
+            Dict: A dictionary with `pageName` and `windowId` keys.
         """
         return self.tabs[tabName] 
     
     def _getwindowId(self):
-        """Gets the window handle from the webDriver
+        """Gets the window handle from the webDriver.
 
         Returns:
-            String: windowId of the current window
+            String: windowId of the current window.
         """
         return self.webDriver.getWindowId()
 
     def getSubElements(self, elementName):
-        """Returns a list of elementNames for the subElements of the element passed
+        """Returns a list of elementNames for the subElements of the element passed.
 
         Args:
-            elementName (String): Name of element
+            elementName (String): Name of element.
 
         Returns:
-            list: A list of element names that will now be included in as temporary elements in the webpageControllers config
+            list: A list of element names that will now be included in as temporary elements in the webpageControllers config.
             
         """
         element = self._getElement(elementName)
