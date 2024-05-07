@@ -81,7 +81,7 @@ To begin the rack config we define the `globalConfig` section. In this section w
 
 In the global section we will define the included config, using the includes field. For the purpose of this guide we need to add the `deviceConfig` key to this, with it's value set to the path of the device config file.
 
-We also need to defile the local field, with the log key. This will tell the test where to put the logs from the tests.
+We also need to define the local field, with the log key. This will tell the test where to put the logs from the tests.
 
 #### Example of the global section
 ```yaml
@@ -326,7 +326,7 @@ class FirstTest(testController):
 
 ### Clean up after your test
 
-To clean up after a test has run we use the `testEndFunction()`. This function will always run after the test to clean up any mess made by the test. In this case we are using it to remove the `TEST_DIRECTORY` and it's contents
+To clean up after a test has run we use the `testEndFunction()`. This function will always run after the test to clean up any mess made by the test. In this case we are using it to remove the `TEST_DIRECTORY` and its contents.
 
 ```python
 #!/usr/bin/env python3
@@ -412,7 +412,7 @@ class FirstTest(testController):
 
 The final step to creating your test script is to add a main function to the bottom of the script. This is what the script will run when executed.
 
-In our main we are simply creating an instace of our test and calling it's `run()` function.
+In our main we are simply creating an instace of our test and calling its `run()` function.
 
 ```python
 if __name__ == '__main__':
@@ -514,7 +514,7 @@ This test script can be run with the below command:
 
 ## The Logs
 
-After running your test you should find a new folder has been created called `logs`. In this folder you will sub directories for the racks and slots listed in your rack config. In each slot directory you will find directories, with the time and date. Each of these corresponds to a test run. In these you will find the logs for your tests.
+After running your test you should find a new folder has been created called `logs`. In this folder you will find sub directories for the racks and slots listed in your rack config. In each slot directory you will find directories, with the time and date. Each of these corresponds to a test run. In these you will find the logs for your tests.
 
 ```sh
 python_raft/logs/
@@ -532,7 +532,7 @@ python_raft/logs/
 ### Explaination of the log files
 
 The `.log` files in this directory are text files that detail the running and results of the test and it's steps.
-The `.csv` files in the directory are show the results of the test steps as a simple pass fail, in a standard csv format.
+The `.csv` files in the directory show the results of the test steps as a simple pass fail, in a standard csv format.
 The summary files in this directory show the results of all tests that ran.
 *If multiple instances of our test class had been created they would each get a `test-<index>.log` and corresponding `.csv`, with all their results being collated into the summary files.*
 
