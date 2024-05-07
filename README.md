@@ -72,7 +72,7 @@ Clone the repository and ensure that all requirements are met.
 
 ### Running Your First Test
 
-For our first test script we will be using the [example_test.py](examples/tests/example_test.py). There are extensive comments in the test files to explain what it does.
+For our first test script we will be using the [example_test.py](examples/code/example_ssh.py). There are extensive comments in the test files to explain what it does.
 
 This test script can be run with the below command:
 `./example_test.py --config ../configs/getting_started_rack_config.yml`
