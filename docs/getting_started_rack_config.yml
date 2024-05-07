@@ -1,0 +1,24 @@
+globalConfig:
+    includes:
+        deviceConfig: "./device_config.yml"
+    local:
+        log:
+            directory: "./logs"
+            delimiter: "/"
+        
+rackConfig:
+    rack1:
+        name: "rack1"
+        description: "example config at my desk"
+        slot1:
+            name: "slot1"
+            devices:
+                - dut:
+                    ip: "127.0.0.1"  
+                    description: "local pc"
+                    platform: "linux"
+                    consoles:
+                        - default:
+                            type: "ssh"
+                            port: "22"
+                            ip: "127.0.0.1"
