@@ -8,8 +8,16 @@
 6. Exits with test success if the file is created, failure when the file is not created.
 """
 
+import sys
+from os import path
 
+# Since this test is in a sub-directory we need to add the directory above
+# so we can import the framework correctly
+MY_PATH = path.abspath(__file__)
+MY_DIR = path.dirname(MY_PATH)
+sys.path.append(path.join(MY_DIR,'../../'))
 from framework.core.testControl import testController
+
 
 # Constants for the file paths we need for testing
 TEST_FILE = 'RAFT_Test_File'
