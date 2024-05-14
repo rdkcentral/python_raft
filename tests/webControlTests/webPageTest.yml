@@ -1,0 +1,298 @@
+#** *****************************************************************************
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2023 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
+#* ******************************************************************************
+rebasebuffer:
+  pages:
+    test_locator:
+      url_extension: '/find-by-playground-test.html'
+      elements:
+        paragraph_a_XPATH:
+          type: 'XPATH'
+          value: '/html/body/div[2]/p[1]'
+        paragraph_a_ID:
+          type: 'ID'
+          value: 'p1'
+        paragraph_a_NAME:
+          type: 'NAME'
+          value: 'pName1'
+        paragraph_a_CLASS_NAME:
+          type: 'CLASS_NAME'
+          value: 'normal'    
+        paragraph_a_TAG_NAME:
+          type: 'TAG_NAME'
+          value: 'p'      
+    attributes_page:
+      url_extension: '/attributes-test.html'
+      elements:
+        paragraph:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/div/p'
+    form_page:
+      url_extension: '/basic-html-form-test.html'
+      elements:
+        username_input:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[1]/td/input'
+        password_input:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[2]/td/input'
+        file_upload:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[4]/td/input[1]'
+        checkbox_2:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[5]/td/input[2]'
+        checkbox_3:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[5]/td/input[3]'
+        radio_button_3:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[6]/td/input[3]'
+        multi_select:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[7]/td/select'
+        dropdown_select:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[8]/td/select'
+        submit_button:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/form/table/tbody/tr[9]/td/input[2]'
+      actions:
+        fill_form:
+          - send_keys:
+              element: 'username_input'
+              args: 
+                keys: admin
+          - send_keys:
+              element: 'password_input'
+              args: 
+                keys: $password
+          - send_keys:
+              element: 'file_upload'
+              args: 
+                keys: $path
+          - click:  
+              element: 'checkbox_2'   
+          - click:  
+              element: 'radio_button_3'   
+          - select:
+              element: 'multi_select'
+              args: 
+                selectVal: $multi_1     
+          - select:
+              element: 'multi_select'
+              args: 
+                selectVal: $multi_2  
+          - select:
+              element: 'dropdown_select'
+              args: 
+                selectVal: $dropdown           
+          - click:
+              element: 'submit_button'
+
+    form_results_page:
+      elements:
+        username_value:
+          type: 'ID'
+          value: '_valueusername'
+        password_value:
+          type: 'ID'
+          value: '_valuepassword'
+        filename_value:
+          type: 'ID'
+          value: '_valuefilename'
+        checkbox_1_value:
+          type: 'ID'
+          value: '_valuecheckboxes0'
+        checkbox_2_value:
+          type: 'ID'
+          value: '_valuecheckboxes1'
+        radio_button_value:
+          type: 'ID'
+          value: '_valueradioval'
+        multiselect_1_value:
+          type: 'ID'
+          value: '_valuemultipleselect0'
+        multiselect_2_value:
+          type: 'ID'
+          value: '_valuemultipleselect1'
+        dropdown_value:
+          type: 'ID'
+          value: '_valuedropdown'
+
+    dynamic_buttons_page:
+      url_extension: '/dynamic-buttons-simple.html'
+      views:
+        default:
+          elements:
+            - button0
+        view1:
+          elements:
+            - button1
+          sequence: activate_view1
+        view2:
+          elements:
+            - button2
+          sequence: activate_view2
+        view3:
+          elements:
+            - button3
+          sequence: activate_view3
+      elements:
+        button0:
+          type: 'ID'
+          value: 'button00'
+        button1:
+          type: 'ID'
+          value: 'button01'
+        button2:
+          type: 'ID'
+          value: 'button02'
+        button3:
+          type: 'ID'
+          value: 'button03'
+      actions:
+       activate_view1:
+        - click:
+            element: button0
+       activate_view2:
+        - click:
+            element: button1
+       activate_view3:
+        - click:
+            element: button2
+
+    index_page:
+      url_extension: '/index.html'
+      elements:
+        link_to_redirect_page:
+          type: 'ID'
+          value: 'redirecttest'
+      actions:
+        go_to_redirect_page:
+          - click:
+              element: link_to_redirect_page
+
+    redirect_page:
+      sequence:
+        index_page: go_to_redirect_page
+      elements:
+        link_to_sequence_page:
+          type: 'ID'
+          value: 'delaygotobasic'
+      actions:
+        go_to_sequence_page:
+          - click:
+              element: link_to_sequence_page
+
+    sequence_page:
+      sequence:
+        redirect_page: go_to_sequence_page
+      elements:
+        content:
+          type: 'XPATH'
+          value: '/html/body/div/div[2]/p'
+
+    alerts_page:
+      url_extension: '/alerts/alert-test.html'
+      views:
+        default:
+          elements:
+            - alert_button
+            - confirm_button
+        alertConfirmed:
+          elements:
+            - confirm_result
+      elements:
+        alert_button:
+          type: 'ID'
+          value: 'alertexamples'
+        confirm_button:
+          type: 'ID'
+          value: 'confirmexample'
+        confirm_result:
+          type: 'ID'
+          value: 'confirmreturn'
+      actions:  
+        create_alert:
+          - click:
+              element: alert_button
+        confirm_alert:
+          - accept_alert:
+        create_alert_and_confirm:
+          - click:
+              element: alert_button
+          - accept_alert:
+        create_confirm_alert:
+          - click:
+              element: confirm_button
+        dismiss_alert:
+          - dismiss_alert:
+    download_page:
+      url_extension: '/download/download.html'
+      elements:
+        direct_download:
+          type: 'ID'
+          value: 'direct-download'
+      actions:
+       download:
+        - click:
+            element: direct_download
+    dynamic_tables_page:
+      url_extension: '/tag/dynamic-table.html'
+      elements:
+        dynamic_table:
+          type: 'XPATH'
+          dynamic_element: True
+          value: '/html/body/div/div[3]/div/table'
+        text_area:
+          type: 'ID'
+          value: 'jsondata'
+        refresh_table_button:
+          type: 'ID'
+          value: 'refreshtable'
+        table_marker:
+          type: 'XPATH'
+          value: '/html/body/div/div[3]/details/summary'
+        link_to_index:
+          type: 'XPATH'
+          value: '/html/body/div/div[1]/a'
+      actions:
+        update_table:
+          - click:
+              element: table_marker
+          - clear:
+              element: 'text_area'  
+          - send_keys:
+              element: 'text_area'
+              args: 
+                keys: $input_row
+          - click:
+              element: refresh_table_button
+        page_refresh:
+          - refresh:
+        return_to_index_page:
+          - click:
+              element: 'link_to_index'
+  global_actions:
+    alert_action:
+      - alerts_page: "create_alert_and_confirm"
+      - form_page: "fill_form"
