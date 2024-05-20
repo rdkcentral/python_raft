@@ -45,7 +45,6 @@
 #     7- Cancel
 ###########################################################
 
-from framework.core.powerModules.S20control import powerOrviboS20
 from framework.core.powerModules.apcAos import powerApcAos
 from framework.core.powerModules.kasaControl import powerKasa
 from framework.core.powerModules.olimex import powerOlimex

@@ -45,8 +45,12 @@ import signal
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
+
+framework_path = '/home/FKC01/python_raft/framework/core'
+sys.path.append(framework_path)
+
 from framework.core.logModule import logModule
-from . logModule import DEBUG, INFO, WARNING, ERROR, CRITICAL
+from logModule import DEBUG, INFO, WARNING, ERROR, CRITICAL
 
 from framework.core.rackController import rackController
 from framework.core.configParser import configParser
