@@ -13,8 +13,8 @@ from framework.core.unittestTestControl import unittestTestControl
 
 class DeviceManagementTests(unittestTestControl):
 
-# def test_initial(self):
-#     print("initial test")
+    def test_initial(self):
+        print("initial test")
 
     def test_addition(self):
         self.assertEqual(1 + 1, 2)
