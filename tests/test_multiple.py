@@ -11,10 +11,14 @@ print("sys.path:", sys.path)
 
 from framework.core.unittestTestControl import unittestTestControl
 
-class TestSingle(unittestTestControl):
+class TestMultiple(unittestTestControl):
 
     def test_example_one(self):
         print("Running test example one")
+        self.assertTrue(True)
+
+    def test_example_two(self):
+        print("Running test example two")
         self.assertTrue(True)
 
 if __name__ == '__main__':
