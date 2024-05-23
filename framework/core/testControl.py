@@ -286,6 +286,7 @@ class testController():
         Returns:
             bool: True if pre-test setup succeeds, False otherwise.
         """
+        # self.session = self.initialise_session()
         return True
     
     def testEndFunction(self, powerOff=True):
@@ -297,7 +298,11 @@ class testController():
         Returns:
             bool: True if cleanup succeeds, False otherwise.
         """
-        self.session.close()
+        if self.session:
+            self.session.close()
+        else:
+            print("No session to close")
+
         if powerOff:
            self.powerControl.powerOff()
         if self.webpageController is not None:
@@ -305,7 +310,7 @@ class testController():
         if self.capture is not None:
             self.capture.stop()
         return True
-
+    
     def testExceptionCleanUp(self):
         """Clean up test if required.
 

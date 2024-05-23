@@ -30,14 +30,24 @@
 
 import sys
 import os
-
-testControl_path = '/home/FKC01/python_raft/framework/core'
-sys.path.append(testControl_path)
-
 import unittest
+
+path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(path)
+
+
 from framework.core.testControl import testController
 
-class unittestTestControl(testController, unittest.TestCase):
+class unittestTestControl(unittest.TestCase, testController):
+
+    # config_url = None
+
+    # @classmethod
+    # def setUpClass(cls):
+    #     if cls.config_url:
+    #         # Perform any setup using the config_url
+    #         print(f"Using configuration from: {cls.config_url}")
+    #         # Example: load config file, set environment variables, etc.
 
     def setUp(self):
         """Set up the test environment before each test."""
