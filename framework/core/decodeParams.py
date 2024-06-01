@@ -37,7 +37,10 @@ from os import path
 import argparse
 import yaml
 import os
-
+class FlexibleObject:
+    def __getattr__(self, name):
+        # Return None if the attribute is not found
+        return None
 class decodeParams():
     """Decodes the input arguments and sets the slot details
     """
@@ -59,7 +62,7 @@ class decodeParams():
         self.overrideCpeConfig = None
 
         parser = argparse.ArgumentParser()
-
+        config=os.environ.get('CONFIG')
         # Switches with a 2nd parameter
         parser.add_argument('--config', '-config', help="config file", action="store", dest="configFile")
         parser.add_argument('--deviceConfig', '-deviceConfig', '--deviceConfig', '-testConfig', "--testConfig", help="testconfig file", action="store", dest="deviceConfigFile")
@@ -76,8 +79,11 @@ class decodeParams():
         parser.add_argument('--test', '-test', help="test Mode enabled", action="store_const", dest="testMode", const=True)
         parser.add_argument('--debug', '-debug', help="set debug level", action="store_const", dest="debug", const=True)
 
-        self.args = parser.parse_args()
-
+        try:
+            self.args = parser.parse_args()
+        except SystemExit:
+            self.log.error("Failed to parse command-line arguments.")
+            self.args = FlexibleObject()
         if self.args.configFile == None:
             print("Config file is required to run: ERROR, missing --config <url> argument")
             os._exit(1)

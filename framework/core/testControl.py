@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#** ******************************************************************************
+# ** ******************************************************************************
 # *
 # * If not stated otherwise in this file or this component's LICENSE file the
 # * following copyright and licenses apply:
@@ -19,14 +19,14 @@
 # * See the License for the specific language governing permissions and
 # * limitations under the License.
 # *
-#* ******************************************************************************
-#*
-#*   ** Project      : RAFT
-#*   ** @addtogroup  : core
-#*   ** @file        : testControl.py
-#*   ** @brief : Test Control Module for running rack Testing
-#*   **
-#* ******************************************************************************
+# * ******************************************************************************
+# *
+# *   ** Project      : RAFT
+# *   ** @addtogroup  : core
+# *   ** @file        : testControl.py
+# *   ** @brief : Test Control Module for running rack Testing
+# *   **
+# * ******************************************************************************
 # System
 import sys
 import datetime
@@ -45,12 +45,11 @@ import signal
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
-
 framework_path = '/home/FKC01/python_raft/framework/core'
 sys.path.append(framework_path)
 
 from framework.core.logModule import logModule
-from logModule import DEBUG, INFO, WARNING, ERROR, CRITICAL
+# from logModule import DEBUG, INFO, WARNING, ERROR, CRITICAL
 
 from framework.core.rackController import rackController
 from framework.core.configParser import configParser
@@ -60,23 +59,25 @@ from framework.core.capture import capture
 from framework.core.webpageController import webpageController
 from framework.core.deviceManager import deviceManager
 
-class testController():
 
+class testController:
     slotInfo = None
     log = None
     session = None
     fullPath = None
     testMode = False
     loopCount = 0
-    TEST_MAX_RUN_TIME = (60*60*24*30) #  Test all tests max run time to 30 days
+    TEST_MAX_RUN_TIME = (60 * 60 * 24 * 30)  # Test all tests max run time to 30 days
 
-    def __init__(self, testName="", qcId="", maxRunTime=TEST_MAX_RUN_TIME, level=logModule.STEP, loop=1, log=None):
+    def __init__(self, testName="", qcId="", maxRunTime=TEST_MAX_RUN_TIME,
+                 level=logModule.STEP, loop=1, log=None):
         """Initialize the test class.
 
         Args:
             testName (str, optional): Name of the test. Defaults to "".
             qcId (str, optional): QC ID of the test. Defaults to "".
-            maxRunTime (int, optional): Maximum runtime of the test. Defaults to TEST_MAX_RUN_TIME.
+            maxRunTime (int, optional): Maximum runtime of the test. Defaults to
+            TEST_MAX_RUN_TIME.
             level (int, optional): Log level. Defaults to logModule.STEP.
             loop (int, optional): Number of test loops. Defaults to 1.
             log (class, optional): Parent log class. Defaults to None.
@@ -87,11 +88,11 @@ class testController():
         testHasParent = False
         self.summaryLog = log
         if self.summaryLog == None:
-            self.summaryLog = logModule( testName+"-summary" )
+            self.summaryLog = logModule(testName + "-summary")
             self.summaryLogCreated = True
         self.maxRunTime = maxRunTime
-        self.loopCount = loop   # Set the loop input from the test
-        self.result = False    # Setup the result codes
+        self.loopCount = loop  # Set the loop input from the test
+        self.result = False  # Setup the result codes
         self.testName = testName
         self.qcId = qcId
         self.capture = None
@@ -105,62 +106,67 @@ class testController():
             self.log.setLevel(self.log.DEBUG)
 
         # Decode the input configuration file
-        self.rackControl = rackController( self.config.rackConfig )
+        self.rackControl = rackController(self.config.rackConfig)
 
-        # Let's run the config parse on the deviceConfig + anything in the rackConfig also, so that all the data is in the deviceConfig
+        # Let's run the config parse on the deviceConfig + anything in the rackConfig
+        # also, so that all the data is in the deviceConfig
         # except for the rack specific section
-        self.deviceConfig = configParser( self.config.deviceConfig )
-        self.deviceConfig.decodeConfig( self.config.rackConfig )
+        self.deviceConfig = configParser(self.config.deviceConfig)
+        self.deviceConfig.decodeConfig(self.config.rackConfig)
 
         # Determine what slot we're going to work with
         rackName = self.config.args.rackName
         if rackName == None:
-            rack = self.rackControl.getRackByIndex( 0 )
+            rack = self.rackControl.getRackByIndex(0)
         else:
-            rack = self.rackControl.getRackByName( rackName )
+            rack = self.rackControl.getRackByName(rackName)
 
-        #Determine the slot to use
+        # Determine the slot to use
         if self.config.args.slotNumber != None:
-            slot = rack.getSlot(self.config.args.slotNumber )
+            slot = rack.getSlot(self.config.args.slotNumber)
         else:
             slotName = self.config.args.slotName
             if slotName == None:
-                slot = rack.getSlot( 1 )
+                slot = rack.getSlot(1)
             else:
-                slot = rack.getSlotByName( slotName )
+                slot = rack.getSlotByName(slotName)
 
         self.slotInfo = slot
 
-        if (self.config.testMode != None ):
-            self.testMode = self.config.testMode # Override the test mode out of the decodeParams, as required
-        if (self.config.loop != None ):
-            self.loopCount = int(self.config.loop) # Override the loop count out of the decodeParams
+        if (self.config.testMode != None):
+            self.testMode = self.config.testMode  # Override the test mode out of the
+            # decodeParams, as required
+        if (self.config.loop != None):
+            self.loopCount = int(
+                self.config.loop)  # Override the loop count out of the decodeParams
 
         # Pull the log configuration
         self.logConfig = self.config.rackConfig.get("local").get("log")
-        self.logPath = self.constructLogPath(rack.name,self.slotInfo.config[ "name" ] )
+        self.logPath = self.constructLogPath(rack.name, self.slotInfo.config["name"])
         self.testLogPath = self.constructTestPath()
 
-        #Start the logging system
+        # Start the logging system
         logFilename = "test-{}.log".format(self.summaryLog.summaryTestTotal)
-        self.log.setFilename( self.testLogPath, logFilename )
+        self.log.setFilename(self.testLogPath, logFilename)
         summaryPath = self.logPath
-        if log==None:
-            #We don't have a parent log so we put the summary log inside the test path
+        if log == None:
+            # We don't have a parent log so we put the summary log inside the test path
             summaryPath = self.testLogPath
-        self.summaryLog.setFilename( summaryPath, "test_summary.log")
+        self.summaryLog.setFilename(summaryPath, "test_summary.log")
 
-        #Start the rest of the testControl requirements
-        self.devices = deviceManager(self.slotInfo.config.get("devices"), self.log, self.testLogPath)
+        # Start the rest of the testControl requirements
+        self.devices = deviceManager(self.slotInfo.config.get("devices"), self.log,
+                                     self.testLogPath)
 
         # Set up the session from the default console
-        self.dut = self.devices.getDevice( "dut" )
+        self.dut = self.devices.getDevice("dut")
         self.session = self.dut.getConsoleSession()
         self.outboundClient = self.dut.outBoundClient
         self.powerControl = self.dut.powerControl
         self.commonRemote = self.dut.remoteController
         self.utils = utilities(self.log)
-        # For UI tests Initialising Video capture and decode the screen_regions.yml for the platform
+        # For UI tests Initialising Video capture and decode the screen_regions.yml
+        # for the platform
         cpePlatform = self.slotInfo.getPlatform()
         self.cpe = self.deviceConfig.getCPEEntryViaPlatform(cpePlatform)
         if self.cpe == None:
@@ -179,9 +185,11 @@ class testController():
         # Setup the OCR capture regions if defined, otherwise the test can configure it
         if self.cpe != None and captureConfig != None and 'screenRegions' in self.cpe:
             # Setup the current capture regions
-            captureRegionsFile = self.deviceConfig.getCPEFieldViaPlatform(cpePlatform, "screenRegions")
-            captureRegions = self.config.decodeConfigIntoDictionary("./{}".format(captureRegionsFile))
-            self.capture.setRegions( captureRegions )
+            captureRegionsFile = self.deviceConfig.getCPEFieldViaPlatform(cpePlatform,
+                                                                          "screenRegions")
+            captureRegions = self.config.decodeConfigIntoDictionary(
+                "./{}".format(captureRegionsFile))
+            self.capture.setRegions(captureRegions)
         else:
             self.log.warn("screenRegions not setup")
 
@@ -197,9 +205,10 @@ class testController():
             self.buildConfig = self.processBuildConfiguration(self.config.buildConfig)
 
         if self.config.overrideCpeConfig:
-            self.overrideCpeConfig = self.processBuildConfiguration(self.config.overrideCpeConfig)
+            self.overrideCpeConfig = self.processBuildConfiguration(
+                self.config.overrideCpeConfig)
 
-    def addDelimiter( self, path ):
+    def addDelimiter(self, path):
         """Add delimiter to the path if required.
 
         Args:
@@ -224,42 +233,43 @@ class testController():
         Returns:
             str: Constructed log path.
         """
-        #Check if the summary path was previous set, if so then we take that one instead of our new one
+        # Check if the summary path was previous set, if so then we take that one
+        # instead of our new one
         if self.summaryLog.path != None:
             logPath = self.summaryLog.path
             return logPath
 
         time = datetime.datetime.now().strftime("%Y%m%d-%H-%M-%S")
 
-        logPath = self.addDelimiter(  self.logConfig.get("directory") )
-        logPath += self.addDelimiter( rackName )
-        logPath += self.addDelimiter( slotName )
-        logPath = self.addDelimiter( logPath + time )
+        logPath = self.addDelimiter(self.logConfig.get("directory"))
+        logPath += self.addDelimiter(rackName)
+        logPath += self.addDelimiter(slotName)
+        logPath = self.addDelimiter(logPath + time)
         self.summaryLog.path = logPath
 
         try:
-            os.makedirs(logPath, exist_ok = True )
+            os.makedirs(logPath, exist_ok=True)
             self.log.debug("Directory '{}' created successfully".format(logPath))
         except OSError as error:
             self.log.error("Directory '{}' can not be created".format(logPath))
         return logPath
-   
+
     def constructTestPath(self):
         """Construct the path required for all test logs.
 
         Returns:
             str: Constructed test log path.
         """
-        testPath = self.addDelimiter( self.logPath + self.testName + "-" + self.qcId )
+        testPath = self.addDelimiter(self.logPath + self.testName + "-" + self.qcId)
         try:
-            os.makedirs(testPath, exist_ok = True )
+            os.makedirs(testPath, exist_ok=True)
             self.log.debug("Directory '{}' created successfully".format(testPath))
-            screenImagesPath = self.addDelimiter( testPath + "screenImages")
-            os.makedirs(screenImagesPath, exist_ok = True )
+            screenImagesPath = self.addDelimiter(testPath + "screenImages")
+            os.makedirs(screenImagesPath, exist_ok=True)
         except OSError as error:
             self.log.error("Directory '{}' can not be created".format(testPath))
         return testPath
-    
+
     def waitForBoot(self):
         """Wait for the system to boot.
 
@@ -267,11 +277,12 @@ class testController():
             bool: True if system booted, False otherwise.
         """
         return True
-    
+
     def testFunction(self):
         """Execute the main actions for performing the test.
 
-        Should be overloaded in the test script to contain the main actions executed during the test.
+        Should be overloaded in the test script to contain the main actions executed
+        during the test.
 
         Returns:
             bool: True if test passes, False otherwise.
@@ -288,12 +299,13 @@ class testController():
         """
         # self.session = self.initialise_session()
         return True
-    
+
     def testEndFunction(self, powerOff=True):
         """Close device sessions and release test resources.
 
         Args:
-            powerOff (bool, optional): Whether to power off after the test. Defaults to True.
+            powerOff (bool, optional): Whether to power off after the test. Defaults
+            to True.
 
         Returns:
             bool: True if cleanup succeeds, False otherwise.
@@ -304,13 +316,13 @@ class testController():
             print("No session to close")
 
         if powerOff:
-           self.powerControl.powerOff()
+            self.powerControl.powerOff()
         if self.webpageController is not None:
             self.webpageController.closeBrowser()
         if self.capture is not None:
             self.capture.stop()
         return True
-    
+
     def testExceptionCleanUp(self):
         """Clean up test if required.
 
@@ -326,12 +338,12 @@ class testController():
             startMessage (bool, optional): Display a start message. Defaults to False.
             endMessage (bool, optional): Display an end message. Defaults to False.
         """
-        if ( True == startMessage ):
-            self.log.info("waitSeconds["+str(seconds)+"]")
-        if ( 0 != seconds ):
+        if (True == startMessage):
+            self.log.info("waitSeconds[" + str(seconds) + "]")
+        if (0 != seconds):
             time.sleep(seconds)
-        if ( True == endMessage ):
-            self.log.info("Waited:[" + str(seconds) + "]")    
+        if (True == endMessage):
+            self.log.info("Waited:[" + str(seconds) + "]")
 
     def waitForSessionMessage(self, message):
         """Wait for the given message in the session.
@@ -342,13 +354,14 @@ class testController():
         Returns:
             bool: True if message found, False otherwise.
         """
-        self.log.step( "testControl.waitForSessionMessage("+message+")" )
-        #return self.session.read_until(message)
+        self.log.step("testControl.waitForSessionMessage(" + message + ")")
+        # return self.session.read_until(message)
         try:
             string = self.session.read_until(message)
-            findStringLocation=string.find(message)
+            findStringLocation = string.find(message)
             if findStringLocation == -1:
-                self.log.error("Could not find string: {} ,raise an exception".format(message))
+                self.log.error(
+                    "Could not find string: {} ,raise an exception".format(message))
                 raise Exception(" raise an exception")
                 return False
         except Exception as e:
@@ -356,30 +369,32 @@ class testController():
             raise Exception('Waitfor session message - {} failed'.format(message))
         return True
 
-    def writeMessageToSession(self,message):
+    def writeMessageToSession(self, message):
         """Write a message to the current session.
 
         Args:
             message (str): Message to write to the session.
         """
-        self.log.step( "testControl.writeMessageToSession({})".format(message.strip()) )
+        self.log.step("testControl.writeMessageToSession({})".format(message.strip()))
         self.session.write(message)
 
-    def programOutboundWithValidImage( self, sourceImageType,  destinationImageType = None ):
+    def programOutboundWithValidImage(self, sourceImageType, destinationImageType=None):
         """Program an image from the valid list based on platform.
 
         Args:
             sourceImageType (str): Source image type.
-            destinationImageType (str, optional): Destination image type. Defaults to None.
+            destinationImageType (str, optional): Destination image type. Defaults to
+            None.
 
         Returns:
             bool: True if programming succeeds, False otherwise.
         """
         platform = self.slotInfo.getPlatform()
-        if destinationImageType == None: 
+        if destinationImageType == None:
             destinationImageType = sourceImageType
-        url = self.deviceConfig.getValidImageUrlViaPlatform( sourceImageType, platform )
-        result = self.outboundClient.prepareOutboundWithImageFromUrl( destinationImageType, url )
+        url = self.deviceConfig.getValidImageUrlViaPlatform(sourceImageType, platform)
+        result = self.outboundClient.prepareOutboundWithImageFromUrl(
+            destinationImageType, url)
         return result
 
     def processBuildConfiguration(self, inputUrl):
@@ -399,7 +414,8 @@ class testController():
             inputPath = os.path.join(workspaceFolder, fileName)
             outputDict = self.config.decodeConfigIntoDictionary(inputPath)
         except Exception as e:
-            raise Exception("testControl.processBuildConfiguration returns error - {}".format(e))
+            raise Exception(
+                "testControl.processBuildConfiguration returns error - {}".format(e))
         return outputDict
 
     def validatePlatform(self, platform):
@@ -418,12 +434,13 @@ class testController():
         if platform in alternativePlatform:
             return True
         return False
- 
+
     def run(self, powerOff=True):
         """Run the test.
 
         Args:
-            powerOff (bool, optional): Whether to turn off power after the test. Defaults to True.
+            powerOff (bool, optional): Whether to turn off power after the test.
+            Defaults to True.
 
         Returns:
             bool: True if test passes, False otherwise.
@@ -431,34 +448,38 @@ class testController():
         self.session.open()
 
         result = self.waitForBoot()
-        if ( result == False ):
-            self.log.stepResult( result, "could not communicate or start test" )
+        if (result == False):
+            self.log.stepResult(result, "could not communicate or start test")
             return False
-        
-        end_time = self.summaryLog.testStart( self.testName, self.qcId, self.loopCount, self.maxRunTime )
-        self.log.testStart( self.testName, self.qcId, self.loopCount, self.maxRunTime )
+
+        end_time = self.summaryLog.testStart(self.testName, self.qcId, self.loopCount,
+                                             self.maxRunTime)
+        self.log.testStart(self.testName, self.qcId, self.loopCount, self.maxRunTime)
         # Run the testPrepare function
-        self.log.info( logModule.SEPERATOR+"testPrepareFunction()"+logModule.SEPERATOR )
+        self.log.info(
+            logModule.SEPERATOR + "testPrepareFunction()" + logModule.SEPERATOR)
         self.log.indent()
         iterations = 1
         result = self.testPrepareFunction()
         showLoopCount = True
-        if ( self.loopCount == 1 ):
+        if (self.loopCount == 1):
             showLoopCount = False
         self.log.outdent()
         if (result == True):
-            # Use "finish" variable in case there are other reasons to quit apart from end of test, although note simple
-            #  keyboard polling is troublesome in Python hence the simpler addition of a ^C handler
-            finish=False
-            
-            while finish==False:
+            # Use "finish" variable in case there are other reasons to quit apart
+            # from end of test, although note simple
+            #  keyboard polling is troublesome in Python hence the simpler addition
+            #  of a ^C handler
+            finish = False
+
+            while finish == False:
                 if (0 != self.maxRunTime):
                     if (datetime.datetime.now() >= end_time):
                         break
                 if showLoopCount:
-                    self.log.testLoop( iterations )
+                    self.log.testLoop(iterations)
                 # Script log file init
-                
+
                 try:
                     result = self.testFunction()
                 except Exception as e:
@@ -474,23 +495,29 @@ class testController():
                     self.log.debug(str(inspect.stack()))
                     exception = traceback.format_exc()
                     exceptionDict = self.parseException(exception)
-                    self.log.stepResult( False, "Exception in stage. '{}' in method '{}' of file {} line {}".format(exceptionDict.get("exception"), exceptionDict.get("method"), exceptionDict.get("file"), exceptionDict.get("line")))
+                    self.log.stepResult(False,
+                                        "Exception in stage. '{}' in method '{}' of "
+                                        "file {} line {}".format(
+                                            exceptionDict.get("exception"),
+                                            exceptionDict.get("method"),
+                                            exceptionDict.get("file"),
+                                            exceptionDict.get("line")))
                     break
                 if result == False:
                     break
                 if showLoopCount:
-                    self.log.testLoopComplete( iterations )
+                    self.log.testLoopComplete(iterations)
                 if self.loopCount != 0:
                     if iterations >= self.loopCount:
                         break
-                iterations=iterations+1
+                iterations = iterations + 1
 
-        self.log.testResult("[{}] : Test Completed".format(self.testName) )
+        self.log.testResult("[{}] : Test Completed".format(self.testName))
         self.summaryLog.failedSteps = self.log.failedSteps
         self.summaryLog.totalStepsFailed += self.log.totalStepsFailed
         self.summaryLog.totalStepsPassed += self.log.totalStepsPassed
         self.summaryLog.totalSteps += self.log.totalSteps
-        self.summaryLog.testResult("[{}] : Test Completed".format(self.testName) )
+        self.summaryLog.testResult("[{}] : Test Completed".format(self.testName))
         self.testEndFunction(powerOff)
         self.utils.wait(2)
 
@@ -508,7 +535,8 @@ class testController():
         lines = exception.split("\n")
         exceptionInfo = {}
         lastFileIndex = None
-        # Finds the last line of the execption that has'File "' in to then parse the information from the following lines
+        # Finds the last line of the execption that has'File "' in to then parse the
+        # information from the following lines
         for index, line in enumerate(lines):
             if "File \"" in line:
                 lastFileIndex = index
@@ -516,27 +544,28 @@ class testController():
         exceptionInfo["exception"] = lines[lastFileIndex + 2]
         fileLineWords = lines[lastFileIndex].strip().split(" ")
         try:
-            fileIndex = fileLineWords.index('File')+1
+            fileIndex = fileLineWords.index('File') + 1
             exceptionInfo["file"] = fileLineWords[fileIndex].replace(",", "")
         except IndexError:
-            raise ValueError("Incorrect format of exception, expected 'File' on 3rd last line")
-        
-        try:
-            lineNumIndex = fileLineWords.index('line')+1
-            exceptionInfo["line"] = fileLineWords[lineNumIndex].replace(",", "")
-        except IndexError:
-            raise ValueError("Incorrect format of exception, expected 'line' on 3rd last line")
+            raise ValueError(
+                "Incorrect format of exception, expected 'File' on 3rd last line")
 
         try:
-            methodIndex = fileLineWords.index('in')+1
+            lineNumIndex = fileLineWords.index('line') + 1
+            exceptionInfo["line"] = fileLineWords[lineNumIndex].replace(",", "")
+        except IndexError:
+            raise ValueError(
+                "Incorrect format of exception, expected 'line' on 3rd last line")
+
+        try:
+            methodIndex = fileLineWords.index('in') + 1
             exceptionInfo["method"] = fileLineWords[methodIndex]
         except IndexError:
-            raise ValueError("Incorrect format of exception, expected 'in' on 3rd last line")
+            raise ValueError(
+                "Incorrect format of exception, expected 'in' on 3rd last line")
 
         return exceptionInfo
 
-
-    
     def signal_handler(self, signal, frame):
         """Signal handler support for CTRL-C.
 
@@ -544,41 +573,43 @@ class testController():
             signal (_type_): Signal input.
             frame (_type_): Signal frame.
         """
-        #result = True
-        self.log.info( "signal_handler [{}]".format(frame) )
+        # result = True
+        self.log.info("signal_handler [{}]".format(frame))
         self.testEndFunction()
         sys.exit(1)
 
-    def runHostCommand(self, command, supressErrors=False, supressOutput=False, supress=False):
+    def runHostCommand(self, command, supressErrors=False, supressOutput=False,
+                       supress=False):
         """Run a host command.
 
         Args:
             command (_type_): Command to run.
             suppressErrors (bool, optional): Suppress all errors. Defaults to False.
             suppressOutput (bool, optional): Suppress the output. Defaults to False.
-            suppress (bool, optional): Suppress both errors and output. Defaults to False.
+            suppress (bool, optional): Suppress both errors and output. Defaults to
+            False.
 
         Returns:
             _type_: Any errors listed.
         """
-        self.log.debug( command )
-        args = shlex.split( command )
+        self.log.debug(command)
+        args = shlex.split(command)
         errors = None
         output = None
-        if ( True == supress ):
+        if (True == supress):
             supressErrors = True
             supressOutput = True
-        if ( True == supressErrors ):
+        if (True == supressErrors):
             errors = subprocess.STDOUT
-        if ( True == supressOutput ):
+        if (True == supressOutput):
             output = subprocess.DEVNULL
-        proc = subprocess.Popen( args, stderr=errors, stdout=output )
+        proc = subprocess.Popen(args, stderr=errors, stdout=output)
         try:
             errs = proc.communicate(timeout=15)
-        except: 
+        except:
             proc.kill()
             errs = proc.communicate()
-            self.log.fatal( command + " Failed : ["+str(errs)+"]")
+            self.log.fatal(command + " Failed : [" + str(errs) + "]")
         return errs
 
     def syscmd(self, cmd, encoding='', returnCode=False):
@@ -592,88 +623,98 @@ class testController():
         Returns:
             str or int: Command result or return code.
         """
-        self.log.debug( "command: ["+str(cmd)+"]")
-        p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,close_fds=True)
+        self.log.debug("command: [" + str(cmd) + "]")
+        p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE,
+                             stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                             close_fds=True)
         p.wait()
         self.output = p.stdout.read()
-        if ( True == returnCode ):
+        if (True == returnCode):
             if len(self.output) > 1:
-                self.log.debug( "command: output:["+str(self.output)+"], returnCode:["+str(p.returncode)+"]")
+                self.log.debug(
+                    "command: output:[" + str(self.output) + "], returnCode:[" + str(
+                        p.returncode) + "]")
             return p.returncode
         if len(self.output) > 1:
-            if encoding: 
+            if encoding:
                 return self.output.decode(encoding)
-            else: 
+            else:
                 return self.output
         return p.returncode
-    
 
     def pingTest(self, deviceName="dut", logPingTime=False):
         """Perform a ping test against the given device.
 
         Args:
-            deviceName (str, optional): Device from the configuration to ping. Defaults to "dut".
+            deviceName (str, optional): Device from the configuration to ping.
+            Defaults to "dut".
             logPingTime (bool, optional): Log ping time. Defaults to False.
 
         Returns:
             bool: True if host is up, False otherwise.
         """
-        #Ping the box till the box responds after the boot
-        if(logPingTime):
+        # Ping the box till the box responds after the boot
+        if (logPingTime):
             self.log.step("waitForBoot( {} )".format(self.slotInfo.getDeviceAddress()))
             pingStartTime = time.time()
-            timeString = time.strftime("%H:%M:%S",time.gmtime(pingStartTime))
-            self.log.step("ping start time: [{}]".format(timeString) )
+            timeString = time.strftime("%H:%M:%S", time.gmtime(pingStartTime))
+            self.log.step("ping start time: [{}]".format(timeString))
         self.alive = self._pingTestOnly(deviceName)
-        if(logPingTime):
+        if (logPingTime):
             elapsed_time = time.time() - pingStartTime
-            timeString = time.strftime("%H:%M:%S",time.gmtime(time.time()))
-            self.log.step("ping response time: [{}]".format(timeString) )
-            elasped_string = time.strftime( "%H:%M:%S", time.gmtime(elapsed_time))              
-            self.log.step("Time taken to get ping response: ["+elasped_string+"]")
+            timeString = time.strftime("%H:%M:%S", time.gmtime(time.time()))
+            self.log.step("ping response time: [{}]".format(timeString))
+            elasped_string = time.strftime("%H:%M:%S", time.gmtime(elapsed_time))
+            self.log.step("Time taken to get ping response: [" + elasped_string + "]")
         # We've not be able to ping the box, return an error
-        if ( False == self.alive ):
-            self.log.critical( "ping Up Check:[Box is not responding to ping within:"+elasped_string+"]")
-            raise Exception(" ping failed")           
+        if (False == self.alive):
+            self.log.critical(
+                "ping Up Check:[Box is not responding to ping within:" +
+                elasped_string + "]")
+            raise Exception(" ping failed")
         return self.alive
 
     def _pingTestOnly(self, deviceName="dut"):
         """Perform a ping test against the given device.
 
         Args:
-            deviceName (str, optional): Device from the configuration to ping. Defaults to "dut".
+            deviceName (str, optional): Device from the configuration to ping.
+            Defaults to "dut".
 
         Returns:
             bool: True if host is up, False otherwise.
         """
         hostIsUp = False
-        ip = self.slotInfo.getDeviceAddress( deviceName )
-        if (platform.system().lower() == 'windows') or ('cygwin' in platform.system().lower()):
+        ip = self.slotInfo.getDeviceAddress(deviceName)
+        if (platform.system().lower() == 'windows') or (
+                'cygwin' in platform.system().lower()):
             ping_param_amount = " -n "
             ping_param_quiet = " "
         else:
             ping_param_amount = " -c "
             ping_param_quiet = " -q "
         # Quick check for ping working first time round
-        command  = "ping" + ping_param_amount + "1" + ping_param_quiet + ip
-        result = self.syscmd( command, returnCode=True )
-        if ( 0 == result ):
+        command = "ping" + ping_param_amount + "1" + ping_param_quiet + ip
+        result = self.syscmd(command, returnCode=True)
+        if (0 == result):
             self.log.debug("ping response 1 - Host Up")
             return True
-        #Host is currently down, we need to loop
-        for x in range( 0, 15 ):
-            self.log.debug("pingTest Inner Loop["+str(x)+"]")
-            self.waitSeconds(5) # Wait 5 seconds before trying constant ping
-            result = self.syscmd( "ping" + ping_param_amount + "10" + ping_param_quiet + ip, returnCode=True )
-            if ( 0 == result ):
+        # Host is currently down, we need to loop
+        for x in range(0, 15):
+            self.log.debug("pingTest Inner Loop[" + str(x) + "]")
+            self.waitSeconds(5)  # Wait 5 seconds before trying constant ping
+            result = self.syscmd(
+                "ping" + ping_param_amount + "10" + ping_param_quiet + ip,
+                returnCode=True)
+            if (0 == result):
                 # Check for 0% packet loss, otherwise reject it
                 outputString = str(self.output)
-                if ( ", 0% packet loss" in outputString ):
+                if (", 0% packet loss" in outputString):
                     hostIsUp = True
                     self.log.debug("pingTest hostIsUp")
                     break
             self.log.debug("pingTest hostIsDown")
-    
+
         return hostIsUp
 
     def waitForPrompt(self, prompt=None):
