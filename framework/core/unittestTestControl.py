@@ -39,8 +39,6 @@ sys.path.append(path)
 from framework.core.testControl import testController
 
 class unittestTestControl( testController,unittest.TestCase):
-
-
     def setUp(self):
         """Set up the test environment before each test."""
         self.testPrepareFunction()

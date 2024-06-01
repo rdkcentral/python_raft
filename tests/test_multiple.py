@@ -25,8 +25,8 @@ if __name__ == '__main__':
     # unittest.main()
     unittest.main(exit=False)
 
-
-
-class TestDefault:
-    def test_1(self):
-        assert True
+#
+#
+# class TestDefault:
+#     def test_1(self):
+#         assert True

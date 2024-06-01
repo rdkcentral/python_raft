@@ -207,7 +207,7 @@ class testController:
         if self.config.overrideCpeConfig:
             self.overrideCpeConfig = self.processBuildConfiguration(
                 self.config.overrideCpeConfig)
-
+        super().__init__()
     def addDelimiter(self, path):
         """Add delimiter to the path if required.
 
@@ -435,7 +435,7 @@ class testController:
             return True
         return False
 
-    def run(self, powerOff=True):
+    def run(self,*args, powerOff=True,**kwargs):
         """Run the test.
 
         Args:
@@ -445,82 +445,85 @@ class testController:
         Returns:
             bool: True if test passes, False otherwise.
         """
-        self.session.open()
+        result=None
+        try:
+            self.session.open()
 
-        result = self.waitForBoot()
-        if (result == False):
-            self.log.stepResult(result, "could not communicate or start test")
-            return False
+            result = self.waitForBoot()
+            if (result == False):
+                self.log.stepResult(result, "could not communicate or start test")
+                return False
 
-        end_time = self.summaryLog.testStart(self.testName, self.qcId, self.loopCount,
-                                             self.maxRunTime)
-        self.log.testStart(self.testName, self.qcId, self.loopCount, self.maxRunTime)
-        # Run the testPrepare function
-        self.log.info(
-            logModule.SEPERATOR + "testPrepareFunction()" + logModule.SEPERATOR)
-        self.log.indent()
-        iterations = 1
-        result = self.testPrepareFunction()
-        showLoopCount = True
-        if (self.loopCount == 1):
-            showLoopCount = False
-        self.log.outdent()
-        if (result == True):
-            # Use "finish" variable in case there are other reasons to quit apart
-            # from end of test, although note simple
-            #  keyboard polling is troublesome in Python hence the simpler addition
-            #  of a ^C handler
-            finish = False
+            end_time = self.summaryLog.testStart(self.testName, self.qcId, self.loopCount,
+                                                 self.maxRunTime)
+            self.log.testStart(self.testName, self.qcId, self.loopCount, self.maxRunTime)
+            # Run the testPrepare function
+            self.log.info(
+                logModule.SEPERATOR + "testPrepareFunction()" + logModule.SEPERATOR)
+            self.log.indent()
+            iterations = 1
+            result = self.testPrepareFunction()
+            showLoopCount = True
+            if (self.loopCount == 1):
+                showLoopCount = False
+            self.log.outdent()
+            if (result == True):
+                # Use "finish" variable in case there are other reasons to quit apart
+                # from end of test, although note simple
+                #  keyboard polling is troublesome in Python hence the simpler addition
+                #  of a ^C handler
+                finish = False
 
-            while finish == False:
-                if (0 != self.maxRunTime):
-                    if (datetime.datetime.now() >= end_time):
-                        break
-                if showLoopCount:
-                    self.log.testLoop(iterations)
-                # Script log file init
+                while finish == False:
+                    if (0 != self.maxRunTime):
+                        if (datetime.datetime.now() >= end_time):
+                            break
+                    if showLoopCount:
+                        self.log.testLoop(iterations)
+                    # Script log file init
 
-                try:
-                    result = self.testFunction()
-                except Exception as e:
-                    self.log.step('testControl - Invoking testExceptionCleanUp')
-                    self.log.critical(str(e))
                     try:
-                        self.testExceptionCleanUp()
-                        self.utils.wait(2)
+                        result = self.testFunction()
                     except Exception as e:
-                        self.log.step('Exception while running testExceptionCleanUp')
+                        self.log.step('testControl - Invoking testExceptionCleanUp')
                         self.log.critical(str(e))
-                    self.log.debug("************************")
-                    self.log.debug(str(inspect.stack()))
-                    exception = traceback.format_exc()
-                    exceptionDict = self.parseException(exception)
-                    self.log.stepResult(False,
-                                        "Exception in stage. '{}' in method '{}' of "
-                                        "file {} line {}".format(
-                                            exceptionDict.get("exception"),
-                                            exceptionDict.get("method"),
-                                            exceptionDict.get("file"),
-                                            exceptionDict.get("line")))
-                    break
-                if result == False:
-                    break
-                if showLoopCount:
-                    self.log.testLoopComplete(iterations)
-                if self.loopCount != 0:
-                    if iterations >= self.loopCount:
+                        try:
+                            self.testExceptionCleanUp()
+                            self.utils.wait(2)
+                        except Exception as e:
+                            self.log.step('Exception while running testExceptionCleanUp')
+                            self.log.critical(str(e))
+                        self.log.debug("************************")
+                        self.log.debug(str(inspect.stack()))
+                        exception = traceback.format_exc()
+                        exceptionDict = self.parseException(exception)
+                        self.log.stepResult(False,
+                                            "Exception in stage. '{}' in method '{}' of "
+                                            "file {} line {}".format(
+                                                exceptionDict.get("exception"),
+                                                exceptionDict.get("method"),
+                                                exceptionDict.get("file"),
+                                                exceptionDict.get("line")))
                         break
-                iterations = iterations + 1
+                    if result == False:
+                        break
+                    if showLoopCount:
+                        self.log.testLoopComplete(iterations)
+                    if self.loopCount != 0:
+                        if iterations >= self.loopCount:
+                            break
+                    iterations = iterations + 1
 
-        self.log.testResult("[{}] : Test Completed".format(self.testName))
-        self.summaryLog.failedSteps = self.log.failedSteps
-        self.summaryLog.totalStepsFailed += self.log.totalStepsFailed
-        self.summaryLog.totalStepsPassed += self.log.totalStepsPassed
-        self.summaryLog.totalSteps += self.log.totalSteps
-        self.summaryLog.testResult("[{}] : Test Completed".format(self.testName))
-        self.testEndFunction(powerOff)
-        self.utils.wait(2)
-
+            self.log.testResult("[{}] : Test Completed".format(self.testName))
+            self.summaryLog.failedSteps = self.log.failedSteps
+            self.summaryLog.totalStepsFailed += self.log.totalStepsFailed
+            self.summaryLog.totalStepsPassed += self.log.totalStepsPassed
+            self.summaryLog.totalSteps += self.log.totalSteps
+            self.summaryLog.testResult("[{}] : Test Completed".format(self.testName))
+            self.testEndFunction(powerOff)
+            self.utils.wait(2)
+        except Exception as e:
+            print(f"Run function error :{e}")
         return result
 
     def parseException(self, exception):

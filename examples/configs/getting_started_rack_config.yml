@@ -22,7 +22,7 @@
 
 globalConfig:
     includes:
-        deviceConfig: "../configs/example_device_config.yml"
+        deviceConfig: "examples/configs/example_device_config.yml"
     local:
         log:
             directory: "./logs"
