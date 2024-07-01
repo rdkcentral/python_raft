@@ -21,11 +21,6 @@ singleton = Singleton()
 
 class RAFTUnitTestCase(unittest.TestCase):
 
-    # def __init__(self):
-    #     print("Here_1")
-    #     self.raft = singleton
-    #     super(unittest.TestCase.__init__)
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.raft = singleton
@@ -37,14 +32,19 @@ class RAFTUnitTestCase(unittest.TestCase):
 # but unittest is a module, not a class. You should be subclassing unittest.TestCase instead.
 class RAFTUnitTestMain(unittest.TestCase):
 
-    # def __init__(self):
-    #     self.raft = singleton
-    #     super(unittest.TestCase.__init__)
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.raft = singleton
         print("Here_2, Config:", self.raft.get_config())
+
+class TestNew(RAFTUnitTestCase):
+    
+    def test_new(self):   
+        print("Here_3")
+        self.dut = deviceController()
+        self.dut.powerOn()
+        self.assertTrue(deviceController.power)
+
 
 def main():
     parser = argparse.ArgumentParser(description="Run RAFT unit tests.")
@@ -58,15 +58,9 @@ def main():
         # Load and process the config file if needed
 
     # Run unit tests
-    unittest.main(argv=[sys.argv[0]] + remaining_args)
+    unittest.main(argv=[sys.argv[0]] + remaining_args, exit=False)
 
 if __name__ == "__main__":
     main()
 
 
-class TestNew(RAFTUnitTestCase):
-    
-    def test_new(self):   
-        print("Here_3")
-        self.dut.powerOn()
-        self.assertTrue(deviceController.power)
