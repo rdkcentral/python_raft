@@ -145,6 +145,7 @@ class commonRemoteClass():
         if fullPath.startswith("."):
             fullPath = os.path.abspath(configFile)
         if os.path.exists(fullPath) == False:
+            print(f"2.0 Path does not exist: {fullPath}")
             print("config: file is required to run: ERROR, missing url=[{}]".format(fullPath))
             os._exit(1)
         with open(configFile) as inputFile:

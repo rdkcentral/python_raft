@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="0.562" timestamp="2024-05-20T10:56:20.288196" hostname="bw-hermes"><testcase classname="test_device_management" name="unittestTestControl" time="0.000"><error message="collection failure">../framework/core/testControl.py:102: in __init__
+    self.config = decodeParams(self.log)
+../framework/core/decodeParams.py:79: in __init__
+    self.args = parser.parse_args()
+/usr/lib/python3.10/argparse.py:1848: in parse_args
+    self.error(msg % ' '.join(argv))
+/usr/lib/python3.10/argparse.py:2606: in error
+    self.exit(2, _('%(prog)s: error: %(message)s\n') % args)
+/usr/lib/python3.10/argparse.py:2593: in exit
+    _sys.exit(status)
+E   SystemExit: 2</error></testcase><testcase classname="test_device_management" name="DeviceManagementTests" time="0.000"><error message="collection failure">../framework/core/testControl.py:99: in __init__
+    signal.signal(signal.SIGINT, self.signal_handler)
+/usr/lib/python3.10/signal.py:57: in signal
+    return _int_to_enum(handler, Handlers)
+/usr/lib/python3.10/signal.py:29: in _int_to_enum
+    return enum_klass(value)
+/usr/lib/python3.10/enum.py:385: in __call__
+    return cls.__new__(cls, value)
+/usr/lib/python3.10/enum.py:708: in __new__
+    ve_exc = ValueError("%r is not a valid %s" % (value, cls.__qualname__))
+/usr/lib/python3.10/unittest/case.py:468: in __repr__
+    (strclass(self.__class__), self._testMethodName)
+E   AttributeError: 'unittestTestControl' object has no attribute '_testMethodName'</error></testcase></testsuite></testsuites>
