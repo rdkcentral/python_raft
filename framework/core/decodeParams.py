@@ -109,7 +109,7 @@ class decodeParams():
         """Decodes the device configuration.
         """
         self.deviceConfig = None
-        deviceConfigFile = self.args.deviceConfigFile
+        deviceConfigFile = self.args.configFile
         if deviceConfigFile == None:
             try:
                 deviceConfigFile = self.rackConfig.get("includes").get("deviceConfig")
