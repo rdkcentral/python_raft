@@ -2,9 +2,9 @@
 
 import argparse
 import sys
+import argparse
 import unittest
 from framework.core.decodeParams import decodeParams
-from framework.core.deviceManager import deviceManager
 
 
 class Singleton:
@@ -15,7 +15,7 @@ class Singleton:
     def __new__(cls, log):
         if cls._instance is None:
             cls._instance = super(Singleton, cls).__new__(cls)
-            cls._instance.config = decodeParams(log)
+            cls._instance._config = decodeParams(log)
         return cls._instance
 
     def __init__(self, log):
@@ -23,49 +23,53 @@ class Singleton:
             return
         self.__initialized = True
         self.config = None
-        self.deviceManager = None
+        self.deviceManager = None   
+        self.params = decodeParams(log=None)   
         self.setup()
 
     def setup(self):
-        parser = argparse.ArgumentParser()
-        parser.add_argument('--config', type=str, help='Path to the configuration file')
-        args, remaining_args = parser.parse_known_args()
+        deviceConfig = self.params.deviceConfig
 
-        if args.config:
-            self.set_config(args.config)
-            self.config = decodeParams.decodeConfigIntoDictionary(self, self.config) # ---- need to get the device not the whole config
-        #     self.config.devices.get("dut") ###
+        if deviceConfig:
+            self.config = deviceConfig
+          
 
-        # self.deviceManager = deviceManager(self.config, log=None)
-        # if self.deviceManager:
-        #     print("deviceManager initialised succesfully")
-        # else:
-        #     print("failed to initialise deviceManager")
+    @property
+    def config(self):
+        # Return a copy if the config is mutable
+        return self._config.copy() if isinstance(self._config, dict) else self._config
 
-    def set_config(self, config):
-        self.config = config
-
-    def get_config(self):
-        return self.config
+    @config.setter
+    def config(self, config: dict):
+        self._config = config
     
-    # def get_config(self):
-    #     return self._instance.config
 
-
-singleton = Singleton(log=None)
+SINGLETON = Singleton(log=None)
 
 class RAFTUnitTestCase(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.deviceManager = singleton.deviceManager
-        # print("Here_1, Config:", self.deviceManager.get_config())
+        self.deviceManager = SINGLETON.deviceManager
+
+    def main():    
+        parser = argparse.ArgumentParser(description="Run RAFT unit tests.")
+        parser.add_argument('--config', type=str, help='Path to the configuration file')
+        args, remaining_args = parser.parse_known_args()
+
+        if args.config:
+            print(f"Using config file: {args.config}")
+            # Load and set the configuration in the singleton
+            singleton_instance = Singleton(args.config)
+            singleton_instance.config = decodeParams(args.config)
+
+        # Run unit tests 
+        unittest.main(argv=[sys.argv[0]] + remaining_args, exit=False)
 
 
 class RAFTUnitTestMain(unittest.TestCase):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.deviceManager = singleton.deviceManager
-        # print("Here_2, Config:", self.raft.get_config())
+        self.deviceManager = SINGLETON.deviceManager
 
