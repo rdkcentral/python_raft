@@ -24,7 +24,5 @@ class RAFTUnitTestSuite(unittest.TestSuite):
     
 
 def RAFTUnitTestMain():
-
-    print(f"Using config file: {SINGLETON.params.deviceConfig}\n")
     
     unittest.main(argv=[sys.argv[0]], exit=False)
