@@ -16,8 +16,6 @@ class Singleton:
             cls._instance = super(Singleton, cls).__new__(cls)
             cls._params = decodeParams(log)
                     
-            # cls._clean_argv()
-
         return cls._instance
 
     def __init__(self, log):
@@ -27,26 +25,7 @@ class Singleton:
         self.config = None
         self.deviceManager = None   
         self.params = self._instance._params  
-        self.setup()
-
-    # @classmethod
-    # def _clean_argv(cls):
-    #     decoded_params_dict = vars(cls._params.args)
-
-    #     for param, value in decoded_params_dict.items():
-    #         sys.argv.remove(f'--{param}')
-    #         if isinstance(bool, value):
-    #             continue
-    #         else:
-    #             sys.argv.remove(value)
-
-
-    def setup(self):
-        deviceConfig = self.params.deviceConfig
-
-        if deviceConfig:
-            self.config = deviceConfig
-          
+        
 
     @property
     def config(self):
