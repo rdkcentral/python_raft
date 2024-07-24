@@ -71,11 +71,12 @@ class consoleClass():
             username = config.get("username")
             password = config.get("password")
             known_hosts = config.get("known_hosts")
+            port = config.get("port")
             if not address:
                 log.error("ssh console config has not been provided an [ip/address]")
             if not username:
                 log.error("ssh console config has not been provided an [username]")
-            self.session = sshConsole(address, username, password, known_hosts=known_hosts)
+            self.session = sshConsole(address, username, password, known_hosts=known_hosts, port=port)
         elif self.type == "serial":
             port = config.get("port")
             baudRate = config.get("baudRate")
