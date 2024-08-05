@@ -380,7 +380,7 @@ class rackController:
             rack: The requested rack.
         """
         for element in self.racks:
-            if ( element.config ["name"] == rackName ):
+            if ( element.name == rackName ):
                 return element
         self.log.error( "getRack("+str(rackName)+") - Invalid name")
         return None
