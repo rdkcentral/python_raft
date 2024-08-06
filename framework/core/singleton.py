@@ -185,7 +185,8 @@ class Singleton:
         """Construct the path required for all test logs.
 
         Args:
-            
+            testName (str): Name of the currently running test case/suite.
+            qcId (str, Optional): Quality control ID of the currently running test case/suite.
 
         Returns:
             str: Constructed test log path.
