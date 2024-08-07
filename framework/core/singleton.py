@@ -34,6 +34,7 @@ import datetime
 import os
 
 from framework.core.decodeParams import decodeParams
+from framework.core.deviceManager import deviceManager
 from framework.core.rackController import rackController
 from framework.core.configParser import configParser
 from framework.core.logModule import logModule
@@ -75,10 +76,12 @@ class Singleton:
 
         if cls._instance is False:
             cls._instance = True
+            cls._verbosity = 1
             cls.summaryLog = None
             cls.logPath =None
             cls.testLog = None
             cls.testLogPath = None
+            cls.devices = None
             cls.config = decodeParams(log)
             cls._rackController = rackController(cls.config.rackConfig)
             cls.deviceConfig = configParser(cls.config.deviceConfig)
@@ -86,7 +89,6 @@ class Singleton:
             cls.rack = cls._get_rack()
             cls.slotInfo = cls._getSlotInfo()
             cls.logConfig = cls.config.rackConfig.get("local").get("log")
-            cls._verbosity = 1
         return cls
 
     @classmethod
@@ -234,5 +236,30 @@ class Singleton:
             logFilename = "test-{}.log".format(cls.summaryLog.summaryTestTotal)
             cls.testLog.setFilename(cls.testLogPath, logFilename)
 
+    @classmethod
+    def setupDevices(cls, log: logModule, logPath:str):
+        """Setup the deviceManager for the devices in the current slot under test.
+
+        Args:
+            log (logModule): Log Module for the current test.
+            logPath (str): Path of logging output for the current test.
+
+        Returns:
+            deviceManager : deviceManager object for all devices in the slot in use by the
+                            current test.
+        """
+        if cls.devices is None:
+            cls.devices = deviceManager(cls.slotInfo.config.get("devices"), log, logPath)
+        return cls.devices
+
+    @classmethod
+    def getCPEInfo(cls):
+        """Get the device config information for the current CPE device.
+
+        Returns:
+            dict: Dictionary of information for the current CPE device.
+        """
+        cpePlatform = cls.slotInfo.getPlatform()
+        return cls.deviceConfig.getCPEEntryViaPlatform(cpePlatform)
 
 SINGLETON = Singleton(log=None)
