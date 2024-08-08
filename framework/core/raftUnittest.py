@@ -40,7 +40,7 @@ path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 sys.path.append(path)
 
 from framework.core.singleton import SINGLETON
-from framework.core.logModule import logModule
+from framework.core.utilities import utilities
 
 class RAFTUnitTestCase(unittest.TestCase):
     """
@@ -67,6 +67,13 @@ class RAFTUnitTestCase(unittest.TestCase):
         self.testName = self.__class__.__name__
         self.qcId = kwargs.get('qcId', '')
         self._singleton.setSummaryLog(self.testName, self.qcId)
+        self.log = self._singleton.testLog
+        self.devices = self._singleton.setupDevices(self.log, self.log.logPath)
+        self.dut = self.devices.getDevice("dut")
+        self.cpe = self._singleton.getCPEInfo()
+        if self.cpe is None:
+            self.log.warn("CPE device not set")
+        self.utils = utilities(self.log)
         super().__init__(*args, **kwargs)
 
     @property
