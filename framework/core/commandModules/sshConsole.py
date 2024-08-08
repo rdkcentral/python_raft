@@ -46,11 +46,12 @@ class sshConsole(consoleInterface):
         known_hosts (str, optional): Filepath of known_hosts file to use.
     """
 
-    def __init__(self, address, username, password, key=None, known_hosts=None) -> None:
+    def __init__(self, address, username, password, key=None, known_hosts=None, port=None) -> None:
         self.address = address
         self.username = username
         self.password = password
         self.key = key
+        self.port = port
         self.console = SSHClient()
         self.console.load_system_host_keys(known_hosts)
         self.buffer = []
@@ -60,7 +61,7 @@ class sshConsole(consoleInterface):
     def open(self):
         """Open the SSH session.
         """
-        self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key)
+        self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
 
     def write(self, message):
         """Write a message into the console.
