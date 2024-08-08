@@ -45,7 +45,6 @@
 #     7- Cancel
 ###########################################################
 
-from framework.core.powerModules.S20control import powerOrviboS20
 from framework.core.powerModules.apcAos import powerApcAos
 from framework.core.powerModules.kasaControl import powerKasa
 from framework.core.powerModules.olimex import powerOlimex
@@ -58,9 +57,9 @@ from framework.core.utilities import utilities
 from framework.core.logModule import logModule
 
 class powerControlClass():
-    
+
     def __init__(self, log:logModule, config:dict):
-        """Initalise the power controller 
+        """Initalise the power controller
 
         Args:
             log (logModule): log module class
@@ -80,8 +79,6 @@ class powerControlClass():
         type = config.get("type")
         if type == None:
             self.powerSwitch = powerNone( log )
-        elif type == "orviboS20":
-            self.powerSwitch = powerOrviboS20( log, ip=self.ip, mac=config.get("mac"), port=config.get("port"))
         elif type == "hs100":
             self.powerSwitch = powerHS100( log, self.ip, config.get("port"))
         elif type == "apc":
@@ -111,7 +108,7 @@ class powerControlClass():
     def powerOff(self):
         self.log.info("powerOff ({})".format( self.name ))
         result = self.powerRetry(self.powerSwitch.powerOff)
-        if result == True: 
+        if result == True:
             self.powerOnState = False
         return result
 
@@ -139,6 +136,6 @@ class powerControlClass():
             except Exception as e:
                 self.log.info(f"Could not perform {[powerMethod.__name__]}. Retry count: [{x}] of [{self.retryCount}], delay is [{self.retryDelay}]")
                 if x == self.retryCount:
-                    raise e 
+                    raise e
                 self.utils.wait(self.retryDelay)
         return result
