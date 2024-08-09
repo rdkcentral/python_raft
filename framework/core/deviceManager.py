@@ -71,7 +71,7 @@ class consoleClass():
             username = config.get("username")
             password = config.get("password")
             known_hosts = config.get("known_hosts")
-            port = config.get("port")
+            port = int(config.get("port",22))
             if not address:
                 log.error("ssh console config has not been provided an [ip/address]")
             if not username:
