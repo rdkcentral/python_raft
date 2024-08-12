@@ -38,7 +38,7 @@ MY_PATH = path.abspath(__file__)
 MY_DIR = path.dirname(MY_PATH)
 sys.path.append(path.join(MY_DIR,'../../'))
 from framework.core.raftUnittest import RAFTUnitTestCase, RAFTUnitTestMain
-
+from framework.core.singleton import SINGLETON
 # Constants for the file paths we need for testing
 TEST_FILE = 'RAFT_Test_File'
 TEST_DIRECTORY = '~/RAFT_test_files'
@@ -55,21 +55,22 @@ class TestExampleSSH(RAFTUnitTestCase):
         """
         self.log.info('Pre-test check')
         self.log.info('Make the test directory')
-        # Get the default console session for the DUT
-        self.session = self.dut.getConsoleSession()
+        # Ping Test to check Box alive
+        if self.dut.pingTest() is False:
+            raise ConnectionError('Cannot reach dut')
         # Open the console session
-        self.session.open()
+        self.dut.session.open()
         # Create test directory if if doesn't already exist
-        self.session.write(f'mkdir -p {TEST_DIRECTORY}')
+        self.dut.session.write(f'mkdir -p {TEST_DIRECTORY}')
         # List the files in the test directory
-        self.session.write(f'ls {TEST_DIRECTORY}')
-        file_list = self.session.read_all()
+        self.dut.session.write(f'ls {TEST_DIRECTORY}')
+        file_list = self.dut.session.read_all()
         # Clear the session buffer now we've capured its contents
-        self.session.write('clear')
+        self.dut.session.write('clear')
         self.log.info(f'Current file list: {file_list}')
         if TEST_FILE in file_list:
             self.log.info(f'{TEST_FILE} found in testing directory')
-            self.session.write(f'rm {TEST_DIRECTORY}/{TEST_FILE}')
+            self.dut.session.write(f'rm {TEST_DIRECTORY}/{TEST_FILE}')
             self.log.info('Rerunning pre-test check to ensure file has been removed')
 
     def test_fileCreation(self):
@@ -81,11 +82,11 @@ class TestExampleSSH(RAFTUnitTestCase):
         """
         self.log.stepStart(f'Creating {TEST_FILE} in {TEST_DIRECTORY}')
         # Create the test file in the test directory
-        self.session.write(f'touch {TEST_DIRECTORY}/{TEST_FILE}')
+        self.dut.session.write(f'touch {TEST_DIRECTORY}/{TEST_FILE}')
         self.log.step(f'Running ls in {TEST_DIRECTORY}')
         # List the contents of the test directory
-        self.session.write(f'ls {TEST_DIRECTORY}')
-        file_list = self.session.read_all()
+        self.dut.session.write(f'ls {TEST_DIRECTORY}')
+        file_list = self.dut.session.read_all()
         # Test that the file is in the list object
         self.assertIn(TEST_FILE, file_list)
 
@@ -96,7 +97,7 @@ class TestExampleSSH(RAFTUnitTestCase):
         This method will run after each test method.
         """
         self.log.info(f'Removing {TEST_DIRECTORY}')
-        self.session.write(f'rm -rf {TEST_DIRECTORY}')
+        self.dut.session.write(f'rm -rf {TEST_DIRECTORY}')
 
 if __name__ == '__main__':
     RAFTUnitTestMain()
