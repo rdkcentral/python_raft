@@ -31,6 +31,7 @@
 
 import sys
 from os import path
+import re
 
 # Since this test is in a sub-directory we need to add the directory above
 # so we can import the framework correctly
@@ -39,6 +40,7 @@ MY_DIR = path.dirname(MY_PATH)
 sys.path.append(path.join(MY_DIR,'../../'))
 from framework.core.raftUnittest import RAFTUnitTestCase, RAFTUnitTestMain
 from framework.core.singleton import SINGLETON
+from framework.core.utilities import utilities
 # Constants for the file paths we need for testing
 TEST_FILE = 'RAFT_Test_File'
 TEST_DIRECTORY = '~/RAFT_test_files'
@@ -47,6 +49,24 @@ class TestExampleSSH(RAFTUnitTestCase):
     """
     A test class for verifying file creation on the DUT via SSH.
     """
+
+    def _list_files(self,directory:str):
+        """List the files in the given directory.
+
+        Args:
+            directory (str): Path of directory to list files in.
+
+        Returns:
+            str: Space separated list of files from the directory.
+        """
+        # List the files in the test directory
+        self.dut.session.write(f'ls {directory}')
+        file_list = utilities.strip_ansi_escapes(self.dut.session.read_all())
+        # Clear the session buffer now we've capured its contents
+        self.dut.session.write('clear')
+        self.log.info(f'Current file list: [{file_list}]')
+        return file_list
+
     def setUp(self):
         """
         Perform pre-test setup tasks.
@@ -62,12 +82,7 @@ class TestExampleSSH(RAFTUnitTestCase):
         self.dut.session.open()
         # Create test directory if if doesn't already exist
         self.dut.session.write(f'mkdir -p {TEST_DIRECTORY}')
-        # List the files in the test directory
-        self.dut.session.write(f'ls {TEST_DIRECTORY}')
-        file_list = self.dut.session.read_all()
-        # Clear the session buffer now we've capured its contents
-        self.dut.session.write('clear')
-        self.log.info(f'Current file list: {file_list}')
+        file_list = self._list_files(TEST_DIRECTORY)
         if TEST_FILE in file_list:
             self.log.info(f'{TEST_FILE} found in testing directory')
             self.dut.session.write(f'rm {TEST_DIRECTORY}/{TEST_FILE}')
@@ -83,10 +98,7 @@ class TestExampleSSH(RAFTUnitTestCase):
         self.log.stepStart(f'Creating {TEST_FILE} in {TEST_DIRECTORY}')
         # Create the test file in the test directory
         self.dut.session.write(f'touch {TEST_DIRECTORY}/{TEST_FILE}')
-        self.log.step(f'Running ls in {TEST_DIRECTORY}')
-        # List the contents of the test directory
-        self.dut.session.write(f'ls {TEST_DIRECTORY}')
-        file_list = self.dut.session.read_all()
+        file_list = self._list_files(TEST_DIRECTORY)
         # Test that the file is in the list object
         self.assertIn(TEST_FILE, file_list)
 

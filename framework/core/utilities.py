@@ -143,3 +143,15 @@ class utilities():
             if encoding: 
                 output = output.decode(encoding)
         return output, resultCodeReturn
+    
+    def strip_ansi_escapes(line):
+        """Removes ansi escape sequences from strings.
+
+        Args:
+            line (str): String to remove ansi escape sequences from.
+
+        Returns:
+            str: The input string with all ansi escape sequences removed.
+        """
+        ansi_escape = re.compile(r'(?:\x1B[@-_]|[\x80-\x9F])[0-?]*[ -/]*[@-~]')
+        return ansi_escape.sub('', line)
