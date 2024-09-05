@@ -29,6 +29,7 @@
 #*   **
 #/* ******************************************************************************
 
+import time
 from paramiko import SSHClient
 
 
@@ -57,52 +58,100 @@ class sshConsole(consoleInterface):
         self.buffer = []
         self.stdout = None
         self.type="ssh"
+        self.shell = None
+        self.full_output = ""
 
     def open(self):
         """Open the SSH session.
         """
         self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
 
-    def write(self, message):
-        """Write a message into the console.
+    def open_interactive_shell(self):
+        """Open an interactive shell session."""
+        # Open an interactive shell
+        self.shell = self.console.invoke_shell()
+
+        # Ensure the shell is ready
+        while not self.shell.recv_ready():
+            time.sleep(1)
+
+    def write(self, message, wait_time=1):
+        """Write a message in the interactive shell.
 
         Args:
             message (str): String to write into the console.
+            wait_time (int): 
         """
-        if self.stdout:
-            self.buffer.extend(self.stdout.readlines())
-        self.stdin, self.stdout, self.stderr = self.console.exec_command(message, get_pty=True)
+        
+        if self.shell is None:
+            self.open_interactive_shell()
 
+        self.shell.send(message + '\n')
+        time.sleep(wait_time)
+        
+        output = self.read()
+        self.full_output += output
+
+        return output
+    
+    def read(self, timeout=10):
+        """Read the output from the shell with a timeout.
+
+        Args:
+            timeout (int): The maximum time to wait for in the message in seconds. Defaults to 10. 
+        """
+        output = ""
+        
+        # Set a timeout period
+        end_time = time.time() + timeout
+        
+        while time.time() < end_time:
+            if self.shell.recv_ready():
+                output += self.shell.recv(4096).decode('utf-8')
+                # Reset the timeout when new data arrives
+                end_time = time.time() + timeout
+            else:
+                # Small delay to prevent busy waiting
+                time.sleep(0.1)
+
+        return output
+    
     def read_all(self):
-        """Capture all lines that are displayed in the console.
+        """Retrieve the accumulated output in the console.
 
         Returns:
-            List: List of strings, with each being a line displayed in the console.
+            Str: A single string containing all the accumulated output in the console.
         """
-        data = ""
-        self.buffer.extend(self.stdout.readlines())
-        self.stdout = None
-        while self.buffer.__len__() > 0:
-            data = data + self.buffer.pop(0)
-        return data
+        return self.full_output
 
-    def read_until(self, value):
-        """Read the console until a message appears.
+    def read_until(self, value, timeout=10):
+        """Read the console output until a specific message appears.
 
         Args:
             value (str): The message to wait for in the console.
+            timeout (int): The maximum time to wait for in the message in seconds. Defaults to 10. 
 
         Returns:
-            List: List of strings, with each being a line displayed in the console up to the value entered.
+            Str: The console output up to the specified value.
+
         """
-        data = ""
-        self.buffer.extend(self.stdout.readlines())
-        self.stdout = None
-        while self.buffer.__len__() > 0:
-            data = data + self.buffer.pop(0)
-            if value in data:
-                break
-        return data
+        output = ""
+        end_time = time.time() + timeout
+        
+        while time.time() < end_time:
+            if self.shell.recv_ready():
+                output += self.shell.recv(4096).decode('utf-8')
+                # Reset the timeout if new data is received
+                end_time = time.time() + timeout
+
+                # Check if the target value is in the current output
+                if value in output:
+                    break
+            else:
+                # Small delay to prevent busy waiting
+                time.sleep(0.1)
+
+        return output
 
     def close(self):
         """Close the SSH session
