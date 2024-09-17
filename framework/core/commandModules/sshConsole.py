@@ -72,22 +72,20 @@ class sshConsole(consoleInterface):
         self.shell = self.console.invoke_shell()
 
         # Ensure the shell is ready
-        while not self.shell.recv_ready():
+        while not self.shell.send_ready():
             time.sleep(1)
 
-    def write(self, message, wait_time=1):
+    def write(self, message):
         """Write a message in the interactive shell.
 
         Args:
             message (str): String to write into the console.
-            wait_time (int): 
         """
         
         if self.shell is None:
             self.open_interactive_shell()
 
         self.shell.send(message + '\n')
-        time.sleep(wait_time)
         
         output = self.read()
         self.full_output += output
