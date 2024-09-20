@@ -31,6 +31,7 @@
 #* ******************************************************************************
 
 import re
+import subprocess
 import time
 
 class utilities():
@@ -120,5 +121,37 @@ class utilities():
             if intValuesOfValue1 [1] == intValuesOfValue2[1]:
                 if intValuesOfValue1[2] > intValuesOfValue2[2]:
                     return True
-
         return False
+    
+    def syscmd(self, cmd, encoding=''):
+        """Run a command on the system.
+
+        Args:
+            cmd (str): Command to run.
+            encoding (str, optional): Encoding required. Defaults to ''.
+            returnCode (bool, optional): Check for return codes. Defaults to False.
+
+        Returns:
+            str or int: Command result or return code.
+        """
+        self.log.debug( "command: ["+str(cmd)+"]")
+        p = subprocess.run(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,close_fds=True)
+        output = p.stdout
+        resultCodeReturn = p.returncode
+        if len(output) > 1:
+            self.log.debug( "command: output:["+str(output.decode('utf-8'))+"], returnCode:["+str(resultCodeReturn)+"]")
+            if encoding: 
+                output = output.decode(encoding)
+        return output, resultCodeReturn
+    
+    def strip_ansi_escapes(line):
+        """Removes ansi escape sequences from strings.
+
+        Args:
+            line (str): String to remove ansi escape sequences from.
+
+        Returns:
+            str: The input string with all ansi escape sequences removed.
+        """
+        ansi_escape = re.compile(r'(?:\x1B[@-_]|[\x80-\x9F])[0-?]*[ -/]*[@-~]')
+        return ansi_escape.sub('', line)

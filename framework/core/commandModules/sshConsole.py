@@ -47,7 +47,7 @@ class sshConsole(consoleInterface):
         known_hosts (str, optional): Filepath of known_hosts file to use.
     """
 
-    def __init__(self, address, username, password, key=None, known_hosts=None, port=None) -> None:
+    def __init__(self, address, username, password, key=None, known_hosts=None, port=22) -> None:
         self.address = address
         self.username = username
         self.password = password
