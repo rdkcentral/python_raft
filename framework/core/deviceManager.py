@@ -29,6 +29,8 @@
 #* ******************************************************************************
 
 from logging import exception
+from datetime import time
+import platform
 import os
 
 from framework.core.commandModules.sshConsole import sshConsole
@@ -38,6 +40,7 @@ from framework.core.logModule import logModule
 from framework.core.powerControl import powerControlClass
 from framework.core.outboundClient import outboundClientClass
 from framework.core.commonRemote import commonRemoteClass
+from framework.core.utilities import utilities
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -71,11 +74,12 @@ class consoleClass():
             username = config.get("username")
             password = config.get("password")
             known_hosts = config.get("known_hosts")
+            port = int(config.get("port",22))
             if not address:
                 log.error("ssh console config has not been provided an [ip/address]")
             if not username:
                 log.error("ssh console config has not been provided an [username]")
-            self.session = sshConsole(address, username, password, known_hosts=known_hosts)
+            self.session = sshConsole(address, username, password, known_hosts=known_hosts, port=port)
         elif self.type == "serial":
             port = config.get("port")
             baudRate = config.get("baudRate")
@@ -135,10 +139,13 @@ class deviceClass():
         #         # Telnet
         #     # outbound
         #     # remoteController
+        self.log = log
         self.consoles = dict()
         self.powerControl = None
         self.outBoundClient = None
         self.remoteController = None
+        self.session = None
+        self.alive = False
 
         self.rawConfig = devices
         for element in devices:
@@ -157,6 +164,7 @@ class deviceClass():
             config = device.get("remoteController")
             if config != None:
                 self.remoteController = commonRemoteClass(log, config)
+        self.session = self.getConsoleSession()
 
     def getField(self, fieldName:str, itemsList:dict = None):
         """Gets a named field from the device
@@ -193,6 +201,69 @@ class deviceClass():
         if console == None:
             self.log.error("Invalid consoleName [{}]".format(consoleName))
         return console.session
+    
+    def pingTest(self, logPingTime=False):
+        """Perform a ping test against the given device.
+
+        Args:
+            logPingTime (bool, optional): Log ping time. Defaults to False.
+
+        Returns:
+            bool: True if host is up, False otherwise.
+        """
+        #Ping the box till the box responds after the boot
+        if(logPingTime):
+            self.log.step("waitForBoot( {} )".format(self.slotInfo.getDeviceAddress()))
+            pingStartTime = time.time()
+            timeString = time.strftime("%H:%M:%S",time.gmtime(pingStartTime))
+            self.log.step("ping start time: [{}]".format(timeString) )
+        self.alive = self._pingTestOnly()
+        if(logPingTime):
+            elapsed_time = time.time() - pingStartTime
+            timeString = time.strftime("%H:%M:%S",time.gmtime(time.time()))
+            self.log.step("ping response time: [{}]".format(timeString) )
+            elasped_string = time.strftime( "%H:%M:%S", time.gmtime(elapsed_time))              
+            self.log.step("Time taken to get ping response: ["+elasped_string+"]")
+        # We've not be able to ping the box, return an error
+        if ( False == self.alive ):
+            self.log.critical( "ping Up Check:[Box is not responding to ping within:"+elasped_string+"]")
+            raise Exception(" ping failed")           
+        return self.alive
+
+    def _pingTestOnly(self):
+        """Perform a ping test against the given device.
+
+        Returns:
+            bool: True if host is up, False otherwise.
+        """
+        hostIsUp = False
+        ip = self.getField("ip")
+        if (platform.system().lower() == 'windows') or ('cygwin' in platform.system().lower()):
+            ping_param_amount = " -n "
+            ping_param_quiet = " "
+        else:
+            ping_param_amount = " -c "
+            ping_param_quiet = " -q "
+        # Quick check for ping working first time round
+        command  = "ping" + ping_param_amount + "1" + ping_param_quiet + ip
+        result = utilities(self.log).syscmd(command)
+        if (0 == result[1]):
+            self.log.debug("ping response 1 - Host Up")
+            return True
+        #Host is currently down, we need to loop
+        for x in range( 0, 15 ):
+            self.log.debug("pingTest Inner Loop["+str(x)+"]")
+            utilities(self.log).wait(5) # Wait 5 seconds before trying constant ping
+            result = utilities(self.log).syscmd( "ping" + ping_param_amount + "10" + ping_param_quiet + ip)
+            if ( 0 == result[1] ):
+                # Check for 0% packet loss, otherwise reject it
+                outputString = str(self.output)
+                if ( ", 0% packet loss" in outputString ):
+                    hostIsUp = True
+                    self.log.debug("pingTest hostIsUp")
+                    break
+            self.log.debug("pingTest hostIsDown")
+        return hostIsUp
 
 class deviceManager():
     """Manages device configurations.

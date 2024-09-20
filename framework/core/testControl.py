@@ -583,20 +583,16 @@ class testController():
         Returns:
             str or int: Command result or return code.
         """
-        self.log.debug( "command: ["+str(cmd)+"]")
-        p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,close_fds=True)
-        p.wait()
-        self.output = p.stdout.read()
+        stdout, exitCode = utilities(self.log).syscmd(cmd, encoding=encoding)
+        self.output = stdout
         if ( True == returnCode ):
-            if len(self.output) > 1:
-                self.log.debug( "command: output:["+str(self.output)+"], returnCode:["+str(p.returncode)+"]")
-            return p.returncode
+            return exitCode
         if len(self.output) > 1:
             if encoding: 
                 return self.output.decode(encoding)
             else: 
                 return self.output
-        return p.returncode
+        return exitCode
     
 
     def pingTest(self, deviceName="dut", logPingTime=False):
@@ -610,25 +606,10 @@ class testController():
             bool: True if host is up, False otherwise.
         """
         #Ping the box till the box responds after the boot
-        if(logPingTime):
-            self.log.step("waitForBoot( {} )".format(self.slotInfo.getDeviceAddress()))
-            pingStartTime = time.time()
-            timeString = time.strftime("%H:%M:%S",time.gmtime(pingStartTime))
-            self.log.step("ping start time: [{}]".format(timeString) )
         self.alive = self._pingTestOnly(deviceName)
-        if(logPingTime):
-            elapsed_time = time.time() - pingStartTime
-            timeString = time.strftime("%H:%M:%S",time.gmtime(time.time()))
-            self.log.step("ping response time: [{}]".format(timeString) )
-            elasped_string = time.strftime( "%H:%M:%S", time.gmtime(elapsed_time))              
-            self.log.step("Time taken to get ping response: ["+elasped_string+"]")
-        # We've not be able to ping the box, return an error
-        if ( False == self.alive ):
-            self.log.critical( "ping Up Check:[Box is not responding to ping within:"+elasped_string+"]")
-            raise Exception(" ping failed")           
         return self.alive
 
-    def _pingTestOnly(self, deviceName="dut"):
+    def _pingTestOnly(self, deviceName="dut", logPingTime=False):
         """Perform a ping test against the given device.
 
         Args:
@@ -637,35 +618,8 @@ class testController():
         Returns:
             bool: True if host is up, False otherwise.
         """
-        hostIsUp = False
-        ip = self.slotInfo.getDeviceAddress( deviceName )
-        if (platform.system().lower() == 'windows') or ('cygwin' in platform.system().lower()):
-            ping_param_amount = " -n "
-            ping_param_quiet = " "
-        else:
-            ping_param_amount = " -c "
-            ping_param_quiet = " -q "
-        # Quick check for ping working first time round
-        command  = "ping" + ping_param_amount + "1" + ping_param_quiet + ip
-        result = self.syscmd( command, returnCode=True )
-        if ( 0 == result ):
-            self.log.debug("ping response 1 - Host Up")
-            return True
-        #Host is currently down, we need to loop
-        for x in range( 0, 15 ):
-            self.log.debug("pingTest Inner Loop["+str(x)+"]")
-            self.waitSeconds(5) # Wait 5 seconds before trying constant ping
-            result = self.syscmd( "ping" + ping_param_amount + "10" + ping_param_quiet + ip, returnCode=True )
-            if ( 0 == result ):
-                # Check for 0% packet loss, otherwise reject it
-                outputString = str(self.output)
-                if ( ", 0% packet loss" in outputString ):
-                    hostIsUp = True
-                    self.log.debug("pingTest hostIsUp")
-                    break
-            self.log.debug("pingTest hostIsDown")
-    
-        return hostIsUp
+        device = self.devices.getDevice(deviceName)
+        return device.pingTest(logPingTime)
 
     def waitForPrompt(self, prompt=None):
         """Wait for the prompt to denote that the target is booted.
