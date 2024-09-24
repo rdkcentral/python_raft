@@ -60,32 +60,31 @@ class sshConsole(consoleInterface):
         self.type="ssh"
         self.shell = None
         self.full_output = ""
+        self.is_open = False
 
     def open(self):
         """Open the SSH session.
         """
         self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
+        self.is_open = True
 
-    def open_interactive_shell(self):
-        """Open an interactive shell session."""
-        # Open an interactive shell
-        self.shell = self.console.invoke_shell()
-
-        # Ensure the shell is ready
-        while not self.shell.send_ready():
-            time.sleep(1)
-
-    def write(self, message):
-        """Write a message in the interactive shell.
+    def write(self, message:list|str, lineFeed="\n"):
+        """Write a message into the console.
 
         Args:
             message (str): String to write into the console.
+            lineFeed (str): Linefeed extension
         """
         
         if self.shell is None:
+            self.open()
             self.open_interactive_shell()
 
-        self.shell.send(message + '\n')
+        if isinstance( message, str ):
+            message = [message]
+        for msg in message:
+            msg += lineFeed
+            self.shell.send(msg)
         
         output = self.read()
         self.full_output += output
@@ -155,3 +154,4 @@ class sshConsole(consoleInterface):
         """Close the SSH session
         """
         self.console.close()
+        self.is_open = False

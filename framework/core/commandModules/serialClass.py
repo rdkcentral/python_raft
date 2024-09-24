@@ -53,6 +53,7 @@ class serialSession(consoleInterface):
         self.timeout = 5
         self.baudRate = baudRate
         self.type="serial"
+        self.is_open = false
 
         # TODO: Pass in the rest of the serial configuration
 
@@ -79,6 +80,7 @@ class serialSession(consoleInterface):
         except (OSError, IOError) as e:
             self.log.error('Failed to initiate Serial log file - %s' % e)
         isOpen = self.serialCon.is_open
+        self.is_open = True
         return isOpen
 
     def close(self):
@@ -100,23 +102,32 @@ class serialSession(consoleInterface):
         except  serial.SerialException as e:
             self.log.error('Failed to close serial connection or file')
             self.log.error(e)
+        self.is_open = False
         return True
 
-    def write(self, message):
+    def write(self, message:list|str, lineFeed="\n"):
         """Write to serial console.
 
         Args:
             message (Str) - message to write to serial console.
+            lineFeed (str): Linefeed extension
 
         Returns:
             bool: True if can successfully write to serial console.
         """
+        if not self.is_open:
+            self.open()
         self.log.debug("Writing to Serial [{}]".format(message.strip()))
-        try:
-            self.serialCon.write(message.encode('utf-8'))
-        except Exception as e:
-            self.log.error('Failed to write to serial - %s' % e)
-            return False
+        if isinstance( message, str ):
+            message = [message]
+        for msg in message:
+            msg += lineFeed
+            outputMessage = msg.encode('utf-8')
+            try:
+                self.serialCon.write(outputMessage)
+            except Exception as e:
+                self.log.error('Failed to write to serial - %s' % e)
+                return False
         return True
     
     def writeLines(self, message):

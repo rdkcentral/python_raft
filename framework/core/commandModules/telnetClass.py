@@ -53,6 +53,7 @@ class telnet(consoleInterface):
         self.username = username
         self.password = password
         self.type="telnet"
+        self.is_open = False
 
         try:
             xhost=host.split(':')
@@ -76,11 +77,13 @@ class telnet(consoleInterface):
         """Open the telnet session.
         """
         self.connect()
+        self.is_open = True
 
     def close(self):
         """Close the telnet session.
         """
         self.disconnect()
+        self.is_open = False
 
     def connect(self, username_prompt = "login: ", password_prompt = "Password: "):
         """Open the telnet session
@@ -126,21 +129,29 @@ class telnet(consoleInterface):
         self.tn.close()
         return True
 
-    def write(self,message):
+    def write(self,message:list|str, lineFeed:str="\r\n"):
         """Write a message into the session console.
 
         Args:
-            message (str): Message to write into the console.
+            message (list|str): String or list of strings to write to the console.
+            lineFeed (str): Linefeed extension
 
         Returns:
             bool: True when the message is successfully written to the console.
         """
-        message = message.encode()
-        try:
-            self.tn.write(message + b"\r\n")
-        except socket.error:
-            self.log.error("telnet.write() socket.error")
-            return False
+        if not self.is_open:
+            self.open()
+
+        if isinstance( message, str ):
+            message = [message]
+        for msg in message:
+            msg += lineFeed
+            msg = msg.encode()
+            try:
+                self.tn.write(message)
+            except socket.error:
+                self.log.error("telnet.write() socket.error")
+                return False
         return True
 
     def read_until(self,value):
