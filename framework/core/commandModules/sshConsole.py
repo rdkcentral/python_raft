@@ -29,12 +29,11 @@
 #*   **
 #/* ******************************************************************************
 
+import paramiko
 import time
-from paramiko import SSHClient
-
 
 from .consoleInterface import consoleInterface
-
+from paramiko import SSHClient
 
 class sshConsole(consoleInterface):
     """sshConsole is a consoleInterface class to interface with SSH console sessions
@@ -54,7 +53,8 @@ class sshConsole(consoleInterface):
         self.key = key
         self.port = port
         self.console = SSHClient()
-        self.console.load_system_host_keys(known_hosts)
+        #self.console.load_system_host_keys(known_hosts)
+        self.console.set_missing_host_key_policy(paramiko.MissingHostKeyPolicy())
         self.buffer = []
         self.stdout = None
         self.type="ssh"
