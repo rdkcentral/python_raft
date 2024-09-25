@@ -53,7 +53,7 @@ class serialSession(consoleInterface):
         self.timeout = 5
         self.baudRate = baudRate
         self.type="serial"
-        self.is_open = false
+        self.is_open = False
 
         # TODO: Pass in the rest of the serial configuration
 
