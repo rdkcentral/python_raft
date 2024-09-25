@@ -68,6 +68,15 @@ class sshConsole(consoleInterface):
         self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
         self.is_open = True
 
+    def open_interactive_shell(self):
+        """Open an interactive shell session."""
+        # Open an interactive shell
+        self.shell = self.console.invoke_shell()
+
+        # Ensure the shell is ready
+        while not self.shell.send_ready():
+            time.sleep(1)
+
     def write(self, message:list|str, lineFeed="\n"):
         """Write a message into the console.
 
@@ -85,11 +94,11 @@ class sshConsole(consoleInterface):
         for msg in message:
             msg += lineFeed
             self.shell.send(msg)
-        
-        output = self.read()
-        self.full_output += output
 
-        return output
+       # output = self.read()
+       # self.full_output += output
+
+        return True
     
     def read(self, timeout=10):
         """Read the output from the shell with a timeout.
