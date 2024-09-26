@@ -95,9 +95,6 @@ class sshConsole(consoleInterface):
             msg += lineFeed
             self.shell.send(msg)
 
-       # output = self.read()
-       # self.full_output += output
-
         return True
     
     def read(self, timeout=10):
