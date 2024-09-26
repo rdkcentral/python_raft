@@ -61,7 +61,7 @@ class outboundClientClass():
         self.workspaceDirectory = workspaceDirectory
         if not os.path.isdir(workspaceDirectory):
             self.log.info('creating [{}]'.format(workspaceDirectory))
-            os.mkdir( workspaceDirectory )
+            os.makedirs( workspaceDirectory, exist_ok=True )
         self.upload_url = upload_url
         self.uploadPath = ""
         self.httpProxy = httpProxy

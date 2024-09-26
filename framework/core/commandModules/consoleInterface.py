@@ -35,11 +35,13 @@ from abc import ABCMeta, abstractmethod
 class consoleInterface(metaclass=ABCMeta):
 
     @abstractmethod
-    def write(self, message):
+    def write(self, message:list|str, lineFeed:str="\n"):
         """Abstract method. Define how to write to the console.
+        This method by default is to always send newLine
 
         Args:
-            message (str): Message to write into the console.
+            message (list|str): String or list to write into the console.
+            lineFeed (str): Linefeed extension
         """
         raise NotImplementedError('users must define write() to use this base class')
 
