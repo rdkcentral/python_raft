@@ -29,12 +29,11 @@
 #*   **
 #/* ******************************************************************************
 
+import paramiko
 import time
-from paramiko import SSHClient
-
 
 from .consoleInterface import consoleInterface
-
+from paramiko import SSHClient
 
 class sshConsole(consoleInterface):
     """sshConsole is a consoleInterface class to interface with SSH console sessions
@@ -54,17 +53,20 @@ class sshConsole(consoleInterface):
         self.key = key
         self.port = port
         self.console = SSHClient()
-        self.console.load_system_host_keys(known_hosts)
+        #self.console.load_system_host_keys(known_hosts)
+        self.console.set_missing_host_key_policy(paramiko.MissingHostKeyPolicy())
         self.buffer = []
         self.stdout = None
         self.type="ssh"
         self.shell = None
         self.full_output = ""
+        self.is_open = False
 
     def open(self):
         """Open the SSH session.
         """
         self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
+        self.is_open = True
 
     def open_interactive_shell(self):
         """Open an interactive shell session."""
@@ -75,22 +77,25 @@ class sshConsole(consoleInterface):
         while not self.shell.send_ready():
             time.sleep(1)
 
-    def write(self, message):
-        """Write a message in the interactive shell.
+    def write(self, message:list|str, lineFeed="\n"):
+        """Write a message into the console.
 
         Args:
             message (str): String to write into the console.
+            lineFeed (str): Linefeed extension
         """
         
         if self.shell is None:
+            self.open()
             self.open_interactive_shell()
 
-        self.shell.send(message + '\n')
-        
-        output = self.read()
-        self.full_output += output
+        if isinstance( message, str ):
+            message = [message]
+        for msg in message:
+            msg += lineFeed
+            self.shell.send(msg)
 
-        return output
+        return True
     
     def read(self, timeout=10):
         """Read the output from the shell with a timeout.
@@ -155,3 +160,4 @@ class sshConsole(consoleInterface):
         """Close the SSH session
         """
         self.console.close()
+        self.is_open = False
