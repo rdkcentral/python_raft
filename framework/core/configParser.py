@@ -32,6 +32,7 @@ import os
 from urllib.parse import urlparse
 
 import yaml
+import requests
 from framework.core.logModule import logModule as logModule
 from framework.core.configParserBase import configParserBase
 
@@ -89,11 +90,12 @@ class configParser(configParserBase):
         """Processes and merges included YAML files into the current config."""
         deviceConfigFilePaths = config["include"]
         
-        config == {}
         # Loop through all the file paths and merge them into config
         for configFilePath in deviceConfigFilePaths:
             newConfig = self.loadYaml(configFilePath)
-            self.mergeConfig(config, newConfig)
+            config.update(newConfig)
+
+        config.pop("include")
 
     def loadYaml(self, filepath):
         """Loads a YAML file from the specified path."""
@@ -108,27 +110,12 @@ class configParser(configParserBase):
 
     def loadRemoteYaml(self, url):
         """Downloads and loads a YAML file from a URL."""
-        import requests
         self.log.info(f"Downloading YAML configuration from {url}")
         response = requests.get(url)
         if response.status_code == 200:
             return yaml.safe_load(response.text)
         else:
             raise Exception(f"Failed to download YAML from {url}, status code {response.status_code}")
-
-
-    def mergeConfig(self, base_config, new_config):
-        """Merges new_config into base_config recursively."""
-        if base_config is None:
-            base_config = {}
-
-        for key, value in new_config.items():
-            if isinstance(value, dict) and key in base_config and isinstance(base_config[key], dict):
-                # If both values are dictionaries, merge them recursively
-                self.mergeConfig(base_config[key], value)
-            else:
-                # Otherwise, replace the value in the base config
-                base_config[key] = value
 
 
     def __decodeMemoryMapConfig__(self, parent, config):
