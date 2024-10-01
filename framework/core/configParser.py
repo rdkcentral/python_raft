@@ -73,8 +73,7 @@ class configParser(configParserBase):
         """
 
         # To process the included yaml files
-        if "include" in config:
-            self.processIncludes(config)
+        self.processIncludes(config)
 
         for x in config:
             # Items from rack config
@@ -88,14 +87,25 @@ class configParser(configParserBase):
     
     def processIncludes(self, config):
         """Processes and merges included YAML files into the current config."""
-        deviceConfigFilePaths = config["include"]
-        
-        # Loop through all the file paths and merge them into config
-        for configFilePath in deviceConfigFilePaths:
-            newConfig = self.loadYaml(configFilePath)
-            config.update(newConfig)
+        if isinstance(config, dict):
+            if "include" in config:
+                deviceConfigFilePaths = config["include"]
+                
+                # Loop through all the file paths and merge them into config
+                for configFilePath in deviceConfigFilePaths:
+                    newConfig = self.loadYaml(configFilePath)
+                    self.processIncludes(newConfig)
+                    config.update(newConfig)
 
-        config.pop("include")
+                config.pop("include")
+
+            # Recursively checkthe nested dictionaries for include fields
+            for key, value in config.items():
+                self.processIncludes(value)
+        
+        elif isinstance(config, list):
+            for item in config:
+                self.processIncludes(item)
 
     def loadYaml(self, filepath):
         """Loads a YAML file from the specified path."""
