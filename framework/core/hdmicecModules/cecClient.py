@@ -26,18 +26,15 @@
 #*   ** @date        : 02/10/2024
 #*   **
 #*   ** @brief : cecClient controller. Class for running cec-client commands on
-#*   **          the host PC
+#*   **          the host PC. This requires the cec-utils package to be installed
+#*   **          on the host.
 #*   **
 #* ******************************************************************************
 
 from io import IOBase
-import os
 import re
 import subprocess
 from threading import Thread
-
-import sys
-sys.path.append('/mnt/1TB/home/toby/Documents/Scripts/python/python_raft/')
 
 from framework.core.logModule import logModule
 from .abstractCECController import CECInterface
@@ -70,7 +67,6 @@ class CECClientController(CECInterface):
         self._monitoring = False
         self._m_proc = None
         self._m_stdout_thread = None
-        self._m_log = None
 
     def sendMessage(self,message: str) -> bool:
         exit_code, stdout =  self._sendMessage(message, 0)
@@ -172,28 +168,28 @@ class CECClientController(CECInterface):
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT,
                                 text=True)
-            self._m_log = open(monitoringLog, 'w+', encoding='utf-8')
             self._m_stdout_thread = Thread(target=self._write_monitoring_log,
-                                        args=[self._m_proc.stdout, self._m_log],
+                                        args=[self._m_proc.stdout, monitoringLog],
                                         daemon=True)
             self._m_stdout_thread.start()
         except Exception as e:
             self.stopMonitoring()
             raise
 
-    def _write_monitoring_log(self,stream_in: IOBase, stream_out: IOBase) -> None:
+    def _write_monitoring_log(self,streamIn: IOBase, logFilePath: str) -> None:
         """
         Writes the output of the monitoring process to a log file.
 
         Args:
             stream_in (IOBase): The input stream from the monitoring process.
-            stream_out (IOBase): The output stream to the log file.
+            logFilePath (str): File path to write the monitoring log out to.
         """
         while True:
-            chunk = stream_in.readline()
+            chunk = streamIn.readline()
             if chunk == '':
                 break
-            stream_out.write(chunk)
+            with open(logFilePath, 'a+',) as out:
+                out.write(chunk)
 
     def stopMonitoring(self) -> None:
         self._log.debug('Stopping monitoring of adaptor [%s]' % self.adaptor)
@@ -202,7 +198,6 @@ class CECClientController(CECInterface):
         self._m_proc.terminate()
         exit_code = self._m_proc.wait()
         self._m_stdout_thread.join()
-        self._m_log.close()
         self._monitoring = False
 
     def __del__(self):
