@@ -60,9 +60,13 @@ It understands how to:
 
 - Python (=3.11.8)
     - Pyenv can be used to manage multiple versions of Python (please refer to the [documentation](https://github.com/pyenv/pyenv?tab=readme-ov-file#installation)).
-
 - All the packages listed in requirements.txt
     - Can be installed using `$ pip install -r requirements.txt`
+
+#### Optional Packages
+
+- To use the cec-client type hdmiCECController the `cec-utils` package is required.
+  - `sudo apt install -y cec-utils`
 
 ### User Installation
 
