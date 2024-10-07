@@ -114,10 +114,10 @@ class HDMICECController():
         """
         self._log.debug('Starting readUntil for message as [%s] with [%s] retries' % (message,retries))
         result = False
-        with open(self._monitoringLog, 'r') as logFile:
-            retry = 0
-            max_retries = retries
-            while retry != max_retries and not result:
+        retry = 0
+        max_retries = retries
+        while retry != max_retries and not result:
+            with open(self._monitoringLog, 'r') as logFile:
                 logLines = logFile.readlines()
                 read_line = self._read_line
                 write_line = len(logLines)
@@ -126,8 +126,8 @@ class HDMICECController():
                         result = True
                         break
                     read_line+=1
-                retry += 1
-            self._read_line = read_line
+            retry += 1
+        self._read_line = read_line
         return result
 
     def listDevices(self) -> list:
