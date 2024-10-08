@@ -45,7 +45,8 @@ class serialSession(consoleInterface):
 
     """
   
-    def __init__(self, log, workspacePath, serialPort, baudRate=115200):
+    def __init__(self, log, workspacePath, serialPort, baudRate=115200, prompt=None) -> None:
+        super().__init__(prompt)
         self.log = log
         self.workspacePath = workspacePath
         self.serialPort = serialPort
@@ -64,7 +65,7 @@ class serialSession(consoleInterface):
             self.log.error('Failed to start serial connection - {}'.format(e))
             raise Exception('Failed to start Serial Connection. Check the COM port settings')
 
-    def open(self):
+    def open(self) -> bool:
         """Start serial session and serial file logger.
 
         Returns:
@@ -83,7 +84,7 @@ class serialSession(consoleInterface):
         self.is_open = True
         return isOpen
 
-    def close(self):
+    def close(self) -> bool:
         """Close the serial session and serial file logger.
 
         Returns:
@@ -105,47 +106,7 @@ class serialSession(consoleInterface):
         self.is_open = False
         return True
 
-    def write(self, message:list|str, lineFeed="\n"):
-        """Write to serial console.
-
-        Args:
-            message (Str) - message to write to serial console.
-            lineFeed (str): Linefeed extension
-
-        Returns:
-            bool: True if can successfully write to serial console.
-        """
-        if not self.is_open:
-            self.open()
-        self.log.debug("Writing to Serial [{}]".format(message.strip()))
-        if isinstance( message, str ):
-            message = [message]
-        for msg in message:
-            msg += lineFeed
-            outputMessage = msg.encode('utf-8')
-            try:
-                self.serialCon.write(outputMessage)
-            except Exception as e:
-                self.log.error('Failed to write to serial - %s' % e)
-                return False
-        return True
-    
-    def writeLines(self, message):
-        """Write to serial console.
-
-        Args:
-            message (Str) - message to write to serial console.
-
-        Returns:
-            bool: True if can successfully write to serial console.
-        """
-        try:
-            self.serialCon.writelines(message.encode('utf-8'))
-        except Exception as e:
-            self.log.error('Failed to write to Serial log file - %s' % e)
-        return True
-
-    def read_until(self, value):
+    def read_until(self, value) -> str:
         """Read serial output until a specified value is found.
 
         Args:
@@ -163,7 +124,7 @@ class serialSession(consoleInterface):
             self.log.error('Failed to decode to Serial log  - %s' % e)
         return writeString
 
-    def read_all(self):
+    def read_all(self) -> str:
         """Read all lines from serial output available in the buffer.
 
         Returns:
@@ -178,8 +139,68 @@ class serialSession(consoleInterface):
         except Exception as e:
             self.log.error('Failed to writelines from Serial log  - %s' % e)
         return writeString
+    
+    def write(self, message:list|str, lineFeed:str="\n", wait_for_prompt:bool=False) -> bool:
+        """Write to serial console.
+        Optional: waits for prompt.
 
-    def flush(self):
+        Args:
+            message (Str) - message to write to serial console.
+            lineFeed (str): Linefeed extension.
+            wait_for_prompt (bool): If True, waits for the prompt before writing.
+
+        Returns:
+            bool: True if can successfully write to serial console.
+        """
+        if not self.is_open:
+            self.open()
+        self.log.debug("Writing to Serial [{}]".format(message.strip()))
+        if wait_for_prompt:
+            if not self.waitForPrompt():
+                return False
+        if isinstance( message, str ):
+            message = [message]
+        for msg in message:
+            msg += lineFeed
+            outputMessage = msg.encode('utf-8')
+            try:
+                self.serialCon.write(outputMessage)
+            except Exception as e:
+                self.log.error('Failed to write to serial - %s' % e)
+                return False
+        return True
+
+    def waitForPrompt(self, prompt:str=None) -> bool:
+        """Wait for a specific prompt to appear in the serial console.
+        
+        Args:
+            prompt (str, optional): The prompt to wait for. Defaults to the instance's prompt.
+
+        Returns:
+            bool: True if the prompt was found, False otherwise.
+        """
+        prompt = prompt or self.prompt
+        if not prompt:
+            self.log.error('No prompt specified for waitForPrompt.')
+            return False
+        return prompt in self.read_until(prompt)
+    
+    def writeLines(self, message):
+        """Write to serial console.
+
+        Args:
+            message (Str) - message to write to serial console.
+
+        Returns:
+            bool: True if can successfully write to serial console.
+        """
+        try:
+            self.serialCon.writelines(message.encode('utf-8'))
+        except Exception as e:
+            self.log.error('Failed to write to Serial log file - %s' % e)
+        return True
+
+    def flush(self) -> bool:
         """Clear the console.
 
         Returns:
