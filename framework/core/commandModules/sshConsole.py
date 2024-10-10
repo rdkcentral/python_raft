@@ -46,7 +46,8 @@ class sshConsole(consoleInterface):
         known_hosts (str, optional): Filepath of known_hosts file to use.
     """
 
-    def __init__(self, address, username, password, key=None, known_hosts=None, port=22) -> None:
+    def __init__(self, address, username, password, key=None, known_hosts=None, port=22, prompt=None) -> None:
+        super().__init__(prompt)
         self.address = address
         self.username = username
         self.password = password
@@ -62,72 +63,30 @@ class sshConsole(consoleInterface):
         self.full_output = ""
         self.is_open = False
 
-    def open(self):
+    def open(self) -> bool:
         """Open the SSH session.
         """
-        self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
-        self.is_open = True
-
-    def open_interactive_shell(self):
-        """Open an interactive shell session."""
-        # Open an interactive shell
-        self.shell = self.console.invoke_shell()
-
-        # Ensure the shell is ready
-        while not self.shell.send_ready():
-            time.sleep(1)
-
-    def write(self, message:list|str, lineFeed="\n"):
-        """Write a message into the console.
-
-        Args:
-            message (str): String to write into the console.
-            lineFeed (str): Linefeed extension
-        """
+        try:
+            self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
+            self.is_open = True
+            return True
+        except Exception as e:
+            self.log.error(f"Failed to open SSH connection - {e}")
+            self.is_open = False
+            return False
         
-        if self.shell is None:
-            self.open()
-            self.open_interactive_shell()
-
-        if isinstance( message, str ):
-            message = [message]
-        for msg in message:
-            msg += lineFeed
-            self.shell.send(msg)
-
-        return True
+    def close(self) -> bool:
+        """Close the SSH session
+        """
+        try:
+            self.console.close()
+            self.is_open = False
+            return True
+        except Exception as e:
+            self.log.error(f"Failed to close SSH connection - {e}")
+            return False
     
-    def read(self, timeout=10):
-        """Read the output from the shell with a timeout.
-
-        Args:
-            timeout (int): The maximum time to wait for in the message in seconds. Defaults to 10. 
-        """
-        output = ""
-        
-        # Set a timeout period
-        end_time = time.time() + timeout
-        
-        while time.time() < end_time:
-            if self.shell.recv_ready():
-                output += self.shell.recv(4096).decode('utf-8')
-                # Reset the timeout when new data arrives
-                end_time = time.time() + timeout
-            else:
-                # Small delay to prevent busy waiting
-                time.sleep(0.1)
-
-        return output
-    
-    def read_all(self):
-        """Retrieve the accumulated output in the console.
-
-        Returns:
-            Str: A single string containing all the accumulated output in the console.
-        """
-        return self.full_output
-
-    def read_until(self, value, timeout=10):
+    def read_until(self, value, timeout=10) -> str:
         """Read the console output until a specific message appears.
 
         Args:
@@ -153,11 +112,72 @@ class sshConsole(consoleInterface):
             else:
                 # Small delay to prevent busy waiting
                 time.sleep(0.1)
-
         return output
 
-    def close(self):
-        """Close the SSH session
+    def read_all(self) -> str:
+        """Retrieve the accumulated output in the console.
+
+        Returns:
+            Str: A single string containing all the accumulated output in the console.
         """
-        self.console.close()
-        self.is_open = False
+        return self.full_output
+    
+    def write(self, message:list|str, lineFeed="\n", wait_for_prompt:bool=False) -> bool:
+        """Write a message into the console.
+        Optional: waits for prompt.
+
+        Args:
+            message (str): String to write into the console.
+            lineFeed (str): Linefeed extension.
+            wait_for_prompt (bool): If True, waits for the prompt before writing.
+
+        Returns:
+            bool: True if can successfully write to SSH console.
+        """
+        if self.shell is None:
+            self.open()
+            self.open_interactive_shell()
+        if wait_for_prompt:
+            if not self.waitForPrompt():
+                return False
+        if isinstance( message, str ):
+            message = [message]
+        try:
+            for msg in message:
+                msg += lineFeed
+                self.shell.send(msg)
+            return True
+        except Exception as e:
+            self.log.error(f"Failed to write to SSH console - {e}")
+            return False
+    
+    def open_interactive_shell(self) -> None:
+        """Open an interactive shell session."""
+        # Open an interactive shell
+        self.shell = self.console.invoke_shell()
+
+        # Ensure the shell is ready
+        while not self.shell.send_ready():
+            time.sleep(1)
+
+    def read(self, timeout=10) -> str:
+        """Read the output from the shell with a timeout.
+
+        Args:
+            timeout (int): The maximum time to wait for in the message in seconds. Defaults to 10. 
+        """
+        output = ""
+        
+        # Set a timeout period
+        end_time = time.time() + timeout
+        
+        while time.time() < end_time:
+            if self.shell.recv_ready():
+                output += self.shell.recv(4096).decode('utf-8')
+                # Reset the timeout when new data arrives
+                end_time = time.time() + timeout
+            else:
+                # Small delay to prevent busy waiting
+                time.sleep(0.1)
+        return output
+    
