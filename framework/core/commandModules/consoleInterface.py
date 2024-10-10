@@ -102,3 +102,21 @@ class consoleInterface(metaclass=ABCMeta):
             bool: True if the prompt was found, False otherwise.
         """
         raise NotImplementedError('users must define waitForPrompt() to use this base class')
+
+
+
+def waitForPrompt(self, prompt:str=None) -> bool:
+        """Wait for a specific prompt to appear in the console.
+        
+        Args:
+            prompt (str, optional): The prompt to wait for. Defaults to the instance's prompt.
+
+        Returns:
+            bool: True if the prompt was found, False otherwise.
+        """
+        prompt = prompt or self.prompt
+        if not prompt:
+            self.log.error('No prompt specified for waitForPrompt.')
+            return False
+        output = self.read_until(prompt)
+        return prompt in output

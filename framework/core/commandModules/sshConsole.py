@@ -150,22 +150,6 @@ class sshConsole(consoleInterface):
         except Exception as e:
             self.log.error(f"Failed to write to SSH console - {e}")
             return False
-
-    def waitForPrompt(self, prompt:str=None) -> bool:
-        """Wait for a specific prompt to appear in the SSH console.
-        
-        Args:
-            prompt (str, optional): The prompt to wait for. Defaults to the instance's prompt.
-
-        Returns:
-            bool: True if the prompt was found, False otherwise.
-        """
-        prompt = prompt or self.prompt
-        if not prompt:
-            self.log.error('No prompt specified for waitForPrompt.')
-            return False
-        output = self.read_until(prompt)
-        return prompt in output
     
     def open_interactive_shell(self) -> None:
         """Open an interactive shell session."""

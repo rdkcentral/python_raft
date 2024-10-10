@@ -113,7 +113,7 @@ class serialSession(consoleInterface):
             value (str): The message to wait for in the console.
 
         Returns:
-            List: List of strings, with each being a line displayed in the console up to the value entered.
+            str: Information displayed in the console up to the value entered.
         """
         message = bytes(value,encoding='utf-8')
         serialStr = self.serialCon.read_until( message )
@@ -128,7 +128,7 @@ class serialSession(consoleInterface):
         """Read all lines from serial output available in the buffer.
 
         Returns:
-           List: List of strings, with each being a line displayed in the console.
+           str: Information currently displayed in the console.
         """
         serialStr = self.serialCon.read_all()
         if serialStr == b'':
@@ -169,21 +169,6 @@ class serialSession(consoleInterface):
                 self.log.error('Failed to write to serial - %s' % e)
                 return False
         return True
-
-    def waitForPrompt(self, prompt:str=None) -> bool:
-        """Wait for a specific prompt to appear in the serial console.
-        
-        Args:
-            prompt (str, optional): The prompt to wait for. Defaults to the instance's prompt.
-
-        Returns:
-            bool: True if the prompt was found, False otherwise.
-        """
-        prompt = prompt or self.prompt
-        if not prompt:
-            self.log.error('No prompt specified for waitForPrompt.')
-            return False
-        return prompt in self.read_until(prompt)
     
     def writeLines(self, message):
         """Write to serial console.

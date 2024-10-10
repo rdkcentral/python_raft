@@ -180,23 +180,6 @@ class telnet(consoleInterface):
                 return False
         return True
 
-    def waitForPrompt(self, prompt: str = None) -> bool:
-        """Wait for a specific prompt to appear in the telnet console.
-        
-        Args:
-            prompt (str, optional): The prompt to wait for. Defaults to the instance's prompt.
-
-        Returns:
-            bool: True if the prompt was found, False otherwise.
-        """
-        prompt = prompt or self.prompt
-        if not prompt:
-            self.log.error('No prompt specified for waitForPrompt.')
-            return False
-        output = self.read_until(prompt)
-        return prompt in output
-    
-
     def read_eager(self) -> str:
         """Read all readily available information displayed in the console.
 
