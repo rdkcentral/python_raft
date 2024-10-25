@@ -66,6 +66,7 @@ class consoleClass():
         for element in configElements:
             config = configElements.get(element)
         self.type = config.get("type")
+        self.prompt = config.get("prompt")
         # Create a new console since it hasn't been created
         if self.type == "ssh":
             address = config.get("address")
@@ -79,7 +80,7 @@ class consoleClass():
                 log.error("ssh console config has not been provided an [ip/address]")
             if not username:
                 log.error("ssh console config has not been provided an [username]")
-            self.session = sshConsole(address, username, password, known_hosts=known_hosts, port=port)
+            self.session = sshConsole(log, address, username, password, known_hosts=known_hosts, port=port, prompt=self.prompt)
         elif self.type == "serial":
             port = config.get("port")
             baudRate = config.get("baudRate")
@@ -101,7 +102,7 @@ class consoleClass():
                 flowControl = False
 
             #TODO: Pass more params to the serial session
-            self.session = serialSession(log, logPath, port, baudRate)
+            self.session = serialSession(log, logPath, port, baudRate, prompt=self.prompt)
         elif self.type == "telnet":
             address = config.get("address")
             if ( address == None ):
@@ -115,7 +116,7 @@ class consoleClass():
                 log.error("Telnet console config has not been provided a [username]")
             if not password:
                 log.error("Telnet console config has not been provided a [password]")
-            self.session = telnet(log, "", address, username, password, port)
+            self.session = telnet(log, "", address, username, password, port, prompt=self.prompt)
         else:
             raise exception ("Unknown console type".format(self.type))
 

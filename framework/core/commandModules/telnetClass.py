@@ -66,7 +66,6 @@ class telnet(consoleInterface):
         except:
             self.host = host
             self.port = port
-        self.timeout = 5
         self.log = log
         self.sessionLogFile = workspacePath + "session.log"
         try:
@@ -130,15 +129,17 @@ class telnet(consoleInterface):
         self.tn.close()
         return True
 
-    def read_until(self,value) -> str:
+    def read_until(self,value: str, timeout: int = 10) -> str:
         """Read the console until a message appears.
 
         Args:
             value (str): The message to wait for in the console.
+            timeout (int): Time limit before timing out, in seconds. Defaults to 10.
 
         Returns:
             str: Information displayed in the console up to the value entered.
         """
+        self.timeout = timeout
         message = value.encode()
         result = self.tn.read_until(message,self.timeout)
         return result.decode()
