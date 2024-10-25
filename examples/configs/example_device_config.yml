@@ -26,3 +26,4 @@ deviceConfig:
     cpe1:
         platform:   "linux"
         model:      "PC"
+        prompt: "raft@test-linux:~ $"

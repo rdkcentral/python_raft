@@ -110,13 +110,22 @@ class consoleClass():
             username = config.get("username")
             password = config.get("password")
             port =  config.get("port",23)
+            username_prompt = config.get("username_prompt")
+            password_prompt = config.get("password_prompt")
             if not address:
                 log.error("Telnet console config has not been provided an [addres/ip]")
             if not username:
                 log.error("Telnet console config has not been provided a [username]")
             if not password:
                 log.error("Telnet console config has not been provided a [password]")
-            self.session = telnet(log, "", address, username, password, port, prompt=self.prompt)
+            self.session = telnet(log, "",
+                                  address,
+                                  username,
+                                  password,
+                                  port,
+                                  prompt=self.prompt,
+                                  username_prompt=username_prompt,
+                                  password_prompt=password_prompt)
         else:
             raise exception ("Unknown console type".format(self.type))
 

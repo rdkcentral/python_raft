@@ -64,6 +64,9 @@ class FirstTest(testController):
         result = True
         self.log.info('Pre-test check')
         self.log.info('Make the test directory')
+        # For this to work the prompt entry in the example_device_config.yml
+        # must be set to the prompt of the test device
+        self.session.prompt = self.cpe.get('prompt')
         # Create test directory if if doesn't already exist
         self.session.write(f'mkdir -p {TEST_DIRECTORY}')
         # List the files in the test directory

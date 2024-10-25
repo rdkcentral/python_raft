@@ -74,6 +74,8 @@ Clone the repository and ensure that all requirements are met.
 
 For our first test script we will be using the [example_test.py](examples/code/example_ssh.py). There are extensive comments in the test files to explain what it does.
 
+Before this test script can be run the `prompt` line in the [device_config](examples/configs/example_device_config.yml) must be replaced with the prompt of the PC running the script.
+
 This test script can be run with the below command:
 `./example_test.py --config ../configs/getting_started_rack_config.yml`
 
