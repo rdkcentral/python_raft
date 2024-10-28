@@ -64,11 +64,14 @@ class FirstTest(testController):
         result = True
         self.log.info('Pre-test check')
         self.log.info('Make the test directory')
+        # For this to work the prompt entry in the example_device_config.yml
+        # must be set to the prompt of the test device
+        self.session.prompt = self.cpe.get('prompt')
         # Create test directory if if doesn't already exist
         self.session.write(f'mkdir -p {TEST_DIRECTORY}')
         # List the files in the test directory
         self.session.write(f'ls {TEST_DIRECTORY}')
-        file_list = self.session.read_all()
+        file_list = self.session.read_until(self.session.prompt)
         # Clear the session buffer now we've capured its contents
         self.session.write('clear')
         self.log.info(f'Current file list: {file_list}')
@@ -101,7 +104,7 @@ class FirstTest(testController):
         self.log.step(f'Running ls in {TEST_DIRECTORY}')
         # List the contents of the test directory
         self.session.write(f'ls {TEST_DIRECTORY}')
-        file_list = self.session.read_all()
+        file_list = self.session.read_until(self.session.prompt)
         if TEST_FILE in file_list:
             result = True
         self.log.stepResult(result, 'Test for file')

@@ -46,8 +46,8 @@ class sshConsole(consoleInterface):
         known_hosts (str, optional): Filepath of known_hosts file to use.
     """
 
-    def __init__(self, address, username, password, key=None, known_hosts=None, port=22, prompt=None) -> None:
-        super().__init__(prompt)
+    def __init__(self, log, address, username, password, key=None, known_hosts=None, port=22, prompt=None) -> None:
+        super().__init__(log, prompt)
         self.address = address
         self.username = username
         self.password = password
@@ -91,13 +91,14 @@ class sshConsole(consoleInterface):
 
         Args:
             value (str): The message to wait for in the console.
-            timeout (int): The maximum time to wait for in the message in seconds. Defaults to 10. 
+            timeout (int): Time limit before timing out, in seconds. Defaults to 10.
 
         Returns:
             Str: The console output up to the specified value.
 
         """
         output = ""
+        self.timeout = timeout
         end_time = time.time() + timeout
         
         while time.time() < end_time:
@@ -120,7 +121,7 @@ class sshConsole(consoleInterface):
         Returns:
             Str: A single string containing all the accumulated output in the console.
         """
-        return self.full_output
+        return self.read()
     
     def write(self, message:list|str, lineFeed="\n", wait_for_prompt:bool=False) -> bool:
         """Write a message into the console.

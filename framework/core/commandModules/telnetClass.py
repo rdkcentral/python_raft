@@ -48,11 +48,13 @@ class telnet(consoleInterface):
         port (int, optional): Listening telnet port on host. Defaults to 23.
     """
 
-    def __init__(self,log, workspacePath, host, username, password, port=23, prompt=None) -> None:
-        super().__init__(prompt)
+    def __init__(self,log, workspacePath, host, username, password, port=23, prompt=None, username_prompt:str=None, password_prompt:str=None) -> None:
+        super().__init__(log, prompt)
         self.tn = None
         self.username = username
         self.password = password
+        self._usernamePrompt = username_prompt
+        self._passwordPrompt = password_prompt
         self.type="telnet"
         self.is_open = False
 
@@ -66,8 +68,6 @@ class telnet(consoleInterface):
         except:
             self.host = host
             self.port = port
-        self.timeout = 5
-        self.log = log
         self.sessionLogFile = workspacePath + "session.log"
         try:
             self.sessionLogHand = open(self.sessionLogFile, "w+")
@@ -77,7 +77,14 @@ class telnet(consoleInterface):
     def open(self) -> bool:
         """Open the telnet session.
         """
-        self.connect()
+        if self._usernamePrompt and self._passwordPrompt:
+            self.connect(username_prompt=self._usernamePrompt, password_prompt=self._passwordPrompt)
+        elif self._usernamePrompt:
+            self.connect(username_prompt=self._usernamePrompt)
+        elif self._passwordPrompt:
+            self.connect(password_prompt=self._passwordPrompt)
+        else:
+            self.connect()
         self.is_open = True
 
     def close(self) -> bool:
@@ -111,14 +118,16 @@ class telnet(consoleInterface):
         readData = self.read_until(username_prompt)
         if len(readData) == 0:
             return False
-        self.write(self.username)
+        username = self.username + '\r\n'
+        self.tn.write(username.encode())
         if self.password is None:
             return True
         self.log.info( "Password : [{}]".format( self.password))
         readData = self.read_until(password_prompt)
         if len(readData) == 0:
             return False
-        self.write(self.password)
+        password = self.password + '\r\n'
+        self.tn.write(password.encode())
         return True
 
     def disconnect(self) -> bool:
@@ -130,15 +139,17 @@ class telnet(consoleInterface):
         self.tn.close()
         return True
 
-    def read_until(self,value) -> str:
+    def read_until(self,value: str, timeout: int = 10) -> str:
         """Read the console until a message appears.
 
         Args:
             value (str): The message to wait for in the console.
+            timeout (int): Time limit before timing out, in seconds. Defaults to 10.
 
         Returns:
             str: Information displayed in the console up to the value entered.
         """
+        self.timeout = timeout
         message = value.encode()
         result = self.tn.read_until(message,self.timeout)
         return result.decode()
@@ -174,7 +185,7 @@ class telnet(consoleInterface):
             msg += lineFeed
             msg = msg.encode()
             try:
-                self.tn.write(message)
+                self.tn.write(msg)
             except socket.error:
                 self.log.error("telnet.write() socket.error")
                 return False

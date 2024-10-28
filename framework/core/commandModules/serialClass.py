@@ -46,16 +46,13 @@ class serialSession(consoleInterface):
     """
   
     def __init__(self, log, workspacePath, serialPort, baudRate=115200, prompt=None) -> None:
-        super().__init__(prompt)
-        self.log = log
+        super().__init__(log, prompt)
         self.workspacePath = workspacePath
         self.serialPort = serialPort
         self.serialFile = workspacePath + "session.log"
-        self.timeout = 5
         self.baudRate = baudRate
         self.type="serial"
         self.is_open = False
-
         # TODO: Pass in the rest of the serial configuration
 
         # Initiate serial session , parity = serial.PARITY_NONE, stopbits = serial.STOPBITS_ONE, xonxoff=False,
@@ -64,6 +61,15 @@ class serialSession(consoleInterface):
         except Exception as e:
             self.log.error('Failed to start serial connection - {}'.format(e))
             raise Exception('Failed to start Serial Connection. Check the COM port settings')
+
+    @property
+    def timeout(self):
+        return self._timeout
+
+    @timeout.setter
+    def timeout(self, new_timeout: int):
+        self._timeout = new_timeout
+        self.serialCon.timeout = int(new_timeout)
 
     def open(self) -> bool:
         """Start serial session and serial file logger.
@@ -106,16 +112,18 @@ class serialSession(consoleInterface):
         self.is_open = False
         return True
 
-    def read_until(self, value) -> str:
+    def read_until(self, value, timeout: int = 10) -> str:
         """Read serial output until a specified value is found.
 
         Args:
             value (str): The message to wait for in the console.
+            timeout (int): Time limit before timing out, in seconds. Defaults to 10.
 
         Returns:
             str: Information displayed in the console up to the value entered.
         """
         message = bytes(value,encoding='utf-8')
+        self.timeout = timeout
         serialStr = self.serialCon.read_until( message )
         writeString = serialStr.decode("utf-8", errors='ignore')
         try:
