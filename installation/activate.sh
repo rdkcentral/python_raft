@@ -27,6 +27,3 @@ if [ $0 != "bash" ];then
 fi
 
 . ${PWD}/VENV/bin/activate
-export PYTHONPATH=${PWD}/VENV/lib/python3.8/site-packages/:$PYTHONPATH
-
-
