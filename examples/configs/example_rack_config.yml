@@ -25,10 +25,6 @@
 # Each optional module will be off by default unless otherwise stated.
 # Uncomment and fill out the sections for the modules you require.
 
-# Deprecated
-# slotx: address:  IP of device while running locally, replaced with slotx: ip
-# slotx: deviceConsole:  IP of device while running locally, replaced with slotx: devices
-
 # Data that is global to all tests.
 globalConfig:
     includes:
