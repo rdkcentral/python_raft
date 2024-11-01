@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 #** *****************************************************************************
 # *
 # * If not stated otherwise in this file or this component's LICENSE file the
@@ -20,10 +19,12 @@
 # * limitations under the License.
 # *
 #* ******************************************************************************
+#*
+#*   ** Project      : RAFT
+#*   ** @addtogroup  : core
+#*   ** @date        : 22/11/2021
+#*   **
+#* ******************************************************************************
 
-if [ $0 != "bash" ];then
-    echo "re-run this script with source e.g. '. ./activate.sh'"
-    exit 1
-fi
-
-. ${PWD}/VENV/bin/activate
+from .cecClient import CECClientController
+from .cecTypes import MonitoringType
