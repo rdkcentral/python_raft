@@ -45,16 +45,14 @@ class serialSession(consoleInterface):
 
     """
   
-    def __init__(self, log, workspacePath, serialPort, baudRate=115200):
-        self.log = log
+    def __init__(self, log, workspacePath, serialPort, baudRate=115200, prompt=None) -> None:
+        super().__init__(log, prompt)
         self.workspacePath = workspacePath
         self.serialPort = serialPort
         self.serialFile = workspacePath + "session.log"
-        self.timeout = 5
         self.baudRate = baudRate
         self.type="serial"
         self.is_open = False
-
         # TODO: Pass in the rest of the serial configuration
 
         # Initiate serial session , parity = serial.PARITY_NONE, stopbits = serial.STOPBITS_ONE, xonxoff=False,
@@ -64,7 +62,16 @@ class serialSession(consoleInterface):
             self.log.error('Failed to start serial connection - {}'.format(e))
             raise Exception('Failed to start Serial Connection. Check the COM port settings')
 
-    def open(self):
+    @property
+    def timeout(self):
+        return self._timeout
+
+    @timeout.setter
+    def timeout(self, new_timeout: int):
+        self._timeout = new_timeout
+        self.serialCon.timeout = int(new_timeout)
+
+    def open(self) -> bool:
         """Start serial session and serial file logger.
 
         Returns:
@@ -83,7 +90,7 @@ class serialSession(consoleInterface):
         self.is_open = True
         return isOpen
 
-    def close(self):
+    def close(self) -> bool:
         """Close the serial session and serial file logger.
 
         Returns:
@@ -105,12 +112,50 @@ class serialSession(consoleInterface):
         self.is_open = False
         return True
 
-    def write(self, message:list|str, lineFeed="\n"):
+    def read_until(self, value, timeout: int = 10) -> str:
+        """Read serial output until a specified value is found.
+
+        Args:
+            value (str): The message to wait for in the console.
+            timeout (int): Time limit before timing out, in seconds. Defaults to 10.
+
+        Returns:
+            str: Information displayed in the console up to the value entered.
+        """
+        message = bytes(value,encoding='utf-8')
+        self.timeout = timeout
+        serialStr = self.serialCon.read_until( message )
+        writeString = serialStr.decode("utf-8", errors='ignore')
+        try:
+            self.serialFileHandler.writelines(writeString)
+        except Exception as e:
+            self.log.error('Failed to decode to Serial log  - %s' % e)
+        return writeString
+
+    def read_all(self) -> str:
+        """Read all lines from serial output available in the buffer.
+
+        Returns:
+           str: Information currently displayed in the console.
+        """
+        serialStr = self.serialCon.read_all()
+        if serialStr == b'':
+            return ""
+        writeString = serialStr.decode("utf-8", errors='ignore')
+        try:
+            self.serialFileHandler.writelines(writeString)
+        except Exception as e:
+            self.log.error('Failed to writelines from Serial log  - %s' % e)
+        return writeString
+    
+    def write(self, message:list|str, lineFeed:str="\n", wait_for_prompt:bool=False) -> bool:
         """Write to serial console.
+        Optional: waits for prompt.
 
         Args:
             message (Str) - message to write to serial console.
-            lineFeed (str): Linefeed extension
+            lineFeed (str): Linefeed extension.
+            wait_for_prompt (bool): If True, waits for the prompt before writing.
 
         Returns:
             bool: True if can successfully write to serial console.
@@ -118,6 +163,9 @@ class serialSession(consoleInterface):
         if not self.is_open:
             self.open()
         self.log.debug("Writing to Serial [{}]".format(message.strip()))
+        if wait_for_prompt:
+            if not self.waitForPrompt():
+                return False
         if isinstance( message, str ):
             message = [message]
         for msg in message:
@@ -145,41 +193,7 @@ class serialSession(consoleInterface):
             self.log.error('Failed to write to Serial log file - %s' % e)
         return True
 
-    def read_until(self, value):
-        """Read serial output until a specified value is found.
-
-        Args:
-            value (str): The message to wait for in the console.
-
-        Returns:
-            List: List of strings, with each being a line displayed in the console up to the value entered.
-        """
-        message = bytes(value,encoding='utf-8')
-        serialStr = self.serialCon.read_until( message )
-        writeString = serialStr.decode("utf-8", errors='ignore')
-        try:
-            self.serialFileHandler.writelines(writeString)
-        except Exception as e:
-            self.log.error('Failed to decode to Serial log  - %s' % e)
-        return writeString
-
-    def read_all(self):
-        """Read all lines from serial output available in the buffer.
-
-        Returns:
-           List: List of strings, with each being a line displayed in the console.
-        """
-        serialStr = self.serialCon.read_all()
-        if serialStr == b'':
-            return ""
-        writeString = serialStr.decode("utf-8", errors='ignore')
-        try:
-            self.serialFileHandler.writelines(writeString)
-        except Exception as e:
-            self.log.error('Failed to writelines from Serial log  - %s' % e)
-        return writeString
-
-    def flush(self):
+    def flush(self) -> bool:
         """Clear the console.
 
         Returns:

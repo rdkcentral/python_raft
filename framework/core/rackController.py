@@ -320,10 +320,10 @@ class rack(configDecoderClass):
         Returns:
             rackSlot: The requested rack slot.
         """
-        for x in self.slots:
-            if x.getName == slotName:
+        for x in self.slot:
+            if x.getName() == slotName:
                 return x
-        self.log.error( "getSlot("+slotName+") - Not Found")
+        self.log.error( "getSlotByName("+slotName+") - Not Found")
         return None
        
 class rackController:

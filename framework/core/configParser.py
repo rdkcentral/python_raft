@@ -30,6 +30,9 @@
 #* ******************************************************************************
 import os
 from urllib.parse import urlparse
+
+import yaml
+import requests
 from framework.core.logModule import logModule as logModule
 from framework.core.configParserBase import configParserBase
 
@@ -68,6 +71,10 @@ class configParser(configParserBase):
         Args:
             config (dict): The config dictionary.
         """
+
+        # To process the included yaml files
+        self.processIncludes(config)
+
         for x in config:
             # Items from rack config
             if x.startswith("local"):
@@ -77,6 +84,49 @@ class configParser(configParserBase):
                 self.__decodeCPEConfig__( x, config[x] )
             if x.startswith('memoryMap'):
                 self.__decodeMemoryMapConfig__( x, config[x] )
+    
+    def processIncludes(self, config):
+        """Processes and merges included YAML files into the current config."""
+        if isinstance(config, dict):
+            if "include" in config:
+                deviceConfigFilePaths = config["include"]
+                
+                # Loop through all the file paths and merge them into config
+                for configFilePath in deviceConfigFilePaths:
+                    newConfig = self.loadYaml(configFilePath)
+                    self.processIncludes(newConfig)
+                    config.update(newConfig)
+
+                config.pop("include")
+
+            # Recursively checkthe nested dictionaries for include fields
+            for key, value in config.items():
+                self.processIncludes(value)
+        
+        elif isinstance(config, list):
+            for item in config:
+                self.processIncludes(item)
+
+    def loadYaml(self, filepath):
+        """Loads a YAML file from the specified path."""
+        self.log.info(f"Loading configuration from {filepath}")
+        if filepath.startswith("http") or filepath.startswith("https"):
+            # for remote yamls
+            return self.loadRemoteYaml(filepath)
+        else:
+            # for local yamls
+            with open(filepath, 'r') as f:
+                return yaml.safe_load(f)
+
+    def loadRemoteYaml(self, url):
+        """Downloads and loads a YAML file from a URL."""
+        self.log.info(f"Downloading YAML configuration from {url}")
+        response = requests.get(url)
+        if response.status_code == 200:
+            return yaml.safe_load(response.text)
+        else:
+            raise Exception(f"Failed to download YAML from {url}, status code {response.status_code}")
+
 
     def __decodeMemoryMapConfig__(self, parent, config):
         """Decodes the memory map config.
