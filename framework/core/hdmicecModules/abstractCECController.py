@@ -40,6 +40,7 @@ class CECInterface(metaclass=ABCMeta):
         self.adaptor = adaptor_path
         self._log = logger
         self._monitoring = False
+        self._monitoring_log = None
 
     @property
     def monitoring(self) -> bool:

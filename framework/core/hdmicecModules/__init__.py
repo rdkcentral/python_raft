@@ -27,4 +27,5 @@
 #* ******************************************************************************
 
 from .cecClient import CECClientController
+from .remoteCECClient import RemoteCECClient
 from .cecTypes import MonitoringType

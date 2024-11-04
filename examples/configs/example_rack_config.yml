@@ -96,6 +96,7 @@ rackConfig:
                     # [ hdmiCECController: optional ] - Specific hdmiCECController for the slot
                         # supported types:
                         # [type: "cec-client", adaptor: "/dev/ttycec"]
+                        # [type: "remote-cec-client", adaptor: "/dev/ttycec", address: "192.168.99.1", username(optional): "testuser", password(optional): "testpswd", port(optional): "22"]
                 - pi2:
                     ip: "192.168.99.1"
                     description: "local pi4"

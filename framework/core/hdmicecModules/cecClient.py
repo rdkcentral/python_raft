@@ -59,8 +59,7 @@ class CECClientController(CECInterface):
             AttributeError: If the specified CEC adaptor is not found.
         """
         
-        self._log = logger
-        self.adaptor = adaptor_path
+        super().__init__(adaptor_path=adaptor_path, logger=logger)
         self._log.debug('Initialising CECClientController for [%s]' % self.adaptor)
         if self.adaptor not in map(lambda x: x.get('com port'),self._getAdaptors()):
             raise AttributeError('CEC Adaptor specified not found')
@@ -163,33 +162,16 @@ class CECClientController(CECInterface):
 
     def startMonitoring(self, monitoringLog: str, device_type: MonitoringType = MonitoringType.RECORDER) -> None:
         self._monitoring = True
+        self._monitoring_log = monitoringLog
         try:
             self._m_proc = subprocess.Popen(f'cec-client {self.adaptor} -m -d 0 -t {device_type.value}'.split(),
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT,
                                 text=True)
-            self._m_stdout_thread = Thread(target=self._write_monitoring_log,
-                                        args=[self._m_proc.stdout, monitoringLog],
-                                        daemon=True)
-            self._m_stdout_thread.start()
+            self._log.logStreamToFile(self._m_proc.stdout, self._monitoring_log)
         except Exception as e:
             self.stopMonitoring()
             raise
-
-    def _write_monitoring_log(self,streamIn: IOBase, logFilePath: str) -> None:
-        """
-        Writes the output of the monitoring process to a log file.
-
-        Args:
-            stream_in (IOBase): The input stream from the monitoring process.
-            logFilePath (str): File path to write the monitoring log out to.
-        """
-        while True:
-            chunk = streamIn.readline()
-            if chunk == '':
-                break
-            with open(logFilePath, 'a+',) as out:
-                out.write(chunk)
 
     def stopMonitoring(self) -> None:
         self._log.debug('Stopping monitoring of adaptor [%s]' % self.adaptor)
@@ -197,7 +179,8 @@ class CECClientController(CECInterface):
             return
         self._m_proc.terminate()
         exit_code = self._m_proc.wait()
-        self._m_stdout_thread.join()
+        self._log.stopStreamedLog(self._monitoring_log)
+        self._monitoring_log = None
         self._monitoring = False
 
     def __del__(self):
