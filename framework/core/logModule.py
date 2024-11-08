@@ -112,7 +112,6 @@ class logModule():
         self.path = None
         self.logFile = None
         self.csvLogFile = None
-        self._loggingThreads = {}
 
     def __del__(self):
         """Deletes the logger instance.
@@ -489,57 +488,3 @@ class logModule():
         message = "[{}]: RESULT : [{}]: {}".format(self.stepNum,resultMessage, message)
         self.step("=====================Step End======================",showStepNumber=False)
         self.stepResultMessage(message)
-
-    def logStreamToFile(self, inputStream: IOBase, outFileName: str) -> None:
-        """
-        Starts a new thread to write the contents of an input stream to a file.
-
-        Args:
-            inputStream (IOBase): The input stream to be read from.
-            outFileName (str): The path of the output file where the stream data will be written.
-                                If only a file name is given, the file will be written in the current tests log directory.
-        """
-        outPath = path.join(self.logPath,outFileName)
-        if path.isabs(outFileName):
-            outPath = outFileName
-        newThread = Thread(target=self._writeLogFile,
-                                        args=[inputStream, outPath],
-                                        daemon=True)
-        
-        self._loggingThreads.update({outFileName: newThread})
-        newThread.start()
-
-    def stopStreamedLog(self, outFileName: str) -> None:
-        """
-        Stops a previously started thread that is writing to a log file.
-
-        Args:
-            outFileName (str): The path of the output file associated with the thread to be stopped.
-
-        Raises:
-            AttributeError: If the specified thread cannot be found.
-        """
-        log_thread = self._loggingThreads.get(outFileName)
-        if log_thread:
-            log_thread.join(timeout=30)
-        else:
-            raise AttributeError(f'Could not find requested logging thread to stop. [{outFileName}]')
-
-    def _writeLogFile(self,streamIn: IOBase, logFilePath: str) -> None:
-        """
-        Writes the input stream to a log file.
-
-        Args:
-            stream_in (IOBase): The stream from a process.
-            logFilePath (str): File path to write the log out to.
-        """
-        while True:
-            chunk = streamIn.readline()
-            if chunk == '':
-                break
-            with open(logFilePath, 'a+',) as out:
-                out.write(chunk)
-
-    def __del__(self):
-        for thread in self._loggingThreads.values():
-            thread.join()

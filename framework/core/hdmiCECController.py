@@ -30,9 +30,11 @@
 #*   **
 #* ******************************************************************************
 
+from io import IOBase
 from os import path
 
 import sys
+from threading import Thread
 MY_PATH = path.realpath(__file__)
 MY_DIR = path.dirname(MY_PATH)
 sys.path.append(path.join(MY_DIR,'../../'))
@@ -67,6 +69,7 @@ class HDMICECController():
                                               port=config.get('port',22))
         self._read_line = 0
         self._monitoringLog = path.abspath(path.join(self._log.logPath, 'cecMonitor.log'))
+        self._loggingThreads = {}
 
     def send_message(self, message: str) -> bool:
         """
@@ -146,6 +149,60 @@ class HDMICECController():
         """
         self._log.debug('Listing devices on CEC network')
         return self.controller.listDevices()
+    
+    def logStreamToFile(self, inputStream: IOBase, outFileName: str) -> None:
+        """
+        Starts a new thread to write the contents of an input stream to a file.
+
+        Args:
+            inputStream (IOBase): The input stream to be read from.
+            outFileName (str): The path of the output file where the stream data will be written.
+                                If only a file name is given, the file will be written in the current tests log directory.
+        """
+        outPath = path.join(self.logPath,outFileName)
+        if path.isabs(outFileName):
+            outPath = outFileName
+        newThread = Thread(target=self._writeLogFile,
+                                        args=[inputStream, outPath],
+                                        daemon=True)
+        
+        self._loggingThreads.update({outFileName: newThread})
+        newThread.start()
+
+    def stopStreamedLog(self, outFileName: str) -> None:
+        """
+        Stops a previously started thread that is writing to a log file.
+
+        Args:
+            outFileName (str): The path of the output file associated with the thread to be stopped.
+
+        Raises:
+            AttributeError: If the specified thread cannot be found.
+        """
+        log_thread = self._loggingThreads.get(outFileName)
+        if log_thread:
+            log_thread.join(timeout=30)
+        else:
+            raise AttributeError(f'Could not find requested logging thread to stop. [{outFileName}]')
+
+    def _writeLogFile(self,streamIn: IOBase, logFilePath: str) -> None:
+        """
+        Writes the input stream to a log file.
+
+        Args:
+            stream_in (IOBase): The stream from a process.
+            logFilePath (str): File path to write the log out to.
+        """
+        while True:
+            chunk = streamIn.readline()
+            if chunk == '':
+                break
+            with open(logFilePath, 'a+',) as out:
+                out.write(chunk)
+
+    def __del__(self):
+        for thread in self._loggingThreads.values():
+            thread.join()
 
 
 if __name__ == "__main__":
@@ -160,9 +217,9 @@ if __name__ == "__main__":
         {
             'type': 'remote-cec-client',
             'adaptor': '/dev/cec0', # This is default for Raspberry Pi
-            'address': '', # Needs to be be filled out with IP address
-            'username': '', # Needs to be filled out with login username
-            'password': '' # Needs to be filled out with login password
+            'address': '192.168.0.83', # Needs to be be filled out with IP address
+            'username': 'toby', # Needs to be filled out with login username
+            'password': 'test1234' # Needs to be filled out with login password
         }
     ]
     for config in CONFIGS:
