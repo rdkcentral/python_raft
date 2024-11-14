@@ -9,59 +9,73 @@ sys.path.append(path.join(current_project_root, "..", "ut-raft"))
 from framework.core.submodules.vdevice_message_sender import VDeviceMessageSender
 from framework.core.commonRemote import commonRemoteClass
 from framework.core.logModule import logModule
+from submodules.ir import IR
 
-class ControlPlane:
-    def __init__(self, device, device_type, config):
-        # Load configuration
-        self.device = device
-        self.device_type = device_type
-        self.config = config
-        
-        # Get device config and check if platform is virtual or not
-        device_config = self.config.get("control_devices")[device]
-        
-        if device_type == "virtual":
-            self.vdevice_sender = VDeviceMessageSender(device_config)
-        else:
-            self.common_remote = commonRemoteClass(log=logModule, remoteConfig=device_config)
-        
-    def process_message(self, message_yaml):
-        # Parse the YAML message
-        message = yaml.safe_load(message_yaml)
-        
-        # For virtual platforms, route to the vDevice message sender
-        # For physical platforms, decode message
-        
-        command = message.get(self.device)
-        if command:
-            if self.device_type == 'virtual':
-                self.vdevice_sender.send_command(command)
-            else:
-                self.send_command(command)
-
-    def send_command(self, command_data):
+class ControlPlane:    
+    """
+    Manages the control framework for both physical and virtual devices. 
+    It initializes the appropriate device handlers and processes incoming commands based on the device configuration.
+    """
+   
+    def __init__(self, config=None, virtualConfig=None):
         """
-        Sends a command using commonRemoteClass.
+        Initializes the ControlPlane class.
+        
+        Args:
+            config (dict, optional): Configuration dictionary for physical device handlers. Defaults to None.
+            virtualConfig (dict, optional): Configuration for virtual device communication. Defaults to None.
+        
+        Attributes:
+            config (dict): Holds the configuration for physical devices if provided.
+            virtualConfig (dict): Holds the configuration for virtual devices if provided.
+            handlers (dict): Dictionary of device handlers for physical devices.
+            vdevice_sender (VDeviceMessageSender): Instance for handling virtual device messages if `virtualConfig` is provided.
+        """
+        self.config = None
+        self.virtualConfig = None
+
+        if config is not None:
+            self.config = config
+
+            # Initialize device-specific subclasses for physical devices
+            self.handlers = {
+                "IR": IR(),
+                "HDMICEC": HDMICEC(),
+                "Power": Power(),
+                "DeepSleep": DeepSleep()
+            }
+        
+        if virtualConfig is not None:
+            self.virtualConfig = virtualConfig
+            self.vdevice_sender = VDeviceMessageSender(virtualConfig)
+
+
+    def process_message(self, message_yaml):
+        """
+        Processes a given YAML message and routes it to the appropriate handlers.
 
         Args:
-            command_data (dict): Dictionary containing 'command', 'delay', 'repeat', 'randomRepeat', etc.
+            message_yaml (str): The message in YAML format to be parsed and processed.
         """
-        keycode = {'name': command_data['command']}  # Command as keycode dictionary for sendKey
-        
-        # Send the command via commonRemote's sendKey
-        self.common_remote.sendKey(
-            keycode=keycode,
-            delay=command_data.get('delay', 1),
-            repeat=command_data.get('repeat', 1),
-            randomRepeat=command_data.get('randomRepeat', 0)
-        )
+        # Parse the YAML message
+        message = yaml.safe_load(message_yaml)
 
+        # If device type is virtual, handle exclusively with Virtual Device Sender
+        if self.virtualConfig is not None:
+            self.vdevice_sender.send_command(message)
+            print("Virtual device handler invoked.")
+        else:
+            # Route the message to all physical device handlers to be decoded
+            for handler_name, handler in self.handlers.items():
+                print(f"Sending message to {handler_name} handler")
+                handler.process_command(message)
+        
 
 if __name__ == "__main__":
     try:
         config = {
             "control_devices": {
-                "irblaster": {
+                "IR": {
                     "command_port": "/dev/irblaster",
                     "supported_commands": ["PowerOn", "PowerOff", "VolumeUp", "VolumeDown"]
                 },
@@ -72,10 +86,11 @@ if __name__ == "__main__":
             }
         }
 
+        control_plane = ControlPlane(config=config)
+
         # Example message for IR Blaster command
-        control_plane = ControlPlane("irblaster", "virtual", config)
         message_yaml_ir = """
-        irblaster:
+        IR:
           command: PowerOn
           delay: 2
           repeat: 3
@@ -83,12 +98,11 @@ if __name__ == "__main__":
           target_device: DUT
           code: "NUM_0"
         """
-        print("Testing IR Blaster Command:")
+        print("Testing IR Blaster Command:") 
         control_plane.process_message(message_yaml_ir)
 
         
         # Example message for HDMI command
-        control_plane = ControlPlane("hdmicec", "physical", config)
         message_yaml_hdmi = """
         hdmicec:
           command: ImageViewOn
