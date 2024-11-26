@@ -49,7 +49,6 @@ class KeySimulator:
 
         if verify:
             output = self.session.read_until(self.prompt)
-            print(output)
 
             # Check for the presence of a keyword in the output
             if keyword and keyword not in output:
