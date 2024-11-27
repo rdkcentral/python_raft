@@ -40,20 +40,19 @@ class KeySimulator:
         Returns:
             bool: Result of the command verification.
         """
-        result = True
-        verify = True
+        result = False
         keyword = "term start init 1"
 
         # Send the key command
-        self.session.write(f"{key}")
-
-        if verify:
-            output = self.session.read_until(self.prompt)
-
-            # Check for the presence of a keyword in the output
-            if keyword and keyword not in output:
-                result = True
-        else:
+        for _ in range(repeat):
+            self.session.write(f"{key}")
             time.sleep(delay)
+
+        # Read output after sending keys
+        output = self.session.read_until(self.prompt)
+
+        # Check for the presence of a keyword in the output
+        if keyword in output:
+            result = True
 
         return result
