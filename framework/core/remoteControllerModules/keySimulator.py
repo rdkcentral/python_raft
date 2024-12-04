@@ -32,7 +32,6 @@ import time
 import subprocess
 from framework.core.logModule import logModule
 from framework.core.commandModules.sshConsole import sshConsole
-from framework.core.rcCodes import rcCode as rc
 
 
 class KeySimulator:
@@ -58,11 +57,11 @@ class KeySimulator:
         )
 
 
-    def sendKey(self, key: rc, repeat: int , delay: int ):
+    def sendKey(self, key: str, repeat: int , delay: int ):
         """Send a key command with specified repeats and interval.
 
         Args:
-            key (rc): The key to send.
+            key (str): The key to send.
             repeat (int): Number of times to send the key.
             delay (int): Delay between key presses in seconds.
 
