@@ -76,7 +76,7 @@ class remoteControllerMapping():
         prefix = self.currentMap.get("prefix")
         returnedKey=self.currentMap["codes"].get(key)
         if prefix:
-            returnedKey = prefix + returnedKey
+            returnedKey = prefix + key
         return returnedKey
 
     def getKeyMap(self):
@@ -153,7 +153,15 @@ class commonRemoteClass():
         with open(configFile) as inputFile:
             inputFile.seek(0, os.SEEK_SET)
             config = yaml.full_load(inputFile)
-        return config.get("remoteMaps", [])
+        keyDictionary = {}
+        for key, val in config.items():
+            if isinstance(val, dict):
+                for k, v in val.items():
+                    keyDictionary[k] = v 
+            else:
+                keyDictionary[key] = val
+
+        return keyDictionary.get("remoteMaps")
 
     def sendKey(self, keycode:dict, delay:int=1, repeat:int=1, randomRepeat:int=0):
         """Send a key to the remoteCommander
@@ -188,4 +196,4 @@ class commonRemoteClass():
     def getKeyMap( self ):
         """Get the Key Translation Map
         """
-        return self.remoteMap.getKeyMap()
+        self.remoteMap.getKeyMap()
