@@ -160,7 +160,6 @@ class commonRemoteClass():
                     keyDictionary[k] = v 
             else:
                 keyDictionary[key] = val
-
         return keyDictionary.get("remoteMaps")
 
     def sendKey(self, keycode:dict, delay:int=1, repeat:int=1, randomRepeat:int=0):
