@@ -38,7 +38,7 @@ from threading import Thread
 
 from framework.core.logModule import logModule
 from .abstractCECController import CECInterface
-from .cecTypes import MonitoringType
+from .cecTypes import CECDeviceType
 
 
 class CECClientController(CECInterface):
@@ -67,25 +67,25 @@ class CECClientController(CECInterface):
         self._m_proc = None
         self._m_stdout_thread = None
 
-    def sendMessage(self,message: str) -> bool:
-        exit_code, stdout =  self._sendMessage(message, 0)
+    def sendMessage(self,message: str, deviceType: CECDeviceType = CECDeviceType.PLAYBACK) -> bool:
+        exit_code, stdout =  self._sendMessage(message, deviceType)
         self._log.debug('Output of message sent: [%s]' % stdout)
         if exit_code != 0:
             return False
         return True
 
-    def _sendMessage(self, message: str, debug: int = 1) -> tuple:
+    def _sendMessage(self, message: str, deviceType: CECDeviceType) -> tuple:
         """
         Internal method for sending a CEC message using `subprocess`.
 
         Args:
             message (str): The CEC message to be sent.
-            debug (int, optional): Debug level for `cec-client` (default: 1).
+            deviceType (CECDeviceType): Type of device to send the message as.
 
         Returns:
             tuple: A tuple containing the exit code of the subprocess call and the standard output.
         """
-        result = subprocess.run(f'echo "{message}" | cec-client {self.adaptor} -s -d {debug}',
+        result = subprocess.run(f'echo "{message}" | cec-client {self.adaptor} -s -d 1 -t {deviceType.value}',
                                 shell=True,
                                 check=True,
                                 stdout=subprocess.PIPE,
@@ -121,7 +121,7 @@ class CECClientController(CECInterface):
         Returns:
             list: A list of dictionaries representing discovered devices with details.
         """
-        _, result = self._sendMessage('scan')
+        _, result = self._sendMessage('scan', CECDeviceType.PLAYBACK)
         self._log.debug('Output of scan on CEC Network: [%s]' % result)
         devicesOnNetwork = self._splitDeviceSectionsToDicts(result)
         return devicesOnNetwork
@@ -160,11 +160,11 @@ class CECClientController(CECInterface):
                 devices.append(device_dict)
         return devices
 
-    def startMonitoring(self, monitoringLog: str, device_type: MonitoringType = MonitoringType.RECORDER) -> None:
+    def startMonitoring(self, monitoringLog: str) -> None:
         self._monitoring = True
         self._monitoring_log = monitoringLog
         try:
-            self._m_proc = subprocess.Popen(f'cec-client {self.adaptor} -m -d 0 -t {device_type.value}'.split(),
+            self._m_proc = subprocess.Popen(f'cec-client {self.adaptor} -m -d 0'.split(),
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT,
                                 text=True)

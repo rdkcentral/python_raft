@@ -31,7 +31,7 @@
 
 from enum import Enum
 
-class MonitoringType(Enum):
+class CECDeviceType(Enum):
     PLAYBACK = "p"
     RECORDER = "r"
     TUNER = "t"

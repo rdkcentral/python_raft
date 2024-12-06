@@ -32,7 +32,7 @@
 from abc import ABCMeta, abstractmethod
 
 from framework.core.logModule import logModule
-from .cecTypes import MonitoringType
+from .cecTypes import CECDeviceType
 
 class CECInterface(metaclass=ABCMeta):
 
@@ -47,12 +47,13 @@ class CECInterface(metaclass=ABCMeta):
         return self._monitoring
 
     @abstractmethod
-    def sendMessage(cls, message:str) -> bool:
+    def sendMessage(cls, message:str, deviceType: CECDeviceType) -> bool:
         """
         Send a CEC message to the CEC network.
 
         Args:
             message (str): The CEC message to be sent.
+            deviceType (CECDeviceType): Type of device to send the message as.
 
         Returns:
             bool: True if the message was sent successfully, False otherwise.
@@ -81,13 +82,9 @@ class CECInterface(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def startMonitoring(cls, monitoringLog: str, deviceType: MonitoringType=MonitoringType.RECORDER) -> None:
+    def startMonitoring(cls) -> None:
         """
         Starts monitoring CEC messages with a specified device type.
-
-        Args:
-            deviceType (MonitoringType, optional): The type of device to monitor (default: MonitoringType.RECORDER).
-            monitoringLog (str) : Path to write the monitoring log out
         """
         pass
 

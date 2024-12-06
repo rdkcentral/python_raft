@@ -34,7 +34,7 @@ import re
 from framework.core.logModule import logModule
 from framework.core.commandModules.sshConsole import sshConsole
 from .abstractCECController import CECInterface
-from .cecTypes import MonitoringType
+from .cecTypes import CECDeviceType
 
 class RemoteCECClient(CECInterface):
 
@@ -69,17 +69,18 @@ class RemoteCECClient(CECInterface):
         adaptors = self._splitDeviceSectionsToDicts(stdout)
         return adaptors
 
-    def sendMessage(self, message:str) -> bool:
+    def sendMessage(self, message:str, deviceType: CECDeviceType = CECDeviceType.PLAYBACK) -> bool:
         """
         Send a CEC message to the CEC network.
 
         Args:
             message (str): The CEC message to be sent.
+            deviceType (CECDeviceType): Type of device to send the message as.
 
         Returns:
             bool: True if the message was sent successfully, False otherwise.
         """
-        return self._console.write(f'echo "{message}" | cec-client {self.adaptor}')
+        return self._console.write(f'echo "{message}" | cec-client {self.adaptor} -s -d 1 -t {deviceType.value}')
 
     def listDevices(self) -> list:
         """
@@ -110,16 +111,15 @@ class RemoteCECClient(CECInterface):
                 device['active source'] = False
         return devices
 
-    def startMonitoring(self, monitoringLog: str, deviceType: MonitoringType=MonitoringType.RECORDER) -> None:
+    def startMonitoring(self, monitoringLog: str) -> None:
         """
         Starts monitoring CEC messages with a specified device type.
 
         Args:
-            deviceType (MonitoringType, optional): The type of device to monitor (default: MonitoringType.RECORDER).
             monitoringLog (str) : Path to write the monitoring log out
         """
         self._monitoringLog = monitoringLog
-        self._console.write(f'cec-client -m -t{deviceType.value}')
+        self._console.write(f'cec-client -m -d 0')
         self._console.shell.set_combine_stderr(True)
         self._log.logStreamToFile(self._console.shell.makefile(), self._monitoringLog)
         self._monitoring = True

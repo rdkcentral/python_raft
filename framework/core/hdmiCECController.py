@@ -29,17 +29,15 @@
 #*   **          cec controller type is specified.
 #*   **
 #* ******************************************************************************
-
-from io import IOBase
+from datetime import datetime
 from os import path
 
 import sys
-from threading import Thread
 MY_PATH = path.realpath(__file__)
 MY_DIR = path.dirname(MY_PATH)
 sys.path.append(path.join(MY_DIR,'../../'))
 from framework.core.logModule import logModule
-from framework.core.hdmicecModules import CECClientController, RemoteCECClient, MonitoringType
+from framework.core.hdmicecModules import CECClientController, RemoteCECClient, CECDeviceType
 
 class HDMICECController():
     """
@@ -69,9 +67,8 @@ class HDMICECController():
                                               port=config.get('port',22))
         self._read_line = 0
         self._monitoringLog = path.abspath(path.join(self._log.logPath, 'cecMonitor.log'))
-        self._loggingThreads = {}
 
-    def send_message(self, message: str) -> bool:
+    def send_message(self, message: str, deviceType: CECDeviceType=CECDeviceType.PLAYBACK) -> bool:
         """
         Sends a CEC message to connected devices using the configured controller.
 
@@ -82,22 +79,18 @@ class HDMICECController():
             bool: True if the message was sent successfully, False otherwise.
         """
         self._log.debug('Sending CEC message: [%s]' % message)
-        return self.controller.sendMessage(message)
-
-    def startMonitoring(self, deviceType: MonitoringType = MonitoringType.RECORDER) -> None:
+        return self.controller.sendMessage(message,deviceType)
+        
+    def startMonitoring(self) -> None:
         """
         Starts monitoring CEC messages from the adaptor as the specified device type.
-
-        Args:
-            deviceType (MonitoringType, optional): The type of device to monitor (default: MonitoringType.RECORDER).
 
         Raises:
             RuntimeError: If monitoring is already running.
         """
         if self.controller.monitoring is False:
             self._log.debug('Starting monitoring on adaptor: [%s]' % self.cecAdaptor)
-            self._log.debug('Monitoring as device type [%s]' % deviceType.name)
-            return self.controller.startMonitoring(self._monitoringLog, deviceType)
+            return self.controller.startMonitoring(self._monitoringLog)
         else:
             self._log.warn('CEC monitoring is already running')
 
@@ -122,7 +115,6 @@ class HDMICECController():
         Returns:
             bool: True if the message was found, False otherwise.
         """
-        self._log.debug('Starting readUntil for message as [%s] with [%s] retries' % (message,retries))
         result = False
         retry = 0
         max_retries = retries
@@ -140,6 +132,38 @@ class HDMICECController():
         self._read_line = read_line
         return result
 
+    def receiveMessage(self,messages: str|list|None=None, timeout: int=10) -> bool:
+        """
+        This function receives messages and checks if all specified messages are found within a given
+        timeout period.
+
+        Args:
+            messages (str|list|None): Specify the messages that expected during the monitoring process.
+            timeout (int): The maximum amount of time, in seconds, that the method will
+                           wait for the messages to be received. Defaults to 10.
+
+        Returns:
+          The function `receiveMessage` returns a boolean value indicating whether all the specified
+        messages were found within the given timeout period.
+        """
+        end = datetime.now().timestamp() + timeout
+        self.startMonitoring()
+        found_all = False
+        while datetime.now().timestamp() < end:
+            if messages:
+                if isinstance(messages, str):
+                    messages = [messages]
+                try:
+                    result = self.readUntil(messages[0])
+                except FileNotFoundError:
+                    continue
+                if result is True:
+                    if len(messages) > 1:
+                        messages.pop(0)
+                    else:
+                        found_all = True
+        return found_all
+
     def listDevices(self) -> list:
         """
         Retrieves a list of discovered CEC devices with their OSD names (if available).
@@ -149,60 +173,6 @@ class HDMICECController():
         """
         self._log.debug('Listing devices on CEC network')
         return self.controller.listDevices()
-    
-    def logStreamToFile(self, inputStream: IOBase, outFileName: str) -> None:
-        """
-        Starts a new thread to write the contents of an input stream to a file.
-
-        Args:
-            inputStream (IOBase): The input stream to be read from.
-            outFileName (str): The path of the output file where the stream data will be written.
-                                If only a file name is given, the file will be written in the current tests log directory.
-        """
-        outPath = path.join(self.logPath,outFileName)
-        if path.isabs(outFileName):
-            outPath = outFileName
-        newThread = Thread(target=self._writeLogFile,
-                                        args=[inputStream, outPath],
-                                        daemon=True)
-        
-        self._loggingThreads.update({outFileName: newThread})
-        newThread.start()
-
-    def stopStreamedLog(self, outFileName: str) -> None:
-        """
-        Stops a previously started thread that is writing to a log file.
-
-        Args:
-            outFileName (str): The path of the output file associated with the thread to be stopped.
-
-        Raises:
-            AttributeError: If the specified thread cannot be found.
-        """
-        log_thread = self._loggingThreads.get(outFileName)
-        if log_thread:
-            log_thread.join(timeout=30)
-        else:
-            raise AttributeError(f'Could not find requested logging thread to stop. [{outFileName}]')
-
-    def _writeLogFile(self,streamIn: IOBase, logFilePath: str) -> None:
-        """
-        Writes the input stream to a log file.
-
-        Args:
-            stream_in (IOBase): The stream from a process.
-            logFilePath (str): File path to write the log out to.
-        """
-        while True:
-            chunk = streamIn.readline()
-            if chunk == '':
-                break
-            with open(logFilePath, 'a+',) as out:
-                out.write(chunk)
-
-    def __del__(self):
-        for thread in self._loggingThreads.values():
-            thread.join()
 
 
 if __name__ == "__main__":
@@ -217,9 +187,9 @@ if __name__ == "__main__":
         {
             'type': 'remote-cec-client',
             'adaptor': '/dev/cec0', # This is default for Raspberry Pi
-            'address': '192.168.0.83', # Needs to be be filled out with IP address
-            'username': 'toby', # Needs to be filled out with login username
-            'password': 'test1234' # Needs to be filled out with login password
+            'address': '', # Needs to be be filled out with IP address
+            'username': '', # Needs to be filled out with login username
+            'password': '' # Needs to be filled out with login password
         }
     ]
     for config in CONFIGS:
@@ -230,12 +200,9 @@ if __name__ == "__main__":
         LOG.info(json.dumps(DEVICES))
         # The user will need to check all the devices expected from their
         # cec network are shown in this output.
-        CEC.startMonitoring()
         # It's is expected that a user will send a standby command on their cec
         # network during this 2 minutes.
-        time.sleep(120)
-        result = CEC.readUntil('standby')
-        CEC.stopMonitoring()
+        result = CEC.receiveMessage('standby',120)
         LOG.stepResult(result, 'The readUntil result is: [%s]' % result)
         # The user should check here the monitoring log for thier type contains
         # the expected information.
