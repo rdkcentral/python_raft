@@ -76,7 +76,7 @@ class remoteControllerMapping():
         prefix = self.currentMap.get("prefix")
         returnedKey=self.currentMap["codes"].get(key)
         if prefix:
-            returnedKey = prefix + key
+            returnedKey = prefix + returnedKey
         return returnedKey
 
     def getKeyMap(self):
@@ -195,4 +195,4 @@ class commonRemoteClass():
     def getKeyMap( self ):
         """Get the Key Translation Map
         """
-        self.remoteMap.getKeyMap()
+        return self.remoteMap.getKeyMap()
