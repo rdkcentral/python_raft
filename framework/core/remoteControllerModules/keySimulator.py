@@ -1,4 +1,4 @@
-#** *****************************************************************************
+# ** *****************************************************************************
 # *
 # * If not stated otherwise in this file or this component's LICENSE file the
 # * following copyright and licenses apply:
@@ -18,15 +18,15 @@
 # * See the License for the specific language governing permissions and
 # * limitations under the License.
 # *
-#* ******************************************************************************
-#*
-#*   ** Project      : RAFT
-#*   ** @addtogroup  : core.remoteControllerModules
-#*   ** @date        : 27/11/2024
-#*   **
-#*   ** @brief : remote keySimulator
-#*   **
-#* ******************************************************************************
+# * ******************************************************************************
+# *
+# *   ** Project      : RAFT
+# *   ** @addtogroup  : core.remoteControllerModules
+# *   ** @date        : 27/11/2024
+# *   **
+# *   ** @brief : remote keySimulator
+# *   **
+# * ******************************************************************************
 import os
 import time
 import subprocess
@@ -34,7 +34,7 @@ from framework.core.logModule import logModule
 from framework.core.commandModules.sshConsole import sshConsole
 
 
-class KeySimulator:
+class keySimulator:
 
     def __init__(self, log: logModule, remoteConfig: dict):
         """Initialize the KeySimulator class.
@@ -45,7 +45,6 @@ class KeySimulator:
         """
         self.log = log
         self.remoteConfig = remoteConfig
-        self.prompt = r"\$ "
 
         # Initialize SSH session
         self.session = sshConsole(
@@ -54,10 +53,11 @@ class KeySimulator:
             password=self.remoteConfig.get("password"),
             known_hosts=self.remoteConfig.get("known_hosts"),
             port=int(self.remoteConfig.get("port")),
+            prompt=self.remoteConfig.get("prompt"),
+            log=self.log,
         )
 
-
-    def sendKey(self, key: str, repeat: int , delay: int ):
+    def sendKey(self, key: str, repeat: int, delay: int):
         """Send a key command with specified repeats and interval.
 
         Args:
@@ -69,18 +69,10 @@ class KeySimulator:
             bool: Result of the command verification.
         """
         result = False
-        keyword = "term start init 1"
 
         # Send the key command
         for _ in range(repeat):
-            self.session.write(f"{key}")
+            result = self.session.write(f"keySimulator -k{key}", wait_for_prompt=True)
             time.sleep(delay)
-
-        # Read output after sending keys
-        output = self.session.read_until(self.prompt)
-
-        # Check for the presence of a keyword in the output
-        if keyword in output:
-            result = True
 
         return result
