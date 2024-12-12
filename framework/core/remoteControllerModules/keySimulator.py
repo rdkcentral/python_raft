@@ -27,14 +27,12 @@
 # *   ** @brief : remote keySimulator
 # *   **
 # * ******************************************************************************
-import os
 import time
-import subprocess
 from framework.core.logModule import logModule
 from framework.core.commandModules.sshConsole import sshConsole
 
 
-class keySimulator:
+class remoteKeySimulator:
 
     def __init__(self, log: logModule, remoteConfig: dict):
         """Initialize the KeySimulator class.
@@ -48,13 +46,13 @@ class keySimulator:
 
         # Initialize SSH session
         self.session = sshConsole(
+            log=self.log,
             address=self.remoteConfig.get("ip"),
             username=self.remoteConfig.get("username"),
             password=self.remoteConfig.get("password"),
             known_hosts=self.remoteConfig.get("known_hosts"),
             port=int(self.remoteConfig.get("port")),
-            prompt=self.remoteConfig.get("prompt"),
-            log=self.log,
+            prompt=self.remoteConfig.get("prompt", ':~$ ')
         )
 
     def sendKey(self, key: str, repeat: int, delay: int):

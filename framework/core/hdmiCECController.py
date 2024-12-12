@@ -37,7 +37,7 @@ MY_PATH = path.realpath(__file__)
 MY_DIR = path.dirname(MY_PATH)
 sys.path.append(path.join(MY_DIR,'../../'))
 from framework.core.logModule import logModule
-from hdmicecModules import CECClientController, MonitoringType
+from framework.core.hdmicecModules import CECClientController, MonitoringType
 
 class HDMICECController():
     """
