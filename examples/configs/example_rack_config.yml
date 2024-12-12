@@ -71,6 +71,8 @@ rackConfig:
                         # [ type: "olimex", ip: "192.168.0.17", port: 7, map: "llama_rc6", config: "remote_commander.yml" ]
                         # [ type: "skyProc", map: "skyq_map", config: "remote_commander.yml" ]
                         # [ type: "None" ]
+                        # To use keySimulator RDK Middleware is required
+                        # [ type: "keySimulator", ip: "192.168.50.99", port: 10022, username: "root", password: '', map: "keysimulator_rdk", config: "rdk_keymap.yml" ]
 
                     # [ outbound: optional ] - This section is used to configure paths for downloads and uploads from your test
                         # supported usage:

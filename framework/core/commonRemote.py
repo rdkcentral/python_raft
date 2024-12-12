@@ -38,6 +38,7 @@ from framework.core.remoteControllerModules.olimex import remoteOlimex
 from framework.core.remoteControllerModules.skyProc import remoteSkyProc
 from framework.core.remoteControllerModules.arduino import remoteArduino
 from framework.core.remoteControllerModules.none import remoteNone
+from framework.core.remoteControllerModules.keySimulator import keySimulator
 
 class remoteControllerMapping():
     def __init__(self, log:logModule, mappingConfig:dict):
@@ -75,7 +76,7 @@ class remoteControllerMapping():
         prefix = self.currentMap.get("prefix")
         returnedKey=self.currentMap["codes"].get(key)
         if prefix:
-            returnedKey = prefix+key
+            returnedKey = prefix + returnedKey
         return returnedKey
 
     def getKeyMap(self):
@@ -132,6 +133,8 @@ class commonRemoteClass():
             self.remoteController = remoteSkyProc( self.log, remoteConfig )
         elif self.type == "arduino":
             self.remoteController = remoteArduino (self.log, remoteConfig)
+        elif self.type == "keySimulator":
+            self.remoteController = keySimulator (self.log, remoteConfig)
         else:   # remoteNone otherwise
             self.remoteController = remoteNone( self.log, remoteConfig )
 
@@ -157,7 +160,7 @@ class commonRemoteClass():
                     keyDictionary[k] = v 
             else:
                 keyDictionary[key] = val
-        return keyDictionary
+        return keyDictionary.get("remoteMaps")
 
     def sendKey(self, keycode:dict, delay:int=1, repeat:int=1, randomRepeat:int=0):
         """Send a key to the remoteCommander
@@ -192,4 +195,4 @@ class commonRemoteClass():
     def getKeyMap( self ):
         """Get the Key Translation Map
         """
-        self.remoteMap.getKeyMap()
+        return self.remoteMap.getKeyMap()
