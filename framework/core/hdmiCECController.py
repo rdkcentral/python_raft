@@ -37,6 +37,7 @@ MY_PATH = path.realpath(__file__)
 MY_DIR = path.dirname(MY_PATH)
 sys.path.append(path.join(MY_DIR,'../../'))
 from framework.core.logModule import logModule
+from framework.core.streamToFile import StreamToFile
 from framework.core.hdmicecModules import CECClientController, RemoteCECClient, CECDeviceType
 
 class HDMICECController():
@@ -56,140 +57,108 @@ class HDMICECController():
         self._log = log
         self.controllerType = config.get('type')
         self.cecAdaptor = config.get('adaptor')
+        self._streamFile = path.join(self._log.logPath, f'{self.controllerType.lower()}_{str(datetime.now().timestamp())}')
+        self._stream = StreamToFile(self._streamFile)
         if self.controllerType.lower() == 'cec-client':
-            self.controller = CECClientController(self.cecAdaptor, self._log)
+            self.controller = CECClientController(self.cecAdaptor,
+                                                  self._log,
+                                                  self._stream)
         elif self.controllerType.lower() == 'remote-cec-client':
             self.controller = RemoteCECClient(self.cecAdaptor,
                                               self._log,
-                                              address=config.get('address'),
+                                              self._stream,
+                                              config.get('address'),
                                               username=config.get('username',''),
                                               password=config.get('password',''),
-                                              port=config.get('port',22))
+                                              port=config.get('port',22),
+                                              prompt=config.get('prompt', ':~'))
         self._read_line = 0
-        self._monitoringLog = path.abspath(path.join(self._log.logPath, 'cecMonitor.log'))
 
-    def send_message(self, message: str, deviceType: CECDeviceType=CECDeviceType.PLAYBACK) -> bool:
+    def sendMessage(self, sourceAddress: str, destAddress: str, opCode: str, payload: list = None) -> None:
         """
-        Sends a CEC message to connected devices using the configured controller.
-
-        Args:
-            message (str): The CEC message to be sent.
-
-        Returns:
-            bool: True if the message was sent successfully, False otherwise.
-        """
-        self._log.debug('Sending CEC message: [%s]' % message)
-        return self.controller.sendMessage(message,deviceType)
+        Sends an opCode from a specified source and to a specified destination.
         
-    def startMonitoring(self) -> None:
+        Args:
+          sourceAddress (str): The logical address of the source device (0-9 or A-F).
+          destAddress (str): The logical address of the destination device (0-9 or A-F).
+          opCode (str): Operation code to send as an hexidecimal string e.g 0x81.
+          payload (list): List of hexidecimal strings to be sent with the opCode. Optional.
         """
-        Starts monitoring CEC messages from the adaptor as the specified device type.
+        payload_string = ''
+        if isinstance(payload, list):
+            payload_string = ' '.join(payload)
+        self._log.debug('Sending CEC message: Source=[%s] Dest=[%s] opCode=[%s] payload=[%s]' % 
+                        (sourceAddress, destAddress, opCode, payload_string))
+        self.controller.sendMessage(sourceAddress, destAddress, opCode, payload=payload)
 
-        Raises:
-            RuntimeError: If monitoring is already running.
+    def receiveMessage(self, sourceAddress: str, destAddress: str, opCode: str, timeout: int = 10, payload: list = None) -> bool:
         """
-        if self.controller.monitoring is False:
-            self._log.debug('Starting monitoring on adaptor: [%s]' % self.cecAdaptor)
-            return self.controller.startMonitoring(self._monitoringLog)
-        else:
-            self._log.warn('CEC monitoring is already running')
-
-    def stopMonitoring(self):
-        """
-        Stops the CEC monitoring process.
-
-        Delegates the stop task to the underlying `CECClientController`.
-        """
-        return self.controller.stopMonitoring()
-
-    def readUntil(self, message: str, retries: int = 5) -> bool:
-        """
-        Reads the monitoring log until the specified message is found.
-
-        Opens the monitoring log file and checks for the message within a specified retry limit.
+        This function checks to see if a specified opCode has been received.
 
         Args:
-            message (str): The message to search for in the monitoring log.
-            retries (int, optional): The maximum number of retries before giving up (default: 5).
+          sourceAddress (str): The logical address of the source device (0-9 or A-F).
+          destAddress (str): The logical address of the destination device (0-9 or A-F).
+          opCode (str): Operation code to send as an hexidecimal string e.g 0x81.
+          timeout (int): The maximum amount of time, in seconds, that the method will
+                           wait for the message to be received. Defaults to 10.
+          payload (list): List of hexidecimal strings to be sent with the opCode. Optional.
 
         Returns:
-            bool: True if the message was found, False otherwise.
+            boolean: True if message is received. False otherwise.
         """
-        result = False
-        retry = 0
-        max_retries = retries
-        while retry != max_retries and not result:
-            with open(self._monitoringLog, 'r') as logFile:
-                logLines = logFile.readlines()
-                read_line = self._read_line
-                write_line = len(logLines)
-                while read_line != write_line:
-                    if message in logLines[read_line]:
-                        result = True
-                        break
-                    read_line+=1
-            retry += 1
-        self._read_line = read_line
-        return result
-
-    def receiveMessage(self,messages: str|list|None=None, timeout: int=10) -> bool:
-        """
-        This function receives messages and checks if all specified messages are found within a given
-        timeout period.
-
-        Args:
-            messages (str|list|None): Specify the messages that expected during the monitoring process.
-            timeout (int): The maximum amount of time, in seconds, that the method will
-                           wait for the messages to be received. Defaults to 10.
-
-        Returns:
-          The function `receiveMessage` returns a boolean value indicating whether all the specified
-        messages were found within the given timeout period.
-        """
-        end = datetime.now().timestamp() + timeout
-        self.startMonitoring()
-        found_all = False
-        while datetime.now().timestamp() < end:
-            if messages:
-                if isinstance(messages, str):
-                    messages = [messages]
-                try:
-                    result = self.readUntil(messages[0])
-                except FileNotFoundError:
-                    continue
-                if result is True:
-                    if len(messages) > 1:
-                        messages.pop(0)
-                    else:
-                        found_all = True
-        return found_all
+        payload_string = ''
+        if isinstance(payload, list):
+            payload_string = ' '.join(payload)
+        self._log.debug('Expecting CEC message: Source=[%s] Dest=[%s] opCode=[%s] payload=[%s]' % 
+                        (sourceAddress, destAddress, opCode, payload_string))
+        return self.controller.receiveMessage(sourceAddress, destAddress, opCode, timeout=timeout, payload=payload)
 
     def listDevices(self) -> list:
         """
-        Retrieves a list of discovered CEC devices with their OSD names (if available).
+        List CEC devices on CEC network.
 
+        The list returned contains dicts in the following format:
+            {'active source': False,
+             'vendor': 'Unknown',
+             'osd string': 'TV',
+             'CEC version': '1.3a',
+             'power status': 'on',
+             'language': 'eng',
+             'physical address': '0.0.0.0',
+             'name': 'TV',
+             'logical address': '0'}
         Returns:
             list: A list of dictionaries representing discovered devices.
         """
         self._log.debug('Listing devices on CEC network')
         return self.controller.listDevices()
 
+    def start(self):
+        """Start the CECContoller.
+        """
+        self.controller.start()
+
+    def stop(self):
+        """Stop the CECController.
+        """
+        self.controller.stop()
 
 if __name__ == "__main__":
     import time
     import json
     LOG = logModule('CECTEST', logModule.DEBUG)
     CONFIGS = [
-        {
-            'type': 'cec-client',
-            'adaptor': '/dev/ttyACM0' # This is default for pulse 8
-        },
+        # {
+        #     'type': 'cec-client',
+        #     'adaptor': '/dev/ttyACM0' # This is default for pulse 8
+        # },
         {
             'type': 'remote-cec-client',
             'adaptor': '/dev/cec0', # This is default for Raspberry Pi
             'address': '', # Needs to be be filled out with IP address
             'username': '', # Needs to be filled out with login username
-            'password': '' # Needs to be filled out with login password
+            'password': '', # Needs to be filled out with login password
+            'prompt' : ''
         }
     ]
     for config in CONFIGS:
@@ -198,11 +167,13 @@ if __name__ == "__main__":
         CEC = HDMICECController(LOG, config)
         DEVICES = CEC.listDevices()
         LOG.info(json.dumps(DEVICES))
-        # The user will need to check all the devices expected from their
+        CEC.sendMessage('0', '2', '0x8f', ['0x21','0x85'])
+        # The user will need to check all the devices expected from their 
         # cec network are shown in this output.
         # It's is expected that a user will send a standby command on their cec
         # network during this 2 minutes.
-        result = CEC.receiveMessage('standby',120)
+        result = CEC.receiveMessage('2', '0', '0x8f')
         LOG.stepResult(result, 'The readUntil result is: [%s]' % result)
+        CEC.stop()
         # The user should check here the monitoring log for thier type contains
         # the expected information.

@@ -32,15 +32,16 @@
 import re
 
 from framework.core.logModule import logModule
+from framework.core.streamToFile import StreamToFile
 from framework.core.commandModules.sshConsole import sshConsole
 from .abstractCECController import CECInterface
 from .cecTypes import CECDeviceType
 
 class RemoteCECClient(CECInterface):
 
-    def __init__(self, adaptor: str,logger: logModule, address: str, port: int = 22, username: str = '', password: str = ''):
-        super().__init__(adaptor, logger)
-        self._console = sshConsole(self._log,address, username, password, port=port)
+    def __init__(self, adaptor: str,logger: logModule, streamLogger: StreamToFile, address: str, port: int = 22, username: str = '', password: str = '', prompt = ':~'):
+        super().__init__(adaptor, logger, streamLogger)
+        self._console = sshConsole(self._log,address, username, password, port=port, prompt=prompt)
         self._log.debug('Initialising RemoteCECClient controller')
         try:
             self._console.open()
@@ -49,12 +50,16 @@ class RemoteCECClient(CECInterface):
             raise
         if self.adaptor not in map(lambda x: x.get('com port'),self._getAdaptors()):
             raise AttributeError('CEC Adaptor specified not found')
-        self._monitoringLog = None
+        self.start()
 
-    @property
-    def monitoring(self) -> bool:
-        return self._monitoring
-    
+    def start(self):
+        self._console.write(f'cec-client {self.adaptor} -d 0')
+        self._stream.writeStreamToFile(self._console.shell.makefile())
+
+    def stop(self):
+        self._console.write('q')
+        self._stream.stopStreamedLog()
+
     def _getAdaptors(self) -> list:
         """
         Retrieves a list of available CEC adaptors using `cec-client`.
@@ -63,75 +68,36 @@ class RemoteCECClient(CECInterface):
             list: A list of dictionaries representing available adaptors with details like COM port.
         """
         self._console.write(f'cec-client -l')
-        stdout = self._console.read_until('currently active source')
+        stdout = self._console.read_until(self._console.prompt)
         stdout = stdout.replace('\r\n','\n')
         adaptor_count = re.search(r'Found devices: ([0-9]+)',stdout, re.M).group(1)
         adaptors = self._splitDeviceSectionsToDicts(stdout)
         return adaptors
 
-    def sendMessage(self, message:str, deviceType: CECDeviceType = CECDeviceType.PLAYBACK) -> bool:
-        """
-        Send a CEC message to the CEC network.
-
-        Args:
-            message (str): The CEC message to be sent.
-            deviceType (CECDeviceType): Type of device to send the message as.
-
-        Returns:
-            bool: True if the message was sent successfully, False otherwise.
-        """
-        return self._console.write(f'echo "{message}" | cec-client {self.adaptor} -s -d 1 -t {deviceType.value}')
+    def sendMessage(self, sourceAddress: str, destAddress: str, opCode: str, payload: list = None) -> None:
+        message = self.formatMessage(sourceAddress, destAddress, opCode, payload=payload)
+        self._console.write(f'tx {message}')
 
     def listDevices(self) -> list:
-        """
-        List CEC devices on CEC network.
-
-        The list returned contains dicts in the following format:
-            {
-            'name': 'TV'
-            'address': '0.0.0.0',
-            'active source': True,
-            'vendor': 'Unknown',
-            'osd string': 'TV', 
-            'CEC version': '1.3a', 
-            'power status': 'on', 
-            'language': 'eng', 
-            }
-        Returns:
-            list: A list of dictionaries representing discovered devices.
-        """
-        self.sendMessage('scan')
+        self.stop()
+        self._console.write(f'echo "scan" | cec-client -s {self.adaptor} -d 1 > cec-test.txt')
+        self._console.waitForPrompt()
         output = self._console.read_until('currently active source')
+        self.start()
         devices = self._splitDeviceSectionsToDicts(output.replace('\r\n','\n'))
         for device in devices:
+            device['physical address'] = device.pop('address')
             device['name'] = device.get('osd string')
+            for key in device.keys():
+                if 'device' in key.lower():
+                    device['logical address'] = key.rsplit('#')[-1]
+                    device.pop(key)
+                    break
             if device.get('active source') == 'yes':
                 device['active source'] = True
             else:
                 device['active source'] = False
         return devices
-
-    def startMonitoring(self, monitoringLog: str) -> None:
-        """
-        Starts monitoring CEC messages with a specified device type.
-
-        Args:
-            monitoringLog (str) : Path to write the monitoring log out
-        """
-        self._monitoringLog = monitoringLog
-        self._console.write(f'cec-client -m -d 0')
-        self._console.shell.set_combine_stderr(True)
-        self._log.logStreamToFile(self._console.shell.makefile(), self._monitoringLog)
-        self._monitoring = True
-
-    def stopMonitoring(self) -> None:
-        """
-        Stops the CEC monitoring process.
-        """
-        if self.monitoring is False:
-            return
-        self._console.write('\x03')
-        self._log.stopStreamedLog(self._monitoringLog)
 
     def _splitDeviceSectionsToDicts(self,command_output:str) -> list:
             """
@@ -144,7 +110,7 @@ class RemoteCECClient(CECInterface):
                 list: A list of dictionaries, each representing a single CEC device with its attributes.
             """
             devices = []
-            device_sections = re.findall(r'^device[ #0-9]{0,}:[\s\S]+?(?:type|language): +[\S ]+$',
+            device_sections = re.findall(r'^device[ #0-9A-F]{0,}:[\s\S]+?(?:type|language): +[\S ]+$',
                                         command_output,
                                         re.M)
             if device_sections:
@@ -156,3 +122,10 @@ class RemoteCECClient(CECInterface):
                             device_dict[line_split.group(1)] = line_split.group(2)
                     devices.append(device_dict)
             return devices
+
+    def formatMessage(self, sourceAddress, destAddress, opCode, payload = None):
+        message_string = f'{sourceAddress}{destAddress}:{opCode[2:]}'
+        if payload:
+            payload_string = ':'.join(map(lambda x: x[2:], payload))
+            message_string += ':' + payload_string
+        return message_string

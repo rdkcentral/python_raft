@@ -112,6 +112,8 @@ class logModule():
         self.path = None
         self.logFile = None
         self.csvLogFile = None
+        self.failedSteps = {}
+
 
     def __del__(self):
         """Deletes the logger instance.
