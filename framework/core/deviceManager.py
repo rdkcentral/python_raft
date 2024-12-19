@@ -150,11 +150,13 @@ class deviceClass():
         #         # Telnet
         #     # outbound
         #     # remoteController
+        #     # hdmiCECController
         self.log = log
         self.consoles = dict()
         self.powerControl = None
         self.outBoundClient = None
         self.remoteController = None
+        self.hdmiCECController = None
         self.session = None
         self.alive = False
 
