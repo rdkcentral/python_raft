@@ -53,7 +53,7 @@ class RemoteCECClient(CECInterface):
         self.start()
 
     def start(self):
-        self._console.write(f'cec-client {self.adaptor} -d 0')
+        self._console.write(f'cec-client {self.adaptor}')
         self._stream.writeStreamToFile(self._console.shell.makefile())
 
     def stop(self):
@@ -68,7 +68,7 @@ class RemoteCECClient(CECInterface):
             list: A list of dictionaries representing available adaptors with details like COM port.
         """
         self._console.write(f'cec-client -l')
-        stdout = self._console.read_until(self._console.prompt)
+        stdout = self._console.read()
         stdout = stdout.replace('\r\n','\n')
         adaptor_count = re.search(r'Found devices: ([0-9]+)',stdout, re.M).group(1)
         adaptors = self._splitDeviceSectionsToDicts(stdout)
@@ -79,12 +79,12 @@ class RemoteCECClient(CECInterface):
         self._console.write(f'tx {message}')
 
     def listDevices(self) -> list:
-        self.stop()
-        self._console.write(f'echo "scan" | cec-client -s {self.adaptor} -d 1 > cec-test.txt')
-        self._console.waitForPrompt()
-        output = self._console.read_until('currently active source')
-        self.start()
-        devices = self._splitDeviceSectionsToDicts(output.replace('\r\n','\n'))
+        self._console.write(f'scan')
+        output = self._stream.readUntil('currently active source',30)
+        devices = []
+        if len(output) > 0:
+            output = '\n'.join(output)
+            devices = self._splitDeviceSectionsToDicts(output)
         for device in devices:
             device['physical address'] = device.pop('address')
             device['name'] = device.get('osd string')

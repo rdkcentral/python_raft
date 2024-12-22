@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 
-from io import IOBase
+from io import IOBase, SEEK_CUR
 from threading import Thread
 from os import path
+import time
 
 
 class StreamToFile():
@@ -12,6 +13,7 @@ class StreamToFile():
         self._fileHandle = None
         self._activeThread = None
         self._readLine = 0
+        self._stopThread = False
 
     def writeStreamToFile(self, inputStream: IOBase) -> None:
         """
@@ -23,10 +25,10 @@ class StreamToFile():
                                 If only a file name is given, the file will be written in the current tests log directory.
         """
         self._fileHandle = open(self._filePath, 'a+', encoding='utf-8')
+        self._stopThread = False
         newThread = Thread(target=self._writeLogFile,
                                         args=[inputStream, self._fileHandle],
                                         daemon=True)
-        
         self._activeThread =  newThread
         newThread.start()
 
@@ -40,10 +42,9 @@ class StreamToFile():
         Raises:
             AttributeError: If the specified thread cannot be found.
         """
-        if self._activeThread:
-            self._activeThread.join(timeout=30)
-        else:
-            raise AttributeError(f'Could not find requested logging thread to stop. [{self._filePath}]')
+        self._stopThread = True
+        while self._activeThread.is_alive():
+            self._activeThread.join()
 
     def _writeLogFile(self,streamIn: IOBase, ioOut: IOBase) -> None:
         """
@@ -53,7 +54,7 @@ class StreamToFile():
             stream_in (IOBase): The stream from a process.
             logFilePath (str): File path to write the log out to.
         """
-        while True:
+        while self._stopThread is False:
             chunk = streamIn.readline()
             if chunk == '':
                 break
@@ -63,30 +64,33 @@ class StreamToFile():
         """
         Read lines from a file until a specific search string is found, with a specified
         number of retries.
-        
+
         Args:
           searchString (str): The string that will be search for.
           retries (int): The maximum number of times the method will attempt to find the `searchString`.
                           Defaults to 5
-        
+
         Returns:
-            boolean : True when the `searchString` is found. False otherwise.
+            list : list of strings including the search line. Empty list when search not found.
         """
-        result = False
+        result = []
         retry = 0
         max_retries = retries
-        while retry != max_retries and not result:
+        while retry != max_retries and len(result) == 0:
             read_line = self._readLine
-            self._fileHandle.seek(read_line)
+            self._fileHandle.seek(0)
             out_lines = self._fileHandle.readlines()
             write_line = len(out_lines)
-            while read_line != write_line:
-                if searchString in out_lines[read_line]:
-                    result = True
-                    break
-                read_line+=1
+            if read_line == write_line:
+                time.sleep(1)
+            else:
+                while read_line < write_line:
+                    if searchString in out_lines[read_line]:
+                        result = out_lines[:read_line]
+                        break
+                    read_line+=1
             retry += 1
-        self._readLine = read_line
+            self._readLine = read_line
         return result
 
     def __del__(self):

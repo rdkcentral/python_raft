@@ -42,7 +42,7 @@ class CECInterface(metaclass=ABCMeta):
     def __init__(self, adaptor_path:str, logger:logModule, streamLogger: StreamToFile):
         self.adaptor = adaptor_path
         self._log = logger
-        self._proc = None
+        self._console = None
         self._stream = streamLogger
 
     @abstractmethod
@@ -120,9 +120,9 @@ class CECInterface(metaclass=ABCMeta):
         Returns:
             boolean: True if message is received. False otherwise.
         """
-        end = datetime.now().timestamp() + timeout
         result = False
-        while datetime.now().timestamp() < end and result is False:
-            message = self.formatMessage(sourceAddress, destAddress, opCode, payload)
-            result = self._stream.readUntil(message)
+        message = self.formatMessage(sourceAddress, destAddress, opCode, payload)
+        output = self._stream.readUntil(message, timeout)
+        if len(output) > 0:
+                result = True
         return result

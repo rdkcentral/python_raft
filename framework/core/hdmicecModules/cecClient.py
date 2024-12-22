@@ -68,7 +68,7 @@ class CECClientController(CECInterface):
         self.start()
 
     def start(self):
-        self._console = subprocess.Popen(f'cec-client {self.adaptor} -d 0'.split(),
+        self._console = subprocess.Popen(f'cec-client {self.adaptor}'.split(),
                                 stdout=subprocess.PIPE,
                                 stderr=subprocess.STDOUT,
                                 stdin=subprocess.PIPE,
@@ -115,15 +115,14 @@ class CECClientController(CECInterface):
         Returns:
             list: A list of dictionaries representing discovered devices with details.
         """
-        self.stop()
-        result = subprocess.run(f'echo "scan" | cec-client {self.adaptor} -s -d 1',
-                                shell=True,
-                                check=True,
-                                stdout=subprocess.PIPE)
-        self.start()
-        stdout = result.stdout.decode('utf-8')
-        self._log.debug('Output of scan on CEC Network: [%s]' % stdout)
-        devicesOnNetwork = self._splitDeviceSectionsToDicts(stdout)
+        devicesOnNetwork = []
+        self._console.stdin.write('scan')
+        self._console.stdin.flush()
+        output = self._stream.readUntil('currently active source',30)
+        if len(output) > 0:
+            output = '\n'.join(output)
+            self._log.debug('Output of scan on CEC Network: [%s]' % output)
+            devicesOnNetwork = self._splitDeviceSectionsToDicts(output)
         return devicesOnNetwork
 
     def listDevices(self) -> list:

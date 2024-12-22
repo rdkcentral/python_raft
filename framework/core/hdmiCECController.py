@@ -148,10 +148,10 @@ if __name__ == "__main__":
     import json
     LOG = logModule('CECTEST', logModule.DEBUG)
     CONFIGS = [
-        # {
-        #     'type': 'cec-client',
-        #     'adaptor': '/dev/ttyACM0' # This is default for pulse 8
-        # },
+        {
+            'type': 'cec-client',
+            'adaptor': '/dev/ttyACM0' # This is default for pulse 8
+        },
         {
             'type': 'remote-cec-client',
             'adaptor': '/dev/cec0', # This is default for Raspberry Pi
@@ -168,11 +168,13 @@ if __name__ == "__main__":
         DEVICES = CEC.listDevices()
         LOG.info(json.dumps(DEVICES))
         CEC.sendMessage('0', '2', '0x8f', ['0x21','0x85'])
+        CEC.stop()
         # The user will need to check all the devices expected from their 
         # cec network are shown in this output.
         # It's is expected that a user will send a standby command on their cec
         # network during this 2 minutes.
-        result = CEC.receiveMessage('2', '0', '0x8f')
+        CEC.start()
+        result = CEC.receiveMessage('2', '0', '0x8f', timeout=20)
         LOG.stepResult(result, 'The readUntil result is: [%s]' % result)
         CEC.stop()
         # The user should check here the monitoring log for thier type contains
