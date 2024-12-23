@@ -38,6 +38,7 @@ from framework.core.remoteControllerModules.olimex import remoteOlimex
 from framework.core.remoteControllerModules.skyProc import remoteSkyProc
 from framework.core.remoteControllerModules.arduino import remoteArduino
 from framework.core.remoteControllerModules.none import remoteNone
+from framework.core.remoteControllerModules.keySimulator import remoteKeySimulator
 
 class remoteControllerMapping():
     def __init__(self, log:logModule, mappingConfig:dict):
@@ -75,7 +76,7 @@ class remoteControllerMapping():
         prefix = self.currentMap.get("prefix")
         returnedKey=self.currentMap["codes"].get(key)
         if prefix:
-            returnedKey = prefix+key
+            returnedKey = prefix + returnedKey
         return returnedKey
 
     def getKeyMap(self):
@@ -101,6 +102,8 @@ class remoteControllerMapping():
             self.log.error("RemoteController keyMap [{}] not found".format(newMapName))
             return False
         found = False
+        if isinstance(self.maps, dict):
+            self.maps = list(self.maps.values())
         for x in self.maps:
             if x["name"] == newMapName:
                 self.currentMap = x
@@ -132,6 +135,8 @@ class commonRemoteClass():
             self.remoteController = remoteSkyProc( self.log, remoteConfig )
         elif self.type == "arduino":
             self.remoteController = remoteArduino (self.log, remoteConfig)
+        elif self.type == "keySimulator":
+            self.remoteController = remoteKeySimulator (self.log, remoteConfig)
         else:   # remoteNone otherwise
             self.remoteController = remoteNone( self.log, remoteConfig )
 
@@ -150,13 +155,7 @@ class commonRemoteClass():
         with open(configFile) as inputFile:
             inputFile.seek(0, os.SEEK_SET)
             config = yaml.full_load(inputFile)
-        keyDictionary = {}
-        for key, val in config.items():
-            if isinstance(val, dict):
-                for k, v in val.items():
-                    keyDictionary[k] = v 
-            else:
-                keyDictionary[key] = val
+        keyDictionary = config.get('remoteMaps',{})
         return keyDictionary
 
     def sendKey(self, keycode:dict, delay:int=1, repeat:int=1, randomRepeat:int=0):
@@ -180,6 +179,7 @@ class commonRemoteClass():
 
         mappedCode = self.remoteMap.getMappedKey( keycode.name )
         result = self.remoteController.sendKey( mappedCode, repeat, delay)
+        return result
 
     def setKeyMap( self, name:dict ):
         """Set the Key Translation Map
@@ -192,4 +192,4 @@ class commonRemoteClass():
     def getKeyMap( self ):
         """Get the Key Translation Map
         """
-        self.remoteMap.getKeyMap()
+        return self.remoteMap.getKeyMap()

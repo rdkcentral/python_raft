@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 #** *****************************************************************************
 # *
 # * If not stated otherwise in this file or this component's LICENSE file the
@@ -20,10 +20,19 @@
 # * limitations under the License.
 # *
 #* ******************************************************************************
+#*
+#*   ** Project      : RAFT
+#*   ** @addtogroup  : core
+#*   ** @date        : 02/10/2024
+#*   **
+#*   ** @brief : cecTypes defined to standardise cecController usage.
+#*   **
+#* ******************************************************************************
 
-if [ $0 != "bash" ];then
-    echo "re-run this script with source e.g. '. ./activate.sh'"
-    exit 1
-fi
+from enum import Enum
 
-. ${PWD}/VENV/bin/activate
+class CECDeviceType(Enum):
+    PLAYBACK = "p"
+    RECORDER = "r"
+    TUNER = "t"
+    AUDIO = "a"
