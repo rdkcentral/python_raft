@@ -77,7 +77,7 @@ class HDMICECController():
     def sendMessage(self, sourceAddress: str, destAddress: str, opCode: str, payload: list = None) -> None:
         """
         Sends an opCode from a specified source and to a specified destination.
-        
+
         Args:
           sourceAddress (str): The logical address of the source device (0-9 or A-F).
           destAddress (str): The logical address of the destination device (0-9 or A-F).
@@ -87,11 +87,11 @@ class HDMICECController():
         payload_string = ''
         if isinstance(payload, list):
             payload_string = ' '.join(payload)
-        self._log.debug('Sending CEC message: Source=[%s] Dest=[%s] opCode=[%s] payload=[%s]' % 
+        self._log.debug('Sending CEC message: Source=[%s] Dest=[%s] opCode=[%s] payload=[%s]' %
                         (sourceAddress, destAddress, opCode, payload_string))
         self.controller.sendMessage(sourceAddress, destAddress, opCode, payload=payload)
 
-    def receiveMessage(self, sourceAddress: str, destAddress: str, opCode: str, timeout: int = 10, payload: list = None) -> bool:
+    def checkMessageReceived(self, sourceAddress: str, destAddress: str, opCode: str, timeout: int = 10, payload: list = None) -> bool:
         """
         This function checks to see if a specified opCode has been received.
 
@@ -106,12 +106,16 @@ class HDMICECController():
         Returns:
             boolean: True if message is received. False otherwise.
         """
+        result = False
         payload_string = ''
         if isinstance(payload, list):
             payload_string = ' '.join(payload)
-        self._log.debug('Expecting CEC message: Source=[%s] Dest=[%s] opCode=[%s] payload=[%s]' % 
+        self._log.debug('Expecting CEC message: Source=[%s] Dest=[%s] opCode=[%s] payload=[%s]' %
                         (sourceAddress, destAddress, opCode, payload_string))
-        return self.controller.receiveMessage(sourceAddress, destAddress, opCode, timeout=timeout, payload=payload)
+        received_message = self.controller.receiveMessage(sourceAddress, destAddress, opCode, timeout=timeout, payload=payload)
+        if len(received_message) > 0:
+            result = True
+        return result
 
     def listDevices(self) -> list:
         """
@@ -167,15 +171,8 @@ if __name__ == "__main__":
         CEC = HDMICECController(LOG, config)
         DEVICES = CEC.listDevices()
         LOG.info(json.dumps(DEVICES))
-        CEC.sendMessage('0', '2', '0x8f', ['0x21','0x85'])
-        CEC.stop()
-        # The user will need to check all the devices expected from their 
-        # cec network are shown in this output.
-        # It's is expected that a user will send a standby command on their cec
-        # network during this 2 minutes.
-        CEC.start()
-        result = CEC.receiveMessage('2', '0', '0x8f', timeout=20)
+        CEC.sendMessage('0', '2', '0x8f')
+        result = CEC.receiveMessage('2', '0', '0x90', payload=['0x00'])
         LOG.stepResult(result, 'The readUntil result is: [%s]' % result)
         CEC.stop()
-        # The user should check here the monitoring log for thier type contains
-        # the expected information.
+

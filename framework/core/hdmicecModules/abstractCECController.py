@@ -118,11 +118,8 @@ class CECInterface(metaclass=ABCMeta):
           payload (list): List of hexidecimal strings to be sent with the opCode. Optional.
 
         Returns:
-            boolean: True if message is received. False otherwise.
+            list: list of strings containing found message. Empty list if message isn't found.
         """
-        result = False
         message = self.formatMessage(sourceAddress, destAddress, opCode, payload)
         output = self._stream.readUntil(message, timeout)
-        if len(output) > 0:
-                result = True
-        return result
+        return output

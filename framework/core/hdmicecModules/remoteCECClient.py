@@ -128,4 +128,4 @@ class RemoteCECClient(CECInterface):
         if payload:
             payload_string = ':'.join(map(lambda x: x[2:], payload))
             message_string += ':' + payload_string
-        return message_string
+        return message_string.lower()

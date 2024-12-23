@@ -45,7 +45,7 @@ from .cecTypes import CECDeviceType
 
 class CECClientController(CECInterface):
     """
-    This class provides an interface for controlling Consumer Electronics Control (CEC) 
+    This class provides an interface for controlling Consumer Electronics Control (CEC)
     devices through the `cec-client` command-line tool.
     """
 
@@ -60,7 +60,7 @@ class CECClientController(CECInterface):
         Raises:
             AttributeError: If the specified CEC adaptor is not found.
         """
-        
+
         super().__init__(adaptor_path=adaptor_path, logger=logger, streamLogger=streamLogger)
         self._log.debug('Initialising CECClientController for [%s]' % self.adaptor)
         if self.adaptor not in map(lambda x: x.get('com port'),self._getAdaptors()):
@@ -96,7 +96,7 @@ class CECClientController(CECInterface):
         Returns:
             list: A list of dictionaries representing available adaptors with details like COM port.
         """
-        result = subprocess.run(f'cec-client -l', 
+        result = subprocess.run(f'cec-client -l',
                                 shell=True,
                                 text=True,
                                 capture_output=True,
@@ -141,7 +141,7 @@ class CECClientController(CECInterface):
             else:
                 device_dict['active source'] = False
         return devices
-    
+
     def _splitDeviceSectionsToDicts(self,command_output:str) -> list:
         """
         Splits the output of a `cec-client` command into individual device sections and parses them into dictionaries.
@@ -171,7 +171,7 @@ class CECClientController(CECInterface):
         if payload:
             payload_string = ':'.join(map(lambda x: x[2:], payload))
             message_string += ':' + payload_string
-        return message_string
+        return message_string.lower()
 
     def __del__(self):
         """
