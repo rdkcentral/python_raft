@@ -31,7 +31,9 @@
 #* ******************************************************************************
 
 import os
+from io import IOBase
 import logging
+from threading import Thread
 import time
 import datetime
 #from datetime import datetime
@@ -110,6 +112,8 @@ class logModule():
         self.path = None
         self.logFile = None
         self.csvLogFile = None
+        self.failedSteps = {}
+
 
     def __del__(self):
         """Deletes the logger instance.
@@ -486,4 +490,3 @@ class logModule():
         message = "[{}]: RESULT : [{}]: {}".format(self.stepNum,resultMessage, message)
         self.step("=====================Step End======================",showStepNumber=False)
         self.stepResultMessage(message)
-            

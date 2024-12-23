@@ -31,23 +31,25 @@
 #*   **
 #* ******************************************************************************
 
+from datetime import datetime
 from io import IOBase
 import re
 import subprocess
 from threading import Thread
 
 from framework.core.logModule import logModule
+from framework.core.streamToFile import StreamToFile
 from .abstractCECController import CECInterface
-from .cecTypes import MonitoringType
+from .cecTypes import CECDeviceType
 
 
 class CECClientController(CECInterface):
     """
-    This class provides an interface for controlling Consumer Electronics Control (CEC) 
+    This class provides an interface for controlling Consumer Electronics Control (CEC)
     devices through the `cec-client` command-line tool.
     """
 
-    def __init__(self, adaptor_path:str, logger:logModule):
+    def __init__(self, adaptor_path:str, logger:logModule, streamLogger: StreamToFile):
         """
         Initializes the CECClientController instance.
 
@@ -58,43 +60,34 @@ class CECClientController(CECInterface):
         Raises:
             AttributeError: If the specified CEC adaptor is not found.
         """
-        
-        self._log = logger
-        self.adaptor = adaptor_path
+
+        super().__init__(adaptor_path=adaptor_path, logger=logger, streamLogger=streamLogger)
         self._log.debug('Initialising CECClientController for [%s]' % self.adaptor)
         if self.adaptor not in map(lambda x: x.get('com port'),self._getAdaptors()):
             raise AttributeError('CEC Adaptor specified not found')
-        self._monitoring = False
-        self._m_proc = None
-        self._m_stdout_thread = None
+        self.start()
 
-    def sendMessage(self,message: str) -> bool:
-        exit_code, stdout =  self._sendMessage(message, 0)
-        self._log.debug('Output of message sent: [%s]' % stdout)
-        if exit_code != 0:
-            return False
-        return True
-
-    def _sendMessage(self, message: str, debug: int = 1) -> tuple:
-        """
-        Internal method for sending a CEC message using `subprocess`.
-
-        Args:
-            message (str): The CEC message to be sent.
-            debug (int, optional): Debug level for `cec-client` (default: 1).
-
-        Returns:
-            tuple: A tuple containing the exit code of the subprocess call and the standard output.
-        """
-        result = subprocess.run(f'echo "{message}" | cec-client {self.adaptor} -s -d {debug}',
-                                shell=True,
-                                check=True,
+    def start(self):
+        self._console = subprocess.Popen(f'cec-client {self.adaptor}'.split(),
                                 stdout=subprocess.PIPE,
-                                stderr=subprocess.PIPE)
-        stdout = result.stdout.decode('utf-8')
-        stderr = result.stderr.decode('utf-8')
-        exit_code = result.returncode
-        return exit_code, stdout
+                                stderr=subprocess.STDOUT,
+                                stdin=subprocess.PIPE,
+                                text=True)
+        self._stream.writeStreamToFile(self._console.stdout)
+
+    def stop(self):
+        self._console.stdin.write('q\n')
+        self._console.stdin.flush()
+        try:
+            self._console.wait()
+        except subprocess.CalledProcessError:
+            self._console.terminate()
+        self._stream.stopStreamedLog()
+
+    def sendMessage(self, sourceAddress: str, destAddress: str, opCode: str, payload: list = None) -> None:
+        message = self.formatMessage(sourceAddress, destAddress, opCode, payload=payload)
+        self._console.stdin.write(f'tx {message}\n')
+        self._console.stdin.flush()
 
     def _getAdaptors(self) -> list:
         """
@@ -103,7 +96,7 @@ class CECClientController(CECInterface):
         Returns:
             list: A list of dictionaries representing available adaptors with details like COM port.
         """
-        result = subprocess.run(f'cec-client -l', 
+        result = subprocess.run(f'cec-client -l',
                                 shell=True,
                                 text=True,
                                 capture_output=True,
@@ -122,21 +115,33 @@ class CECClientController(CECInterface):
         Returns:
             list: A list of dictionaries representing discovered devices with details.
         """
-        _, result = self._sendMessage('scan')
-        self._log.debug('Output of scan on CEC Network: [%s]' % result)
-        devicesOnNetwork = self._splitDeviceSectionsToDicts(result)
+        devicesOnNetwork = []
+        self._console.stdin.write('scan')
+        self._console.stdin.flush()
+        output = self._stream.readUntil('currently active source',30)
+        if len(output) > 0:
+            output = '\n'.join(output)
+            self._log.debug('Output of scan on CEC Network: [%s]' % output)
+            devicesOnNetwork = self._splitDeviceSectionsToDicts(output)
         return devicesOnNetwork
 
     def listDevices(self) -> list:
         devices = self._scanCECNetwork()
         for device_dict in devices:
+            # Remove the 'address' from the dict and change it to 'physical address'
+            device_dict['physical address'] = device_dict.pop('address')
             device_dict['name'] = device_dict.get('osd string')
+            for key in device_dict.keys():
+                if 'device' in key.lower():
+                    device_dict['logical address'] = key.rsplit('#')[-1]
+                    device_dict.pop(key)
+                    break
             if device_dict.get('active source') == 'yes':
                 device_dict['active source'] = True
             else:
                 device_dict['active source'] = False
         return devices
-    
+
     def _splitDeviceSectionsToDicts(self,command_output:str) -> list:
         """
         Splits the output of a `cec-client` command into individual device sections and parses them into dictionaries.
@@ -148,7 +153,7 @@ class CECClientController(CECInterface):
             list: A list of dictionaries, each representing a single CEC device with its attributes.
         """
         devices = []
-        device_sections = re.findall(r'^device[ #0-9]{0,}:[\s\S]+?(?:type|language): +[\S ]+$',
+        device_sections = re.findall(r'^device[ #0-9A-F]{0,}:[\s\S]+?(?:type|language): +[\S ]+$',
                                      command_output,
                                      re.M)
         if device_sections:
@@ -161,47 +166,15 @@ class CECClientController(CECInterface):
                 devices.append(device_dict)
         return devices
 
-    def startMonitoring(self, monitoringLog: str, device_type: MonitoringType = MonitoringType.RECORDER) -> None:
-        self._monitoring = True
-        try:
-            self._m_proc = subprocess.Popen(f'cec-client {self.adaptor} -m -d 0 -t {device_type.value}'.split(),
-                                stdout=subprocess.PIPE,
-                                stderr=subprocess.STDOUT,
-                                text=True)
-            self._m_stdout_thread = Thread(target=self._write_monitoring_log,
-                                        args=[self._m_proc.stdout, monitoringLog],
-                                        daemon=True)
-            self._m_stdout_thread.start()
-        except Exception as e:
-            self.stopMonitoring()
-            raise
-
-    def _write_monitoring_log(self,streamIn: IOBase, logFilePath: str) -> None:
-        """
-        Writes the output of the monitoring process to a log file.
-
-        Args:
-            stream_in (IOBase): The input stream from the monitoring process.
-            logFilePath (str): File path to write the monitoring log out to.
-        """
-        while True:
-            chunk = streamIn.readline()
-            if chunk == '':
-                break
-            with open(logFilePath, 'a+',) as out:
-                out.write(chunk)
-
-    def stopMonitoring(self) -> None:
-        self._log.debug('Stopping monitoring of adaptor [%s]' % self.adaptor)
-        if self.monitoring is False:
-            return
-        self._m_proc.terminate()
-        exit_code = self._m_proc.wait()
-        self._m_stdout_thread.join()
-        self._monitoring = False
+    def formatMessage(self, sourceAddress: str, destAddress: str, opCode:str, payload: list = None) -> str:
+        message_string = f'{sourceAddress}{destAddress}:{opCode[2:]}'
+        if payload:
+            payload_string = ':'.join(map(lambda x: x[2:], payload))
+            message_string += ':' + payload_string
+        return message_string.lower()
 
     def __del__(self):
         """
         Destructor for the class, ensures monitoring is stopped.
         """
-        self.stopMonitoring()
+        self.stop()

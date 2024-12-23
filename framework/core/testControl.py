@@ -155,6 +155,7 @@ class testController():
         self.outboundClient = self.dut.outBoundClient
         self.powerControl = self.dut.powerControl
         self.commonRemote = self.dut.remoteController
+        self.hdmiCECController = self.dut.hdmiCECController
         self.utils = utilities(self.log)
         # For UI tests Initialising Video capture and decode the screen_regions.yml for the platform
         cpePlatform = self.slotInfo.getPlatform()
@@ -300,6 +301,8 @@ class testController():
             self.webpageController.closeBrowser()
         if self.capture is not None:
             self.capture.stop()
+        if self.hdmiCECController:
+            self.hdmiCECController.stop()
         return True
 
     def testExceptionCleanUp(self):
