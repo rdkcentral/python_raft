@@ -87,7 +87,7 @@ rackConfig:
                         # [type: "orvbioS20", ip: "", mac: "", port:"optional", relay:"optional"]
                         # [type: "kasa", ip: "", options:"--plug" ] #  <- Plug
                         # [type: "kasa", ip: "", options:"--strip", args:'--index 2' ] # <- Power Strip
-                        # [tyep: "tapo", ip: "", username: "optional", password: "optional", outlet: "optional"]
+                        # [tyep: "tapo", ip: "", username: "", password: "", outlet: "optional"]
                         # [type: "hs100", ip:"", port:"optional" ]  kara also supports hs100
                         # [type: "apc", ip:"", username:"", password:"" ]  rack apc switch
                         # [type: "olimex", ip:"", port:"optional", relay:""  ]  
