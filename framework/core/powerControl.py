@@ -120,7 +120,7 @@ class powerControlClass():
         return self.powerRetry(self.powerSwitch.reboot)
 
     def getPowerLevel(self):
-        """Retreive the current power draw of the device.
+        """Retrieve the current power draw of the device.
 
         Returns:
             float: Power draw in Watts.
@@ -132,7 +132,7 @@ class powerControlClass():
         return self.powerRetry(self.powerSwitch.getPowerLevel)
 
     def getVoltageLevel(self):
-        """Retreive the current Voltage draw of the device.
+        """Retrieve the current Voltage draw of the device.
 
         Returns:
             float: Voltage draw in Volts.
@@ -144,7 +144,7 @@ class powerControlClass():
         return self.powerRetry(self.powerSwitch.getVoltageLevel)
 
     def getCurrentLevel(self):
-        """Retreive the current draw of the device.
+        """Retrieve the current draw of the device.
 
         Returns:
             float: Current draw in Amps.
