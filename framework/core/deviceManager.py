@@ -273,7 +273,7 @@ class deviceClass():
             result = utilities(self.log).syscmd( "ping" + ping_param_amount + "10" + ping_param_quiet + ip)
             if ( 0 == result[1] ):
                 # Check for 0% packet loss, otherwise reject it
-                outputString = str(self.output)
+                outputString = str(result[0])
                 if ( ", 0% packet loss" in outputString ):
                     hostIsUp = True
                     self.log.debug("pingTest hostIsUp")
