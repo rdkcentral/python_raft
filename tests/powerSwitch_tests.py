@@ -76,8 +76,30 @@ if __name__ == "__main__":
 
     utils.wait(5)
 
+    log.info("Testing getPowerLevel")
+    try:
+        result = power.getPowerLevel()
+        log.info("Current Power: [{}W]".format(result))
+    except RuntimeError as e:
+        log.info(e)
+
+    log.info("Testing getVoltageLevel")
+    try:
+        result = power.getVoltageLevel()
+        log.info("Current Voltage: [{}V]".format(result))
+    except RuntimeError as e:
+        log.info(e)
+
+    log.info("Testing getCurrentLevel")
+    try:
+        result = power.getCurrentLevel()
+        log.info("Current current: [{}A]".format(result))
+    except RuntimeError as e:
+        log.info(e)
+
     log.info("Testing Power Off")
     power.powerOff()
+
 
     log.info("Test complete")
 

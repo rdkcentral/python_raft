@@ -47,6 +47,7 @@
 
 from framework.core.powerModules.apcAos import powerApcAos
 from framework.core.powerModules.kasaControl import powerKasa
+from framework.core.powerModules.tapoControl import powerTapo
 from framework.core.powerModules.olimex import powerOlimex
 from framework.core.powerModules.apc import powerAPC
 from framework.core.powerModules.hs100 import powerHS100
@@ -89,6 +90,8 @@ class powerControlClass():
             self.powerSwitch = powerOlimex( log, self.ip, config.get("port"), config.get("relay"))
         elif type == "kasa":
             self.powerSwitch = powerKasa( log, **config )
+        elif type == "tapo":
+            self.powerSwitch = powerTapo( log, **config)
         elif type == "SLP":
             self.powerSwitch = powerSLP(log, self.ip, config.get("username"), config.get("password"), config.get("outlet_id"),config.get('port',23))
         elif type == "none":
@@ -112,10 +115,45 @@ class powerControlClass():
             self.powerOnState = False
         return result
 
-
     def reboot(self):
         self.log.info("reboot")
         return self.powerRetry(self.powerSwitch.reboot)
+
+    def getPowerLevel(self):
+        """Retrieve the current power draw of the device.
+
+        Returns:
+            float: Power draw in Watts.
+
+        Raises:
+            RuntimeError: if powerSwitch type doesn't support power readings.
+        """
+        self.log.debug("Retrieving current Power level")
+        return self.powerRetry(self.powerSwitch.getPowerLevel)
+
+    def getVoltageLevel(self):
+        """Retrieve the current Voltage draw of the device.
+
+        Returns:
+            float: Voltage draw in Volts.
+
+        Raises:
+            RuntimeError: if powerSwitch type doesn't support Voltage readings.
+        """
+        self.log.debug("Retrieving current Voltage level")
+        return self.powerRetry(self.powerSwitch.getVoltageLevel)
+
+    def getCurrentLevel(self):
+        """Retrieve the current draw of the device.
+
+        Returns:
+            float: Current draw in Amps.
+
+        Raises:
+            RuntimeError: if powerSwitch type doesn't support current readings.
+        """
+        self.log.debug("Retrieving current Voltage level")
+        return self.powerRetry(self.powerSwitch.getCurrentLevel)
 
     def powerRetry(self, powerMethod):
         """ Performs the passed powerMethod and retries it if it fails
