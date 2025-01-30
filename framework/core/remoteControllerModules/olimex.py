@@ -42,13 +42,13 @@ class remoteOlimex():
         self.remoteController = remoteController
 
     def command(self, cmd:str):
-        self.telnet=telnet(self.log, '{}:{}'.format( self.remoteController["ip"], self.remoteController["port"] ), None, None)
+        self.telnet=telnet(self.log, self.log.logPath ,'{}:{}'.format( self.remoteController["ip"], self.remoteController["port"] ), None, None)
         if False==self.telnet.connect():
             return False
         self.telnet.read_very_eager()
         if False==self.telnet.write(cmd):
             return False
-        if not b"(OK)" in self.telnet.read_until("(OK)"):
+        if not "(OK)" in self.telnet.read_until("(OK)"):
             return False
         self.telnet.disconnect()
         return True
