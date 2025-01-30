@@ -59,8 +59,9 @@ import time
 import subprocess
 
 from framework.core.logModule import logModule
+from framework.core.powerModules.abstractPowerModule import PowerModuleInterface
 
-class powerKasa():
+class powerKasa(PowerModuleInterface):
     
     """Kasa power switch controller supports
     """
@@ -81,7 +82,7 @@ class powerKasa():
             options ([str], optional): [options]. Defaults to None, which translates to "--plug"
             kwargs ([dict]): [any other args]
         """
-        self.log = log
+        super().__init__(log)
         self.is_on = False
         self.is_off = False
         self.slotIndex=0
@@ -90,7 +91,7 @@ class powerKasa():
         #args = config.get("args")
         #options = config.get("options")
         if options == None:
-            options = "--plug"
+            options = "--type plug"
         if args == None:
             args = ""
         else:
@@ -155,9 +156,9 @@ class powerKasa():
             extension += " {}".format(self.args)
         # kasa [OPTIONS] COMMAND [ARGS]...
         command = self.split_with_quotes( "kasa " + extension )
-        self.log.debug( "Command: {}".format(command))
+        self._log.debug( "Command: {}".format(command))
         data = subprocess.run(command, stdout=subprocess.PIPE, text=True)
-        self.log.debug(data.stdout)
+        self._log.debug(data.stdout)
         return data.stdout
 
     def powerOff(self):
@@ -173,7 +174,7 @@ class powerKasa():
         self.performCommand("off")
         self.__getstate__()
         if self.is_off == False:
-            self.log.error(" Power Off Failed")
+            self._log.error(" Power Off Failed")
         return self.is_off
 
     def powerOn(self):
@@ -189,7 +190,7 @@ class powerKasa():
         self.performCommand("on")
         self.__getstate__()
         if self.is_on == False:
-            self.log.error(" Power On Failed")    
+            self._log.error(" Power On Failed")    
         return self.is_on
 
     def __getstate__(self):
@@ -211,33 +212,33 @@ class powerKasa():
                 elif line[:3] == "OFF":
                     powerState.append("OFF")
             if len(powerState) != 0:
-                self.log.debug(powerState)
+                self._log.debug(powerState)
                 # Check if this strip is off
                 if powerState[0] == "OFF":
                     self.is_on = False
                     self.is_off = True
-                    self.log.debug("Device state: OFF")
+                    self._log.debug("Device state: OFF")
                     return
                 # Check if the this socket is off.
                 if powerState[self.slotIndex+1] == "OFF":
                     self.is_on = False
                     self.is_off = True
-                    self.log.debug("Slot state: OFF")
+                    self._log.debug("Slot state: OFF")
                 else:
                     self.is_on = True
                     self.is_off = False
-                    self.log.debug("Slot state: ON")
+                    self._log.debug("Slot state: ON")
         else:
             result = self.performCommand("state")
             # | grep 'Device state' | cut -d ' ' -f 3
-            if "Device state: OFF" in result:
+            if "Device state: False" in result:
                 self.is_on = False
                 self.is_off = True
-                self.log.debug("Device state: OFF")
+                self._log.debug("Device state: OFF")
             else:
                 self.is_on = True
                 self.is_off = False
-                self.log.debug("Device state: ON")
+                self._log.debug("Device state: ON")
 
     def reboot(self):
         """
