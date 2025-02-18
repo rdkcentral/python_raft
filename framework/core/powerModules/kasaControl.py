@@ -83,8 +83,6 @@ class powerKasa(PowerModuleInterface):
             kwargs ([dict]): [any other args]
         """
         super().__init__(log)
-        self.is_on = False
-        self.is_off = False
         self.slotIndex=0
         self.ip = ip
         #config.get("ip")
@@ -215,29 +213,24 @@ class powerKasa(PowerModuleInterface):
                 self._log.debug(powerState)
                 # Check if this strip is off
                 if powerState[0] == "OFF":
-                    self.is_on = False
-                    self.is_off = True
+                    self._is_on = False
                     self._log.debug("Device state: OFF")
                     return
                 # Check if the this socket is off.
                 if powerState[self.slotIndex+1] == "OFF":
-                    self.is_on = False
-                    self.is_off = True
+                    self._is_on = False
                     self._log.debug("Slot state: OFF")
                 else:
-                    self.is_on = True
-                    self.is_off = False
+                    self._is_on = True
                     self._log.debug("Slot state: ON")
         else:
             result = self.performCommand("state")
             # | grep 'Device state' | cut -d ' ' -f 3
             if "Device state: False" in result:
-                self.is_on = False
-                self.is_off = True
+                self._is_on = False
                 self._log.debug("Device state: OFF")
             else:
-                self.is_on = True
-                self.is_off = False
+                self._is_on = True
                 self._log.debug("Device state: ON")
 
     def reboot(self):
