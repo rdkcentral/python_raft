@@ -26,7 +26,7 @@ import sys
 
 # Add the framework path to system
 dir_path = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(dir_path+"/../")
+sys.path.append(dir_path+"/../../")
 
 from framework.core.rcCodes import rcCode as rc
 from framework.core.logModule import logModule
