@@ -48,7 +48,7 @@ class remoteOlimex():
         self.telnet.read_very_eager()
         if False==self.telnet.write(cmd):
             return False
-        if not "(OK)" in self.telnet.read_until("(OK)"):
+        if not "(OK)" in self.telnet.read_until("(OK)", 20):
             return False
         self.telnet.disconnect()
         return True
