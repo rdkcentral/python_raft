@@ -29,7 +29,7 @@
 #* ******************************************************************************
 
 from logging import exception
-from datetime import time
+import time
 import platform
 import os
 
@@ -229,7 +229,6 @@ class deviceClass():
         """
         #Ping the box till the box responds after the boot
         if(logPingTime):
-            self.log.step("waitForBoot( {} )".format(self.slotInfo.getDeviceAddress()))
             pingStartTime = time.time()
             timeString = time.strftime("%H:%M:%S",time.gmtime(pingStartTime))
             self.log.step("ping start time: [{}]".format(timeString) )
