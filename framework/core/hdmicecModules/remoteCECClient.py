@@ -80,7 +80,7 @@ class RemoteCECClient(CECInterface):
 
     def listDevices(self) -> list:
         self._console.write(f'scan')
-        output = self._stream.readUntil('currently active source',30)
+        output = self._stream.readUntil('currently active source',90)
         devices = []
         if len(output) > 0:
             output = '\n'.join(output)
