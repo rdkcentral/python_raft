@@ -1,23 +1,118 @@
 from abc import ABC, abstractmethod
 
 class AudioAmplifier(ABC):
+    """
+    Abstract base class defining the interface for an audio amplifier controller.
+
+    Implementations must provide async methods for controlling power, volume,
+    input source, mute state, sound mode, and retrieving status information.
+    """
+
+    @classmethod
     @abstractmethod
-    async def power_on(self): pass
+    async def create(cls, host: str):
+        """
+        Async factory method to create and initialize an instance.
+
+        :param host: IP address or hostname of the audio amplifier.
+        :return: An initialized instance of AudioAmplifier.
+        """
+        pass
 
     @abstractmethod
-    async def power_off(self): pass
+    async def power_on(self):
+        """Power on the amplifier."""
+        pass
 
     @abstractmethod
-    async def set_volume(self, volume: float): pass
+    async def power_off(self):
+        """Power off the amplifier."""
+        pass
 
     @abstractmethod
-    async def mute(self, state: bool): pass
+    async def set_volume(self, volume: float):
+        """
+        Set the amplifier volume.
+
+        :param volume: Desired volume level.
+        """
+        pass
 
     @abstractmethod
-    async def set_input(self, input_name: str): pass
+    async def mute(self, state: bool):
+        """
+        Mute or unmute the amplifier.
+
+        :param state: True to mute, False to unmute.
+        """
+        pass
 
     @abstractmethod
-    async def update_state(self): pass
+    async def get_available_inputs(self) -> list[str]:
+        """
+        Get the list of available input sources supported by the amplifier.
+        """
+        pass
 
     @abstractmethod
-    def get_status(self) -> dict: pass
+    async def get_available_sound_modes(self) -> list[str]:
+        """
+        Get the list of available sound modes supported by the amplifier.
+        """
+        pass
+
+    @abstractmethod
+    async def set_input(self, input_name: str):
+        """
+        Set the input source of the amplifier.
+
+        :param input_name: Name of the input source (e.g., "TV", "CD").
+        """
+        pass
+
+    @abstractmethod
+    async def set_sound_mode(self, input_name: str):
+        """
+        Set the sound mode of the amplifier.
+
+        :param input_name: Name of the sound mode (e.g., "TV", "CD").
+        """
+        pass
+
+    @abstractmethod
+    async def update_state(self):
+        """
+        Refresh the internal state from the amplifier.
+
+        Typically required before retrieving status properties.
+        """
+        pass
+
+    @abstractmethod
+    async def get_power(self) -> str:
+        """Get the current power state (e.g., "ON", "OFF")."""
+        pass
+
+    @abstractmethod
+    async def get_volume(self) -> float:
+        """Get the current volume level."""
+        pass
+
+    @abstractmethod
+    async def get_input(self) -> str:
+        """Get the currently selected input source."""
+        pass
+
+    @abstractmethod
+    async def is_muted(self) -> bool:
+        """Check whether the amplifier is muted."""
+        pass
+
+    @abstractmethod
+    async def get_status(self) -> dict:
+        """
+        Get a dictionary of key status information (power, volume, input, mute).
+
+        :return: Dictionary of current amplifier state.
+        """
+        pass
