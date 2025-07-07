@@ -1,5 +1,4 @@
 import asyncio
-
 import os
 import sys
 
@@ -7,16 +6,17 @@ import sys
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path+"/../")
 
-from framework.core.audioAmplifier.denon_controller import DenonAVRController
+from framework.core.denon_controller import DenonAVRController
 
-async def main():
-    controller = await DenonAVRController.create("10.242.30.236")
+if __name__ == "__main__":
+    controller = DenonAVRController("10.242.30.236")
+    controller.setup()
 
     # Power ON test
     try:
-        await controller.power_on()
-        await controller.update_state() 
-        power = await controller.get_power()
+        controller.power_on()
+        controller.update_state() 
+        power = controller.get_power()
         assert power == "ON"
         print("PASSED: Power ON")
     except:
@@ -24,10 +24,10 @@ async def main():
 
     # Volume test
     try:
-        volume = -40
-        await controller.set_volume(volume)
-        await controller.update_state()
-        updated_volume = await controller.get_volume()
+        volume = -45
+        controller.set_volume(volume)
+        controller.update_state()
+        updated_volume = controller.get_volume()
         assert updated_volume == volume
         print("PASSED: Volume change")
     except:
@@ -35,18 +35,18 @@ async def main():
 
     # Mute test
     try:
-        await controller.mute(True)
-        await controller.update_state()
-        muted = await controller.is_muted()
+        controller.mute(True)
+        controller.update_state()
+        muted = controller.is_muted()
         assert muted is True
         print("PASSED: Mute")
     except: 
         print("FAILED: Mute")
 
     try:
-        await controller.mute(False)
-        await controller.update_state()
-        muted = await controller.is_muted()
+        controller.mute(False)
+        controller.update_state()
+        muted = controller.is_muted()
         assert muted is False
         print("PASSED: Unmute")
     except: 
@@ -54,11 +54,11 @@ async def main():
 
     # Input test
     try:
-        print("Available inputs:", await controller.get_available_inputs())
-        input = "Game"
-        await controller.set_input(input)
-        await controller.update_state()
-        updated_input = await controller.get_input()
+        print("Available inputs:", controller.get_available_inputs())
+        input = "AUX2"
+        controller.set_input(input)
+        controller.update_state()
+        updated_input = controller.get_input()
         assert updated_input == input
         print("PASSED: Input source set correctly.")
     except:
@@ -66,11 +66,11 @@ async def main():
 
     # Sound Mode test
     try:
-        print("Available sound modes:", await controller.get_available_sound_modes())
-        sound_mode = "MUSIC"
-        await controller.set_sound_mode(sound_mode)
-        await controller.update_state()
-        updated_sound_mode = await controller.get_sound_mode()
+        print("Available sound modes:", controller.get_available_sound_modes())
+        sound_mode = "MOVIE"
+        controller.set_sound_mode(sound_mode)
+        controller.update_state()
+        updated_sound_mode = controller.get_sound_mode()
         assert updated_sound_mode == sound_mode
         print("PASSED: Sound mode set correctly")
     except:
@@ -78,12 +78,10 @@ async def main():
 
     # Power OFF test
     try:
-        await controller.power_off()
-        await controller.update_state()
-        power = await controller.get_power()
+        controller.power_off()
+        controller.update_state()
+        power = controller.get_power()
         assert power.upper() == "OFF"
         print("PASSED: Power OFF")
     except:
         print("FAILED: Power OFF")
-
-asyncio.run(main())

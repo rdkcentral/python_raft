@@ -4,18 +4,16 @@ class AudioAmplifier(ABC):
     """
     Abstract base class defining the interface for an audio amplifier controller.
 
-    Implementations must provide async methods for controlling power, volume,
+    Implementations must provide methods for controlling power, volume,
     input source, mute state, sound mode, and retrieving status information.
     """
 
     @classmethod
     @abstractmethod
-    async def create(cls, host: str):
+    async def setup(self):
         """
-        Async factory method to create and initialize an instance.
-
-        :param host: IP address or hostname of the audio amplifier.
-        :return: An initialized instance of AudioAmplifier.
+        Async setup method to initialize the amplifier connection.
+        Called once after construction.
         """
         pass
 
