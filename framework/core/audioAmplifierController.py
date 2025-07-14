@@ -35,82 +35,85 @@ from denonavr import DenonAVR
 from framework.core.logModule import logModule
 from framework.core.audioAmplifier.base import AudioAmplifier
 
-class DenonAVRController(AudioAmplifier):
+class audioAmplifierController(AudioAmplifier):
     
-    def __init__(self, host: str):
-        self.receiver = DenonAVR(host)
+    def __init__(self, config:dict):
         self._log = logModule("DenonAVRController")
+        self.controllerType = config.get("type")
+        self.host = config.get("host")
+        
+        self.audioAmplifier = DenonAVR(self.host)
 
     def setup(self):
-        self._log.info("Setting up receiver")
-        asyncio.run(self.receiver.async_setup())
+        self._log.info("Setting up audio amplifier")
+        asyncio.run(self.audioAmplifier.async_setup())
 
     def power_on(self):
-        self._log.info("Powering ON receiver")
-        asyncio.run(self.receiver.async_power_on())
+        self._log.info("Powering ON audio amplifier")
+        asyncio.run(self.audioAmplifier.async_power_on())
 
     def power_off(self):
-        self._log.info("Powering OFF receiver")
-        asyncio.run(self.receiver.async_power_off())
+        self._log.info("Powering OFF audio amplifier")
+        asyncio.run(self.audioAmplifier.async_power_off())
 
     def set_volume(self, volume: float):
-        self._log.info("Setting receiver volume")
-        asyncio.run(self.receiver.async_set_volume(volume))
+        self._log.info("Setting audio amplifier volume")
+        asyncio.run(self.audioAmplifier.async_set_volume(volume))
 
     def mute(self, state: bool):
-        self._log.info("Muting receiver")
-        asyncio.run(self.receiver.async_mute(state))
+        self._log.info("Muting audio amplifier")
+        asyncio.run(self.audioAmplifier.async_mute(state))
 
     def get_available_inputs(self) -> list[str]:
-        self._log.info("Getting receiver available inputs")
+        self._log.info("Getting audio amplifier available inputs")
         self.update_state()
-        return self.receiver.input_func_list
+        return self.audioAmplifier.input_func_list
 
     def get_available_sound_modes(self) -> list[str]:
-        self._log.info("Getting receiver available sound modes")
+        self._log.info("Getting audio amplifier available sound modes")
         self.update_state()
-        return self.receiver.sound_mode_list
+        return self.audioAmplifier.sound_mode_list
 
     def set_input(self, input_name: str):
-        self._log.info("Setting receiver input")
+        self._log.info("Setting audio amplifier input")
         available = self.get_available_inputs()
         if input_name not in available:
             raise ValueError(f"Invalid input: {input_name}. Available inputs: {available}")
-        asyncio.run(self.receiver.async_set_input_func(input_name))
+        asyncio.run(self.audioAmplifier.async_set_input_func(input_name))
 
     def set_sound_mode(self, mode: str):
-        self._log.info("Setting receiver sound mode")
+        self._log.info("Setting audio amplifier sound mode")
         available = self.get_available_sound_modes()
         if mode not in available:
             raise ValueError(f"Invalid sound mode: {mode}. Available modes: {available}")
-        asyncio.run(self.receiver.async_set_sound_mode(mode))
+        asyncio.run(self.audioAmplifier.async_set_sound_mode(mode))
 
     def update_state(self):
-        self._log.info("Updating receiver state")
-        asyncio.run(self.receiver.async_update())
+        self._log.info("Updating audio amplifier state")
+        asyncio.run(self.audioAmplifier.async_update())
 
     def get_power(self) -> str:
-        self._log.info("Getting receiver power")
-        return self.receiver.power
+        self._log.info("Getting audio amplifier power")
+        return self.audioAmplifier.power
 
     def get_volume(self) -> float:
-        self._log.info("Getting receiver volume")
-        return self.receiver.volume
+        self._log.info("Getting audio amplifier volume")
+        return self.audioAmplifier.volume
 
     def is_muted(self) -> bool:
-        self._log.info("Getting receiver mute state")
-        return self.receiver.muted
+        self._log.info("Getting audio amplifier mute state")
+        return self.audioAmplifier.muted
     
     def get_input(self) -> str:
-        self._log.info("Getting receiver input")
-        return self.receiver.input_func
+        self._log.info("Getting audio amplifier input")
+        return self.audioAmplifier.input_func
     
     def get_sound_mode(self) -> str:
-        self._log.info("Getting receiver sound mode")
-        return self.receiver.sound_mode
+        self._log.info("Getting audio amplifier sound mode")
+        return self.audioAmplifier.sound_mode
 
     def get_status(self):
-        self._log.info("Getting receiver status")
+        self._log.info("Getting audio amplifier status")
         return {
             "power": self.get_power(),
             "volume": self.get_volume(),
