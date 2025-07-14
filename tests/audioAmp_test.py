@@ -15,7 +15,7 @@ if __name__ == "__main__":
     LOG = logModule("audio amplifier test", logModule.DEBUG)
     CONFIGS = [
         {
-            'type': 'denon_controller',
+            'type': 'denon',
             'host': '10.242.30.236'
         }]
     
@@ -25,7 +25,6 @@ if __name__ == "__main__":
         LOG.stepStart('Testing with %s' % json.dumps(config))
         
         controller = audioAmplifierController(config)
-        controller.setup()
 
         # Power ON test
         try:
