@@ -12,35 +12,42 @@ class DenonAVRController(AudioAmplifier):
 
     def power_on(self):
         asyncio.run(self.receiver.async_power_on())
+        self.update_state()
 
     def power_off(self):
         asyncio.run(self.receiver.async_power_off())
+        self.update_state()
+
 
     def set_volume(self, volume: float):
         asyncio.run(self.receiver.async_set_volume(volume))
+        self.update_state()
 
     def mute(self, state: bool):
         asyncio.run(self.receiver.async_mute(state))
+        self.update_state()
 
-    def get_available_inputs(self) -> list[str]:
+    def list_inputs(self) -> list[str]:
         self.update_state()
         return self.receiver.input_func_list
 
-    def get_available_sound_modes(self) -> list[str]:
+    def list_sound_modes(self) -> list[str]:
         self.update_state()
         return self.receiver.sound_mode_list
 
     def set_input(self, input_name: str):
-        available = self.get_available_inputs()
+        available = self.list_inputs()
         if input_name not in available:
             raise ValueError(f"Invalid input: {input_name}. Available inputs: {available}")
         asyncio.run(self.receiver.async_set_input_func(input_name))
+        self.update_state()
 
     def set_sound_mode(self, mode: str):
-        available = self.get_available_sound_modes()
+        available = self.list_sound_modes()
         if mode not in available:
             raise ValueError(f"Invalid sound mode: {mode}. Available modes: {available}")
         asyncio.run(self.receiver.async_set_sound_mode(mode))
+        self.update_state()
 
     def update_state(self):
         asyncio.run(self.receiver.async_update())

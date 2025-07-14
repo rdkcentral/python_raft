@@ -46,14 +46,14 @@ class AudioAmplifier(ABC):
         pass
 
     @abstractmethod
-    async def get_available_inputs(self) -> list[str]:
+    async def list_inputs(self) -> list[str]:
         """
         Get the list of available input sources supported by the amplifier.
         """
         pass
 
     @abstractmethod
-    async def get_available_sound_modes(self) -> list[str]:
+    async def list_sound_modes(self) -> list[str]:
         """
         Get the list of available sound modes supported by the amplifier.
         """

@@ -29,7 +29,6 @@ if __name__ == "__main__":
         # Power ON test
         try:
             controller.power_on()
-            controller.update_state() 
             power = controller.get_power()
             assert power == "ON"
             print("PASSED: Power ON")
@@ -38,9 +37,8 @@ if __name__ == "__main__":
 
         # Volume test
         try:
-            volume = -45
+            volume = -51
             controller.set_volume(volume)
-            controller.update_state()
             updated_volume = controller.get_volume()
             assert updated_volume == volume
             print("PASSED: Volume change")
@@ -50,7 +48,6 @@ if __name__ == "__main__":
         # Mute test
         try:
             controller.mute(True)
-            controller.update_state()
             muted = controller.is_muted()
             assert muted is True
             print("PASSED: Mute")
@@ -59,7 +56,6 @@ if __name__ == "__main__":
 
         try:
             controller.mute(False)
-            controller.update_state()
             muted = controller.is_muted()
             assert muted is False
             print("PASSED: Unmute")
@@ -68,10 +64,9 @@ if __name__ == "__main__":
 
         # Input test
         try:
-            print("Available inputs:", controller.get_available_inputs())
+            print("Available inputs:", controller.list_inputs())
             input = "AUX2"
             controller.set_input(input)
-            controller.update_state()
             updated_input = controller.get_input()
             assert updated_input == input
             print("PASSED: Input source set correctly.")
@@ -80,10 +75,9 @@ if __name__ == "__main__":
 
         # Sound Mode test
         try:
-            print("Available sound modes:", controller.get_available_sound_modes())
+            print("Available sound modes:", controller.list_sound_modes())
             sound_mode = "MOVIE"
             controller.set_sound_mode(sound_mode)
-            controller.update_state()
             updated_sound_mode = controller.get_sound_mode()
             assert updated_sound_mode == sound_mode
             print("PASSED: Sound mode set correctly")
@@ -93,7 +87,6 @@ if __name__ == "__main__":
         # Power OFF test
         try:
             controller.power_off()
-            controller.update_state()
             power = controller.get_power()
             assert power.upper() == "OFF"
             print("PASSED: Power OFF")
