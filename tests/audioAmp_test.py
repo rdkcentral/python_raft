@@ -24,7 +24,7 @@ if __name__ == "__main__":
         LOG.setFilename(os.path.abspath('./logs/'),'audioAmplifier-%sTest.log' % config.get('type'))
         LOG.stepStart('Testing with %s' % json.dumps(config))
         
-        controller = audioAmplifierController(config)
+        controller = audioAmplifierController(LOG, config)
 
         # Power ON test
         try:

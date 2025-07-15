@@ -34,8 +34,8 @@ from framework.core.audioAmplifier.denon_controller import DenonAVRController
 
 class audioAmplifierController():
     
-    def __init__(self, config:dict):
-        self._log = logModule("DenonAVRController")
+    def __init__(self, log:logModule, config:dict):
+        self._log = log
         self.controllerType = config.get("type")
         self.host = config.get("host")
         
