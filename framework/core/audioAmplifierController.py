@@ -41,7 +41,6 @@ class audioAmplifierController():
         
         if self.controllerType == "denon":
             self.audioAmplifier = DenonAVRController(self.host)
-            self.audioAmplifier.setup()
 
     def power_on(self):
         self._log.info("Powering ON audio amplifier")

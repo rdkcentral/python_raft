@@ -6,6 +6,7 @@ class DenonAVRController(AudioAmplifier):
     
     def __init__(self, host: str):
         self.receiver = DenonAVR(host)
+        self.setup()
 
     def setup(self):
         asyncio.run(self.receiver.async_setup())
