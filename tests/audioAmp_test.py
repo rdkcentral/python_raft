@@ -16,7 +16,7 @@ if __name__ == "__main__":
     CONFIGS = [
         {
             'type': 'denon',
-            'host': '10.242.30.236'
+            'host': '' # Needs to be be filled out with IP address
         }]
     
     for config in CONFIGS:
