@@ -21,8 +21,6 @@ class StreamToFile():
 
         Args:
             inputStream (IOBase): The input stream to be read from.
-            outFileName (str): The path of the output file where the stream data will be written.
-                                If only a file name is given, the file will be written in the current tests log directory.
         """
         self._fileHandle = open(self._filePath, 'a+', encoding='utf-8')
         self._stopThread = False
@@ -84,10 +82,9 @@ class StreamToFile():
             if read_line == write_line:
                 time.sleep(1)
             else:
-                while read_line < write_line:
+                while read_line < write_line and len(result) == 0:
                     if searchString in out_lines[read_line]:
                         result = out_lines[:read_line]
-                        break
                     read_line+=1
             retry += 1
             self._readLine = read_line
