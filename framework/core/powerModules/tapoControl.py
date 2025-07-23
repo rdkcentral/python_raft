@@ -257,9 +257,20 @@ class powerTapo(PowerModuleInterface):
             raise RuntimeError("Power monitoring is not yet supported for Tapo strips")
         else:
             result = self._performCommand("emeter", json=True)
-            result = json.loads(result)
+            
+            if not result:
+                raise ValueError("Received empty response from Tapo device for power monitoring")
+            
+            try:
+                result = json.loads(result)
+            except json.JSONDecodeError as e:
+                raise ValueError(f"Failed to parse JSON from Tapo device response: {e}")
+            
             millewatt = result.get('power_mw')
             if millewatt:
-                power = int(millewatt) / 1000
-                return power
-            raise KeyError("The dictionary return for the Tapo device did is not formed as expected.")
+                try:
+                    power = int(millewatt) / 1000
+                    return power
+                except:
+                    raise ValueError(f"Invalid value for power_mw: {millewatt}")
+            raise KeyError("The dictionary returned by the Tapo device does not contain a valid 'power_mw' value.")
