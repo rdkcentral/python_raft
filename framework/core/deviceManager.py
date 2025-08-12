@@ -228,21 +228,28 @@ class deviceClass():
             bool: True if host is up, False otherwise.
         """
         #Ping the box till the box responds after the boot
-        if(logPingTime):
+
+        elapsed_string = "unknown"
+
+        if logPingTime:
             pingStartTime = time.time()
             timeString = time.strftime("%H:%M:%S",time.gmtime(pingStartTime))
             self.log.step("ping start time: [{}]".format(timeString) )
+        
         self.alive = self._pingTestOnly()
-        if(logPingTime):
+        
+        if logPingTime:
             elapsed_time = time.time() - pingStartTime
             timeString = time.strftime("%H:%M:%S",time.gmtime(time.time()))
             self.log.step("ping response time: [{}]".format(timeString) )
-            elasped_string = time.strftime( "%H:%M:%S", time.gmtime(elapsed_time))              
-            self.log.step("Time taken to get ping response: ["+elasped_string+"]")
+            elapsed_string = time.strftime( "%H:%M:%S", time.gmtime(elapsed_time))              
+            self.log.step("Time taken to get ping response: ["+elapsed_string+"]")
         # We've not be able to ping the box, return an error
-        if ( False == self.alive ):
-            self.log.critical( "ping Up Check:[Box is not responding to ping within:"+elasped_string+"]")
+        
+        if not self.alive:
+            self.log.critical( "ping Up Check:[Box is not responding to ping within:"+elapsed_string+"]")
             raise Exception(" ping failed")           
+        
         return self.alive
 
     def _pingTestOnly(self):
@@ -253,31 +260,37 @@ class deviceClass():
         """
         hostIsUp = False
         ip = self.getField("ip")
-        if (platform.system().lower() == 'windows') or ('cygwin' in platform.system().lower()):
+        
+        if platform.system().lower() == 'windows' or 'cygwin' in platform.system().lower():
             ping_param_amount = " -n "
             ping_param_quiet = " "
         else:
             ping_param_amount = " -c "
             ping_param_quiet = " -q "
+        
         # Quick check for ping working first time round
         command  = "ping" + ping_param_amount + "1" + ping_param_quiet + ip
         result = utilities(self.log).syscmd(command)
-        if (0 == result[1]):
+        
+        if result[1] == 0:
             self.log.debug("ping response 1 - Host Up")
             return True
+        
         #Host is currently down, we need to loop
         for x in range( 0, 15 ):
             self.log.debug("pingTest Inner Loop["+str(x)+"]")
             utilities(self.log).wait(5) # Wait 5 seconds before trying constant ping
             result = utilities(self.log).syscmd( "ping" + ping_param_amount + "10" + ping_param_quiet + ip)
-            if ( 0 == result[1] ):
+            
+            if result[1] == 0:
                 # Check for 0% packet loss, otherwise reject it
                 outputString = str(result[0])
-                if ( ", 0% packet loss" in outputString ):
+                if ", 0% packet loss" in outputString:
                     hostIsUp = True
                     self.log.debug("pingTest hostIsUp")
                     break
             self.log.debug("pingTest hostIsDown")
+        
         return hostIsUp
 
 class deviceManager():
