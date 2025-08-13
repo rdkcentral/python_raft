@@ -76,3 +76,24 @@ class DenonAVRController(AudioAmplifier):
             "input": self.get_input(),
             "sound_mode": self.get_sound_mode(),
         }
+
+    def get_state(self) -> str:
+        return self.receiver.state
+
+    def get_current_sound_mode_raw(self) -> str:
+        return self.receiver.sound_mode_raw
+
+    def get_dynamic_volume(self) -> str:
+        return self.receiver.dynamic_volume
+
+    def get_auto_standby_state(self) -> str:
+        return self.receiver.auto_standby
+
+    def get_audio_delay(self) -> int:
+        return self.receiver.delay
+
+    def get_graphic_eq_status(self) -> bool:
+        return self.receiver.graphic_eq
+
+    def get_headphone_eq_status(self) -> bool:
+        return self.receiver.headphone_eq
