@@ -103,7 +103,7 @@ class sshConsole(consoleInterface):
         
         while time.time() < end_time:
             if self.shell.recv_ready():
-                output += self.shell.recv(4096).decode('utf-8')
+                output += self.shell.recv(4096).decode('utf-8', errors='ignore')
                 # Reset the timeout if new data is received
                 end_time = time.time() + timeout
 
