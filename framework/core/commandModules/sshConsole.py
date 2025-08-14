@@ -106,7 +106,7 @@ class sshConsole(consoleInterface):
                 try:
                      # Read the output from the shell
                      raw_output = self.shell.recv(4096)
-                     output += raw_output.decode('utf-8', errors='strict')
+                     output += raw_output.decode('utf-8')
                 except UnicodeDecodeError as e:
                      self.log.critical(f"UnicodeDecodeError - {e}")
                      # Fallback to safer decoding of the same raw data without crashing
