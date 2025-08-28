@@ -59,10 +59,11 @@ class HubClient():
                              This will also occur if the hub address/port is not actually a
                              RedRat Hub socker server.
         """
+        self._socket.settimeout(0.5)
         self._socket.connect((hub_ip, hub_port))
         if netbox_ip is not None:
             response = self.send_message('hubquery="list redrats"')
-            netbox_on_hub = list(filter(lambda x: netbox_ip in x, response))
+            netbox_on_hub = list(filter(lambda x: netbox_ip in x, response.splitlines()))
             if len(netbox_on_hub) <= 0:
                 raise ConnectionError('Could not connect to RedRat Hub. It may be misconfigured.')
 
@@ -84,15 +85,12 @@ class HubClient():
         """
         self._socket.send(f'{message}\n'.encode())
         response = ''
-        timeout = 60
-        start_time = time.time()
         while True:
-            response += self._socket.recv(64).decode()
-            if ('{' in response and '}' in response) or '\n' in response:
-                return response
-            elapsed_time = time.time() - start_time
-            if elapsed_time >= timeout:
-                return ''
+            try:
+                response += self._socket.recv(64).decode()
+            except TimeoutError: 
+                break
+        return response
 
 class remoteRedRat(RemoteInterface):
 
