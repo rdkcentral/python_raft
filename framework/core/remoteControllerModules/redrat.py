@@ -44,14 +44,14 @@ class HubClient():
     def __del__(self):
         self.stop()
 
-    def start(self, hub_ip: str, hub_port: int = 40000, netbox_ip: None|str=None):
+    def start(self, hub_ip: str, hub_port: int = 40000, netbox_id: None|str=None):
         """Start a socket connection to the RedRat Hub on the given IP and port.
-        If the netbox IP address is given, it will check that it's available on the hub.
+        If the netbox ID s is given, it will check that it's available on the hub.
 
         Args:
             hub_ip (str): IP address of the RedRat Hub server.
             hub_port (int, optional): Socket port of the RedRat Hub server. Defaults to 40000.
-            netbox_ip (None | str, optional): IP address of the IR Netbox expected
+            netbox_id (None | str, optional): ID (name, IP address or Mac) of the IR Netbox expected
                                               to be connected to the RedRat Hub server. Defaults to None.
 
         Raises:
@@ -99,12 +99,22 @@ class remoteRedRat(RemoteInterface):
         self._hub_ip = config.get('hub_ip')
         self._hub_port = config.get('hub_port',5248)
         self._client = HubClient()
-        self._netbox_ip = config.get('netbox_ip')
-        self._client.start(self._hub_ip, hub_port=self._hub_port, netbox_ip=self._netbox_ip)
+        if id:=config.get('netbox_ip',None):
+            self._netbox_id = id
+            self._netbox_id_type = 'ip'
+        elif id:= config.get('netbox_mac',None):
+            self._netbox_id = id
+            self._netbox_id_type = 'mac'
+        elif id:=config.get('netbox_name',None):
+            self._netbox_id = id
+            self._netbox_id_type = 'name'
+        if None in (self._hub_ip, self._netbox_id):
+            raise AttributeError('hub_id and either netbox_ip, netbox_name or netbox_mac are required')
+        self._client.start(self._hub_ip, hub_port=self._hub_port, netbox_id=self._netbox_id)
         self._output = config.get('output', 1)
 
     def sendKey(self, code, repeat, delay):
-        msg = f'ip="{self._netbox_ip}" {code} output="{self._output}"'
+        msg = f'{self._netbox_id_type}="{self._netbox_id}" {code} output="{self._output}"'
         for _ in range(repeat):
             if 'OK' not in self._client.send_message(msg):
                 self.log.error("sendKey(), Command [{}] failed.".format( code ) )
