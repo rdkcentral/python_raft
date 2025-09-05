@@ -1,0 +1,331 @@
+#** *****************************************************************************
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2023 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
+#* ******************************************************************************
+# Remote Commander Key Translation Maps
+
+remoteMaps:
+  remoteCommanderMap0:
+    name : 'XfinityXR2'
+    prefix: 'dataset="XfinityXR2" '
+    codes:
+      NUM_0: 'signal="0"'
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      NUM_6: 'signal="6"'
+      NUM_7: 'signal="7"'
+      NUM_8: 'signal="8"'
+      NUM_9: 'signal="9"'
+      BLUE: 'signal="Blue"'
+      CHANNEL_UP: 'signal="Chan+"'
+      CHANNEL_DOWN: 'signal="Chan-"'
+      ARROW_DOWN: 'signal="Down"'
+      EXIT: 'signal="Exit"'
+      FFORWARD: 'signal="FF"'
+      GREEN: 'signal="Green"'
+      GUIDE: 'signal="Guide"'
+      INFO: 'signal="Info"'
+      LAST: 'signal="Last"'
+      ARROW_LEFT: 'signal="Left"'
+      MUTE: 'signal="Mute"'
+      SELECT: 'signal="OK"'
+      PAGE_DOWN: 'signal="PageDown"'
+      PAGE_UP: 'signal="PageUp"'
+      PLAY: 'signal="Play-Pause"'
+      POWER: 'signal="Power"'
+      RECORD: 'signal="Record"'
+      RED: 'signal="Red"'
+      REPLAY: 'signal="Replay"'
+      REWIND: 'signal="Rew"'
+      ARROW_RIGHT: 'signal="Right"'
+      ARROW_UP: 'signal="Up"'
+      VOL_UP: 'signal="Vol+"'
+      VOL_DOWN: 'signal="Vol-"'
+      XFINITY: 'signal="xfinity"'
+      YELLOW: 'signal="Yellow"'
+
+  remoteCommanderMap1:
+    name: 'Panasonic'
+    prefix: 'dataset="Panasonic" '
+    codes:
+      ARROW_DOWN: 'signal="Down"'
+      SELECT: 'signal="OK"'
+      CHANNEL_UP: 'signal="Program+"'
+      CHANNEL_DOWN: 'signal="Program-"'
+      ARROW_UP: 'signal="Up"'
+
+  remoteCommanderMap2:
+    name: 'Sky Digibox'
+    prefix: 'dataset="Sky Digibox" '
+    codes:
+      NUM_0: 'signal="0"'
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      NUM_6: 'signal="6"'
+      NUM_7: 'signal="7"'
+      NUM_8: 'signal="8"'
+      NUM_9: 'signal="9"'
+      BACK: 'signal="Backup'
+      BLUE: 'signal="Blue"'
+      CHANNEL_UP: 'signal="Chan+"'
+      CHANNEL_DOWN: 'signal="Chan-"'
+      ARROW_DOWN: 'signal="Down"'
+      GREEN: 'signal="Green"'
+      HELP: 'signal="Help"'
+      INFO: 'signal="i"'
+      INTERACTIVE: 'signal="Interactive'
+      ARROW_LEFT: 'signal="Left"'
+      MUTE: 'signal="Mute"'
+      POWER: 'signal="Power"'
+      RED: 'signal="Red"'
+      ARROW_RIGHT: 'signal="Right"'
+      SELECT: 'signal="Select"'
+      SERVICES: 'signal="Services"'
+      SKY: 'signal="SKY"'
+      TEXT: 'signal="Text"'
+      SOURCE: 'signal="TV"'
+      GUIDE: 'signal="TV_GUIDE"'
+      ARROW_UP: 'signal="Up"'
+      VOL_UP: 'signal="Vol+"'
+      VOL_DOWN: 'signal="Vol-"'
+      YELLOW: 'signal="Yellow"'
+
+  remoteCommanderMap3:
+    name: 'Hauppauge'
+    prefix: 'dataset="Hauppauge" '
+    codes:
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+
+  remoteCommanderMap4:
+    name: 'CD'
+    prefix: 'dataset="CD"'
+    codes:
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      OPEN: 'signal="Open"'
+      PAUSE: 'signal="Pause"'
+      PLAY: 'signal="Play"'
+      SEARCH_FWD: 'signal="Search+"'
+      SEARCH_BACK: 'signal="Search-"'
+      FFORWARD: 'signal="Skip+"'
+      REWIND: 'signal="Skip-"'
+      STOP: 'signal="Stop"'
+
+  remoteCommanderMap5:
+    name: 'Tuner'
+    prefix: 'dataset="Tuner" '
+    codes:
+      CHANNEL_UP: 'signal="Channel+"'
+      CHANNEL_DOWN: 'signal="Channel+"'
+
+  remoteCommanderMap6:
+    name: 'Sony_Sat'
+    prefix: 'dataset="Sony_Sat" '
+    codes:
+      NUM_0: 'signal="0"'
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      NUM_6: 'signal="6"'
+      NUM_7: 'signal="7"'
+      NUM_8: 'signal="8"'
+      NUM_9: 'signal="9"'
+
+  remoteCommanderMap7:
+    name: 'BlaupunkTV'
+    prefix: 'dataset="BlaupunkTV" '
+    codes:
+      NUM_0: 'signal="0"'
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      NUM_6: 'signal="6"'
+      NUM_7: 'signal="7"'
+      NUM_8: 'signal="8"'
+      NUM_9: 'signal="9"'
+      BLUE: 'signal="Blue"'
+      CHANNEL_UP: 'signal="Chan+"'
+      CHANNEL_DOWN: 'signal="Chan-"'
+      ARROW_DOWN: 'signal="Down"'
+      EXIT: 'signal="Exit"'
+      GREEN: 'signal="Green"'
+      INFO: 'signal="Info"'
+      ARROW_LEFT: 'signal="Left"'
+      MENU: 'signal="Menu"'
+      SELECT: 'signal="OK"'
+      VOL_UP: 'signal="Vol+"'
+      VOL_DOWN: 'signal="Vol-"'
+      YELLOW: 'signal="Yellow"'
+
+  remoteCommanderMap8:
+    name: 'eTRV'
+    prefix: 'dataset="eTRV" '
+    codes:
+      NUM_2: 'signal="2"'
+      NUM_5: 'signal="5"'
+      NUM_8: 'signal="8"'
+      ARROW_DOWN: 'signal="DOWN"'
+      SELECT: 'signal="SET"'
+      ARROW_UP: 'signal="UP"'
+
+  remoteCommanderMap9:
+    name: 'Sony Mini System'
+    prefix: 'dataset="Sony Mini System" '
+    codes:
+      PAUSE: 'signal="Pause"'
+      PLAY: 'signal="Play"'
+
+  remoteCommanderMap10:
+    name: 'Extigy'
+    prefix: 'dataset="Extigy" '
+    codes:
+      ARROW_DOWN: 'signal="Down"'
+      POWER: 'signal="Power"'
+      ARROW_UP: 'signal="Up"'
+      VOL_UP: 'signal="Vol+"'
+      VOL_DOWN: 'signal="Vol-"'
+
+  remoteCommanderMap11:
+    name: 'SKY+'
+    prefix: 'dataset="SKY+" '
+    codes:
+      NUM_0: 'signal="0"'
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      NUM_6: 'signal="6"'
+      NUM_7: 'signal="7"'
+      NUM_8: 'signal="8"'
+      NUM_9: 'signal="9"'
+      BACK: 'signal="Backup"'
+      BLUE: 'signal="Blue"'
+      MOVIE: 'signal="Box_office"'
+      CHANNEL_UP: 'signal="Channel+"'
+      CHANNEL_DOWN: 'signal="Channel+"'
+      ARROW_DOWN: 'signal="Down"'
+      FFORWARD: 'signal="FFwd"'
+      GREEN: 'signal="Green"'
+      HELP: 'signal="Help"'
+      INFO: 'signal="Info"'
+      INTERACTIVE: 'signal="Interactive"'
+      ARROW_LEFT: 'signal="Left"'
+      MUTE: 'signal="Mute"'
+      PAUSE: 'signal="Pause"'
+      PLAY: 'signal="Play"'
+      POWER: 'signal="Power"'
+      RECORD: 'signal="Record"'
+      RED: 'signal="Red"'
+      REWIND: 'signal="Rew"'
+      ARROW_RIGHT: 'signal="Right"'
+      SELECT: 'signal="Select"'
+      SERVICES: 'signal="Services"'
+      SKY: 'signal="SKY"'
+      STOP: 'signal="Stop"'
+      TEXT: 'signal="Text"'
+      SOURCE: 'signal="TV"'
+      GUIDE: 'signal="TV_Guide"'
+      ARROW_UP: 'signal="Up"'
+      VOL_UP: 'signal="Vol +"'
+      VOL_DOWN: 'signal="Vol -"'
+      YELLOW: 'signal="Yellow"'
+
+  remoteCommanderMap12:
+    name : 'Xione'
+    prefix: 'dataset="Xione" '
+    codes:
+      ARROW_DOWN: 'signal="Arrow_down"'
+      ARROW_LEFT: 'signal="Arrow_left"'
+      ARROW_RIGHT: 'signal="Arrow_right"'
+      ARROW_UP: 'signal="Arrow_up"'
+      BACK: 'signal="Back"'
+      CI_PLUS: 'signal="Plus"'
+      DISPLAY: 'signal="Play"'
+      ELLIPSIS: 'signal="Ellipses"'
+      HOME: 'signal="Home"'
+      MIC: 'signal="Mic"'
+      MUTE: 'signal="Mute"'
+      NUM_0: 'signal="0"'
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      NUM_6: 'signal="6"'
+      NUM_7: 'signal="7"'
+      NUM_8: 'signal="8"'
+      NUM_9: 'signal="9"'
+      PLAY: 'signal="Play"'
+      POWER: 'signal="Power"'
+      RGYB: 'signal="Coloured_dots"'
+      SELECT: 'signal="Select"'
+
+  remoteCommanderMap13:
+    name : 'Element'
+    prefix: 'dataset="Element" '
+    codes:
+      ARROW_DOWN: 'signal="Arrow_down"'
+      ARROW_LEFT: 'signal="Arrow_left"'
+      ARROW_RIGHT: 'signal="Arrow_right"'
+      ARROW_UP: 'signal="Arrow_up"'
+      BACK: 'signal="Back"'
+      CI_PLUS: 'signal="Plus"'
+      DISNEY: 'signal="Disney+"'
+      ELLIPSIS: 'signal="Ellipses"'
+      HOME: 'signal="Home"'
+      MIC: 'signal="Mic"'
+      MUTE: 'signal="Mute"'
+      NETFLIX: 'signal="Netflix"'
+      NUM_0: 'signal="0"'
+      NUM_1: 'signal="1"'
+      NUM_2: 'signal="2"'
+      NUM_3: 'signal="3"'
+      NUM_4: 'signal="4"'
+      NUM_5: 'signal="5"'
+      NUM_6: 'signal="6"'
+      NUM_7: 'signal="7"'
+      NUM_8: 'signal="8"'
+      NUM_9: 'signal="9"'
+      PEACOCK: 'signal="Peacock"'
+      POWER: 'signal="Power"'
+      PRIME_VIDEO: 'signal="Prime"'
+      SELECT: 'signal="Select"'
+      SETUP: 'signal="Settings"'
+      SOURCE: 'signal="Input"'
+      VOL_DOWN: 'signal="Vol-"'
+      VOL_UP: 'signal="Vol+"'

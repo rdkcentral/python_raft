@@ -34,11 +34,12 @@ import yaml
 import os
 from framework.core.logModule import logModule
 from framework.core.rcCodes import rcCode as rc
-from framework.core.remoteControllerModules.olimex import remoteOlimex
-from framework.core.remoteControllerModules.skyProc import remoteSkyProc
-from framework.core.remoteControllerModules.arduino import remoteArduino
-from framework.core.remoteControllerModules.none import remoteNone
-from framework.core.remoteControllerModules.keySimulator import remoteKeySimulator
+from framework.core.remoteControllerModules import remoteArduino, \
+                                                   remoteKeySimulator, \
+                                                   remoteNone, \
+                                                   remoteOlimex, \
+                                                   remoteRedRat, \
+                                                   remoteSkyProc
 
 class remoteControllerMapping():
     def __init__(self, log:logModule, mappingConfig:dict):
@@ -137,6 +138,8 @@ class commonRemoteClass():
             self.remoteController = remoteArduino (self.log, remoteConfig)
         elif self.type == "keySimulator":
             self.remoteController = remoteKeySimulator (self.log, remoteConfig)
+        elif self.type == "redrat":
+            self.remoteController = remoteRedRat(self.log, remoteConfig)
         else:   # remoteNone otherwise
             self.remoteController = remoteNone( self.log, remoteConfig )
 
