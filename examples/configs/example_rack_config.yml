@@ -99,6 +99,10 @@ rackConfig:
                         # supported types:
                         # [type: "cec-client", adaptor: "/dev/ttycec"]
                         # [type: "remote-cec-client", adaptor: "/dev/ttycec", address: "192.168.99.1", username(optional): "testuser", password(optional): "testpswd", port(optional): "22"]
+
+                    # [ avSyncController: optional] - Specifiec AVSyncController for the slot
+                        # supported types:
+                        # [type: "SyncOne2", port: "/dev/ttyACM0", extended_mode (optional): true|false, audio_input (optional): "AUTO|EXTERNAL|INTERNAL", speaker_distance (optional): "1.5"]
                 - pi2:
                     ip: "192.168.99.1"
                     description: "local pi4"
