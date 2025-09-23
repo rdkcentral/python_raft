@@ -61,9 +61,9 @@ class SyncOne2(AVSyncInterface):
         """
         self._serial.write(b'api\n')
         self._serial.flush()
-        connecion_res = self._serial.read_until(b'OK')
-        if connecion_res:
-            if 'OK' in connecion_res.decode():
+        connection_res = self._serial.read_until(b'OK')
+        if connection_res:
+            if 'OK' in connection_res.decode():
                 return
         # If the return above isn't hit, the connection didn't work.
         raise ConnectionError(f'Could not start serial connection with SyncOne2 on port')
@@ -93,7 +93,7 @@ class SyncOne2(AVSyncInterface):
 
         Args:
             command (str): Command to be sent to the SyncOne2 device.
-            override_measuring_block (bool, optional): Allows commands to be while the device is taking measurments.
+            override_measuring_block (bool, optional): Allows commands to be while the device is taking measurements.
                                                        Overide active when set to True. Defaults to False. 
 
         Raises:
@@ -124,18 +124,18 @@ class SyncOne2(AVSyncInterface):
 
         Returns:
             processed_readings(list[dict]): List of dictionaries with defined fields:
-                                            {'milleseconds',
+                                            {'milliseconds',
                                             'frames',
-                                            'avg_milleseconds',
+                                            'avg_milliseconds',
                                             'avg_frames',
-                                            'span_milleseconds',
+                                            'span_milliseconds',
                                             'span_frames'}
         """
-        fields = ('milleseconds',
+        fields = ('milliseconds',
                   'frames',
-                  'avg_milleseconds',
+                  'avg_milliseconds',
                   'avg_frames',
-                  'span_milleseconds',
+                  'span_milliseconds',
                   'span_frames')
         processed_readings = []
         for line in readings_list:
@@ -204,7 +204,7 @@ class SyncOne2(AVSyncInterface):
             ConnectionError: When the response from the SyncOne2 device is not as expected.
 
         Returns:
-            state (bool): On/Off state of entended mode. True when extended mode is on.
+            state (bool): On/Off state of extended mode. True when extended mode is on.
         """
         state = False
         response = self._send_cmd_wait_for_resp('EXTENDED MODE\n')
@@ -218,7 +218,7 @@ class SyncOne2(AVSyncInterface):
         """Set the on/off state of the SyncOne2 devices extended mode.
 
         Args:
-            state (bool): True to set extended mode on. False to set entended more off.
+            state (bool): True to set extended mode on. False to set extended more off.
 
         Raises:
             ConnectionError: When the response from the SyncOne2 device is not as expected.
@@ -258,7 +258,7 @@ class SyncOne2(AVSyncInterface):
         if 'OK' not in response:
             raise ConnectionError('Did not receive expected response from SyncOne2')
 
-    def get_offset(self) -> str:
+    def get_offset(self) -> int:
         response = self._send_cmd_wait_for_resp('OFFSET\n')
         if response.lstrip('-').isnumeric():
             return int(response)
@@ -278,7 +278,7 @@ class SyncOne2(AVSyncInterface):
             ConnectionError: When the response from the SyncOne2 device is not as expected.
 
         Returns:
-            repsonse(float): The speaker distance currently set in the SyncOne2 device.
+            response(float): The speaker distance currently set in the SyncOne2 device.
         """
         response = self._send_cmd_wait_for_resp(f'SPEAKER DIST\n')
         if response.isnumeric():
@@ -297,7 +297,7 @@ class SyncOne2(AVSyncInterface):
             ConnectionError: When the response from the SyncOne2 device is not as expected.
         """
         if (speaker_distance % 0.5) != 0 or speaker_distance > 20 or speaker_distance < 0:
-            raise ValueError('The SyncOne2 device can only work with a speaker distance between 0 and 20 in incremrent of 0.5.')
+            raise ValueError('The SyncOne2 device can only work with a speaker distance between 0 and 20 in increment of 0.5.')
         response = self._send_cmd_wait_for_resp(f'SET SPEAKER DIST {speaker_distance}\n')
         if 'OK' not in response:
             raise ConnectionError('Did not receive expected response from SyncOne2')
@@ -310,7 +310,7 @@ class SyncOne2(AVSyncInterface):
 
     def set_video_trigger_level(self, trigger_level:int):
         if trigger_level > 4 or trigger_level < 0:
-            raise ValueError('The triggel level must be between 0 and 4 for the SyncOne2 device.')
+            raise ValueError('The trigger level must be between 0 and 4 for the SyncOne2 device.')
         response = self._send_cmd_wait_for_resp(f'SET VIDEO TRIGGER LEVEL {trigger_level}\n')
         if 'OK' not in response:
             raise ConnectionError('Did not receive expected response from SyncOne2')
@@ -367,7 +367,7 @@ class SyncOne2(AVSyncInterface):
         if 'OK' not in response:
             if 'ERR invalid feature code' in response:
                 raise RuntimeError('Feature code is not for the correct serial number of SyncOne2.')
-            elif 'ERR unknown feature code':
+            elif 'ERR unknown feature code' in response:
                 raise RuntimeError('Feature code action requested is unknown to SyncOne2.')
             else:
                 raise ConnectionError('Did not receive expected response from SyncOne2')

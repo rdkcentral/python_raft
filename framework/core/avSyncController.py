@@ -126,7 +126,7 @@ class AVSyncController():
         be cleared before more measurements start being captured.
         """
         self._log.info('Starting measurement collection from AVSync controller.')
-        # Clear the measurements before we start taking more measurments.
+        # Clear the measurements before we start taking more measurements.
         self.controller.clear_results()
         self.controller.start_measuring()
 
@@ -146,13 +146,13 @@ class AVSyncController():
         """Return the results of the most recent measurements.
 
         Returns:
-            results (list[dict]): list containing dictionary of each measurment recorded,
+            results (list[dict]): list containing dictionary of each measurement recorded,
                         with the following keys:
-                        {'milleseconds',
+                        {'milliseconds',
                         'frames',
-                        'avg_milleseconds',
+                        'avg_milliseconds',
                         'avg_frames',
-                        'span_milleseconds',
+                        'span_milliseconds',
                         'span_frames'}
         """
         self._log.debug('Retrieving results from AVSync controller.')

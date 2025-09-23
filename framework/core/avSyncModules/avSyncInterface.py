@@ -80,10 +80,10 @@ class AVSyncInterface(metaclass=abc.ABCMeta):
         """Return the current length of mask time set in the AVSync device,
         in milliseconds.
 
-        The mask time is the length of time the AVSync device will wait between measurments.
+        The mask time is the length of time the AVSync device will wait between measurements.
 
         Returns:
-            mask_length(int): The length of time between measurments in milliseconds.
+            mask_length(int): The length of time between measurements in milliseconds.
         """
         pass
 
@@ -91,10 +91,10 @@ class AVSyncInterface(metaclass=abc.ABCMeta):
     def set_mask_len(self, mask_length: int):
         """Set the length of mask time in the AVSync device.
 
-        The mask time is the length of time the AVSync device will wait between measurments.
+        The mask time is the length of time the AVSync device will wait between measurements.
 
         Args:
-            mask_length (int): The length of time between measurments in milliseconds.
+            mask_length (int): The length of time between measurements in milliseconds.
         """
         pass
 
@@ -143,13 +143,13 @@ class AVSyncInterface(metaclass=abc.ABCMeta):
         """Return the results of measurement taken, stored in the AVSync device.
 
         Returns:
-            results (list[dict]): list containing dictionary of each measurment recorded,
+            results (list[dict]): list containing dictionary of each measurement recorded,
                         with the following keys:
-                        {'milleseconds',
+                        {'milliseconds',
                         'frames',
-                        'avg_milleseconds',
+                        'avg_milliseconds',
                         'avg_frames',
-                        'span_milleseconds',
+                        'span_milliseconds',
                         'span_frames'}
         """
         pass
