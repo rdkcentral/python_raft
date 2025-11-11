@@ -158,7 +158,7 @@ class powerTapo(PowerModuleInterface):
         else:
             self._performCommand("on")
         self._get_state()
-        if self._is_on == False:
+        if not self._is_on:
             self._log.error(" Power On Failed")    
         return self._is_on
 
@@ -172,7 +172,7 @@ class powerTapo(PowerModuleInterface):
             # == Smart Plug 1 (P304M) ==
             # == Primary features ==
             # State(state): True
-            if result.find('Children') > 1:  # smart extension plug with multiple outlets
+            if 'Children' in result:  # smart extension plug with multiple outlets
                 all_states = re.findall(r"^\s*State\s*\(state\)\s*:\s*(True|False)\s*$",
                                         result, flags=re.IGNORECASE | re.MULTILINE)
                 self._is_on = all_states[int(self._outlet)] == 'True'
@@ -246,7 +246,7 @@ class powerTapo(PowerModuleInterface):
                 self._device_type = "UNKNOWN"
         elif result.get("get_child_device_list", {}).get('child_device_list', []):
             child_devices = result.get("get_child_device_list", {}).get('child_device_list', [])
-            if len(child_devices) >= int(self._outlet) + 1:
+            if len(child_devices) > int(self._outlet):
                 self._device_type = child_devices[int(self._outlet)].get("type", "UNKNOWN")
         elif result.get('get_device_info'):
             self._device_type = result.get("get_device_info").get("type", "UNKNOWN")
@@ -292,4 +292,4 @@ class powerTapo(PowerModuleInterface):
         if watt is not None:
             return watt
 
-        raise KeyError("The dictionary returned by the Tapo device does not contain a valid 'power_mw' value.")
+        raise KeyError("The dictionary returned by the Tapo device does not contain a valid 'current_power' value.")
