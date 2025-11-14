@@ -105,3 +105,12 @@ class AudioAmplifier(ABC):
         :return: Dictionary of current amplifier state.
         """
         pass
+
+    @abstractmethod
+    def get_audio_format(self) -> dict:
+        """
+        Get a string of audio format information.
+
+        :return: String of audio format like Dolby Atmos or PCM
+        """
+        pass

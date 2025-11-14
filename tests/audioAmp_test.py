@@ -84,6 +84,14 @@ if __name__ == "__main__":
         except:
             print(f"FAILED: Sound mode not set correctly. Expected: {sound_mode}, actual: {updated_sound_mode}")
 
+        # Audio format test
+        try:
+            audio_format = controller.get_audio_format()
+            assert audio_format == "Unknown" # when nothing plays
+            print(f"PASSED: Audio format: {audio_format}")
+        except:
+            print(f"FAILED: Audio format: {audio_format}")
+
         # Power OFF test
         try:
             controller.power_off()

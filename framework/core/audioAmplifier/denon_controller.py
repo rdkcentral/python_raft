@@ -1,4 +1,7 @@
 import asyncio
+
+import requests
+from defusedxml.cElementTree import fromstring
 from denonavr import DenonAVR
 from .base import AudioAmplifier
 
@@ -6,6 +9,7 @@ class DenonAVRController(AudioAmplifier):
     
     def __init__(self, host: str):
         self.receiver = DenonAVR(host)
+        self.url = f"https://{host}:10443/"
         self.setup()
 
     def setup(self):
@@ -76,3 +80,17 @@ class DenonAVRController(AudioAmplifier):
             "input": self.get_input(),
             "sound_mode": self.get_sound_mode(),
         }
+
+    def get_audio_format(self):
+        response = requests.get(f'{self.url}ajax/general/get_config?type=12', verify=False)
+        if response.status_code == 200:
+            try:
+                xml_data = fromstring(response.content)
+
+                for element in xml_data.findall(".//InputSignal"):
+                    return element.text
+            except Exception as e:
+                print(e)
+                raise ValueError("Failed to parse Audio format XML. Status code")
+        else:
+            raise ValueError(f"Failed to fetch Audio format. Status code: {response.status_code}")

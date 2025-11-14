@@ -96,3 +96,7 @@ class audioAmplifierController():
     def get_status(self):
         self._log.info("Getting audio amplifier status")
         return self.audioAmplifier.get_status()
+
+    def get_audio_format(self):
+        self._log.info("Getting audio format")
+        return self.audioAmplifier.get_audio_format()
