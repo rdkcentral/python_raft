@@ -107,7 +107,7 @@ class AudioAmplifier(ABC):
         pass
 
     @abstractmethod
-    def get_audio_format(self) -> dict:
+    def get_audio_format(self) -> str:
         """
         Get a string of audio format information.
 

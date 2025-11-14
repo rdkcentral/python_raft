@@ -90,7 +90,6 @@ class DenonAVRController(AudioAmplifier):
                 for element in xml_data.findall(".//InputSignal"):
                     return element.text
             except Exception as e:
-                print(e)
-                raise ValueError("Failed to parse Audio format XML. Status code")
+                raise ValueError(f"Failed to parse Audio format XML. {e}")
         else:
             raise ValueError(f"Failed to fetch Audio format. Status code: {response.status_code}")

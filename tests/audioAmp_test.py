@@ -89,8 +89,8 @@ if __name__ == "__main__":
             audio_format = controller.get_audio_format()
             assert audio_format == "Unknown" # when nothing plays
             print(f"PASSED: Audio format: {audio_format}")
-        except:
-            print(f"FAILED: Audio format: {audio_format}")
+        except Exception as e:
+            print(f"FAILED: Audio format - {e}")
 
         # Power OFF test
         try:
