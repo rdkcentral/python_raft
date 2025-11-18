@@ -48,7 +48,6 @@
 import json
 import re
 import subprocess
-import time
 
 from framework.core.logModule import logModule
 from framework.core.powerModules.abstractPowerModule import PowerModuleInterface
@@ -75,7 +74,7 @@ class powerTapo(PowerModuleInterface):
         self.ip = ip
         self._username = kwargs.get("username", None)
         self._password = kwargs.get("password", None)
-        if outlet:
+        if outlet is not None:
             self._outlet=str(outlet)
         self._device_type = None
         self._encryption_type = None
@@ -111,7 +110,7 @@ class powerTapo(PowerModuleInterface):
             command_list.append("--encrypt-type")
             command_list.append(self._encryption_type)
         else:
-            if self._outlet:
+            if self._outlet is not None:
                 command_list.append("--type")
                 command_list.append("strip")
             else:
@@ -133,16 +132,16 @@ class powerTapo(PowerModuleInterface):
             bool: True if the operation is successful, False otherwise.
         """
         self._get_state()
-        if self.is_off:
+        if not self._is_on:
             return True
-        if self._outlet:
+        if self._outlet is not None:
             self._performCommand("off", append_args=["--index", str(self._outlet)])
         else:
             self._performCommand("off")
         self._get_state()
-        if self.is_off == False:
+        if self._is_on:
             self._log.error(" Power Off Failed")
-        return self.is_off
+        return not self._is_on
 
     def powerOn(self):
         """
@@ -152,21 +151,33 @@ class powerTapo(PowerModuleInterface):
             bool: True if the operation is successful, False otherwise.
         """
         self._get_state()
-        if self.is_on:
+        if self._is_on:
             return True
-        if self._outlet:
+        if self._outlet is not None:
             self._performCommand("on", append_args=["--index", str(self._outlet)])
-        self._performCommand("on")
+        else:
+            self._performCommand("on")
         self._get_state()
-        if self.is_on == False:
+        if not self._is_on:
             self._log.error(" Power On Failed")    
-        return self.is_on
+        return self._is_on
 
     def _get_state(self):
         """Get the state of the device.
         """
         result = self._performCommand("state")
-        if self._outlet:
+        if self._outlet is not None:
+            # == Children ==
+            #
+            # == Smart Plug 1 (P304M) ==
+            # == Primary features ==
+            # State(state): True
+            if 'Children' in result:  # smart extension plug with multiple outlets
+                all_states = re.findall(r"^\s*State\s*\(state\)\s*:\s*(True|False)\s*$",
+                                        result, flags=re.IGNORECASE | re.MULTILINE)
+                self._is_on = all_states[int(self._outlet)] == 'True'
+                self._log.debug(f"Slot state: {'ON' if self._is_on else 'OFF'}")
+                return
             # We have a strip look at the status of the strip, and check the index and the device state
             #Device state: ON
             #== Plugs ==
@@ -233,6 +244,12 @@ class powerTapo(PowerModuleInterface):
                 self._device_type = info.get("mic_type", "UNKNOWN")
             else:
                 self._device_type = "UNKNOWN"
+        elif result.get("get_child_device_list", {}).get('child_device_list', []):
+            child_devices = result.get("get_child_device_list", {}).get('child_device_list', [])
+            if len(child_devices) > int(self._outlet):
+                self._device_type = child_devices[int(self._outlet)].get("type", "UNKNOWN")
+        elif result.get('get_device_info'):
+            self._device_type = result.get("get_device_info").get("type", "UNKNOWN")
         else:
             self._device_type = "UNKNOWN"
         self._encryption_type = self._get_encryption_type()
@@ -249,28 +266,30 @@ class powerTapo(PowerModuleInterface):
         return None
 
     def getPowerLevel(self):
-        if self._outlet:
-            # TODO: implement this for a powerstrip
-            # result = self._performCommand("emeter",
-            #                               json=True,
-            #                               append_args=["--index", str(self._outlet)])
-            raise RuntimeError("Power monitoring is not yet supported for Tapo strips")
+        if self._outlet is not None:
+            args = [
+                "--module", 'energy', 'get_current_power',
+                "--index", self._outlet
+            ]
         else:
-            result = self._performCommand("emeter", json=True)
-            
-            if not result:
-                raise ValueError("Received empty response from Tapo device for power monitoring")
-            
-            try:
-                result = json.loads(result)
-            except json.JSONDecodeError as e:
-                raise ValueError(f"Failed to parse JSON from Tapo device response: {e}")
-            
-            millewatt = result.get('power_mw')
-            if millewatt:
-                try:
-                    power = int(millewatt) / 1000
-                    return power
-                except:
-                    raise ValueError(f"Invalid value for power_mw: {millewatt}")
-            raise KeyError("The dictionary returned by the Tapo device does not contain a valid 'power_mw' value.")
+            args = [
+                "--module", 'energy', 'get_current_power'
+            ]
+        result = self._performCommand("command",
+                                      json=True,
+                                      append_args=args
+                                      )
+
+        if not result:
+            raise ValueError("Received empty response from Tapo device for power monitoring")
+
+        try:
+            result = json.loads(result)
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Failed to parse JSON from Tapo device response: {e}")
+
+        watt = result.get("get_current_power", {}).get('current_power', None)
+        if watt is not None:
+            return watt
+
+        raise KeyError("The dictionary returned by the Tapo device does not contain a valid 'current_power' value.")
