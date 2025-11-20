@@ -2,7 +2,7 @@ import asyncio
 
 import requests
 from defusedxml import DefusedXmlException
-from defusedxml.cElementTree import fromstring
+from defusedxml.ElementTree import fromstring
 from denonavr import DenonAVR
 from .base import AudioAmplifier
 
@@ -84,14 +84,14 @@ class DenonAVRController(AudioAmplifier):
 
     def get_audio_format(self):
         try:
-            response = requests.get(f'{self.url}ajax/general/get_config?type=12', verify=False)
+            # The 'type=12' query parameter requests the configuration from the Denon AVR.
+            response = requests.get(f'{self.url}ajax/general/get_config?type=12', verify=False, timeout=5)
             if response.status_code == 200:
                 xml_data = fromstring(response.content)
-                for element in xml_data.findall(".//InputSignal"):
-                    return element.text
-                return 'Unknown'
+                element = xml_data.find(".//InputSignal")
+                return element.text if element is not None else None
             raise ValueError(f"Failed to fetch Audio format. Status code: {response.status_code}")
         except DefusedXmlException:
             raise ValueError("Failed to parse AVR response.")
         except requests.exceptions.RequestException:
-            raise ValueError("Cant reach AVR. please check configuration")
+            raise ValueError("Cant reach AVR. Please check configuration")
