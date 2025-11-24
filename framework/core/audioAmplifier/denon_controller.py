@@ -83,8 +83,19 @@ class DenonAVRController(AudioAmplifier):
         }
 
     def get_audio_format(self):
+        """
+        Web interface was showing input audio format. Could not find an equivalent method from
+        denonavr package. We need to get the inputSignal details, Searched whole package to find
+        any reference of inputSignal, but could not find. So using the web api itself here.
+
+        Returns:
+            str: 'Dolby Atmos', 'PCM'
+        Raises:
+            ValueError: if could not find or parse the data
+        """
         try:
             # The 'type=12' query parameter requests the configuration from the Denon AVR.
+            # the certificates in denon avr showed expired even after firmware update. so added verify=False
             response = requests.get(f'{self.url}ajax/general/get_config?type=12', verify=False, timeout=5)
             if response.status_code == 200:
                 xml_data = fromstring(response.content)
