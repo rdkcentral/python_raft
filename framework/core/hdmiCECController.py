@@ -39,6 +39,7 @@ sys.path.append(path.join(MY_DIR,'../../'))
 from framework.core.logModule import logModule
 from framework.core.streamToFile import StreamToFile
 from framework.core.hdmicecModules import CECClientController, RemoteCECClient, CECDeviceType
+from framework.core.hdmicecModules.virtualCECController import virtualCECController
 
 class HDMICECController():
     """
@@ -72,6 +73,17 @@ class HDMICECController():
                                               password=config.get('password',''),
                                               port=config.get('port',22),
                                               prompt=config.get('prompt', ':~'))
+        elif self.controllerType.lower() == 'virtual-cec-client':
+            self.controller = virtualCECController(self.cecAdaptor,
+                                                   self._log,
+                                                   self._stream,
+                                                   address=config.get('address'),
+                                                   username=config.get('username',''),
+                                                   password=config.get('password',''),
+                                                   port=config.get('port',22),
+                                                   prompt=config.get('prompt', '~#'),
+                                                   device_configuration=config.get('device_network_configuration',''),
+                                                   control_port=config.get('control_port', 8080))
         self._read_line = 0
 
     def sendMessage(self, sourceAddress: str, destAddress: str, opCode: str, payload: list = None) -> None:
@@ -106,6 +118,10 @@ class HDMICECController():
         Returns:
             boolean: True if message is received. False otherwise.
         """
+        if self.controllerType.lower() == 'virtual-cec-client':
+            self._log.debug('checkMessageReceived is mock implementation for virtual-cec-client controller. Defaulting to True.')
+            return True
+
         result = False
         payload_string = ''
         if isinstance(payload, list):

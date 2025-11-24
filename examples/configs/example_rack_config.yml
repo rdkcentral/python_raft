@@ -91,7 +91,7 @@ rackConfig:
                         # [type: "tapo", ip: "", username: "", password: "", outlet: "optional"]
                         # [type: "hs100", ip:"", port:"optional" ]  kara also supports hs100
                         # [type: "apc", ip:"", username:"", password:"" ]  rack apc switch
-                        # [type: "olimex", ip:"", port:"optional", relay:""  ]  
+                        # [type: "olimex", ip:"", port:"optional", relay:""  ]
                         # [type: "SLP", ip:"", username: "", password: "", outlet_id:"", port:"optional"]
                         # [type: "none" ] if section doesn't exist then type:none will be used
 
@@ -99,7 +99,8 @@ rackConfig:
                         # supported types:
                         # [type: "cec-client", adaptor: "/dev/ttycec"]
                         # [type: "remote-cec-client", adaptor: "/dev/ttycec", address: "192.168.99.1", username(optional): "testuser", password(optional): "testpswd", port(optional): "22"]
-
+                        # [type: "virtual-cec-client", device_type: ["TV", "RecordingDevice", "Tuner", "PlaybackDevice", "AudioSystem", "VideoProcessor", "PureCecSwitch", "Reserved"]
+                        #        address: "127.0.0.1", username: "testuser", password: "testpswd", port: "5522", control_port: 8080, device_network_configuration: "path to device network configuration file" ]
                     # [ avSyncController: optional] - Specifiec AVSyncController for the slot
                         # supported types:
                         # [type: "SyncOne2", port: "/dev/ttyACM0", extended_mode (optional): true|false, audio_input (optional): "AUTO|EXTERNAL|INTERNAL", speaker_distance (optional): "1.5"]
