@@ -23,6 +23,7 @@
 
 import os
 import sys
+import yaml
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
@@ -55,7 +56,7 @@ class utPlaneController():
         >>> controller.sendMessage("yaml string directly")
     """
 
-    def __init__(self, session:object, port: int = 8080, log:logModule=None):
+    def __init__(self, session:object, port: int = 8080, log: logModule = None):
         """
         Initializes UT Plane Controller class.
 
@@ -64,6 +65,11 @@ class utPlaneController():
             port (int): The port number for the controller
             log (class, optional): Parent log class. Defaults to None.
         """
+
+        # Validate session
+        if session is None:
+            raise ValueError("session cannot be None")
+
         self.log = log
         if log is None:
             self.log = logModule(self.__class__.__name__)
@@ -72,12 +78,13 @@ class utPlaneController():
         self.session = session
         self.port = port
 
-    def sendMessage(self, yamlInput: str) -> bool:
+    def sendMessage(self, yamlInput: str, isFile: bool = False) -> bool:
         """
         Sends a command to the ut-controller via curl.
 
         Args:
             yamlInput (str): Either a YAML string or path to a YAML file.
+            isFile (bool): Flag indicating if yamlInput is a file path. Defaults to False.
 
         Returns:
             bool: True if the message was sent successfully, False otherwise.
@@ -88,9 +95,8 @@ class utPlaneController():
                 self.log.error("Invalid input provided")
                 return False
 
-            # Check if input is a file path
-            if os.path.isfile(yamlInput):
-                # It's a file path - use --data-binary with file reference
+            if isFile:
+                # It's a file path on target device - use --data-binary with file reference
                 yaml_content = yamlInput
                 cmd = f'curl -X POST -H "Content-Type: application/x-yaml" --data-binary @"{yaml_content}" "http://localhost:{self.port}/api/postKVP"'
             else:

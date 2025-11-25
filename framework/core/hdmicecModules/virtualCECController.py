@@ -33,7 +33,7 @@ sys.path.append(os.path.join(dir_path, "../"))
 
 from framework.core.logModule import logModule
 from framework.core.streamToFile import StreamToFile
-from utPlaneController import utPlaneController
+from framework.core.utPlaneController import utPlaneController
 from .abstractCECController import CECInterface
 from framework.core.commandModules.sshConsole import sshConsole
 
@@ -46,7 +46,7 @@ class virtualCECController(CECInterface):
     """
     def __init__(self, adaptor: str, logger: logModule, streamLogger: StreamToFile,
                 address: str, username: str = '', password: str = '', port: int = 22, prompt = '~#',
-                device_configuration:str='', control_port:int=8080):
+                device_configuration:str = '', control_port:int = 8080):
         """
         Initializes the virtualCECController class for HDMI CEC device communication.
 
@@ -71,21 +71,29 @@ class virtualCECController(CECInterface):
         self.session = _console
         self.commandPrompt = prompt
 
-        # Load the HDMI CEC device network configuration file
-        with open(device_configuration, "r") as f:
-            config_dict = yaml.safe_load(f)
+        try:
+            # Load the HDMI CEC device network configuration file
+            with open(device_configuration, "r") as f:
+                config_dict = yaml.safe_load(f)
 
-        self.cecDeviceNetworkConfigString = yaml.dump(config_dict)
-        self.cecDeviceNetworkConfigString = self.cecDeviceNetworkConfigString.replace('"', '\\"')
+            self.cecDeviceNetworkConfigString = yaml.dump(config_dict)
 
-        # Load the print configuration file
-        with open(HDMICEC_PRINT_CEC_NETWORK_CONFIG_FILE, "r") as f:
-            print_dict = yaml.safe_load(f)
+            # Load the print configuration file
+            with open(HDMICEC_PRINT_CEC_NETWORK_CONFIG_FILE, "r") as f:
+                print_dict = yaml.safe_load(f)
 
-        self.printConfigString = yaml.dump(print_dict)
-        self.printConfigString = self.printConfigString.replace('"', '\\"')
+            self.printConfigString = yaml.dump(print_dict)
 
-        self.utPlaneController = utPlaneController(self.session, port=self.control_port)
+            self.utPlaneController = utPlaneController(self.session, port=self.control_port)
+        except FileNotFoundError:
+            self._log.critical(f"Device config file not found")
+            raise
+        except yaml.YAMLError as e:
+            self._log.critical(f"Invalid YAML in device config file: {e}")
+            raise
+        except Exception as e:
+            self._log.critical(f"Failed to load device configuration: {e}")
+            raise
 
     def loadCecDeviceNetworkConfiguration(self, configString: str):
         """
@@ -154,24 +162,6 @@ class virtualCECController(CECInterface):
 
         return devices
 
-    def checkMessageReceived(self, cecMessage:dict, timeout: int = 10) -> bool:
-        """
-        This function checks to see if a specified opCode has been received.
-
-        Args:
-            cecMessage (dict): A dictionary containing the following keys:
-                sourceAddress (int): The logical address of the source device (0-15).
-                destAddress (int): The logical address of the destination device (0-15).
-                opCode (str): Operation code to check as an hexadecimal string e.g 0x81.
-                payload (list): List of hexadecimal strings to be checked with the opCode.
-            timeout (int): The maximum amount of time, in seconds, that the method will
-                           wait for the message to be received. Defaults to 10.
-        Returns:
-          bool: True if the message was received, False otherwise.
-        """
-        # Note: for vComponent, this function always returns True as we cannot verify message receipt
-        return True
-
     def sendMessage(self, sourceAddress: int, destAddress: int, opCode: str, payload: list = None) -> bool:
         """
         This function sends a specified opCode.
@@ -179,7 +169,7 @@ class virtualCECController(CECInterface):
         Args:
           sourceAddress (int): The logical address of the source device (0-15).
           destAddress (int): The logical address of the destination device (0-15).
-          opCode (str): Operation code to send as an hexadecimal string e.g 0x81.
+          opCode (str): Operation code to send as a hexadecimal string e.g 0x81.
           payload (list): List of hexadecimal strings to be sent with the opCode. Optional.
 
         Returns:
