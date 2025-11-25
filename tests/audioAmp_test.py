@@ -90,7 +90,7 @@ if __name__ == "__main__":
             assert audio_format == "Unknown" # when nothing plays
             print(f"PASSED: Audio format: {audio_format}")
         except Exception as e:
-            print(f"FAILED: Audio format - {e}")
+            print(f"FAILED: Audio format - {audio_format} - {e}")
 
         # Power OFF test
         try:

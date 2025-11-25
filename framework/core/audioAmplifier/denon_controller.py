@@ -96,7 +96,7 @@ class DenonAVRController(AudioAmplifier):
         try:
             # The 'type=12' query parameter requests the configuration from the Denon AVR.
             # the certificates in denon avr showed expired even after firmware update. so added verify=False
-            response = requests.get(f'{self.url}ajax/general/get_config?type=12', verify=False, timeout=5)
+            response = requests.get(f'{self.url}ajax/general/get_config?type=12', verify=False, timeout=15)
             if response.status_code == 200:
                 xml_data = fromstring(response.content)
                 element = xml_data.find(".//InputSignal")
@@ -105,4 +105,4 @@ class DenonAVRController(AudioAmplifier):
         except DefusedXmlException:
             raise ValueError("Failed to parse AVR response.")
         except requests.exceptions.RequestException:
-            raise ValueError("Cant reach AVR. Please check configuration")
+            raise ValueError("Can't reach AVR. Please check configuration")
