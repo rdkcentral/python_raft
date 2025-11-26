@@ -4,7 +4,7 @@
 # * If not stated otherwise in this file or this component's LICENSE file the
 # * following copyright and licenses apply:
 # *
-# * Copyright 2024 RDK Management
+# * Copyright 2025 RDK Management
 # *
 # * Licensed under the Apache License, Version 2.0 (the "License");
 # * you may not use this file except in compliance with the License.
@@ -39,6 +39,7 @@ from framework.core.commandModules.sshConsole import sshConsole
 
 HDMICEC_DEVICE_LIST_FILE = "/tmp/hdmi_cec_device_list_info.txt"
 HDMICEC_PRINT_CEC_NETWORK_CONFIG_FILE = os.path.join(dir_path, "configuration", "virtual_cec_print_device_network_configuration.yaml")
+HOST_CMD_EXEC_TIMEOUT = 2
 
 class virtualCECController(CECInterface):
     """
@@ -51,7 +52,7 @@ class virtualCECController(CECInterface):
         Initializes the virtualCECController class for HDMI CEC device communication.
 
         Args:
-            adaptor (str): The adaptor type/name for the parent class.
+            adaptor (str): The adaptor file path for the parent class.
             logger (logModule): Logger module instance for logging operations.
             streamLogger (StreamToFile): Stream logger for file-based logging.
             address (str): IP address or hostname of the remote device.
@@ -156,18 +157,18 @@ class virtualCECController(CECInterface):
 
         if devices is None or len(devices) == 0:
             self.session.write("cat " + HDMICEC_DEVICE_LIST_FILE)
-            time.sleep(2)
+            time.sleep(HOST_CMD_EXEC_TIMEOUT)
             devices = self.readDeviceNetworkList()
 
         return devices
 
-    def sendMessage(self, sourceAddress: int, destAddress: int, opCode: str, payload: list = None) -> bool:
+    def sendMessage(self, sourceAddress: str, destAddress: str, opCode: str, payload: list = None) -> bool:
         """
         This function sends a specified opCode.
 
         Args:
-          sourceAddress (int): The logical address of the source device (0-15).
-          destAddress (int): The logical address of the destination device (0-15).
+          sourceAddress (str): The logical address of the source device ('0'-'F').
+          destAddress (str): The logical address of the destination device ('0'-'F').
           opCode (str): Operation code to send as a hexadecimal string e.g 0x81.
           payload (list): List of hexadecimal strings to be sent with the opCode. Optional.
 
@@ -188,13 +189,34 @@ class virtualCECController(CECInterface):
             f"    payload: {msg_payload}\n"
         )
 
-        # Send the command to ut-controller
-        self.utPlaneController.sendMessage(yaml_content)
-
-        return True
+        try:
+            result = self.utPlaneController.sendMessage(yaml_content)
+            return bool(result)
+        except Exception as e:
+            self._log.critical(f"Failed to send CEC message: {e}")
+            return False
 
     def start(self):
         self.loadCecDeviceNetworkConfiguration(self.cecDeviceNetworkConfigString)
 
     def stop(self):
         pass
+
+    def receiveMessage(self,sourceAddress: str, destAddress: str, opCode: str, timeout: int = 10, payload: list = None) -> bool:
+        """
+        For a virtual component, the device network is only a simulation, so the controller
+        does not generate any logs when messages are sent or received. Therefore, it always returns expected message.
+
+        Args:
+          sourceAddress (str): The logical address of the source device (0-9 or A-F).
+          destAddress (str): The logical address of the destination device (0-9 or A-F).
+          opCode (str): Operation code to send as an hexidecimal string e.g 0x81.
+          timeout (int): The maximum amount of time, in seconds, that the method will
+                           wait for the message to be received. Defaults to 10.
+          payload (list): List of hexidecimal strings to be sent with the opCode. Optional.
+
+        Returns:
+            list: list of strings containing found message.
+        """
+        message = "Received expected message"
+        return message

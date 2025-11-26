@@ -118,12 +118,6 @@ class HDMICECController():
         Returns:
             boolean: True if message is received. False otherwise.
         """
-        if self.controllerType.lower() == 'virtual-cec-client':
-            # For a virtual component, the device network is only a simulation, so the controller
-            # does not generate any logs when messages are sent or received. Therefore, it always returns True.
-            self._log.debug('checkMessageReceived is mock implementation for virtual-cec-client controller. Defaulting to True.')
-            return True
-
         result = False
         payload_string = ''
         if isinstance(payload, list):

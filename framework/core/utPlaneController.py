@@ -23,7 +23,6 @@
 
 import os
 import sys
-import yaml
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
@@ -104,11 +103,13 @@ class utPlaneController():
                 yaml_content = yamlInput.replace('"', '\\"')
                 cmd = f'curl -X POST -H "Content-Type: application/x-yaml" --data-binary "{yaml_content}" "http://localhost:{self.port}/api/postKVP"'
 
+            result = True
+
             # Send command
-            self.session.write(cmd)
+            result = self.session.write(cmd)
 
             self.log.info(f"Message sent successfully to ut-controller on port {self.port}")
-            return True
+            return result
 
         except Exception as e:
             self.log.error(f"Failed to send message to ut-controller: {str(e)}")
