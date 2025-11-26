@@ -65,10 +65,7 @@ class virtualCECController(CECInterface):
         """
         super().__init__(adaptor, logger, streamLogger)
 
-        _console = sshConsole(self._log, address, username, password, port=port, prompt=prompt)
-
         self.control_port = control_port
-        self.session = _console
         self.commandPrompt = prompt
 
         try:
@@ -83,6 +80,8 @@ class virtualCECController(CECInterface):
                 print_dict = yaml.safe_load(f)
 
             self.printConfigString = yaml.dump(print_dict)
+
+            self.session = sshConsole(self._log, address, username, password, port=port, prompt=prompt)
 
             self.utPlaneController = utPlaneController(self.session, port=self.control_port)
         except FileNotFoundError:
