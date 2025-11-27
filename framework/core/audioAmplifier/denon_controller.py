@@ -1,11 +1,16 @@
 import asyncio
+
+import requests
+from defusedxml import DefusedXmlException
+from defusedxml.ElementTree import fromstring
 from denonavr import DenonAVR
 from .base import AudioAmplifier
 
 class DenonAVRController(AudioAmplifier):
     
-    def __init__(self, host: str):
+    def __init__(self, host: str, port: int = 10443):
         self.receiver = DenonAVR(host)
+        self.url = f"https://{host}:{port}/"
         self.setup()
 
     def setup(self):
@@ -76,3 +81,28 @@ class DenonAVRController(AudioAmplifier):
             "input": self.get_input(),
             "sound_mode": self.get_sound_mode(),
         }
+
+    def get_audio_format(self):
+        """
+        Web interface was showing input audio format. Could not find an equivalent method from
+        denonavr package. We need to get the inputSignal details, Searched whole package to find
+        any reference of inputSignal, but could not find. So using the web api itself here.
+
+        Returns:
+            str: 'Dolby Atmos', 'PCM'
+        Raises:
+            ValueError: if could not find or parse the data
+        """
+        try:
+            # The 'type=12' query parameter requests the configuration from the Denon AVR.
+            # the certificates in denon avr showed expired even after firmware update. so added verify=False
+            response = requests.get(f'{self.url}ajax/general/get_config?type=12', verify=False, timeout=15)
+            if response.status_code == 200:
+                xml_data = fromstring(response.content)
+                element = xml_data.find(".//InputSignal")
+                return element.text if element is not None else None
+            raise ValueError(f"Failed to fetch Audio format. Status code: {response.status_code}")
+        except DefusedXmlException:
+            raise ValueError("Failed to parse AVR response.")
+        except requests.exceptions.RequestException:
+            raise ValueError("Can't reach AVR. Please check configuration")
