@@ -49,7 +49,7 @@ class CECInterface(metaclass=ABCMeta):
     def sendMessage(cls, sourceAddress: str, destAddress: str, opCode: str, payload: list = None, deviceType: CECDeviceType=None) -> None:
         """
         Sends an opCode from a specified source and to a specified destination.
-        
+
         Args:
           sourceAddress (str): The logical address of the source device (0-9 or A-F).
           destAddress (str): The logical address of the destination device (0-9 or A-F).
