@@ -61,9 +61,9 @@ class HubClient():
         """
         self._socket.settimeout(0.5)
         self._socket.connect((hub_ip, hub_port))
-        if netbox_ip is not None:
+        if netbox_id is not None:
             response = self.send_message('hubquery="list redrats"')
-            netbox_on_hub = list(filter(lambda x: netbox_ip in x, response.splitlines()))
+            netbox_on_hub = list(filter(lambda x: netbox_id in x, response.splitlines()))
             if len(netbox_on_hub) <= 0:
                 raise ConnectionError('Could not connect to RedRat Hub. It may be misconfigured.')
 
