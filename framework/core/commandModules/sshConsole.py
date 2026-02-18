@@ -67,7 +67,29 @@ class sshConsole(consoleInterface):
         """Open the SSH session.
         """
         try:
-            self.console.connect(self.address, username = self.username, password = self.password, key_filename=self.key, port=self.port)
+            # Prepare password (convert None to empty string for password-less auth)
+            password = self.password or ''
+
+            # Only use key-based auth if a key file is explicitly provided
+            if self.key:
+                self.console.connect(
+                    self.address,
+                    username=self.username,
+                    password=password,
+                    key_filename=self.key,
+                    port=self.port
+                )
+            else:
+                # No key file - use password-only auth (disable automatic key discovery)
+                self.console.connect(
+                    self.address,
+                    username=self.username,
+                    password=password,
+                    port=self.port,
+                    look_for_keys=False,  # Don't try to use SSH keys from ~/.ssh
+                    allow_agent=False     # Don't try to use SSH agent
+                )
+
             self.is_open = True
             return True
         except Exception as e:
