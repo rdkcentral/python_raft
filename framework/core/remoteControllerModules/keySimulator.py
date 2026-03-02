@@ -43,6 +43,7 @@ class remoteKeySimulator:
         """
         self.log = log
         self.remoteConfig = remoteConfig
+        self.prompt = self.remoteConfig.get("prompt", ':~$ ')
 
         # Initialize SSH session
         self.session = sshConsole(
@@ -52,7 +53,7 @@ class remoteKeySimulator:
             password=self.remoteConfig.get("password"),
             known_hosts=self.remoteConfig.get("known_hosts"),
             port=int(self.remoteConfig.get("port")),
-            prompt=self.remoteConfig.get("prompt", ':~$ ')
+            prompt=self.prompt
         )
 
     def sendKey(self, key: str, repeat: int, delay: int):
@@ -66,11 +67,16 @@ class remoteKeySimulator:
         Returns:
             bool: Result of the command verification.
         """
-        result = False
+        finalResult = True
 
         # Send the key command
         for _ in range(repeat):
-            result = self.session.write(f"keySimulator -k{key}", wait_for_prompt=True)
+            self.session.write("\n")
+            self.session.write(f"keySimulator -k{key}", wait_for_prompt=True)
             time.sleep(delay)
-
+            output = self.session.read_until(self.prompt, timeout=10)
+            if self.prompt not in output:
+                self.log.error(f"Failed to send key: {key}")
+                finalResult = False
+                break
         return result
