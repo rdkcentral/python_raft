@@ -30,7 +30,76 @@
 #*
 #* ******************************************************************************
 
-import telnetlib
+try:
+    import telnetlib
+except ModuleNotFoundError:
+    # telnetlib was removed in Python 3.13, provide a minimal compatibility layer
+    import socket
+    import time
+
+    class Telnet:
+        def __init__(self, host=None, port=23, timeout=socket._GLOBAL_DEFAULT_TIMEOUT):
+            self.host = host
+            self.port = port
+            self.timeout = timeout
+            self.sock = None
+            if host:
+                self.open(host, port, timeout)
+
+        def open(self, host, port=23, timeout=socket._GLOBAL_DEFAULT_TIMEOUT):
+            self.host = host
+            self.port = port
+            self.sock = socket.create_connection((host, port), timeout)
+
+        def close(self):
+            if self.sock:
+                self.sock.close()
+                self.sock = None
+
+        def write(self, buffer):
+            if self.sock:
+                self.sock.send(buffer)
+
+        def read_until(self, match, timeout=None):
+            if not self.sock:
+                return b''
+
+            buffer = b''
+            start_time = time.time()
+            while True:
+                if timeout and (time.time() - start_time) > timeout:
+                    break
+                try:
+                    data = self.sock.recv(1024)
+                    if not data:
+                        break
+                    buffer += data
+                    if match in buffer:
+                        break
+                except socket.timeout:
+                    break
+                except Exception:
+                    break
+            return buffer
+
+        def read_all(self):
+            if not self.sock:
+                return b''
+            buffer = b''
+            try:
+                while True:
+                    data = self.sock.recv(1024)
+                    if not data:
+                        break
+                    buffer += data
+            except Exception:
+                pass
+            return buffer
+
+    # Create a mock telnetlib module
+    class telnetlib:
+        Telnet = Telnet
+
 import socket
 
 from .consoleInterface import consoleInterface
@@ -153,7 +222,7 @@ class telnet(consoleInterface):
         message = value.encode()
         result = self.tn.read_until(message,self.timeout)
         return result.decode()
-    
+
     def read_all(self) -> str:
         """Read all readily available information displayed in the console.
 
@@ -161,7 +230,7 @@ class telnet(consoleInterface):
             str: Information currently displayed in the console.
         """
         return self.read_eager()
-    
+
     def write(self,message:list|str, lineFeed:str="\r\n", wait_for_prompt:bool=False) -> bool:
         """Write a message into the session console.
         Optional: waits for prompt.

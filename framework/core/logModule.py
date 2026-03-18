@@ -118,7 +118,7 @@ class logModule():
     def __del__(self):
         """Deletes the logger instance.
         """
-        while self.log.hasHandlers():
+        while self.log.handlers:
             self.log.removeHandler(self.log.handlers[0])
 
     def setFilename( self, logPath, logFileName ):
@@ -134,11 +134,11 @@ class logModule():
             return
         self.logPath = logPath
         logFileName = os.path.join(logPath + logFileName)
-        self.logFile = logging.FileHandler(logFileName)
+        self.logFile = logging.FileHandler(logFileName, encoding='utf-8')
         self.logFile.setFormatter( self.format )
         self.log.addHandler( self.logFile )
         #Create the CSV Logger module
-        self.csvLogFile = logging.FileHandler( logFileName+".csv" )
+        self.csvLogFile = logging.FileHandler( logFileName+".csv", encoding='utf-8' )
         self.csvLogger.addHandler( self.csvLogFile )
         self.csvLogger.info("QcId, TestName, Result, Failed Step, Failure, Duration [hh:mm:ss]")
         self.log.info( "Log File: [{}]".format(logFileName) )

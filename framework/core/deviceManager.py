@@ -67,6 +67,11 @@ class consoleClass():
         """
         for element in configElements:
             config = configElements.get(element)
+        # Respect 'enabled: false' in console config — skip disabled consoles
+        if config.get("enabled") is False:
+            self.type = None
+            self.session = None
+            return
         self.type = config.get("type")
         self.prompt = config.get("prompt")
         # Create a new console since it hasn't been created
@@ -172,7 +177,9 @@ class deviceClass():
             consoles = device.get("consoles")
             for element in consoles:
                 for name in element:
-                    self.consoles[name] = consoleClass(log, logPath, element )
+                    console = consoleClass(log, logPath, element)
+                    if console.type is not None:  # skip disabled consoles
+                        self.consoles[name] = console
             config = device.get("outbound")
             if config != None:
                 self.outBoundClient = outboundClientClass(log, **config)
@@ -218,9 +225,15 @@ class deviceClass():
         Returns:
             consoleClass: Console class, or None on failure
         """
-        console = self.consoles[consoleName]
-        if console == None:
-            self.log.error("Invalid consoleName [{}]".format(consoleName))
+        console = self.consoles.get(consoleName)
+        # If requested console was disabled/missing, fall back to first enabled console
+        if console is None and self.consoles:
+            fallback = next(iter(self.consoles))
+            self.log.info("Console '{}' not available, falling back to '{}'".format(consoleName, fallback))
+            console = self.consoles[fallback]
+        if console is None:
+            self.log.error("No consoles available (all disabled?)")
+            return None
         return console.session
     
     def pingTest(self, logPingTime=False):
