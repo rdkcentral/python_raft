@@ -200,5 +200,5 @@ class serialSession(consoleInterface):
             True if can successfully clear the serial console.
         """
         self.log.info("Clearing Serial console log")
-        self.serialCon.reset_input_buffer()
+        self.serialCon.flushInput()
         return True

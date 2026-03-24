@@ -33,7 +33,11 @@ import datetime
 import time
 import signal
 import random
-import telnetlib
+try:
+    import telnetlib
+except ModuleNotFoundError:
+    # telnetlib was removed in Python 3.13, this is handled in telnetClass.py
+    telnetlib = None
 import os
 import shlex, subprocess
 import traceback
@@ -52,8 +56,22 @@ from framework.core.rackController import rackController
 from framework.core.configParser import configParser
 from framework.core.utilities import utilities
 from framework.core.decodeParams import decodeParams
-from framework.core.capture import capture
-from framework.core.webpageController import webpageController
+try:
+  from framework.core.capture import capture
+except ModuleNotFoundError as e:
+    # cv2/pytesseract/PIL are optional dependencies (e.g. in Docker images)
+    if e.name in ("cv2", "pytesseract", "PIL", "PIL.Image"):
+        capture = None
+    else:
+        raise
+try:
+  from framework.core.webpageController import webpageController
+except ModuleNotFoundError as e:
+    # selenium is an optional dependency (e.g. in Docker images)
+    if e.name == "selenium":
+        webpageController = None
+    else:
+        raise
 from framework.core.deviceManager import deviceManager
 
 class testController():
@@ -149,9 +167,30 @@ class testController():
         #Start the rest of the testControl requirements
         self.devices = deviceManager(self.slotInfo.config.get("devices"), self.log, self.testLogPath)
 
-        # Set up the session from the default console
+        # Set up the session from the enabled console (not just "default")
         self.dut = self.devices.getDevice( "dut" )
-        self.session = self.dut.getConsoleSession()
+
+        # CRITICAL: Select console based on which is enabled, not hardcoded "default"
+        # Check console configuration to find the enabled one
+        console_name = "default"  # Fallback to default
+        try:
+            # Get the raw config to check enabled status
+            dut_config = self.slotInfo.config.get("devices", [{}])[0].get("dut", {})
+            consoles_config = dut_config.get("consoles", [])
+
+            # Find the enabled console
+            for console_item in consoles_config:
+                for name, config in console_item.items():
+                    if config.get("enabled", False):
+                        console_name = name
+                        self.log.info(f"Using enabled console: {console_name} (type: {config.get('type')})")
+                        break
+                if console_name != "default":
+                    break
+        except Exception as e:
+            self.log.warn(f"Failed to detect enabled console, using default: {e}")
+
+        self.session = self.dut.getConsoleSession(console_name)
         self.outboundClient = self.dut.outBoundClient
         self.powerControl = self.dut.powerControl
         self.commonRemote = self.dut.remoteController
