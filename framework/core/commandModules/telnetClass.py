@@ -96,6 +96,56 @@ except ModuleNotFoundError:
                 pass
             return buffer
 
+        def read_very_eager(self):
+            """
+            Read all data available on the socket without blocking.
+            This is a minimal approximation of telnetlib.Telnet.read_very_eager().
+            """
+            if not self.sock:
+                return b''
+
+            buffer = b''
+            # Use non-blocking recv to drain any immediately available data.
+            self.sock.setblocking(False)
+            try:
+                while True:
+                    try:
+                        data = self.sock.recv(1024)
+                    except BlockingIOError:
+                        # No more data available without blocking.
+                        break
+                    if not data:
+                        break
+                    buffer += data
+            finally:
+                # Restore blocking mode for subsequent operations.
+                self.sock.setblocking(True)
+            return buffer
+
+        def read_eager(self):
+            """
+            Read any data available on the socket without significant blocking.
+            For this compatibility shim, delegate to read_very_eager().
+            """
+            return self.read_very_eager()
+
+        def read_some(self):
+            """
+            Read at least some data if available, without blocking if none is ready.
+            Returns an empty bytes object if no data is immediately available.
+            """
+            if not self.sock:
+                return b''
+
+            self.sock.setblocking(False)
+            try:
+                try:
+                    data = self.sock.recv(1024)
+                except BlockingIOError:
+                    data = b''
+            finally:
+                self.sock.setblocking(True)
+            return data
     # Create a mock telnetlib module
     class telnetlib:
         Telnet = Telnet
