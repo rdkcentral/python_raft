@@ -77,7 +77,11 @@ try:
 except ModuleNotFoundError as e:
     # selenium is an optional dependency (e.g. in Docker images)
     if e.name == "selenium":
-        webpageController = None
+        def _missing_webpage_controller(*args, **kwargs):
+            raise ImportError(
+                "webpageController requires the 'selenium' package, which is not installed"
+            )
+        webpageController = _missing_webpage_controller
     else:
         raise
 from framework.core.deviceManager import deviceManager
