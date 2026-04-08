@@ -55,8 +55,13 @@ from . logModule import DEBUG, INFO, WARNING, ERROR, CRITICAL
 from . testControl import testController
 try:
   from . webpageController import webpageController
-except ModuleNotFoundError:
-  webpageController = None  # selenium not installed (e.g. Docker)
+except ModuleNotFoundError as e:
+  if e.name == "selenium":
+    # selenium not installed (e.g. Docker)
+    webpageController = None
+  else:
+    # Unexpected missing module (e.g., bug inside webpageController.py) - do not hide it.
+    raise
 from . rcCodes import rcCode as rc
 from . utilities import utilities
 
