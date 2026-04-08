@@ -61,7 +61,15 @@ try:
 except ModuleNotFoundError as e:
     # cv2/pytesseract/PIL are optional dependencies (e.g. in Docker images)
     if e.name in ("cv2", "pytesseract", "PIL", "PIL.Image"):
-        capture = None
+        def _capture_missing_dependency(*args, **kwargs):
+            raise ImportError(
+                "The 'capture' functionality requires optional dependencies "
+                "(cv2, pytesseract, and Pillow). One or more of these are not "
+                f"installed (missing module: {e.name!r}). Please install the "
+                "required packages to use capture-related features."
+            )
+
+        capture = _capture_missing_dependency
     else:
         raise
 try:
