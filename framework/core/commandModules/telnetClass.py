@@ -58,7 +58,7 @@ except ModuleNotFoundError:
 
         def write(self, buffer):
             if self.sock:
-                self.sock.send(buffer)
+                self.sock.sendall(buffer)
 
         def read_until(self, match, timeout=None):
             if not self.sock:
