@@ -113,7 +113,7 @@ class remoteRedRat(RemoteInterface):
         self._client.start(self._hub_ip, hub_port=self._hub_port, netbox_id=self._netbox_id)
         self._output = config.get('output', 1)
 
-    def sendKey(self, code, repeat, delay):
+    def sendKey(self, code, repeat, delay, holdInterval):
         msg = f'{self._netbox_id_type}="{self._netbox_id}" {code} output="{self._output}"'
         for _ in range(repeat):
             if 'OK' not in self._client.send_message(msg):
