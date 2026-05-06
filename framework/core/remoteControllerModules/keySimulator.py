@@ -73,7 +73,7 @@ class remoteKeySimulator:
         # Send the key command
         self.session.write("")
         self.session.write(f"keySimulator -k{key} -i{delay} -r{repeat} -p{holdInterval}", wait_for_prompt=True)
-        output = self.session.read_until(self.prompt, timeout=10)
+        output = self.session.read_until(self.prompt, timeout=30)
         if self.prompt not in output:
             self.log.error(f"Failed to send key: {key}")
             finalResult = False
