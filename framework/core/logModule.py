@@ -118,9 +118,42 @@ class logModule():
     def __del__(self):
         """Deletes the logger instance.
         """
-        while self.log.hasHandlers():
-            self.log.removeHandler(self.log.handlers[0])
+        # Ensure all handlers are flushed and closed to avoid leaking resources
+        for handler in list(getattr(self, "log", {}).handlers if getattr(self, "log", None) else []):
+            try:
+                # Not all handlers implement flush; guard just in case
+                if hasattr(handler, "flush"):
+                    handler.flush()
+            except Exception:
+                # Best-effort cleanup; ignore flush errors during destruction
+                pass
+            try:
+                handler.close()
+            except Exception:
+                # Ignore close errors during destruction
+                pass
+            try:
+                self.log.removeHandler(handler)
+            except Exception:
+                # If removal fails, there's nothing more we can safely do here
+                pass
 
+        # Also clean up CSV logger handlers, if this instance created one
+        if hasattr(self, "csvLogger") and getattr(self, "csvLogger") is not None:
+            for handler in list(self.csvLogger.handlers):
+                try:
+                    if hasattr(handler, "flush"):
+                        handler.flush()
+                except Exception:
+                    pass
+                try:
+                    handler.close()
+                except Exception:
+                    pass
+                try:
+                    self.csvLogger.removeHandler(handler)
+                except Exception:
+                    pass
     def setFilename( self, logPath, logFileName ):
         """
         Sets the filename for logging.
@@ -134,11 +167,11 @@ class logModule():
             return
         self.logPath = logPath
         logFileName = os.path.join(logPath + logFileName)
-        self.logFile = logging.FileHandler(logFileName)
+        self.logFile = logging.FileHandler(logFileName, encoding='utf-8')
         self.logFile.setFormatter( self.format )
         self.log.addHandler( self.logFile )
         #Create the CSV Logger module
-        self.csvLogFile = logging.FileHandler( logFileName+".csv" )
+        self.csvLogFile = logging.FileHandler( logFileName+".csv", encoding='utf-8' )
         self.csvLogger.addHandler( self.csvLogFile )
         self.csvLogger.info("QcId, TestName, Result, Failed Step, Failure, Duration [hh:mm:ss]")
         self.log.info( "Log File: [{}]".format(logFileName) )
