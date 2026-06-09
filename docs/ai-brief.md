@@ -17,6 +17,13 @@ python_raft is a Python 3.10+ test-automation framework for engineering-level de
 
 Repository: `rdkcentral/python_raft`, default branch `develop`.
 
+**Companion briefs (same format, designed to be used together):**
+- [ut-core AI Brief](https://github.com/rdkcentral/ut-core/blob/develop/docs/ai-brief.md) -- the on-target C/C++ unit-test framework whose binaries RAFT drives.
+- [ut-control AI Brief](https://github.com/rdkcentral/ut-control/blob/develop/docs/ai-brief.md) -- the support library (KVP profiles, logging, control plane) used by ut-core test binaries.
+
+Point an AI at all three briefs plus a component specification to generate a
+working test suite -- see [15-from-a-spec-to-a-test-suite](#15-from-a-spec-to-a-test-suite).
+
 ---
 
 ## 2. Directory Layout
@@ -112,7 +119,7 @@ class testController:
 9. Optionally sets up `capture` (video), `webpageController` (Selenium)
 
 **Key attributes available in tests:**
-- `self.session` -- default console session (SSH/Serial/Telnet) for the DUT
+- `self.session` -- console session (SSH/Serial/Telnet) for the DUT. The constructor auto-selects the console marked `enabled: true` in config, falling back to `default` (or the first available console) when none is flagged
 - `self.dut` -- `deviceClass` instance for "dut"
 - `self.powerControl` -- `powerControlClass`
 - `self.commonRemote` -- `commonRemoteClass`
@@ -184,6 +191,13 @@ class deviceClass:
 Factory that creates the right console type based on `type` field in config.
 
 Supported types: `ssh`, `serial`, `telnet`.
+
+Consoles can be enabled/disabled per slot. A console entry marked
+`enabled: false` is skipped at construction (no session is created).
+`deviceClass.getConsoleSession(name)` falls back to the first available console
+if the requested one is disabled or missing, and returns `None` if every console
+is disabled. `testController` reads the same `enabled` flag to choose the active
+`self.session` automatically.
 
 ### 3.5 rackController / rack / rackSlot (`framework/core/rackController.py`)
 
@@ -320,7 +334,9 @@ Config fields: `type: "serial"`, `port` (e.g. "/dev/ttyUSB0"), `baudRate` (defau
 
 ### 4.3 Telnet (`telnet`)
 
-Uses `telnetlib`.
+Uses `telnetlib`. On Python 3.13+ (where `telnetlib` was removed from the
+standard library) a built-in minimal `Telnet` compatibility shim is used
+automatically, so telnet consoles keep working without the stdlib module.
 
 Config fields: `type: "telnet"`, `address`/`ip`, `username`, `password`, `port` (default 23), `username_prompt`, `password_prompt`, `prompt`.
 
@@ -478,6 +494,7 @@ rackConfig:
                     consoles:
                         - default:
                             type: "ssh"          # or "serial" or "telnet"
+                            enabled: true        # active console; testController auto-selects the enabled one
                             ip: "192.168.1.100"
                             port: 22
                             username: "root"
@@ -485,6 +502,7 @@ rackConfig:
                             prompt: "root@device:~#"
                         - serial:
                             type: "serial"
+                            enabled: false       # disabled consoles are skipped at construction
                             port: "/dev/ttyUSB0"
                             baudRate: 115200
                     powerSwitch:
@@ -621,6 +639,14 @@ python my_test.py --config rack_config.yml [--rack rack1] [--slot 1] [--debug]
 | `fabric` / `invoke` | Remote execution utilities |
 | `boto3` | AWS S3 integration |
 
+**Python:** 3.10+ (enforced by `installation/install_requirements.sh`).
+
+**Optional / Docker-safe:** `opencv-python`, `pytesseract`, `pillow` (capture/OCR)
+and `selenium` (web control) are imported lazily. If they are absent (e.g. in a
+slim Docker image) the framework still loads; the dependent feature raises a
+clear `ImportError` only when actually used. Likewise telnet consoles work
+without the stdlib `telnetlib` on Python 3.13+.
+
 ---
 
 ## 14. Common Test Patterns
@@ -750,6 +776,77 @@ serial_session.write("reboot")
 
 ---
 
-## 15. License
+## 15. From a Spec to a Test Suite
+
+This is the recipe an AI agent should follow when given a component
+specification (e.g. an RDK HAL interface, an API contract, or acceptance
+criteria) and asked to produce a RAFT test suite.
+
+**1. Decide the test layer.**
+- *On-target unit / HAL conformance* (C/C++ assertions running on the device):
+  author the test logic with **ut-core** (see the ut-core companion brief). RAFT's
+  job is to deploy/run that binary and adjudicate its output. Device-specific
+  expected values come from a **ut-control** KVP profile (YAML) the binary loads.
+- *Black-box / integration / system behaviour* driven over a console or remote:
+  author it directly in RAFT using the patterns below -- no on-target binary needed.
+
+**2. Pick the harness style.**
+- `RAFTUnitTestCase` -- one `test_*` method per requirement, standard `unittest`
+  assertions, independent `setUp`/`tearDown`. Preferred for spec-driven suites
+  where each requirement maps to a discrete, independently-reported check.
+- `testController` -- a single scripted scenario with `testPrepareFunction` /
+  `testFunction` / `testEndFunction`. Preferred for one end-to-end flow.
+
+**3. Map the spec to tests.**
+- Each requirement / API behaviour → one `test_*` method (or one `stepStart`/
+  `stepResult` block in a `testController`).
+- Preconditions (device powered, image flashed, service running) → `setUp` /
+  `testPrepareFunction` / `waitForBoot`.
+- Cleanup (remove artifacts, power off) → `tearDown` / `testEndFunction`.
+- Negative/error cases in the spec → their own assertions.
+
+**4. Express the environment as config, not code.**
+- Define the DUT console (mark the one you use `enabled: true`), `powerSwitch`,
+  and `remoteController` in the rack config; never hard-code addresses in tests.
+- Put device-specific expected values (port counts, supported formats, etc.) in
+  a KVP profile consumed by the on-target ut-core binary -- the same value set the
+  spec parameterizes over.
+
+**5. Drive and assert.**
+- Open `self.dut.session`, send commands or launch the ut-core binary with
+  `session.write(...)`, capture output with `read_until(<prompt>)` / `read_all()`.
+- For on-target ut-core runs, invoke the binary in automated mode and parse its
+  pass/fail summary; assert in RAFT on that result.
+- Report with `unittest` assertions (`RAFTUnitTestCase`) or `self.log.stepResult(passed, msg)`
+  (`testController`). Both feed the summary log.
+
+**Skeleton -- run an on-target ut-core suite and adjudicate it:**
+```python
+from framework.core.raftUnittest import RAFTUnitTestCase, RAFTUnitTestMain
+
+class HalConformance(RAFTUnitTestCase):
+    def test_hal_suite_passes(self):
+        self.dut.session.open()
+        # Launch the ut-core binary in automated mode with a device profile
+        self.dut.session.write(
+            "/opt/ut/hal_test -p /opt/ut/profiles/device.yaml -a")
+        output = self.dut.session.read_until(self.dut.session.prompt, timeout=120)
+        # ut-core prints a CUnit/GTest run summary; adjudicate it in RAFT.
+        # Use the exact summary markers documented in the ut-core brief; here we
+        # simply require that no failures were reported.
+        self.assertNotIn("FAILED", output.upper())
+
+if __name__ == "__main__":
+    RAFTUnitTestMain()
+```
+
+The exact ut-core CLI flags, run modes, and output format are in the
+[ut-core AI Brief](https://github.com/rdkcentral/ut-core/blob/develop/docs/ai-brief.md);
+the KVP profile schema the binary consumes is in the
+[ut-control AI Brief](https://github.com/rdkcentral/ut-control/blob/develop/docs/ai-brief.md).
+
+---
+
+## 16. License
 
 Apache License 2.0. Copyright 2023 RDK Management.
