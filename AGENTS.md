@@ -275,13 +275,13 @@ Parallel CSV output: `QcId, TestName, Result, Failed Step, Failure, Duration`
 **Log directory structure:**
 ```
 logs/<rackName>/<slotName>/<YYYYMMDD-HH-MM-SS>/
-    test_summary.log
-    test_summary.log.csv
+    test_summary.log          # only when a parent/summary logger is passed in;
+    test_summary.log.csv      #   a standalone testController writes these INSIDE <testName>-<qcId>/ instead
     <testName>-<qcId>/
         test-0.log
         test-0.log.csv
-        screenImages/
-        captureImages/
+        screenImages/         # always created by constructTestPath()
+        captureImages/        # only present when video capture is enabled
 ```
 
 ### 3.8 Singleton (`framework/core/singleton.py`)
@@ -330,7 +330,7 @@ Extra method: `open_interactive_shell()`, `read(timeout=10)`.
 
 Uses `pyserial`.
 
-Config fields: `type: "serial"`, `port` (e.g. "/dev/ttyUSB0"), `baudRate` (default 115200), `dataBits` (8), `stopBits` (1), `parity` ("None"), `flowControl` (False), `prompt`.
+Config fields honored today: `type: "serial"`, `port` (e.g. "/dev/ttyUSB0"), `baudRate` (default 115200), `prompt`. Note: `serialSession` only passes `port` and `baudRate` (with a fixed 300s timeout) to `pyserial` — `dataBits`/`stopBits`/`parity`/`flowControl` are not applied even if present in the config (pyserial defaults are used: 8/N/1, no flow control).
 
 ### 4.3 Telnet (`telnet`)
 
@@ -365,7 +365,7 @@ All operations support retry via `retryCount` (default 1) and `retryDelay` (defa
 | `"apc"` | `powerAPC` | `ip`, `username`, `password`, `outlet` |
 | `"apcAos"` | `powerApcAos` | `ip`, `username`, `password`, `port` (23), `outlet` |
 | `"olimex"` | `powerOlimex` | `ip`, `port`, `relay` |
-| `"kasa"` | `powerKasa` | `ip`, `options` ("--plug" or "--strip"), `args` ("--index N") |
+| `"kasa"` | `powerKasa` | `ip`, `options` (args passed to the `kasa` CLI; defaults to `"--type plug"` when unset — use a strip form such as `"--type strip"` / `"--strip"` for power strips), `args` ("--index N") |
 | `"tapo"` | `powerTapo` | `ip`, `username`, `password`, `outlet` |
 | `"SLP"` | `powerSLP` | `ip`, `username`, `password`, `outlet_id`, `port` (23) |
 
@@ -685,7 +685,7 @@ def testFunction(self):
     self.log.stepStart("Power cycle DUT")
     self.powerControl.reboot()
     self.log.step("Wait for device to come back")
-    time.sleep(30)
+    self.utils.wait(30)   # framework helper (no separate `import time` needed)
     alive = self.pingTest()
     self.log.stepResult(alive, "DUT responds to ping after reboot")
     return alive
