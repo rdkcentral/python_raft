@@ -18,8 +18,8 @@ python_raft is a Python 3.10+ test-automation framework for engineering-level de
 Repository: `rdkcentral/python_raft`, default branch `develop`.
 
 **Companion briefs (same format, designed to be used together):**
-- [ut-core AI Brief](https://github.com/rdkcentral/ut-core/blob/develop/docs/ai-brief.md) -- the on-target C/C++ unit-test framework whose binaries RAFT drives.
-- [ut-control AI Brief](https://github.com/rdkcentral/ut-control/blob/develop/docs/ai-brief.md) -- the support library (KVP profiles, logging, control plane) used by ut-core test binaries.
+- [ut-core AI Brief](https://github.com/rdkcentral/ut-core/blob/develop/AGENTS.md) -- the on-target C/C++ unit-test framework whose binaries RAFT drives.
+- [ut-control AI Brief](https://github.com/rdkcentral/ut-control/blob/develop/AGENTS.md) -- the support library (KVP profiles, logging, control plane) used by ut-core test binaries.
 
 Point an AI at all three briefs plus a component specification to generate a
 working test suite -- see [15-from-a-spec-to-a-test-suite](#15-from-a-spec-to-a-test-suite).
@@ -841,9 +841,9 @@ if __name__ == "__main__":
 ```
 
 The exact ut-core CLI flags, run modes, and output format are in the
-[ut-core AI Brief](https://github.com/rdkcentral/ut-core/blob/develop/docs/ai-brief.md);
+[ut-core AI Brief](https://github.com/rdkcentral/ut-core/blob/develop/AGENTS.md);
 the KVP profile schema the binary consumes is in the
-[ut-control AI Brief](https://github.com/rdkcentral/ut-control/blob/develop/docs/ai-brief.md).
+[ut-control AI Brief](https://github.com/rdkcentral/ut-control/blob/develop/AGENTS.md).
 
 ---
 
