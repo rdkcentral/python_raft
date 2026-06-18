@@ -156,6 +156,7 @@ class testController():
         self.powerControl = self.dut.powerControl
         self.commonRemote = self.dut.remoteController
         self.hdmiCECController = self.dut.hdmiCECController
+        self.hdmiAnalyserController = self.dut.hdmiAnalyserController
         self.utils = utilities(self.log)
         # For UI tests Initialising Video capture and decode the screen_regions.yml for the platform
         cpePlatform = self.slotInfo.getPlatform()

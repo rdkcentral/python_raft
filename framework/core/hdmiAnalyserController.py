@@ -31,6 +31,8 @@
 
 from framework.core.logModule import logModule
 from framework.core.hdmiAnalyserModules.m42h import M42hController
+from framework.core.hdmiAnalyserModules.virtualHdmiController import virtualHdmiController
+from framework.core.hdmiAnalyserModules.manualHdmiController import manualHdmiController
 
 
 class HDMIAnalyserController():
@@ -67,6 +69,27 @@ class HDMIAnalyserController():
                 user=config.get("user", "qd"),
                 passwd=config.get("passwd", "qd"),
                 card=config.get("card"),
+            )
+        elif self.controllerType == "manual-hdmi-controller":
+        #if self.controllerType == "manual-hdmi-controller":
+            self.hdmiAnalyser = manualHdmiController(self._log,
+                host=self.host,
+                port=config.get("port", 22),
+                user=config.get("user", ""),
+                passwd=config.get("passwd", ""),
+                prompt=config.get('prompt', '~#'),
+                control_port=config.get('sink_control_port', 8080),
+                device=config.get("device", ""),
+            )
+        elif self.controllerType == "virtual-hdmi-controller":
+            self.hdmiAnalyser = virtualHdmiController(self._log,
+                host=self.host,
+                port=config.get("port", 22),
+                user=config.get("user", ""),
+                passwd=config.get("passwd", ""),
+                prompt=config.get('prompt', '~#'),
+                control_port=config.get('sink_control_port', 8080),
+                device=config.get("device", ""),
             )
         else:
             raise ValueError(
@@ -191,3 +214,58 @@ class HDMIAnalyserController():
     def snapshot(self) -> dict:
         self._log.info("Taking analyser snapshot")
         return self.hdmiAnalyser.snapshot()
+
+    # ── HDMI output ─────────────────────────────────────────────────────
+
+    def sendEDIDRead(self, port: int, data: list):
+        """
+        Send an EDID read event for the HDMI output port.
+
+        Args:
+            port (int): HDMI output port number.
+            data (list): EDID data bytes.
+
+        Returns:
+            bool: True if message/event handled successfully.
+        """
+        return self.hdmiAnalyser.sendEDIDRead(port, data)
+
+    def sendFrameRateChanged(self, port: int):
+        """
+        Send a frame rate changed event for the HDMI output port.
+
+        Args:
+            port (int): HDMI output port number.
+
+        Returns:
+            bool: True if message/event handled successfully.
+        """
+        return self.hdmiAnalyser.sendFrameRateChanged(port)
+
+    def setHDCPStatus(self, port: int, status: str, version: str):
+        """
+        Set HDCP status for the HDMI output port.
+
+        Args:
+            port (int): HDMI output port number.
+            status (str): HDCP status string.
+            version (str): HDCP version string.
+
+        Returns:
+            bool: True if message/event handled successfully.
+        """
+        return self.hdmiAnalyser.setHDCPStatus(port, status, version)
+
+    def setHotplugState(self, port: int, connected: bool, version: str = "VERSION_2_X"):
+        """
+        Set hotplug state for the HDMI output port.
+
+        Args:
+            port (int): HDMI output port number.
+            connected (bool): True if connected, False if disconnected.
+            version (str): HDCP version string. Defaults to "VERSION_2_X".
+
+        Returns:
+            bool: True if message/event handled successfully.
+        """
+        return self.hdmiAnalyser.setHotplugState(port, connected, version)
