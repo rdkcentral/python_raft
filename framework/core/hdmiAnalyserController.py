@@ -61,6 +61,7 @@ class HDMIAnalyserController():
         self._log = log
         self.controllerType = config.get("type")
         self.host = config.get("host")
+        self.devicetype=config.get("device", "")
 
         if self.controllerType == "m42h":
             self.hdmiAnalyser = M42hController(
@@ -73,23 +74,23 @@ class HDMIAnalyserController():
         elif self.controllerType == "manual-hdmi-controller":
         #if self.controllerType == "manual-hdmi-controller":
             self.hdmiAnalyser = manualHdmiController(self._log,
-                host=self.host,
+                host=config.get("address", ""),
                 port=config.get("port", 22),
-                user=config.get("user", ""),
-                passwd=config.get("passwd", ""),
+                user=config.get("username", ""),
+                passwd=config.get("password", ""),
                 prompt=config.get('prompt', '~#'),
-                control_port=config.get('sink_control_port', 8080),
-                device=config.get("device", ""),
+                control_port=config.get(f'{self.devicetype}_control_port', 8080),
+                device=self.devicetype,
             )
         elif self.controllerType == "virtual-hdmi-controller":
             self.hdmiAnalyser = virtualHdmiController(self._log,
-                host=self.host,
+                host=config.get("address", ""),
                 port=config.get("port", 22),
-                user=config.get("user", ""),
-                passwd=config.get("passwd", ""),
+                user=config.get("username", ""),
+                passwd=config.get("password", ""),
                 prompt=config.get('prompt', '~#'),
-                control_port=config.get('sink_control_port', 8080),
-                device=config.get("device", ""),
+                control_port=config.get(f'{self.devicetype}_control_port', 8080),
+                device=self.devicetype,
             )
         else:
             raise ValueError(

@@ -30,8 +30,8 @@ sys.path.append(dir_path)
 command_templates_dir = os.path.join(dir_path, 'commands')
 EDID_READ_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_edid_read.yaml')
 FRAME_RATE_CHANGED_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_frame_rate_changed.yaml')
-HDCP_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_hdcp_status.yaml')
-CONNECTION_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_hotplug_state.yaml')
+HDMIOUT_HDCP_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_hdcp_status.yaml')
+HPD_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_hotplug_state.yaml')
 
 from .hdmiAnalyserInterface import HDMIAnalyserInterface
 from framework.core.commandModules.sshConsole import sshConsole
@@ -70,19 +70,20 @@ class virtualHdmiController(HDMIAnalyserInterface):
 
 
     def setHDCPStatus(self, port: int, status: str, version: str):
-        with open(HDCP_STATUS_CMD_TEMPLATE, 'r') as f:
-            msg = yaml.safe_load(f)
-        msg['hdmioutput']['params']['port'] = port
-        msg['hdmioutput']['params']['status'] = status
-        msg['hdmioutput']['params']['version'] = version
+        if self.analyserdevice == "sink":
+            with open(HDMIOUT_HDCP_STATUS_CMD_TEMPLATE, 'r') as f:
+                msg = yaml.safe_load(f)
+            msg['hdmioutput']['params']['port'] = port
+            msg['hdmioutput']['params']['status'] = status
+            msg['hdmioutput']['params']['version'] = version
         yaml_str = yaml.dump(msg)
         return self.utPlaneController.sendMessage(yaml_str)
         
 
     def setHotplugState(self, port: int, connected: bool, version: str):
-        with open(CONNECTION_STATUS_CMD_TEMPLATE, 'r') as f:
-            msg = yaml.safe_load(f)
         if self.analyserdevice == "sink":
+            with open(HPD_STATUS_CMD_TEMPLATE, 'r') as f:
+                msg = yaml.safe_load(f)
             msg['hdmioutput']['params']['port'] = port
             msg['hdmioutput']['params']['connected'] = connected
         yaml_str = yaml.dump(msg)
