@@ -33,6 +33,19 @@ class manualHdmiController(HDMIAnalyserInterface):
         self.prompt = prompt
         self.control_port = control_port
         self.device = device
+
+    def getUserYN(self, query: str = "Please Enter Y or N :") -> bool:
+        """Prompt the user for a Y/N response and return True for Y, False for N."""
+        response = input(query)
+        while True:
+            if response in ('y', 'Y'):
+                return True
+            elif response in ('n', 'N'):
+                return False
+            else:
+                print("Invalid input. Please enter 'y/Y' for Yes or 'n/N' for No.")
+                response = input(query)
+
     def sendEDIDRead(self, port: int, data: list):
         return True
 
