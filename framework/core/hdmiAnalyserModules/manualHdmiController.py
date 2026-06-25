@@ -38,9 +38,53 @@ class manualHdmiController(HDMIAnalyserInterface):
 
     def sendFrameRateChanged(self, port: int):
         return True
+    
+    def setHDCPVersion(self, port: int, hdcp_version: str):
+        """
+        Set the HDCP version for the HDMI input port.
 
-    def setHDCPStatus(self, port: int, status: str, version: str):
-        return True
+        Args:
+            port (int): HDMI input port number.
+            hdcp_version (str): HDCP version string. (VERSION_1_X, VERSION_2_X, UNDEFINED)
+        Returns:
+            bool: True if HDCP version set successfully.
+        """
+        results = self.testUserResponse.getUserYN(f"Set HDCP version '{hdcp_version}' for HDMI input port {port}? (Y/N):")
+        return results
+
+    def validateEdid(self, port: int, expected_edid: list):
+        """
+        Validate the EDID data for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            expected_edid (list): Expected EDID data bytes.
+        Returns:
+            bool: True if EDID data matches expected values.
+        """
+        results = self.testUserResponse.getUserYN(f"Validate EDID data for HDMI input port {port} against expected data {expected_edid}? (Y/N):")
+        return results
+
+    def sendAudioInfoFrame(self, port: int, data: list):
+        """
+        Ask user to manually set Audio Info Frame for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set Audio Info Frame for HDMI input port {port} with data {data}? (Y/N):")
+        return results
+
+    def sendAVIInfoFrame(self, port: int, data: list):
+        """
+        Ask user to manually set AVI Info Frame for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set AVI Info Frame for HDMI input port {port} with data {data}? (Y/N):")
+        return results
+
+    def sendDRMInfoFrame(self, port: int, data: list):
+        """
+        Ask user to manually set DRM Info Frame for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set DRM Info Frame for HDMI input port {port} with data {data}? (Y/N):")
+        return results
 
     def setHotplugState(self, port: int, connected: bool, version: str):
         if connected == False:
@@ -48,6 +92,66 @@ class manualHdmiController(HDMIAnalyserInterface):
         else :
                 result = self.testUserResponse.getUserYN(f"Plug the HDMI device of HDCP version {version} and press Y:")
         return result
+
+    def setHDCPStatus(self, port: int, hdcp_version: str, status: str):
+        """
+        Ask user to manually set HDCP status for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set HDCP status '{status}' (version: {hdcp_version}) for HDMI input port {port}? (Y/N):")
+        return results
+
+    def setSignalStatus(self, port: int, signal_state: str):
+        """
+        Ask user to manually set signal status for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set signal status '{signal_state}' for HDMI input port {port}? (Y/N):")
+        return results
+
+    def sendSPDInfoFrame(self, port: int, data: list):
+        """
+        Ask user to manually set SPD Info Frame for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set SPD Info Frame for HDMI input port {port} with data {data}? (Y/N):")
+        return results
+
+    def sendVSIFInfoFrame(self, port: int, data: list):
+        """
+        Ask user to manually set Vendor Specific Info Frame for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set Vendor Specific Info Frame for HDMI input port {port} with data {data}? (Y/N):")
+        return results
+
+    def SetVIC(self, port: int, vic: str):
+        """
+        Ask user to manually set VIC for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set VIC '{vic}' for HDMI input port {port}? (Y/N):")
+        return results
+
+    def setVRRStatus(self, port: int, vrrActive: bool, M_CONST: bool, fastVActive: bool, frameRate: float):
+        """
+        Ask user to manually set VRR status for the HDMI input port and confirm.
+        """
+        results = self.testUserResponse.getUserYN(f"Set VRR status for HDMI input port {port} with vrrActive={vrrActive}, M_CONST={M_CONST}, fastVActive={fastVActive}, frameRate={frameRate}? (Y/N):")
+        return results
+
+    def start(self):
+        """
+        Start the virtual HDMI controller (stub).
+
+        Returns:
+            None
+        """
+        pass
+
+    def stop(self):
+        """
+        Stop the virtual HDMI controller (stub).
+
+        Returns:
+            None
+        """
+        pass
 
     # ── Connection / lifecycle ──────────────────────────────────────────
 

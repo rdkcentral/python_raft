@@ -270,3 +270,152 @@ class HDMIAnalyserController():
             bool: True if message/event handled successfully.
         """
         return self.hdmiAnalyser.setHotplugState(port, connected, version)
+    
+    def setHDCPVersion(self, port: int, hdcp_version: str):
+        """
+        Set the HDCP version for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            hdcp_version (str): HDCP version string. (VERSION_1_X, VERSION_2_X, UNDEFINED)
+        Returns:
+            bool: True if HDCP version set successfully.
+        """
+        return self.hdmiAnalyser.setHDCPVersion(port, hdcp_version)
+
+    def validateEdid(self, port: int, expected_edid: list):
+        """
+        Validate the EDID data for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            expected_edid (list): Expected EDID data bytes.
+        Returns:
+            bool: True if EDID data matches expected values.
+        """
+        return self.hdmiAnalyser.validateEdid(port, expected_edid)
+
+    def sendAudioInfoFrame(self, port: int, data: list):
+        """
+        Send an Audio Info Frame message to the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            data (list): Audio info frame data bytes.
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.sendAudioInfoFrame(port, data)
+
+    def sendAVIInfoFrame(self, port: int, data: list):
+        """
+        Send an AVI Info Frame message to the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            data (list): AVI info frame data bytes.
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.sendAVIInfoFrame(port, data)
+
+    def sendDRMInfoFrame(self, port: int, data: list):
+        """
+        Send a DRM Info Frame message to the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            data (list): DRM info frame data bytes.
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.sendDRMInfoFrame(port, data)
+    
+    def setSignalStatus(self, port: int, signal_state: str):
+        """
+        Set the signal status for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            signal_state (str): Signal state string (e.g., 'LOCKED', 'NO_SIGNAL').
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.setSignalStatus(port, signal_state)
+
+    def sendSPDInfoFrame(self, port: int, data: list):
+        """
+        Send an SPD Info Frame message to the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            data (list): SPD info frame data bytes.
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.sendSPDInfoFrame(port, data)
+
+    def sendVSIFInfoFrame(self, port: int, data: list):
+        """
+        Send a Vendor Specific Info Frame message to the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            data (list): Vendor specific info frame data bytes.
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.sendVSIFInfoFrame(port, data)
+
+    def SetVIC(self, port: int, vic: str):
+        """
+        Set the Video Identification Code (VIC) for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            vic (str): Video Identification Code string.
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.SetVIC(port, vic)
+
+    def setVRRStatus(self, port: int, vrrActive: bool,M_CONST: bool, fastVActive: bool, frameRate: float):
+        """
+        Abstract method to set the Variable Refresh Rate (VRR) status for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            vrrActive (bool): VRR enabled status.
+            M_CONST (bool): M_CONST status.
+            fastVActive (bool): Fast V Active status.
+            frameRate (float): Frame rate value.
+
+        Returns:
+            bool: True if message sent successfully.
+        """
+        return self.hdmiAnalyser.setVRRStatus(port, vrrActive, M_CONST, fastVActive, frameRate)
+
+    def start(self):
+        """
+        Start the HDMI controller.
+
+        Returns:
+            None
+        """
+        return self.hdmiAnalyser.start()
+
+    def stop(self):
+        """
+        Stop the HDMI controller.
+
+        Returns:
+            None
+        """
+        return self.hdmiAnalyser.stop()

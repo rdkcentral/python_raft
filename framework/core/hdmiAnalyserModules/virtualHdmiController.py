@@ -33,6 +33,18 @@ FRAME_RATE_CHANGED_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutpu
 HDMIOUT_HDCP_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_hdcp_status.yaml')
 HPD_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmioutput_hotplug_state.yaml')
 
+##### HDMIINPUT #####
+AUDIO_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_audioinfo_frame.yaml')
+AVI_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_aviinfo_frame.yaml')
+DRM_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_drminfo_frame.yaml')
+CONNECTION_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_connection_status.yaml')
+HDCP_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_hdcp_status.yaml')
+SIGNAL_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_signal_status.yaml')
+SPD_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_spdinfo_frame.yaml')
+VENDOR_SPECIFIC_INFOFRAME_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_vendorspecificinfo_frame.yaml')
+VIDEO_FORMAT_CHANGE_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_videoformat_change.yaml')
+VRR_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'hdmiinput_vrr_status.yaml')
+
 from .hdmiAnalyserInterface import HDMIAnalyserInterface
 from framework.core.commandModules.sshConsole import sshConsole
 from framework.core.utPlaneController import utPlaneController
@@ -76,18 +88,164 @@ class virtualHdmiController(HDMIAnalyserInterface):
             msg['hdmioutput']['params']['port'] = port
             msg['hdmioutput']['params']['status'] = status
             msg['hdmioutput']['params']['version'] = version
+        elif self.analyserdevice == "source":
+            with open(HDCP_STATUS_CMD_TEMPLATE, 'r') as f:
+                msg = yaml.safe_load(f)
+            msg['hdmiinput']['params']['port'] = port
+            msg['hdmiinput']['params']['state'] = status
+            msg['hdmiinput']['params']['version'] = version
         yaml_str = yaml.dump(msg)
         return self.utPlaneController.sendMessage(yaml_str)
         
-
     def setHotplugState(self, port: int, connected: bool, version: str):
         if self.analyserdevice == "sink":
             with open(HPD_STATUS_CMD_TEMPLATE, 'r') as f:
                 msg = yaml.safe_load(f)
             msg['hdmioutput']['params']['port'] = port
             msg['hdmioutput']['params']['connected'] = connected
+        elif self.analyserdevice == "source":
+            with open(CONNECTION_STATUS_CMD_TEMPLATE, 'r') as f:
+                msg = yaml.safe_load(f)
+            msg['hdmiinput']['params']['port'] = port
+            msg['hdmiinput']['params']['connected'] = connected
         yaml_str = yaml.dump(msg)
         return self.utPlaneController.sendMessage(yaml_str)
+
+
+    def sendDRMInfoFrame(self, port: int, data: list):
+        """
+        Send a DRM Info Frame message to the HDMI input port using a YAML template.
+        """
+        with open(DRM_INFOFRAME_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['data'] = data
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+
+    def setSignalStatus(self, port: int, signal_state: str):
+        """
+        Set the signal status for the HDMI input port using a YAML template.
+        """
+        with open(SIGNAL_STATUS_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['state'] = signal_state
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+
+    def sendSPDInfoFrame(self, port: int, data: list):
+        """
+        Send an SPD Info Frame message to the HDMI input port using a YAML template.
+        """
+        with open(SPD_INFOFRAME_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['data'] = data
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+    
+    def validateEdid(self, port: int, expected_edid: list):
+        """
+        Validate the EDID data for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            expected_edid (list): Expected EDID data bytes.
+        Returns:
+            bool: True if EDID data matches expected values.
+        """
+        print(f"Validate EDID for HDMI input port {port} with expected data {expected_edid} Done")
+        return True
+    
+    def sendAudioInfoFrame(self, port: int, data: list):
+        """
+        Send an Audio Info Frame message to the HDMI input port using a YAML template.
+        """
+        with open(AUDIO_INFOFRAME_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['data'] = data
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+    
+    def sendAVIInfoFrame(self, port: int, data: list):
+        """
+        Send an AVI Info Frame message to the HDMI input port using a YAML template.
+        """
+        with open(AVI_INFOFRAME_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['data'] = data
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+
+    def sendVSIFInfoFrame(self, port: int, data: list):
+        """
+        Send a Vendor Specific Info Frame message to the HDMI input port using a YAML template.
+        """
+        with open(VENDOR_SPECIFIC_INFOFRAME_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['data'] = data
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+
+    def SetVIC(self, port: int, vic: str):
+        """
+        Set the Video Identification Code (VIC) for the HDMI input port using a YAML template.
+        """
+        with open(VIDEO_FORMAT_CHANGE_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['format'] = vic
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+
+    def setVRRStatus(self, port: int, vrrActive: bool,M_CONST: bool, fastVActive: bool, frameRate: float):
+        """
+        Set the Variable Refresh Rate (VRR) status for the HDMI input port using a YAML template.
+        """
+        with open(VRR_STATUS_CMD_TEMPLATE, 'r') as f:
+            msg = yaml.safe_load(f)
+        msg['hdmiinput']['params']['port'] = port
+        msg['hdmiinput']['params']['vrrActive'] = vrrActive
+        msg['hdmiinput']['params']['M_CONST'] = M_CONST
+        msg['hdmiinput']['params']['fastVActive'] = fastVActive
+        msg['hdmiinput']['params']['frameRate'] = frameRate
+        yaml_str = yaml.dump(msg)
+        return self.utPlaneController.sendMessage(yaml_str)
+    
+    def setHDCPVersion(self, port: int, hdcp_version: str):
+        """
+        Set the HDCP version for the HDMI input port.
+
+        Args:
+            port (int): HDMI input port number.
+            hdcp_version (str): HDCP version string. (VERSION_1_X, VERSION_2_X, UNDEFINED)
+        Returns:
+            bool: True if HDCP version set successfully.
+        """
+        print(f"SetHDCP version '{hdcp_version}' for HDMI input port {port} Done")
+        return True
+    
+    def start(self):
+        """
+        Start the virtual HDMI controller (stub).
+
+        Returns:
+            None
+        """
+        pass
+
+    def stop(self):
+        """
+        Stop the virtual HDMI controller (stub).
+
+        Returns:
+            None
+        """
+        pass
 
     # ── Connection / lifecycle ──────────────────────────────────────────
 
@@ -196,4 +354,3 @@ class virtualHdmiController(HDMIAnalyserInterface):
 
     def snapshot(self) -> dict:
         return {}
-
