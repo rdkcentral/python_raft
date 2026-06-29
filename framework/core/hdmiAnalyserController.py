@@ -45,8 +45,12 @@ class HDMIAnalyserController():
 
     Supported types:
         ``m42h`` – Teledyne LeCroy Quantumdata M42h 96G Video Analyser/Generator.
+        ``manual-hdmi-controller`` – SSH-based controller for manual HDMI device
+            interaction via a control port.
+        ``virtual-hdmi-controller`` – SSH-based controller for virtual HDMI device
+            interaction via a control port (used in simulation/test environments).
 
-    Rack-config example::
+    Rack-config example (m42h)::
 
         hdmiAnalyserController:
             type: "m42h"
@@ -55,6 +59,19 @@ class HDMIAnalyserController():
             user: "qd"           # optional, defaults to "qd"
             passwd: "qd"         # optional, defaults to "qd"
             card: 4              # optional card number
+
+    Rack-config example (manual-hdmi-controller / virtual-hdmi-controller)::
+
+        hdmiAnalyserController:
+            type: "manual-hdmi-controller"   # or "virtual-hdmi-controller"
+            address: "192.168.0.51"
+            port: 22
+            username: "admin"
+            password: "secret"
+            prompt: "~#"
+            device: "hdmi"                   # used to resolve <device>_control_port
+            source_control_port: 8080          # optional, defaults to 8080
+            sink_control_port: 8081
     """
 
     def __init__(self, log: logModule, config: dict):

@@ -106,12 +106,12 @@ class manualHdmiController(HDMIAnalyserInterface):
                 result = self.getUserYN(f"Plug the HDMI device of HDCP version {version} and press Y:")
         return result
 
-    def setHDCPStatus(self, port: int, hdcp_version: str, status: str):
+    def setHDCPStatus(self, port: int, status: str, version: str):
         """
         Ask user to manually set HDCP status for the HDMI input port and confirm.
         """
         if self.device == "source":
-            results = self.getUserYN(f"Set HDCP status '{status}' (version: {hdcp_version}) for HDMI input port {port}? (Y/N):")
+            results = self.getUserYN(f"Set HDCP status '{status}' (version: {version}) for HDMI input port {port}? (Y/N):")
             return results
         else:
             return True  # For sink devices.
@@ -153,7 +153,7 @@ class manualHdmiController(HDMIAnalyserInterface):
 
     def start(self):
         """
-        Start the virtual HDMI controller (stub).
+        Start the manual HDMI controller (stub).
 
         Returns:
             None
@@ -162,7 +162,7 @@ class manualHdmiController(HDMIAnalyserInterface):
 
     def stop(self):
         """
-        Stop the virtual HDMI controller (stub).
+        Stop the manual HDMI controller (stub).
 
         Returns:
             None
