@@ -103,10 +103,11 @@ rackConfig:
                     # [ avSyncController: optional] - Specifiec AVSyncController for the slot
                         # supported types:
                         # [type: "SyncOne2", port: "/dev/ttyACM0", extended_mode (optional): true|false, audio_input (optional): "AUTO|EXTERNAL|INTERNAL", speaker_distance (optional): "1.5"]
-
                     # [ hdmiAnalyserController: optional ] - Specifies an HDMI Analyser/Generator for the slot
                         # supported types:
                         # [type: "m42h", host: "192.168.0.50", port (optional): 22, user (optional): "qd", passwd (optional): "qd", card (optional): 4 ]
+                        # [type: "manual-hdmi-controller", address: "127.0.0.1", username: "", password: "", port: "7722", sink_control_port: 8085, source_control_port: 8086, device: sink]
+                        # [type: "virtual-hdmi-controller", address: "127.0.0.1", username: "", password: "", port: "7722", sink_control_port: 8085, source_control_port: 8086, device: sink]
                 - pi2:
                     ip: "192.168.99.1"
                     description: "local pi4"
