@@ -53,6 +53,7 @@ from framework.core.powerModules.apc import powerAPC
 from framework.core.powerModules.hs100 import powerHS100
 from framework.core.powerModules.SLP import powerSLP
 from framework.core.powerModules.none import powerNone
+from framework.core.powerModules.wol import powerWol
 from framework.core.utilities import utilities
 
 from framework.core.logModule import logModule
@@ -94,6 +95,8 @@ class powerControlClass():
             self.powerSwitch = powerTapo( log, **config)
         elif type == "SLP":
             self.powerSwitch = powerSLP(log, self.ip, config.get("username"), config.get("password"), config.get("outlet_id"),config.get('port',23))
+        elif type == "wol":
+            self.powerSwitch = powerWol( log, config.get("mac"), config.get("broadcast", "255.255.255.255"), config.get("port", 9))
         elif type == "none":
             self.powerSwitch = powerNone( log )
         else:
