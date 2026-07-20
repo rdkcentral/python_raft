@@ -22,9 +22,9 @@
 #* ******************************************************************************
 #*
 #*   ** Project      : RAFT
-#*   ** @addtogroup  : core.powerModules
+#*   ** @addtogroup  : core.networkModules
 #*   ** @file        : wol.py
-#*   ** @brief : Wake-on-LAN power module. powerOn() sends a magic packet to
+#*   ** @brief : Wake-on-LAN network module. wake() sends a magic packet to
 #*   **          wake a sleeping / soft-off device on the same broadcast domain.
 #*   **
 #* ******************************************************************************
@@ -32,18 +32,18 @@
 import socket
 
 
-class powerWol():
-    """Wake-on-LAN "power switch".
+class networkWol():
+    """Wake-on-LAN network module.
 
     A magic packet wakes a device that is asleep or in a Wake-on-LAN soft-off
     state, provided the host sending it shares the target's layer-2 broadcast
-    domain (or a directed subnet broadcast reaches it). Wake-on-LAN is
-    wake-only: it cannot power a device off, so powerOff() is a logged no-op and
-    reboot() is a best-effort wake.
+    domain (or a directed subnet broadcast reaches it). Wake-on-LAN is a
+    network (layer-2) action, not a power action: it can only wake a device, so
+    the module exposes a single ``wake()`` verb.
 
-    Rack-config fields (under a device's ``powerSwitch:``)::
+    Rack-config fields (under a device's ``network:``)::
 
-        powerSwitch:
+        network:
             type: "wol"
             mac: "b0:3e:51:ff:f6:bc"       # required - target NIC MAC
             broadcast: "255.255.255.255"   # optional - subnet broadcast for directed WoL
@@ -60,11 +60,11 @@ class powerWol():
         """
         self.log = log
         if not mac:
-            raise ValueError("powerWol requires a 'mac' address")
+            raise ValueError("networkWol requires a 'mac' address")
         self.mac = mac
         self.broadcast = broadcast or "255.255.255.255"
         self.port = int(port) if port else 9
-        self.log.info("powerWol(mac={}, broadcast={}, port={})".format(
+        self.log.info("networkWol(mac={}, broadcast={}, port={})".format(
             self.mac, self.broadcast, self.port))
 
     def _magicPacket(self):
@@ -74,7 +74,7 @@ class powerWol():
             raise ValueError("Invalid MAC address: {}".format(self.mac))
         return b"\xff" * 6 + bytes.fromhex(hexMac) * 16
 
-    def powerOn(self):
+    def wake(self):
         """Send the Wake-on-LAN magic packet.
 
         Returns:
@@ -85,26 +85,8 @@ class powerWol():
             with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
                 sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
                 sock.sendto(packet, (self.broadcast, self.port))
-            self.log.info("powerWol().powerOn: magic packet sent to {}".format(self.mac))
+            self.log.info("networkWol().wake: magic packet sent to {}".format(self.mac))
             return True
         except Exception as error:
-            self.log.error("powerWol().powerOn failed: {}".format(error))
+            self.log.error("networkWol().wake failed: {}".format(error))
             return False
-
-    def powerOff(self):
-        """Wake-on-LAN cannot power a device off; logged no-op.
-
-        Returns:
-            bool: Always True (nothing to do).
-        """
-        self.log.info("powerWol().powerOff: Wake-on-LAN is wake-only; no power-off performed")
-        return True
-
-    def reboot(self):
-        """No hard power cycle over Wake-on-LAN; best-effort wake.
-
-        Returns:
-            bool: Result of powerOn().
-        """
-        self.log.info("powerWol().reboot: Wake-on-LAN is wake-only; sending wake")
-        return self.powerOn()

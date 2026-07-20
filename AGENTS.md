@@ -44,6 +44,7 @@ python_raft/
       rcCodes.py              # rcCode enum (remote control key constants)
       commonRemote.py         # commonRemoteClass, remoteControllerMapping
       powerControl.py         # powerControlClass (delegates to modules)
+      networkControl.py       # networkControlClass (network/wake, delegates to modules)
       hdmiCECController.py    # HDMICECController
       avSyncController.py     # AVSyncController (SyncONE2)
       utPlaneController.py    # utPlaneController (ut-core integration)
@@ -66,6 +67,8 @@ python_raft/
         kasaControl.py        # TP-Link Kasa smart plugs/strips
         tapoControl.py        # TP-Link Tapo smart plugs
         SLP.py                # Server Technology SLP PDU
+      networkModules/
+        wol.py                # Wake-on-LAN (networkWol, wake())
       remoteControllerModules/
         remoteInterface.py    # Abstract base for remotes
         none.py               # No-op remote
@@ -115,13 +118,14 @@ class testController:
 5. Selects rack and slot (from CLI `--rack` / `--slot` / `--slotName`)
 6. Constructs log paths under `logs/<rack>/<slot>/<timestamp>/`
 7. Creates `deviceManager` from slot device list
-8. Sets up shortcut attributes: `self.dut`, `self.session`, `self.powerControl`, `self.commonRemote`, `self.hdmiCECController`
+8. Sets up shortcut attributes: `self.dut`, `self.session`, `self.powerControl`, `self.networkController`, `self.commonRemote`, `self.hdmiCECController`
 9. Optionally sets up `capture` (video), `webpageController` (Selenium)
 
 **Key attributes available in tests:**
 - `self.session` -- console session (SSH/Serial/Telnet) for the DUT. The constructor auto-selects the console marked `enabled: true` in config, falling back to `default` (or the first available console) when none is flagged
 - `self.dut` -- `deviceClass` instance for "dut"
 - `self.powerControl` -- `powerControlClass`
+- `self.networkController` -- `networkControlClass` or None (network/wake, e.g. Wake-on-LAN)
 - `self.commonRemote` -- `commonRemoteClass`
 - `self.hdmiCECController` -- `HDMICECController` or None
 - `self.capture` -- `capture` instance or None
@@ -175,6 +179,7 @@ class deviceClass:
 **Attributes:**
 - `consoles` -- dict of `consoleClass` instances keyed by name (e.g. "default", "ssh")
 - `powerControl` -- `powerControlClass` or None
+- `networkController` -- `networkControlClass` or None (network/wake, e.g. Wake-on-LAN)
 - `outBoundClient` -- `outboundClientClass` or None
 - `remoteController` -- `commonRemoteClass` or None
 - `hdmiCECController` -- `HDMICECController` or None
@@ -342,7 +347,16 @@ Config fields: `type: "telnet"`, `address`/`ip`, `username`, `password`, `port` 
 
 ---
 
-## 5. Power Modules
+## 5. Power & Network Control
+
+Two parallel controllers follow the same pattern -- a `*ControlClass` that delegates
+to a `type`-dispatched module, with retry via `retryCount` (default 1) / `retryDelay`
+(default 30s). `powerControlClass` (config `powerSwitch:`) owns device power; the
+separate `networkControlClass` (config `network:`) owns network-level actions such as
+Wake-on-LAN. They are intentionally distinct: Wake-on-LAN is a network (layer-2)
+action, not a power action, so it lives in `networkModules/`, not `powerModules/`.
+
+### 5.1 Power modules
 
 `powerControlClass` delegates to a specific module based on `type` in config.
 
@@ -368,6 +382,32 @@ All operations support retry via `retryCount` (default 1) and `retryDelay` (defa
 | `"kasa"` | `powerKasa` | `ip`, `options` (args passed to the `kasa` CLI; defaults to `"--type plug"` when unset — use a strip form such as `"--type strip"` / `"--strip"` for power strips), `args` ("--index N") |
 | `"tapo"` | `powerTapo` | `ip`, `username`, `password`, `outlet` |
 | `"SLP"` | `powerSLP` | `ip`, `username`, `password`, `outlet_id`, `port` (23) |
+
+### 5.2 Network / wake modules
+
+`networkControlClass` (device `network:` block) delegates to a `type`-dispatched
+network module. Waking is explicit -- call `dut.networkController.wake()` (it does not
+ride on `powerControl.powerOn()`).
+
+```python
+class networkControlClass:
+    def wake(self) -> bool               # e.g. send a Wake-on-LAN magic packet
+```
+
+| Type | Module | Config fields |
+|---|---|---|
+| `"wol"` | `networkWol` | `mac` (required), `broadcast` (default `255.255.255.255`), `port` (default `9`) |
+
+```yaml
+network:
+  type: "wol"
+  mac: "aa:bb:cc:dd:ee:ff"
+  broadcast: "255.255.255.255"   # optional - subnet broadcast for directed WoL
+  port: 9                        # optional (7 or 9)
+```
+
+The seam is designed to grow (e.g. `isReachable()` / `waitForOnline()` as a natural
+companion to `wake()`; `deviceClass.pingTest()` already offers ICMP reachability).
 
 ---
 
