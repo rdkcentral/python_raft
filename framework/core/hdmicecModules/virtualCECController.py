@@ -94,6 +94,7 @@ class virtualCECController(CECInterface):
         except Exception as e:
             self._log.critical(f"Failed to load device configuration: {e}")
             raise
+        self.start()
 
     def loadCecDeviceNetworkConfiguration(self, configString: str):
         """
