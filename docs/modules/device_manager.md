@@ -27,6 +27,7 @@
    * **Manages:**
       * `consoles` (dictionary): Stores available consoles for the device.
       * `powerControl` (`powerControlClass` object): Handles power cycling.
+      * `networkController` (`networkControlClass` object): Handles network-level actions such as Wake-on-LAN (`dut.networkController.wake()`).
       * `outBoundClient` (`outboundClientClass` object):  Handles outbound connections from the device.
       * `remoteController` (`commonRemoteClass` object):  Manages remote control actions.
 
