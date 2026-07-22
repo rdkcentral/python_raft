@@ -100,7 +100,8 @@ class networkWol():
             with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
                 sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
                 sock.sendto(packet, (self.broadcast, self.port))
-            self.log.info("networkWol().wake: magic packet sent to {}".format(self.mac))
+            self.log.info("networkWol().wake: magic packet for {} sent to {}:{}".format(
+                self.mac, self.broadcast, self.port))
             return True
         except Exception as error:
             self.log.error("networkWol().wake failed: {}".format(error))

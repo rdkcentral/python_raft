@@ -45,7 +45,8 @@ class networkControlClass():
         """
         self.log = log
         self.utils = utilities(log)
-        self.name = config.get("name")
+        # Fall back to the type so logs read e.g. "wake (wol)" rather than "wake (None)".
+        self.name = config.get("name") or config.get("type")
 
         # If variables are not passed in the config they will be defaulted to retryCount: [1], retryDelay: [30]
         self.retryCount = config.get("retryCount", 1)
