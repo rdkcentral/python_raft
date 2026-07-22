@@ -62,17 +62,32 @@ class networkWol():
         if not mac:
             raise ValueError("networkWol requires a 'mac' address")
         self.mac = mac
+        # Validate/normalise the MAC up front so a misconfiguration fails at
+        # construction with a clear error, rather than silently at wake() time.
+        self._hex_mac = self._normalise_mac(mac)
         self.broadcast = broadcast or "255.255.255.255"
         self.port = int(port) if port else 9
         self.log.info("networkWol(mac={}, broadcast={}, port={})".format(
             self.mac, self.broadcast, self.port))
 
-    def _magicPacket(self):
+    @staticmethod
+    def _normalise_mac(mac):
+        """Strip separators/whitespace and validate the MAC as 12 hex digits.
+
+        Raises:
+            ValueError: with a clear, field-named message if the MAC is not
+                twelve hexadecimal digits.
+        """
+        hex_mac = mac.strip().replace(":", "").replace("-", "").replace(".", "")
+        if len(hex_mac) != 12 or any(c not in "0123456789abcdefABCDEF" for c in hex_mac):
+            raise ValueError(
+                "Invalid Wake-on-LAN 'mac' address: {!r} "
+                "(expected 12 hex digits, e.g. aa:bb:cc:dd:ee:ff)".format(mac))
+        return hex_mac
+
+    def _magic_packet(self):
         """Build the Wake-on-LAN magic packet: 6x 0xFF followed by the MAC x16."""
-        hexMac = self.mac.replace(":", "").replace("-", "").replace(".", "")
-        if len(hexMac) != 12:
-            raise ValueError("Invalid MAC address: {}".format(self.mac))
-        return b"\xff" * 6 + bytes.fromhex(hexMac) * 16
+        return b"\xff" * 6 + bytes.fromhex(self._hex_mac) * 16
 
     def wake(self):
         """Send the Wake-on-LAN magic packet.
@@ -81,7 +96,7 @@ class networkWol():
             bool: True if the packet was sent, False on error.
         """
         try:
-            packet = self._magicPacket()
+            packet = self._magic_packet()
             with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
                 sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
                 sock.sendto(packet, (self.broadcast, self.port))

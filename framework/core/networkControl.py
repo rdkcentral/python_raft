@@ -65,6 +65,9 @@ class networkControlClass():
         Returns:
             bool: True if the wake was successfully sent.
         """
+        if self.networkModule is None:
+            self.log.error("wake ({}): no network module configured (check 'type')".format(self.name))
+            return False
         self.log.info("wake ({})".format(self.name))
         return self.networkRetry(self.networkModule.wake)
 
