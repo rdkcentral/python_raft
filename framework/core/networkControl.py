@@ -74,22 +74,27 @@ class networkControlClass():
     def networkRetry(self, networkMethod):
         """Perform the passed networkMethod and retry it if it fails.
 
+        Retries on both a raised exception and a falsy return, up to
+        ``retryCount`` times with a fixed ``retryDelay`` between attempts
+        (Wake-on-LAN either lands or it does not -- no exponential backoff).
+
         Args:
             networkMethod (Method): The networkMethod to perform.
 
-        Raises:
-            e: Exception if the networkMethod fails after all of the retries.
-
         Returns:
-            boolean: Whether the networkMethod was successfully performed.
+            boolean: True if any attempt succeeded, otherwise False.
         """
-        for x in range(self.retryCount+1):
+        result = False
+        for attempt in range(self.retryCount + 1):
             try:
                 result = networkMethod()
+            except Exception as error:
+                self.log.error("{} raised: {}".format(networkMethod.__name__, error))
+                result = False
+            if result:
                 break
-            except Exception as e:
-                self.log.info(f"Could not perform {[networkMethod.__name__]}. Retry count: [{x}] of [{self.retryCount}], delay is [{self.retryDelay}]")
-                if x == self.retryCount:
-                    raise e
+            if attempt < self.retryCount:
+                self.log.info("{} failed, retry [{}] of [{}] after [{}]s".format(
+                    networkMethod.__name__, attempt + 1, self.retryCount, self.retryDelay))
                 self.utils.wait(self.retryDelay)
         return result
