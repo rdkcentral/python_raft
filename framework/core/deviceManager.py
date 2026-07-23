@@ -42,6 +42,7 @@ from framework.core.outboundClient import outboundClientClass
 from framework.core.commonRemote import commonRemoteClass
 from framework.core.hdmiCECController import HDMICECController
 from framework.core.avSyncController import AVSyncController
+from framework.core.hdmiAnalyserController import HDMIAnalyserController
 from framework.core.utilities import utilities
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -164,6 +165,7 @@ class deviceClass():
         self.remoteController = None
         self.hdmiCECController = None
         self.avSyncController =None
+        self.hdmiAnalyserController = None
         self.session = None
         self.alive = False
 
@@ -192,6 +194,9 @@ class deviceClass():
             config = device.get("avSyncController")
             if config != None:
                 self.avSyncController = AVSyncController(log, config)
+            config = device.get("hdmiAnalyserController")
+            if config != None:
+                self.hdmiAnalyserController = HDMIAnalyserController(log, config)
         self.session = self.getConsoleSession()
 
     def getField(self, fieldName:str, itemsList:dict = None):
