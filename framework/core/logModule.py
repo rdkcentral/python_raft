@@ -103,8 +103,10 @@ class logModule():
         self.summaryTestTotal = 0
         self.summaryTestsFailed = 0
         self.summaryTestsPassed = 0
+        self.summaryTestsSkipped = 0
         self.totalStepsFailed = 0
         self.totalStepsPassed = 0
+        self.totalStepsSkipped = 0
         self.totalSteps = 0
         self.testDuration = 0
         self.stepNum = 0
@@ -386,6 +388,7 @@ class logModule():
             self.summaryTestTotal = 0
             self.summaryTestsPassed = 0
             self.summaryTestsFailed = 0
+            self.summaryTestsSkipped = 0
             self.summaryTestName = testName
             self.summaryQcID = qcId
         self.testCountActive += 1
@@ -393,6 +396,7 @@ class logModule():
         self.totalSteps = 0
         self.totalStepsPassed = 0
         self.totalStepsFailed = 0
+        self.totalStepsSkipped = 0
 
         self.start_time = datetime.datetime.now()
         self.end_time = self.start_time + datetime.timedelta(minutes=self.maxRunTime)
@@ -456,6 +460,9 @@ class logModule():
         if self.totalStepsFailed != 0:
             resultMessage = "FAILED"
             self.summaryTestsFailed += 1
+        elif self.totalStepsSkipped != 0 and self.totalStepsPassed == 0:
+            resultMessage = "SKIPPED"
+            self.summaryTestsSkipped += 1
         else:
             resultMessage = "PASSED"
             self.summaryTestsPassed += 1
@@ -463,10 +470,10 @@ class logModule():
 
         self.testResultMessage(message)
         if self.testCountActive == 0:
-            # Cater for the case where there is a test 
-            if self.summaryTestsFailed + self.summaryTestsPassed == self.summaryTestTotal-1:
+            # Cater for the case where there is a test
+            if self.summaryTestsFailed + self.summaryTestsPassed + self.summaryTestsSkipped == self.summaryTestTotal-1:
                 self.summaryTestTotal -= 1
-            message = "testName: [{}], qcId:[{}] Tests: Total:[{}]: Passed:[{}] Failed:[{}] Duration:[{}]".format(self.summaryTestName, self.summaryQcID, self.summaryTestTotal,self.summaryTestsPassed,self.summaryTestsFailed, str(testDuration) )
+            message = "testName: [{}], qcId:[{}] Tests: Total:[{}]: Passed:[{}] Failed:[{}] Skipped:[{}] Duration:[{}]".format(self.summaryTestName, self.summaryQcID, self.summaryTestTotal,self.summaryTestsPassed,self.summaryTestsFailed, self.summaryTestsSkipped, str(testDuration) )
             self.testSummaryMessage(message)
             self.step("====================End Of Test====================\r\n", showStepNumber=False)
             self.testCountActive = 0
@@ -509,13 +516,17 @@ class logModule():
         Logs the result of a step in the test.
 
         Args:
-            result (bool): The result of the step.
+            result: True for a pass, False for a failure, or the string
+                    "SKIPPED" for a skipped step.
             message (str): The result message.
         """
         #self.outdent()
         if result == True:
             resultMessage = "PASSED"
             self.totalStepsPassed += 1
+        elif result == "SKIPPED":
+            resultMessage = "SKIPPED"
+            self.totalStepsSkipped += 1
         else:
             resultMessage = "FAILED"
             self.totalStepsFailed += 1

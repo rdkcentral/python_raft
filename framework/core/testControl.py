@@ -534,6 +534,7 @@ class testController():
         self.summaryLog.failedSteps = self.log.failedSteps
         self.summaryLog.totalStepsFailed += self.log.totalStepsFailed
         self.summaryLog.totalStepsPassed += self.log.totalStepsPassed
+        self.summaryLog.totalStepsSkipped += self.log.totalStepsSkipped
         self.summaryLog.totalSteps += self.log.totalSteps
         self.summaryLog.testResult("[{}] : Test Completed".format(self.testName) )
         self.testEndFunction(powerOff)
