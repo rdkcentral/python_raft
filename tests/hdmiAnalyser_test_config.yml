@@ -1,0 +1,15 @@
+# HDMI Analyser Test Configuration
+# ---------------------------------
+# Fill in the 'host' field with the IP address of your M42h instrument
+# and adjust any optional fields as needed, then run:
+#
+#   python3 tests/hdmiAnalyser_test.py
+#
+
+hdmiAnalyserController:
+  type: "m42h"
+  host: ""          # <-- PUT YOUR M42h IP ADDRESS HERE
+  # port: 22        # SSH port (default: 22)
+  # user: "qd"      # SSH username (default: "qd")
+  # passwd: "qd"    # SSH password (default: "qd")
+  # card: 4         # Card number (uncomment if needed)
