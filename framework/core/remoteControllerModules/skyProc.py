@@ -51,7 +51,7 @@ class remoteSkyProc():
         self.telnet.disconnect()
         return True
   
-    def sendKey(self, code, repeat, delay ):
+    def sendKey(self, code, repeat, delay, holdInterval ):
 
         # Run the key sendKey via the terminal
         command="echo " + str(code) + " > /proc/cdi_ir"
