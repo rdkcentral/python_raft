@@ -53,7 +53,7 @@ class remoteOlimex():
         self.telnet.disconnect()
         return True
     
-    def sendKey(self, code:str, repeat:int, delay:int ):
+    def sendKey(self, code:str, repeat:int, delay:int, holdInterval:int):
         if code == None:
             return False
 

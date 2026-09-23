@@ -44,13 +44,14 @@ class RemoteInterface():
         self._config = remoteConfig
 
     @abstractmethod
-    def sendKey(self, code:str, repeat:int, delay:int ):
+    def sendKey(self, code:str, repeat:int, delay:int, holdInterval:int ):
         """Send a key
 
         Args:
             code (str): keycode
             repeat (int): number of repeats required
             delay (int): delay in seconds between repeats
+            holdInterval (int): How long to wait between key presses.
 
         Returns:
             bool: true on success otherwise failure
