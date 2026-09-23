@@ -103,8 +103,10 @@ class logModule():
         self.summaryTestTotal = 0
         self.summaryTestsFailed = 0
         self.summaryTestsPassed = 0
+        self.summaryTestsSkipped = 0
         self.totalStepsFailed = 0
         self.totalStepsPassed = 0
+        self.totalStepsSkipped = 0
         self.totalSteps = 0
         self.testDuration = 0
         self.stepNum = 0
@@ -118,9 +120,42 @@ class logModule():
     def __del__(self):
         """Deletes the logger instance.
         """
-        while self.log.hasHandlers():
-            self.log.removeHandler(self.log.handlers[0])
+        # Ensure all handlers are flushed and closed to avoid leaking resources
+        for handler in list(getattr(self, "log", {}).handlers if getattr(self, "log", None) else []):
+            try:
+                # Not all handlers implement flush; guard just in case
+                if hasattr(handler, "flush"):
+                    handler.flush()
+            except Exception:
+                # Best-effort cleanup; ignore flush errors during destruction
+                pass
+            try:
+                handler.close()
+            except Exception:
+                # Ignore close errors during destruction
+                pass
+            try:
+                self.log.removeHandler(handler)
+            except Exception:
+                # If removal fails, there's nothing more we can safely do here
+                pass
 
+        # Also clean up CSV logger handlers, if this instance created one
+        if hasattr(self, "csvLogger") and getattr(self, "csvLogger") is not None:
+            for handler in list(self.csvLogger.handlers):
+                try:
+                    if hasattr(handler, "flush"):
+                        handler.flush()
+                except Exception:
+                    pass
+                try:
+                    handler.close()
+                except Exception:
+                    pass
+                try:
+                    self.csvLogger.removeHandler(handler)
+                except Exception:
+                    pass
     def setFilename( self, logPath, logFileName ):
         """
         Sets the filename for logging.
@@ -134,11 +169,11 @@ class logModule():
             return
         self.logPath = logPath
         logFileName = os.path.join(logPath + logFileName)
-        self.logFile = logging.FileHandler(logFileName)
+        self.logFile = logging.FileHandler(logFileName, encoding='utf-8')
         self.logFile.setFormatter( self.format )
         self.log.addHandler( self.logFile )
         #Create the CSV Logger module
-        self.csvLogFile = logging.FileHandler( logFileName+".csv" )
+        self.csvLogFile = logging.FileHandler( logFileName+".csv", encoding='utf-8' )
         self.csvLogger.addHandler( self.csvLogFile )
         self.csvLogger.info("QcId, TestName, Result, Failed Step, Failure, Duration [hh:mm:ss]")
         self.log.info( "Log File: [{}]".format(logFileName) )
@@ -353,6 +388,7 @@ class logModule():
             self.summaryTestTotal = 0
             self.summaryTestsPassed = 0
             self.summaryTestsFailed = 0
+            self.summaryTestsSkipped = 0
             self.summaryTestName = testName
             self.summaryQcID = qcId
         self.testCountActive += 1
@@ -360,6 +396,7 @@ class logModule():
         self.totalSteps = 0
         self.totalStepsPassed = 0
         self.totalStepsFailed = 0
+        self.totalStepsSkipped = 0
 
         self.start_time = datetime.datetime.now()
         self.end_time = self.start_time + datetime.timedelta(minutes=self.maxRunTime)
@@ -423,6 +460,9 @@ class logModule():
         if self.totalStepsFailed != 0:
             resultMessage = "FAILED"
             self.summaryTestsFailed += 1
+        elif self.totalStepsSkipped != 0 and self.totalStepsPassed == 0:
+            resultMessage = "SKIPPED"
+            self.summaryTestsSkipped += 1
         else:
             resultMessage = "PASSED"
             self.summaryTestsPassed += 1
@@ -430,10 +470,10 @@ class logModule():
 
         self.testResultMessage(message)
         if self.testCountActive == 0:
-            # Cater for the case where there is a test 
-            if self.summaryTestsFailed + self.summaryTestsPassed == self.summaryTestTotal-1:
+            # Cater for the case where there is a test
+            if self.summaryTestsFailed + self.summaryTestsPassed + self.summaryTestsSkipped == self.summaryTestTotal-1:
                 self.summaryTestTotal -= 1
-            message = "testName: [{}], qcId:[{}] Tests: Total:[{}]: Passed:[{}] Failed:[{}] Duration:[{}]".format(self.summaryTestName, self.summaryQcID, self.summaryTestTotal,self.summaryTestsPassed,self.summaryTestsFailed, str(testDuration) )
+            message = "testName: [{}], qcId:[{}] Tests: Total:[{}]: Passed:[{}] Failed:[{}] Skipped:[{}] Duration:[{}]".format(self.summaryTestName, self.summaryQcID, self.summaryTestTotal,self.summaryTestsPassed,self.summaryTestsFailed, self.summaryTestsSkipped, str(testDuration) )
             self.testSummaryMessage(message)
             self.step("====================End Of Test====================\r\n", showStepNumber=False)
             self.testCountActive = 0
@@ -476,13 +516,17 @@ class logModule():
         Logs the result of a step in the test.
 
         Args:
-            result (bool): The result of the step.
+            result: True for a pass, False for a failure, or the string
+                    "SKIPPED" for a skipped step.
             message (str): The result message.
         """
         #self.outdent()
         if result == True:
             resultMessage = "PASSED"
             self.totalStepsPassed += 1
+        elif result == "SKIPPED":
+            resultMessage = "SKIPPED"
+            self.totalStepsSkipped += 1
         else:
             resultMessage = "FAILED"
             self.totalStepsFailed += 1
