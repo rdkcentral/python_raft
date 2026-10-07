@@ -112,7 +112,7 @@ class outboundClientClass():
             filename = os.path.basename(url)
         file_path = os.path.join(self.workspaceDirectory, filename)
 
-        if url.startswith("http://") == True:
+        if url.startswith(("http://", "https://")):
             return self.__downloadHTTP__( url, filename )
 
         if url.startswith("sftp://") == True:
@@ -275,13 +275,14 @@ class outboundClientClass():
         if filename == None:
             filename = url.rsplit("/")
         filePath = os.path.join(self.workspaceDirectory, filename)
-        with open(filePath, 'wb') as fHandle:
-            try:
-                response = requests.get(url, proxies=httpProxy, stream=True)
-            except Exception as e:
-                self.log.error(str(e))
-                return e
+        try:
+            response = requests.get(url, proxies=httpProxy, stream=True)
+            response.raise_for_status()
+        except Exception as e:
+            self.log.error(str(e))
+            return False
 
+        with open(filePath, 'wb') as fHandle:
             totalLength = response.headers.get('content-length')
             humanSize = self.getSizeInHumanReadable(totalLength)
             self.log.info("HTTP Downloading url:[{}] to filename:[{}] Length:[{}]".format(url, filePath, humanSize))
