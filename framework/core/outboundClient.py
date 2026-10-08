@@ -259,7 +259,7 @@ class outboundClientClass():
         sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )
 
     def __downloadHTTP__(self, url:str, filename:str=None ):
-        """Download the given URL via HTTP protocol.
+        """Download the given URL via HTTP/HTTPS protocol.
 
         Args:
             url (str): Source URL.
@@ -276,19 +276,19 @@ class outboundClientClass():
             filename = url.rsplit("/")
         filePath = os.path.join(self.workspaceDirectory, filename)
         if os.path.exists(filePath):
-            os.remove(filePath)
+            os.remove(filePath)  # Remove the existing file before downloading a new one.
         try:
-            response = requests.get(url, proxies=httpProxy, stream=True)
+            response = requests.get(url, proxies=httpProxy, stream=True)  # Start a streamed HTTP/HTTPS request.
         except Exception as e:
             self.log.error(str(e))
-            return False
+            return False  # The request could not be completed.
 
         with response:
             try:
-                response.raise_for_status()
+                response.raise_for_status()  # Reject HTTP/HTTPS error status codes.
             except Exception as e:
                 self.log.error(str(e))
-                return False
+                return False  # The server returned an error response.
 
             with open(filePath, 'wb') as fHandle:
                 totalLength = response.headers.get('content-length')
@@ -296,10 +296,13 @@ class outboundClientClass():
                 self.log.info("HTTP Downloading url:[{}] to filename:[{}] Length:[{}]".format(url, filePath, humanSize))
                 downloadLength = 0
                 totalLength = int(totalLength) if totalLength is not None else None
+                # Iterate over the response content in chunks of 4096 bytes.
                 for dataRead in response.iter_content(chunk_size=4096):
+                    # Write each non-empty HTTP/HTTPS response chunk.
                     if dataRead:
                         downloadLength += len(dataRead)
                         fHandle.write(dataRead)
+                    # Report progress only when the server provides a content length.
                     if totalLength:
                         done = int(50 * downloadLength / totalLength)
                         sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )
@@ -307,7 +310,7 @@ class outboundClientClass():
                 if totalLength:
                     sys.stdout.write("\n")
             if downloadLength == 0:
-                os.remove(filePath)
+                os.remove(filePath)  # Remove an empty download.
                 self.log.error("File is of zero length [{}]".format(filePath))
                 raise Exception ("File is of zero length")
         return filename
