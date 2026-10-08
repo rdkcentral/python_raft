@@ -277,29 +277,35 @@ class outboundClientClass():
         filePath = os.path.join(self.workspaceDirectory, filename)
         try:
             response = requests.get(url, proxies=httpProxy, stream=True)
-            response.raise_for_status()
         except Exception as e:
             self.log.error(str(e))
             return False
 
-        with open(filePath, 'wb') as fHandle:
-            totalLength = response.headers.get('content-length')
-            humanSize = self.getSizeInHumanReadable(totalLength)
-            self.log.info("HTTP Downloading url:[{}] to filename:[{}] Length:[{}]".format(url, filePath, humanSize))
-            if totalLength is None: # no content length header
-                fHandle.write(response.content)
-                self.log.error("File is of zero length [{}]".format(filePath))
-                raise Exception ("File is of zero length")
-            else:
-                downloadLength = 0
-                totalLength = int(totalLength)
-                for dataRead in response.iter_content(chunk_size=4096):
-                    downloadLength += len(dataRead)
-                    fHandle.write(dataRead)
-                    done = int(50 * downloadLength / totalLength)
-                    sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )
-                    sys.stdout.flush()
-                sys.stdout.write("\n")
+        with response:
+            try:
+                response.raise_for_status()
+            except Exception as e:
+                self.log.error(str(e))
+                return False
+
+            with open(filePath, 'wb') as fHandle:
+                totalLength = response.headers.get('content-length')
+                humanSize = self.getSizeInHumanReadable(totalLength)
+                self.log.info("HTTP Downloading url:[{}] to filename:[{}] Length:[{}]".format(url, filePath, humanSize))
+                if totalLength is None: # no content length header
+                    fHandle.write(response.content)
+                    self.log.error("File is of zero length [{}]".format(filePath))
+                    raise Exception ("File is of zero length")
+                else:
+                    downloadLength = 0
+                    totalLength = int(totalLength)
+                    for dataRead in response.iter_content(chunk_size=4096):
+                        downloadLength += len(dataRead)
+                        fHandle.write(dataRead)
+                        done = int(50 * downloadLength / totalLength)
+                        sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )
+                        sys.stdout.flush()
+                    sys.stdout.write("\n")
         return filename
 
     def  uploadFile(self,filename:str):
