@@ -290,25 +290,30 @@ class outboundClientClass():
                 self.log.error(str(e))
                 return False  # The server returned an error response.
 
-            with open(filePath, 'wb') as fHandle:
-                totalLength = response.headers.get('content-length')
-                humanSize = self.getSizeInHumanReadable(totalLength) if totalLength is not None else "unknown"
-                self.log.info("HTTP Downloading url:[{}] to filename:[{}] Length:[{}]".format(url, filePath, humanSize))
-                downloadLength = 0
-                totalLength = int(totalLength) if totalLength is not None else None
-                # Iterate over the response content in chunks of 4096 bytes.
-                for dataRead in response.iter_content(chunk_size=4096):
-                    # Write each non-empty HTTP/HTTPS response chunk.
-                    if dataRead:
-                        downloadLength += len(dataRead)
-                        fHandle.write(dataRead)
-                    # Report progress only when the server provides a content length.
+            downloadLength = 0
+            try:
+                with open(filePath, 'wb') as fHandle:
+                    totalLength = response.headers.get('content-length')
+                    humanSize = self.getSizeInHumanReadable(totalLength) if totalLength is not None else "unknown"
+                    self.log.info("HTTP Downloading url:[{}] to filename:[{}] Length:[{}]".format(url, filePath, humanSize))
+                    totalLength = int(totalLength) if totalLength is not None else None
+                    # Iterate over the response content in chunks of 4096 bytes.
+                    for dataRead in response.iter_content(chunk_size=4096):
+                        # Write each non-empty HTTP/HTTPS response chunk.
+                        if dataRead:
+                            downloadLength += len(dataRead)
+                            fHandle.write(dataRead)
+                        # Report progress only when the server provides a content length.
+                        if totalLength:
+                            done = int(50 * downloadLength / totalLength)
+                            sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )
+                            sys.stdout.flush()
                     if totalLength:
-                        done = int(50 * downloadLength / totalLength)
-                        sys.stdout.write("\r[%s%s]" % ('=' * done, ' ' * (50-done)) )
-                        sys.stdout.flush()
-                if totalLength:
-                    sys.stdout.write("\n")
+                        sys.stdout.write("\n")
+            except Exception:
+                if os.path.exists(filePath):
+                    os.remove(filePath)
+                raise
             if downloadLength == 0:
                 os.remove(filePath)  # Remove an empty download.
                 self.log.error("File is of zero length [{}]".format(filePath))

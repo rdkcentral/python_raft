@@ -65,6 +65,12 @@ class FakeResponse:
         yield from self.chunks
 
 
+class FailingStreamResponse(FakeResponse):
+    def iter_content(self, chunk_size):
+        yield b"partial"
+        raise requests.ConnectionError("Connection reset")
+
+
 class TestOutboundClient(unittest.TestCase):
     def setUp(self):
         self.workspace = tempfile.TemporaryDirectory()
@@ -138,6 +144,17 @@ class TestOutboundClient(unittest.TestCase):
 
         self.assertTrue(response.closed)
         self.assertFalse(os.path.exists(os.path.join(self.workspace.name, "empty.bin")))
+
+    def test_stream_error_removes_partial_download(self):
+        response = FailingStreamResponse()
+        destination = os.path.join(self.workspace.name, "partial.bin")
+
+        with patch("framework.core.outboundClient.requests.get", return_value=response):
+            with self.assertRaisesRegex(requests.ConnectionError, "Connection reset"):
+                self.client.downloadFile("https://example.test/partial.bin")
+
+        self.assertTrue(response.closed)
+        self.assertFalse(os.path.exists(destination))
 
 
 if __name__ == "__main__":
