@@ -38,6 +38,7 @@ from framework.core.commandModules.serialClass import serialSession
 from framework.core.commandModules.telnetClass import telnet
 from framework.core.logModule import logModule
 from framework.core.powerControl import powerControlClass
+from framework.core.networkControl import networkControlClass
 from framework.core.outboundClient import outboundClientClass
 from framework.core.commonRemote import commonRemoteClass
 from framework.core.hdmiCECController import HDMICECController
@@ -160,6 +161,7 @@ class deviceClass():
         self.log = log
         self.consoles = dict()
         self.powerControl = None
+        self.networkController = None
         self.outBoundClient = None
         self.remoteController = None
         self.hdmiCECController = None
@@ -174,6 +176,9 @@ class deviceClass():
             config = device.get("powerSwitch")
             if config != None:
                 self.powerControl = powerControlClass( log, config )
+            config = device.get("network")
+            if config != None:
+                self.networkController = networkControlClass( log, config )
             consoles = device.get("consoles")
             for element in consoles:
                 for name in element:

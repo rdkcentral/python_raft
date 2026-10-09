@@ -95,6 +95,13 @@ rackConfig:
                         # [type: "SLP", ip:"", username: "", password: "", outlet_id:"", port:"optional"]
                         # [type: "none" ] if section doesn't exist then type:none will be used
 
+                    # [ network: optional ] - Network/wake controller for the slot
+                        # Network-level device control (distinct from powerSwitch); wake-only.
+                        # supported types:
+                        # [type: "wol", mac: "aa:bb:cc:dd:ee:ff", broadcast:"optional (default 255.255.255.255)", port:"optional (default 9)"]
+                        #   Wake-on-LAN magic packet - wakes a sleeping / soft-off device on the
+                        #   same broadcast domain. Call dut.networkController.wake().
+
                     # [ hdmiCECController: optional ] - Specifies hdmiCECController for the slot
                         # supported types:
                         # [type: "cec-client", adaptor: "/dev/ttycec"]

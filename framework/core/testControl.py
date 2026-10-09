@@ -205,6 +205,7 @@ class testController():
         self.session = self.dut.getConsoleSession(console_name)
         self.outboundClient = self.dut.outBoundClient
         self.powerControl = self.dut.powerControl
+        self.networkController = self.dut.networkController
         self.commonRemote = self.dut.remoteController
         self.hdmiCECController = self.dut.hdmiCECController
         self.utils = utilities(self.log)
