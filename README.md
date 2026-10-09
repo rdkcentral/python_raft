@@ -92,7 +92,8 @@ Two config files are used for running this test. They are:
 - The device config
   - This yaml file is used to define device types. The information defined in this config is consistent across all devices of a type.
   - For of our first test we will use the [example_device_config.yml](examples/configs/example_device_config.yml)
-
+- Also follow : [Setting up the RAFT Guide](https://github.com/rdkcentral/ut-raft/wiki/Guide-for-Setting-up-the-Python-RAFT-Testing-Suite)
+- Note: The console entries in [getting_started_rack_config.yml](examples/configs/getting_started_rack_config.yml) and [example_rack_config.yml](examples/configs/example_rack_config.yml) are examples only. Update the configuration used by your test to match the connection methods available in your environment. The `default` entry is the name of the default console session and does not indicate that serial is required or recommended. If the DUT is accessed through SSH, configure the default console with `type: ssh` and provide the appropriate DUT IP address, port, username, and credentials. Ensure that the console name and connection type match what the test cases expect.
 ### The Logs
 
 After running your test you should find a new folder has been created called `logs`. This should contain test logs in both text and `.csv` format.
