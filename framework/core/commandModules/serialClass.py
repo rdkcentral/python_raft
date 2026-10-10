@@ -57,7 +57,7 @@ class serialSession(consoleInterface):
 
         # Initiate serial session , parity = serial.PARITY_NONE, stopbits = serial.STOPBITS_ONE, xonxoff=False,
         try:
-            self.serialCon = serial.Serial(self.serialPort, self.baudRate, timeout=300)
+            self.serialCon = serial.Serial(baudrate=self.baudRate, timeout=300)
         except Exception as e:
             self.log.error('Failed to start serial connection - {}'.format(e))
             raise Exception('Failed to start Serial Connection. Check the COM port settings')
@@ -78,6 +78,7 @@ class serialSession(consoleInterface):
             bool: True if serial session opened successfully.
         """        
         try:
+            self.serialCon.port = self.serialPort
             if not self.serialCon.is_open:
                 self.serialCon.open()
         except (serial.SerialException, serial.SerialTimeoutException) as e:
