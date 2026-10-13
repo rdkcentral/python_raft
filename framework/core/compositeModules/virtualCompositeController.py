@@ -29,7 +29,9 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 sys.path.append(dir_path)
 sys.path.append(os.path.join(dir_path, "../../tests/raft/"))
 
-command_templates_dir = os.path.join(dir_path, 'commands')
+command_templates_dir = os.path.join(
+    dir_path, '../../../framework/plugins/ut_raft/controlCommands/compositeinput'
+)
 CONNECTION_STATUS_CMD_TEMPLATE = os.path.join(command_templates_dir, 'compositeinput_connection_status.yaml')
 SIGNAL_STATUS_CMD_TEMPLATE     = os.path.join(command_templates_dir, 'compositeinput_signal_status.yaml')
 VIDEO_MODE_CMD_TEMPLATE        = os.path.join(command_templates_dir, 'compositeinput_video_mode.yaml')
