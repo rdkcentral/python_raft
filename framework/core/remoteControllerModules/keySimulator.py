@@ -56,13 +56,14 @@ class remoteKeySimulator:
             prompt=self.prompt
         )
 
-    def sendKey(self, key: str, repeat: int, delay: int):
+    def sendKey(self, key: str, repeat: int=0, delay: int=1, holdInterval: int=0):
         """Send a key command with specified repeats and interval.
 
         Args:
             key (str): The key to send.
             repeat (int): Number of times to send the key.
             delay (int): Delay between key presses in seconds.
+            holdInterval (int): How long to wait between key presses.
 
         Returns:
             bool: Result of the command verification.
@@ -70,13 +71,10 @@ class remoteKeySimulator:
         finalResult = True
 
         # Send the key command
-        for _ in range(repeat):
-            self.session.write("")
-            self.session.write(f"keySimulator -k{key}", wait_for_prompt=True)
-            time.sleep(delay)
-            output = self.session.read_until(self.prompt, timeout=10)
-            if self.prompt not in output:
-                self.log.error(f"Failed to send key: {key}")
-                finalResult = False
-                break
+        self.session.write("")
+        self.session.write(f"keySimulator -k{key} -i{delay} -r{repeat} -p{holdInterval}", wait_for_prompt=True)
+        output = self.session.read_until(self.prompt, timeout=30)
+        if self.prompt not in output:
+            self.log.error(f"Failed to send key: {key}")
+            finalResult = False
         return finalResult

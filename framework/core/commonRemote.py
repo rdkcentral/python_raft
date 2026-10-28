@@ -161,7 +161,7 @@ class commonRemoteClass():
         keyDictionary = config.get('remoteMaps',{})
         return keyDictionary
 
-    def sendKey(self, keycode:dict, delay:int=1, repeat:int=1, randomRepeat:int=0):
+    def sendKey(self, keycode:dict, delay:int=1, repeat:int=1, randomRepeat:int=0, holdInterval:int=0):
         """Send a key to the remoteCommander
 
         Args:
@@ -169,6 +169,7 @@ class commonRemoteClass():
             delay (int, optional): Delay in seconds between repeats. Defaults to 1.
             repeat (int, optional): How many key repeats. Defaults to 1.
             randomRepeat (int, optional): Random Key repeat value. Defaults to 0.
+            holdInterval (int, optional): Hold the key for specified delay. Defaults to 0.
         """
         if (randomRepeat != 0):
             import random
@@ -181,7 +182,7 @@ class commonRemoteClass():
                 self.log.info( "sendKey[" + keycode.name + "] delay:[" +str(delay)+"]" )
 
         mappedCode = self.remoteMap.getMappedKey( keycode.name )
-        result = self.remoteController.sendKey( mappedCode, repeat, delay)
+        result = self.remoteController.sendKey( mappedCode, repeat, delay, holdInterval)
         return result
 
     def setKeyMap( self, name:dict ):

@@ -48,13 +48,14 @@ class remoteArduino():
         self.arduino = serial.Serial(port=self.remoteConfig.get("port"), baudrate=self.remoteConfig.get("baudrate"), timeout=300)
         self.firstKeyPressInTc = True
 
-    def sendKey(self, key, repeat=1, delay=1):
+    def sendKey(self, key, repeat=1, delay=1, holdInterval=0):
         """Send IR key using arduino module
 
         Args:
             key (str) - Key to be sent to device#
             repeat (int) - Number of times the key has to be pressed. Defaults to 1
             delay (int) - wait time after pressing the key
+            holdInterval (int): How long to wait between key presses.
         """
         if self.firstKeyPressInTc:
             time.sleep(5)
