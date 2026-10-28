@@ -32,6 +32,7 @@ from logging import exception
 import time
 import platform
 import os
+import re
 
 from framework.core.commandModules.sshConsole import sshConsole
 from framework.core.commandModules.serialClass import serialSession
@@ -149,7 +150,7 @@ class deviceClass():
             logPath (str): Path to write workspace files.
             devices (dict): Devices to initialize.
         """
-        #     # powerControl 
+        #     # powerControl
         #     # consoles
         #         # Serial
         #         # SSH
@@ -235,7 +236,7 @@ class deviceClass():
             self.log.error("No consoles available (all disabled?)")
             return None
         return console.session
-    
+
     def pingTest(self, logPingTime=False):
         """Perform a ping test against the given device.
 
@@ -253,68 +254,86 @@ class deviceClass():
             pingStartTime = time.time()
             timeString = time.strftime("%H:%M:%S",time.gmtime(pingStartTime))
             self.log.step("ping start time: [{}]".format(timeString) )
-        
+
         self.alive = self._pingTestOnly()
-        
+
         if logPingTime:
             elapsed_time = time.time() - pingStartTime
             timeString = time.strftime("%H:%M:%S",time.gmtime(time.time()))
             self.log.step("ping response time: [{}]".format(timeString) )
-            elapsed_string = time.strftime( "%H:%M:%S", time.gmtime(elapsed_time))              
+            elapsed_string = time.strftime( "%H:%M:%S", time.gmtime(elapsed_time))
             self.log.step("Time taken to get ping response: ["+elapsed_string+"]")
         # We've not be able to ping the box, return an error
-        
+
         if not self.alive:
             self.log.critical( "ping Up Check:[Box is not responding to ping within:"+elapsed_string+"]")
-            raise Exception(" ping failed")           
-        
+            raise Exception(" ping failed")
+
         return self.alive
 
     def _pingTestOnly(self):
         """Perform a ping test against the given device.
 
         Returns:
-            bool: True if host is up, False otherwise.
+            bool: True if the host is up with no packet loss
+                in the retry test, False otherwise.
         """
         hostIsUp = False
         ip = self.getField("ip")
-        
-        if platform.system().lower() == 'windows' or 'cygwin' in platform.system().lower():
+        system = platform.system().lower()
+
+        if system == "windows" or "cygwin" in system:
             ping_param_amount = " -n "
             ping_param_quiet = " "
         else:
             ping_param_amount = " -c "
             ping_param_quiet = " -q "
-        
+
         # Quick check for ping working first time round
-        command  = "ping" + ping_param_amount + "1" + ping_param_quiet + ip
+        command = "ping" + ping_param_amount + "1" + ping_param_quiet + ip
         result = utilities(self.log).syscmd(command)
-        
+
         if result[1] == 0:
             self.log.debug("ping response 1 - Host Up")
             return True
-        
-        #Host is currently down, we need to loop
-        for x in range( 0, 15 ):
-            self.log.debug("pingTest Inner Loop["+str(x)+"]")
+
+        # Host is currently down; retry the ping test
+        for x in range(15):
+            self.log.debug("pingTest Inner Loop[" + str(x) + "]")
             utilities(self.log).wait(5) # Wait 5 seconds before trying constant ping
-            result = utilities(self.log).syscmd( "ping" + ping_param_amount + "10" + ping_param_quiet + ip)
-            
+
+            command = ("ping" + ping_param_amount + "10" + ping_param_quiet + ip)
+            result = utilities(self.log).syscmd(command)
+
             if result[1] == 0:
-                # Check for 0% packet loss, otherwise reject it
                 outputString = str(result[0])
-                if ", 0% packet loss" in outputString:
+
+                # Linux:   0% packet loss
+                # Windows: Lost = 0 (0% loss)
+                linux_loss = re.search(
+                    r"\b0%\s*packet loss\b",
+                    outputString,
+                    re.IGNORECASE
+                )
+                windows_loss = re.search(
+                    r"\bLost\s*=\s*0\s*\(0%\s*loss\)",
+                    outputString,
+                    re.IGNORECASE
+                )
+
+                if linux_loss or windows_loss:
                     hostIsUp = True
                     self.log.debug("pingTest hostIsUp")
                     break
+
             self.log.debug("pingTest hostIsDown")
-        
+
         return hostIsUp
 
 class deviceManager():
     """Manages device configurations.
     """
-    
+
     rawConfig = dict()
     devices = dict()
 
