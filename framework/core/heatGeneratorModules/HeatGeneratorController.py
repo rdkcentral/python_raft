@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+#** *****************************************************************************
+# *
+# * If not stated otherwise in this file or this component's LICENSE file the
+# * following copyright and licenses apply:
+# *
+# * Copyright 2026 RDK Management
+# *
+# * Licensed under the Apache License, Version 2.0 (the "License");
+# * you may not use this file except in compliance with the License.
+# * You may obtain a copy of the License at
+# *
+# *
+# http://www.apache.org/licenses/LICENSE-2.0
+# *
+# * Unless required by applicable law or agreed to in writing, software
+# * distributed under the License is distributed on an "AS IS" BASIS,
+# * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# * See the License for the specific language governing permissions and
+# * limitations under the License.
+# *
+#* ******************************************************************************
+
+import os
+import sys
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(dir_path)
+
+from .virtualHeatGenerator import virtualHeatGenerator
+from .actualHeatGenerator import actualHeatGenerator
+
+
+class HeatGeneratorController:
+    """
+    Factory class — returns the correct controller implementation based on platform.
+    """
+
+    def __new__(cls, platform: str, session, prompt: str = "~#", port: int = 8080):
+        """
+        Create and return the appropriate thermal sensor controller.
+
+        Args:
+            platform (str): Platform type.  "vDevice" returns a virtualHeatGenerator.
+                            Any other value returns an actualHeatGenerator.
+            session: Active pexpect / raft session on the target device.
+            prompt (str): Shell prompt string used to detect command completion.
+            port (int): Control-plane HTTP port the vcomponent is listening on.
+
+        Returns:
+            HeatGeneratorControllerInterface implementation.
+        """
+        if platform.lower() == "vdevice":
+            return virtualHeatGenerator(session, prompt, port)
+        return actualHeatGenerator(session, prompt, port)
